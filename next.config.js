@@ -1,16 +1,22 @@
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
+const { BUNDLE_ANALYZE } = process.env;
+
+const MODE = "static";
+const SERVER = ["server", "both"];
+const BROWSER = ["browser", "both"];
+
 module.exports = withBundleAnalyzer({
-  analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
-  analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
+  analyzeServer: SERVER.includes(BUNDLE_ANALYZE),
+  analyzeBrowser: BROWSER.includes(BUNDLE_ANALYZE),
   bundleAnalyzerConfig: {
     server: {
-      analyzerMode: "static",
+      analyzerMode: MODE,
       reportFilename: "../../.bundles/server.html"
     },
     browser: {
-      analyzerMode: "static",
+      analyzerMode: MODE,
       reportFilename: "../.bundles/client.html"
     }
   }
