@@ -1,0 +1,27 @@
+{
+  "name": "bemba",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
+    "next": "latest",
+    "polka": "^0.3.4",
+    "randomcolor": "^0.5.3",
+    "react": "latest",
+    "react-dom": "latest",
+    "styled-components": "^3.2.6",
+    "styled-theming": "^2.2.0"
+  },
+  "scripts": {
+    "dev": "node server",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "now": {
+    "name": "bemba",
+    "alias": ["bemba.analogic.al"]
+  },
+  "devDependencies": {
+    "@zeit/next-bundle-analyzer": "^0.1.1"
+  }
+}
