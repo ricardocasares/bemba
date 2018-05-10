@@ -4,22 +4,31 @@
   "private": true,
   "dependencies": {
     "babel-plugin-styled-components": "^1.5.1",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.1",
+    "isomorphic-unfetch": "^2.0.0",
     "next": "latest",
+    "next-redux-wrapper": "^2.0.0-beta.6",
     "polka": "^0.3.4",
     "randomcolor": "^0.5.3",
     "react": "latest",
     "react-dom": "latest",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
     "styled-components": "^3.2.6",
     "styled-theming": "^2.2.0"
   },
   "scripts": {
     "dev": "node server",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "analyze": "BUNDLE_ANALYZE=both yarn build"
   },
   "now": {
     "name": "bemba",
-    "alias": ["bemba.analogic.al"]
+    "alias": [
+      "bemba.analogic.al"
+    ]
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.1"

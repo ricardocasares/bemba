@@ -1,12 +1,30 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
+
 import Pad from "../components/Pad";
 import Content from "../components/Content";
-import Search from "../components/Search";
+import SearchInput from "../components/Search";
 import Player from "../components/Player";
 import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
 import Zoom from "../components/Icons/Search";
+
+export const Search = () => (
+  <Fragment>
+    <SearchInput />
+    <Content>
+      <Placeholder>
+        <Zoom />
+      </Placeholder>
+    </Content>
+    <Player hidden={true} />
+    <Navigation hidden={false} />
+  </Fragment>
+);
+
+Search.getInitialProps = function({ store }) {
+  return {};
+};
 
 const Placeholder = styled.div`
   display: flex;
@@ -24,15 +42,4 @@ const Placeholder = styled.div`
   }
 `;
 
-export default () => (
-  <Fragment>
-    <Search />
-    <Content>
-      <Placeholder>
-        <Zoom />
-      </Placeholder>
-    </Content>
-    <Player hidden={true} />
-    <Navigation hidden={false} />
-  </Fragment>
-);
+export default Search;

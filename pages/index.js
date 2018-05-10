@@ -10,12 +10,6 @@ import Player from "../components/Player";
 import Navigation from "../components/Navigation";
 import Station from "../components/StationList/Station";
 
-const SliderTitle = styled.h4`
-  color: #ccc;
-  padding: 0 15px;
-  font-weight: 500;
-`;
-
 export default () => (
   <Fragment>
     <Content>
@@ -109,3 +103,9 @@ export default () => (
     <Navigation />
   </Fragment>
 );
+
+const SliderTitle = styled.h4`
+  color: #ccc;
+  padding: 0 15px;
+  font-weight: 500;
+`;
