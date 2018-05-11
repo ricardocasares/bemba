@@ -20,7 +20,7 @@ export default () => (
           href="/stations?filter=tags&name=rock"
           as="/stations/tags/rock"
         >
-          Electro
+          Rock
         </CardLink>
         <CardLink
           href="/stations?filter=tags&name=Dubstep"
