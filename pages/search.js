@@ -10,9 +10,8 @@ import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
 import Zoom from "../components/Icons/Search";
 
-let ConnectedList = connect(({ search }) => ({ stations: search.results }), {})(
-  StationList
-);
+let mapProps = ({ search }) => ({ stations: search.results });
+let ConnectedList = connect(mapProps)(StationList);
 
 export let Search = () => (
   <Fragment>
