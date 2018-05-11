@@ -34,20 +34,4 @@ Search.getInitialProps = async function({ store, query, req }) {
   return { query };
 };
 
-let Placeholder = styled.div`
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  flex-flow: column;
-  height: 100%;
-
-  svg {
-    flex: 1 1 auto;
-    color: #333;
-    stroke-width: 2px;
-    width: 128px;
-    height: 128px;
-  }
-`;
-
 export default Search;
