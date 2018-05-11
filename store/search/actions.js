@@ -1,5 +1,4 @@
 import Router from "next/router";
-import debounce from "debounce-action";
 
 import * as TYPES from "./types";
 import * as api from "../../lib/api";
@@ -24,5 +23,3 @@ export let search = function search({ query, page, limit }) {
     }
   };
 };
-
-export let searchDebounced = debounce(search, 900);

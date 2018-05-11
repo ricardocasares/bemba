@@ -5,11 +5,12 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-inline-environment-variables": "^0.4.1",
-    "debounce-action": "^0.1.0",
+    "debounce-fn": "^1.0.0",
     "fast-memoize": "^2.3.2",
     "isomorphic-unfetch": "^2.0.0",
     "next": "latest",
     "next-redux-wrapper": "^2.0.0-beta.6",
+    "nprogress": "^0.2.0",
     "polka": "^0.3.4",
     "randomcolor": "^0.5.3",
     "react": "latest",
@@ -28,9 +29,7 @@
   },
   "now": {
     "name": "bemba",
-    "alias": [
-      "bemba.analogic.al"
-    ]
+    "alias": ["bemba.analogic.al"]
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.1"

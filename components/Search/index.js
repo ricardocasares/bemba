@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import debounce from "debounce-fn";
 import { withRouter } from "next/router";
 import { connect } from "react-redux";
-// store
-import { searchDebounced } from "../../store/search/actions";
 
 let Container = styled.div`
   padding: 15px;
@@ -20,16 +19,19 @@ let Input = styled.input`
   width: 100%;
 `;
 
-export let Search = ({ router, dispatch, query, searchDebounced }) => (
-  <Container>
-    <Input
-      placeholder="Start typing..."
-      defaultValue={query}
-      onChange={e => router.push(`/search?query=${e.target.value}`)}
-    />
-  </Container>
-);
+export function Search({ router, dispatch, query }) {
+  let change = debounce(router.push, { wait: 500 });
 
-export default connect(({ search }) => ({ ...search }), {
-  searchDebounced
-})(withRouter(Search));
+  return (
+    <Container>
+      <Input
+        placeholder="Start typing..."
+        defaultValue={query}
+        onChange={e => change(`/search?query=${e.target.value}`)}
+      />
+    </Container>
+  );
+}
+
+let mapProps = ({ search }) => ({ ...search });
+export default connect(mapProps)(withRouter(Search));

@@ -25,12 +25,8 @@ export let Search = () => (
   </Fragment>
 );
 
-Search.getInitialProps = async function({ store, query, req }) {
-  if (req) {
-    await store.dispatch(search(query));
-  } else {
-    await store.dispatch(searchDebounced(query));
-  }
+Search.getInitialProps = async function({ store, query }) {
+  await store.dispatch(search(query));
 
   return { query };
 };
