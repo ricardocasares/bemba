@@ -1,9 +1,14 @@
 import * as TYPES from "./types";
 
 export const initialState = {
-  query: "",
-  results: [],
+  station: {
+    name: "",
+    state: "",
+    country: "",
+    stream: ""
+  },
   error: null,
+  playing: false,
   loading: false
 };
 

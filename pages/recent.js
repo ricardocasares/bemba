@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
-import Pad from "../components/Pad";
-import Title from "../components/Text/Title";
 
+import Title from "../components/Text/Title";
 import Content from "../components/Content";
 import Search from "../components/Search";
 import Player from "../components/Player";
@@ -11,10 +10,8 @@ import StationList from "../components/StationList";
 const Results = () => (
   <Fragment>
     <Content>
-      <Pad>
-        <Title>Recently played</Title>
-        <StationList />
-      </Pad>
+      <Title>Recently played</Title>
+      <StationList />
     </Content>
     <Player />
     <Navigation />

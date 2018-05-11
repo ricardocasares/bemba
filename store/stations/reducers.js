@@ -1,9 +1,8 @@
 import * as TYPES from "./types";
 
 export const initialState = {
-  query: "",
-  results: [],
   error: null,
+  stations: [],
   loading: false
 };
 
@@ -14,7 +13,7 @@ export default function(state = initialState, { type, payload }) {
     case TYPES.REJECTED:
       return { ...state, loading: false, error: payload.error };
     case TYPES.RESOLVED:
-      return { ...state, loading: false, results: payload.results };
+      return { ...state, loading: false, stations: payload.stations };
   }
 
   return state;

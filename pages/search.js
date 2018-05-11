@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
-import Pad from "../components/Pad";
 import Content from "../components/Content";
 import SearchInput from "../components/Search";
 import Player from "../components/Player";
@@ -9,13 +9,16 @@ import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
 import Zoom from "../components/Icons/Search";
 
+const ConnectedList = connect(
+  ({ search }) => ({ stations: search.results }),
+  {}
+)(StationList);
+
 export const Search = () => (
   <Fragment>
     <SearchInput />
     <Content>
-      <Placeholder>
-        <Zoom />
-      </Placeholder>
+      <ConnectedList />
     </Content>
     <Player hidden={true} />
     <Navigation hidden={false} />

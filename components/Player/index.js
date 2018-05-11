@@ -9,14 +9,18 @@ const Player = styled.div`
   display: flex;
   justify-items: left;
   align-items: center;
+  padding: 15px;
+  background: #333;
+`;
+
+const FlexStation = styled(Station)`
+  flex: 1 1 auto;
 `;
 
 export default ({ ...props }) => (
-  <Pad bg={"#333"} {...props}>
-    <Player>
-      <Station />
-      <Favorite />
-      <Play filled />
-    </Player>
-  </Pad>
+  <Player>
+    <FlexStation />
+    <Favorite />
+    <Play filled />
+  </Player>
 );

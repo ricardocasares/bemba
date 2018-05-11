@@ -1,11 +1,11 @@
-import React from "react";
-
+import React, { Fragment } from "react";
+import styled from "styled-components";
 import StationItem from "./StationItem";
 
-export default () => (
-  <div>
-    {Array(20)
-      .fill(0)
-      .map(x => <StationItem key={Math.random()} />)}
-  </div>
+export default ({ stations = [] }) => (
+  <Fragment>
+    {stations.map(station => (
+      <StationItem station={station} key={station.id} />
+    ))}
+  </Fragment>
 );

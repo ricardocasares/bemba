@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 
 const Title = styled.h3`
@@ -19,9 +19,9 @@ const Flex = styled.div`
   flex: 1 1 auto;
 `;
 
-export default () => (
-  <Flex>
-    <Title>Radio Bemba FM 93.5</Title>
-    <Subtitle>Buenos Aires, Argentina</Subtitle>
-  </Flex>
+export default ({ name, country, state, className }) => (
+  <div className={className}>
+    <Title>{name}</Title>
+    <Subtitle>{[state, country].filter(x => x).join(", ")}</Subtitle>
+  </div>
 );

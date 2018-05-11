@@ -8,7 +8,6 @@ import withRedux from "next-redux-wrapper";
 export default withRedux(makeStore)(
   class extends App {
     static async getInitialProps({ Component, ctx }) {
-      console.log(ctx.store.getState());
       const pageProps = Component.getInitialProps
         ? await Component.getInitialProps(ctx)
         : {};

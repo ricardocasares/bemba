@@ -1,6 +1,6 @@
 import color from "randomcolor";
 import React from "react";
-import Link from "next/link";
+import { CustomLink as Link } from "../Link";
 import styled from "styled-components";
 
 const config = {
@@ -15,15 +15,11 @@ export const Card = styled.div`
   color: black;
   background-color: ${random};
   min-width: 150px;
-  margin-left: 15px;
+  margin-right: 0;
   text-align: center;
   border-radius: 3px;
   display: inline-block;
   padding: 30px 30px;
-
-  :last-child {
-    margin-right: 15px;
-  }
 `;
 
 export const CardTitle = styled.h3`
@@ -42,4 +38,10 @@ export const CardLink = ({ children, ...props }) => (
   </Link>
 );
 
-export default CardLink;
+export default styled(CardLink)`
+  margin-left: 15px;
+
+  :last-child {
+    margin-right: 15px;
+  }
+`;

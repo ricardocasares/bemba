@@ -1,17 +1,16 @@
 import thunk from "redux-thunk";
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { createStore, combineReducers, applyMiddleware as apply } from "redux";
 
-import searchReducer, { searchState } from "./search";
+import searchReducer from "./search";
+import stationsReducer from "./stations";
 
-export default (initialState, options) => {
-  return createStore(
-    combineReducers({
-      search: searchReducer
-    }),
-    // initial state
-    {
-      search: searchState
-    },
-    applyMiddleware(thunk)
-  );
-};
+let mw = [thunk];
+
+let rootReducer = combineReducers({
+  search: searchReducer,
+  stations: stationsReducer
+});
+
+export default function(initialState, options) {
+  return createStore(rootReducer, initialState, apply(...mw));
+}

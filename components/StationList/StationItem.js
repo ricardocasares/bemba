@@ -13,8 +13,8 @@ const StationItem = styled.div`
   justify-content: space-between;
 `;
 
-export default () => (
+export default ({ station }) => (
   <StationItem>
-    <Station />
+    <Station {...station} />
   </StationItem>
 );

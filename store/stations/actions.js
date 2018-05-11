@@ -9,18 +9,18 @@ export let pending = create(TYPES.PENDING);
 export let resolved = create(TYPES.RESOLVED);
 export let rejected = create(TYPES.REJECTED);
 
-export function searchQuery({ query, page, limit }) {
+export function stations({ filter, name, page, limit }) {
   return async dispatch => {
     let failure = error => dispatch(rejected({ error: error.message }));
-    let success = results => dispatch(resolved({ results, loading: false }));
+    let success = stations => dispatch(resolved({ stations }));
 
-    dispatch(pending({ query }));
+    dispatch(pending({ loading: true }));
 
-    return await api
-      .search({ query })
-      .then(success)
-      .catch(failure);
+    try {
+      const stations = await api.stations({ filter, name });
+      dispatch(resolved({ stations }));
+    } catch (err) {
+      dispatch(rejected({ error: err.message }));
+    }
   };
 }
-
-export let search = debounce(searchQuery, 900);

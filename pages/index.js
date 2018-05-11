@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
-import Pad from "../components/Pad";
+
 import CardLink from "../components/Card";
 import Title from "../components/Text/Title";
 import Subtitle from "../components/Text/Subtitle";
@@ -13,20 +13,18 @@ import Station from "../components/StationList/Station";
 export default () => (
   <Fragment>
     <Content>
-      <Pad>
-        <Title>Explore</Title>
-      </Pad>
+      <Title>Explore</Title>
       <SliderTitle>Recommended for you</SliderTitle>
       <Swiper>
         <CardLink
-          href="/stations?filter=genre&name=Electro"
-          as="/stations/genres/Electro"
+          href="/stations?filter=tags&name=rock"
+          as="/stations/tags/rock"
         >
           Electro
         </CardLink>
         <CardLink
           href="/stations?filter=language&name=Russian"
-          as="/stations/languages/Russian"
+          as="/stations/language/Russian"
         >
           Russian
         </CardLink>
@@ -38,7 +36,7 @@ export default () => (
         </CardLink>
         <CardLink
           href="/stations?filter=language&name=Polish"
-          as="/stations/languages/Polski"
+          as="/stations/language/Polski"
         >
           Polski
         </CardLink>
@@ -48,53 +46,53 @@ export default () => (
       <Swiper>
         <CardLink
           href="/stations?filter=country&name=Argentina"
-          as="/stations/countries/Argentina"
+          as="/stations/country/Argentina"
         >
           Argentina
         </CardLink>
         <CardLink
           href="/stations?filter=country&name=Russia"
-          as="/stations/countries/Russia"
+          as="/stations/country/Russia"
         >
           Russia
         </CardLink>
         <CardLink
           href="/stations?filter=country&name=Poland"
-          as="/stations/countries/Poland"
+          as="/stations/country/Poland"
         >
           Poland
         </CardLink>
         <CardLink
           href="/stations?filter=country&name=Netherlands"
-          as="/stations/countries/Netherlands"
+          as="/stations/country/Netherlands"
         >
           Netherlands
         </CardLink>
       </Swiper>
 
-      <SliderTitle>Languages</SliderTitle>
+      <SliderTitle>Language</SliderTitle>
       <Swiper>
         <CardLink
           href="/stations?filter=language&name=Spanish"
-          as="/stations/languages/Spanish"
+          as="/stations/language/Spanish"
         >
           Spanish
         </CardLink>
         <CardLink
           href="/stations?filter=language&name=English"
-          as="/stations/languages/English"
+          as="/stations/language/English"
         >
           English
         </CardLink>
         <CardLink
           href="/stations?filter=language&name=Russian"
-          as="/stations/languages/Pусский"
+          as="/stations/language/Pусский"
         >
           Pусский
         </CardLink>
         <CardLink
           href="/stations?filter=language&name=Polish"
-          as="/stations/languages/Polski"
+          as="/stations/language/Polski"
         >
           Polski
         </CardLink>
@@ -106,6 +104,5 @@ export default () => (
 
 const SliderTitle = styled.h4`
   color: #ccc;
-  padding: 0 15px;
   font-weight: 500;
 `;
