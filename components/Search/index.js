@@ -6,7 +6,7 @@ import { searchDebounced } from "../../store/search/actions";
 
 import Pad from "../Pad";
 
-export const Search = ({ router, dispatch, query, searchDebounced }) => (
+export let Search = ({ router, dispatch, query, searchDebounced }) => (
   <Pad bg={"transparent"}>
     <Input
       placeholder="Start typing..."
@@ -16,7 +16,7 @@ export const Search = ({ router, dispatch, query, searchDebounced }) => (
   </Pad>
 );
 
-const Input = styled.input`
+let Input = styled.input`
   border: none;
   color: #fff;
   padding: 15px;

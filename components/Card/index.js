@@ -1,19 +1,19 @@
-import color from "randomcolor";
 import React from "react";
-import { CustomLink } from "../Link";
+import random from "randomcolor";
+
+import Link from "../Link";
 import styled from "styled-components";
 
-const config = {
+let config = {
   alpha: 0.9,
   format: "rgba",
   luminosity: "light"
 };
 
-const random = () => color(config);
+let color = () => random(config);
 
-export const Card = styled.div`
-  color: black;
-  background-color: ${random};
+export let Card = styled.div`
+  background-color: ${color};
   min-width: 150px;
   margin-right: 0;
   text-align: center;
@@ -22,18 +22,18 @@ export const Card = styled.div`
   padding: 30px 30px;
 `;
 
-export const CardTitle = styled.h3`
+export let CardTitle = styled.h3`
   color: white;
   font-size: 16px;
   font-weight: 500;
 `;
 
-export const CardLink = ({ children, ...props }) => (
-  <CustomLink {...props}>
+export let CardLink = ({ children, ...props }) => (
+  <Link {...props}>
     <Card>
       <CardTitle>{children}</CardTitle>
     </Card>
-  </CustomLink>
+  </Link>
 );
 
 export default styled(CardLink)`

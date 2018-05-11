@@ -6,7 +6,7 @@ import Favorite from "../Button/Favorite";
 
 import Station from "./Station";
 
-const StationItem = styled.div`
+let StationItem = styled.div`
   padding: 15px 0;
   display: flex;
   align-items: center;

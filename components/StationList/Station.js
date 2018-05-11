@@ -1,22 +1,18 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 
-const Title = styled.h3`
+let Title = styled.h3`
   font-size: 16px;
   font-weight: 500;
   margin: 0;
   margin-bottom: 5px;
 `;
 
-const Subtitle = styled.p`
+let Subtitle = styled.p`
   font-size: 14px;
   color: #999;
   margin: 0;
   font-weight: 300;
-`;
-
-const Flex = styled.div`
-  flex: 1 1 auto;
 `;
 
 export default ({ name, country, state, className }) => (

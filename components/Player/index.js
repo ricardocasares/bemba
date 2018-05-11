@@ -5,15 +5,16 @@ import Play from "../Button/Play";
 import Favorite from "../Button/Favorite";
 import Station from "../StationList/Station";
 
-const Player = styled.div`
+let Player = styled.div`
   display: flex;
+  flex: 1 0 auto;
   justify-items: left;
   align-items: center;
   padding: 15px;
   background: #333;
 `;
 
-const FlexStation = styled(Station)`
+let FlexStation = styled(Station)`
   flex: 1 1 auto;
 `;
 
