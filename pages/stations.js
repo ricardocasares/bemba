@@ -1,18 +1,17 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
+// store
 import { stations } from "../store/stations/actions";
-import Pad from "../components/Pad";
+// components
 import Content from "../components/Content";
 import Search from "../components/Search";
 import Player from "../components/Player";
 import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
 import Title from "../components/Text/Title";
-import { consolidateStreamedStyles } from "styled-components";
 
-let ConnectedList = connect(({ stations }) => ({ ...stations }), {})(
-  StationList
-);
+let mapProps = ({ stations }) => ({ ...stations });
+let ConnectedList = connect(mapProps)(StationList);
 
 let Stations = ({ filter, name }) => (
   <Fragment>
