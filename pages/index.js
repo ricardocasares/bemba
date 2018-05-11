@@ -14,7 +14,7 @@ export default () => (
   <Fragment>
     <Content>
       <Title>Explore</Title>
-      <SliderTitle>Recommended for you</SliderTitle>
+      <Subtitle>Recommended for you</Subtitle>
       <Swiper>
         <CardLink
           href="/stations?filter=tags&name=rock"
@@ -23,10 +23,10 @@ export default () => (
           Electro
         </CardLink>
         <CardLink
-          href="/stations?filter=language&name=Russian"
-          as="/stations/language/Russian"
+          href="/stations?filter=tags&name=Dubstep"
+          as="/stations/tags/Dubstep"
         >
-          Russian
+          Dubstep
         </CardLink>
         <CardLink
           href="/stations?filter=tags&name=News"
@@ -35,42 +35,55 @@ export default () => (
           News
         </CardLink>
         <CardLink
-          href="/stations?filter=language&name=Polish"
-          as="/stations/language/Polski"
+          href="/stations?filter=tags&name=Technology"
+          as="/stations/tags/Technology"
         >
-          Polski
+          Technology
         </CardLink>
       </Swiper>
 
-      <SliderTitle>Countries</SliderTitle>
+      <Subtitle>Top Cities</Subtitle>
       <Swiper>
         <CardLink
-          href="/stations?filter=country&name=Argentina"
-          as="/stations/country/Argentina"
+          href="/stations?filter=state&name=Krakow"
+          as="/stations/state/Krakow"
         >
-          Argentina
+          Kraków
         </CardLink>
         <CardLink
-          href="/stations?filter=country&name=Russia"
-          as="/stations/country/Russia"
+          href="/stations?filter=state&name=Kiev"
+          as="/stations/state/Kiev"
         >
-          Russia
+          Kiev
         </CardLink>
         <CardLink
-          href="/stations?filter=country&name=Poland"
-          as="/stations/country/Poland"
+          href="/stations?filter=state&name=Saint-Petersburg"
+          as="/stations/state/Saint-Petersburg"
         >
-          Poland
+          Saint-Petersburg
+        </CardLink>
+
+        <CardLink
+          href="/stations?filter=state&name=Minsk"
+          as="/stations/state/Minsk"
+        >
+          Minsk
         </CardLink>
         <CardLink
-          href="/stations?filter=country&name=Netherlands"
-          as="/stations/country/Netherlands"
+          href="/stations?filter=state&name=Buenos Aires"
+          as="/stations/state/Buenos Aires"
         >
-          Netherlands
+          Buenos Aires
+        </CardLink>
+        <CardLink
+          href="/stations?filter=state&name=Amsterdam"
+          as="/stations/state/Amsterdam"
+        >
+          Amsterdam
         </CardLink>
       </Swiper>
 
-      <SliderTitle>Language</SliderTitle>
+      <Subtitle>Most listened languages</Subtitle>
       <Swiper>
         <CardLink
           href="/stations?filter=language&name=Spanish"
@@ -101,8 +114,3 @@ export default () => (
     <Navigation />
   </Fragment>
 );
-
-const SliderTitle = styled.h4`
-  color: #ccc;
-  font-weight: 500;
-`;

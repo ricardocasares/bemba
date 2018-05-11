@@ -1,3 +1,4 @@
+import Router from "next/router";
 import debounce from "debounce-action";
 
 import * as TYPES from "./types";
@@ -9,18 +10,19 @@ export let pending = create(TYPES.PENDING);
 export let resolved = create(TYPES.RESOLVED);
 export let rejected = create(TYPES.REJECTED);
 
-export function searchQuery({ query, page, limit }) {
+export let search = function search({ query, page, limit }) {
   return async dispatch => {
-    let failure = error => dispatch(rejected({ error: error.message }));
-    let success = results => dispatch(resolved({ results, loading: false }));
-
+    if (!query) return;
     dispatch(pending({ query }));
 
-    return await api
-      .search({ query })
-      .then(success)
-      .catch(failure);
-  };
-}
+    try {
+      let results = await api.search({ query });
 
-export let search = debounce(searchQuery, 900);
+      dispatch(resolved({ results, loading: false }));
+    } catch (err) {
+      dispatch(rejected({ error: err.message }));
+    }
+  };
+};
+
+export let searchDebounced = debounce(search, 900);

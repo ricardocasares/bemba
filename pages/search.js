@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
+import { search, searchDebounced } from "../store/search/actions";
 import Content from "../components/Content";
 import SearchInput from "../components/Search";
 import Player from "../components/Player";
@@ -25,8 +26,14 @@ export const Search = () => (
   </Fragment>
 );
 
-Search.getInitialProps = function({ store }) {
-  return {};
+Search.getInitialProps = async function({ store, query, req }) {
+  if (req) {
+    await store.dispatch(search(query));
+  } else {
+    await store.dispatch(searchDebounced(query));
+  }
+
+  return { query };
 };
 
 const Placeholder = styled.div`

@@ -11,9 +11,6 @@ export let rejected = create(TYPES.REJECTED);
 
 export function stations({ filter, name, page, limit }) {
   return async dispatch => {
-    let failure = error => dispatch(rejected({ error: error.message }));
-    let success = stations => dispatch(resolved({ stations }));
-
     dispatch(pending({ loading: true }));
 
     try {

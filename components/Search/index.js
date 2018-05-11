@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { withRouter } from "next/router";
 import { connect } from "react-redux";
-import { search } from "../../store/search/actions";
+import { searchDebounced } from "../../store/search/actions";
 
 import Pad from "../Pad";
 
-export const Search = ({ dispatch, query, search }) => (
+export const Search = ({ router, dispatch, query, searchDebounced }) => (
   <Pad bg={"transparent"}>
     <Input
       placeholder="Start typing..."
       defaultValue={query}
-      onChange={e => search({ query: e.target.value })}
+      onChange={e => router.push(`/search?query=${e.target.value}`)}
     />
   </Pad>
 );
@@ -26,5 +27,5 @@ const Input = styled.input`
 `;
 
 export default connect(({ search }) => ({ ...search }), {
-  search
-})(Search);
+  searchDebounced
+})(withRouter(Search));
