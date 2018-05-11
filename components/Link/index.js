@@ -3,7 +3,7 @@ import { parse } from "url";
 import { withRouter } from "next/router";
 import styled from "styled-components";
 
-let CustomLink = ({ children, className, ...props }) => (
+let CustomLink = ({ router, children, className, ...props }) => (
   <Link {...props}>
     <a className={className}>{children}</a>
   </Link>

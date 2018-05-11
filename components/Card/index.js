@@ -1,8 +1,8 @@
 import React from "react";
 import random from "randomcolor";
+import styled from "styled-components";
 
 import Link from "../Link";
-import styled from "styled-components";
 
 let config = {
   alpha: 0.9,

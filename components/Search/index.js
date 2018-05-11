@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { withRouter } from "next/router";
 import { connect } from "react-redux";
+
 import { searchDebounced } from "../../store/search/actions";
 
 import Pad from "../Pad";
