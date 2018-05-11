@@ -1,6 +1,6 @@
 import color from "randomcolor";
 import React from "react";
-import { CustomLink as Link } from "../Link";
+import { CustomLink } from "../Link";
 import styled from "styled-components";
 
 const config = {
@@ -29,13 +29,11 @@ export const CardTitle = styled.h3`
 `;
 
 export const CardLink = ({ children, ...props }) => (
-  <Link {...props}>
-    <a>
-      <Card>
-        <CardTitle>{children}</CardTitle>
-      </Card>
-    </a>
-  </Link>
+  <CustomLink {...props}>
+    <Card>
+      <CardTitle>{children}</CardTitle>
+    </Card>
+  </CustomLink>
 );
 
 export default styled(CardLink)`
