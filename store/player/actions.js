@@ -1,5 +1,3 @@
-import debounce from "debounce-action";
-
 import * as TYPES from "./types";
 
 let create = type => payload => ({ type, payload });
