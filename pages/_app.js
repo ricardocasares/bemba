@@ -1,14 +1,15 @@
 import React from "react";
-import styled from "styled-components";
 import App, { Container } from "next/app";
-import makeStore from "../store";
 import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
+
+import makeStore from "../store";
+import Layout from "../components/Layout";
 
 export default withRedux(makeStore)(
   class extends App {
     static async getInitialProps({ Component, ctx }) {
-      const pageProps = Component.getInitialProps
+      let pageProps = Component.getInitialProps
         ? await Component.getInitialProps(ctx)
         : {};
 
@@ -16,7 +17,7 @@ export default withRedux(makeStore)(
     }
 
     render() {
-      const { Component, pageProps, store } = this.props;
+      let { Component, pageProps, store } = this.props;
 
       return (
         <Container>
@@ -30,9 +31,3 @@ export default withRedux(makeStore)(
     }
   }
 );
-
-const Layout = styled.div`
-  height: 100%;
-  display: flex;
-  flex-flow: column;
-`;
