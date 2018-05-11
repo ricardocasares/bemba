@@ -5,9 +5,10 @@ export const initialState = {
     name: "",
     state: "",
     country: "",
-    stream: ""
+    url: ""
   },
   error: null,
+  hidden: true,
   playing: false,
   loading: false
 };
