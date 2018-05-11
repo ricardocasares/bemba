@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-
+// store
 import { search, searchDebounced } from "../store/search/actions";
+// components
 import Content from "../components/Content";
 import SearchInput from "../components/Search";
 import Player from "../components/Player";
