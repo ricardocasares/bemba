@@ -16,6 +16,7 @@ let Input = styled.input`
   background: #333;
   border-radius: 4px;
   font-size: 18px;
+  font-weight: 500;
   width: 100%;
 `;
 
