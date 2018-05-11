@@ -7,7 +7,7 @@ import Player from "../components/Player";
 import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
 
-const Results = () => (
+let Results = () => (
   <Fragment>
     <Content>
       <Title>Recently played</Title>

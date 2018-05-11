@@ -10,11 +10,11 @@ import StationList from "../components/StationList";
 import Title from "../components/Text/Title";
 import { consolidateStreamedStyles } from "styled-components";
 
-const ConnectedList = connect(({ stations }) => ({ ...stations }), {})(
+let ConnectedList = connect(({ stations }) => ({ ...stations }), {})(
   StationList
 );
 
-const Stations = ({ filter, name }) => (
+let Stations = ({ filter, name }) => (
   <Fragment>
     <Content>
       <Title>{name} stations</Title>

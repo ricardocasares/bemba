@@ -10,12 +10,11 @@ import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
 import Zoom from "../components/Icons/Search";
 
-const ConnectedList = connect(
-  ({ search }) => ({ stations: search.results }),
-  {}
-)(StationList);
+let ConnectedList = connect(({ search }) => ({ stations: search.results }), {})(
+  StationList
+);
 
-export const Search = () => (
+export let Search = () => (
   <Fragment>
     <SearchInput />
     <Content>
@@ -36,7 +35,7 @@ Search.getInitialProps = async function({ store, query, req }) {
   return { query };
 };
 
-const Placeholder = styled.div`
+let Placeholder = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;

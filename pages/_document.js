@@ -4,11 +4,11 @@ import "./_reset";
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
-    const sheet = new ServerStyleSheet();
-    const page = renderPage(App => props =>
+    let sheet = new ServerStyleSheet();
+    let page = renderPage(App => props =>
       sheet.collectStyles(<App {...props} />)
     );
-    const styleTags = sheet.getStyleElement();
+    let styleTags = sheet.getStyleElement();
     return { ...page, styleTags };
   }
 
