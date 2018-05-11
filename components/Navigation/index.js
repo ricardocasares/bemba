@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 import Link from "../Link";
 import Pad from "../Pad";
 import Home from "../Icons/Home";
@@ -23,7 +24,7 @@ export default ({ ...props }) => (
         <Clock width={24} />
       </Link>
       <Link href="/search">
-        <Search size={2} />
+        <Search width={24} />
       </Link>
       <Link href="/settings">
         <Options width={24} />
