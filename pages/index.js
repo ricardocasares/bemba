@@ -82,7 +82,7 @@ export default () => (
         href="/stations?filter=language&name=Spanish"
         as="/stations/language/Spanish"
       >
-        Spanish
+        Español
       </CardLink>
       <CardLink
         href="/stations?filter=language&name=English"
@@ -92,7 +92,7 @@ export default () => (
       </CardLink>
       <CardLink
         href="/stations?filter=language&name=Russian"
-        as="/stations/language/Pусский"
+        as="/stations/language/Russian"
       >
         Pусский
       </CardLink>
