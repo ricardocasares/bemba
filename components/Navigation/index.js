@@ -11,6 +11,7 @@ import FolderOpen from "../Icons/FolderOpen";
 
 let Nav = styled.nav`
   display: flex;
+  background: #000;
   padding: 10px 15px;
   flex: 1 0 auto;
   justify-content: space-around;

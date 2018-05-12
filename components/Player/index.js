@@ -14,10 +14,18 @@ export class Player extends PureComponent {
 
   componentDidMount() {
     let player = this.audio;
-    let { play, pause } = this.props;
+    let { play, pause, ready, hide } = this.props;
+
+    player.addEventListener("loadstart", () => {
+      // do something here
+    });
 
     player.addEventListener("canplay", () => {
       player.play();
+    });
+
+    player.addEventListener("error", err => {
+      hide();
     });
 
     player.addEventListener("playing", () => play({ playing: true }));

@@ -9,6 +9,7 @@ export const initialState = {
   },
   error: null,
   hidden: true,
+  ready: false,
   playing: false,
   loading: false
 };
@@ -30,7 +31,12 @@ export default function(state = initialState, { type, payload }) {
     case TYPES.SHOW:
       return {
         ...state,
-        hidden: false
+        hidden: !state.ready
+      };
+    case TYPES.READY:
+      return {
+        ...state,
+        ready: true
       };
   }
 
