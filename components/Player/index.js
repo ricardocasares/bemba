@@ -9,9 +9,7 @@ import Station from "../StationList/Station";
 import { PureComponent } from "react";
 
 export class Player extends PureComponent {
-  play = () => {
-    this.audio.play();
-  };
+  play = () => this.audio.play();
   pause = () => this.audio.pause();
 
   componentDidMount() {
@@ -35,7 +33,7 @@ export class Player extends PureComponent {
         <Pause onClick={this.pause} />
         <Play filled onClick={this.play} />
         <audio
-          autoPlay={true}
+          autoPlay={false}
           ref={e => {
             this.audio = e;
           }}
