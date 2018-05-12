@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
+import nprogress from "nprogress";
 // store
 import { connect } from "react-redux";
 import * as actions from "../../store/player/actions";
@@ -17,14 +18,15 @@ export class Player extends PureComponent {
     let { play, pause, ready, hide } = this.props;
 
     player.addEventListener("loadstart", () => {
-      // do something here
+      nprogress.start();
     });
 
     player.addEventListener("canplay", () => {
-      player.play();
+      player.play().then(() => nprogress.done());
     });
 
     player.addEventListener("error", err => {
+      nprogress.done();
       hide();
     });
 
