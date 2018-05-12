@@ -5,15 +5,11 @@ import { Provider } from "react-redux";
 import NProgress from "nprogress";
 import withRedux from "next-redux-wrapper";
 // utils
-import routingListeners from "../lib/utils/routing";
+import configureProgressBar from "../lib/utils/routing";
 // store
 import makeStore from "../store";
 // components
 import Layout from "../components/Layout";
-
-Router.onRouteChangeStart = NProgress.start;
-Router.onRouteChangeComplete = NProgress.done;
-Router.onRouteChangeError = NProgress.done;
 
 export default withRedux(makeStore)(
   class extends App {
@@ -26,7 +22,7 @@ export default withRedux(makeStore)(
     }
 
     componentDidMount() {
-      routingListeners();
+      configureProgressBar();
     }
 
     render() {
