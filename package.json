@@ -16,9 +16,10 @@
     "react": "latest",
     "react-dom": "latest",
     "react-redux": "^5.0.7",
-    "recompose": "^0.27.0",
+    "recompose": "latest",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
+    "serve-static": "latest",
     "styled-components": "^3.2.6",
     "styled-theming": "^2.2.0"
   },
