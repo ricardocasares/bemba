@@ -1,13 +1,11 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 
-import CardLink from "../components/Card";
 import Title from "../components/Text/Title";
 import Subtitle from "../components/Text/Subtitle";
 import Swiper from "../components/Swiper";
+import CardLink from "../components/Card";
 import Content from "../components/Content";
-import Player from "../components/Player";
-import Navigation from "../components/Navigation";
 
 export default () => (
   <Content>

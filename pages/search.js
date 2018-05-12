@@ -7,10 +7,7 @@ import { search } from "../store/search/actions";
 // components
 import Content from "../components/Content";
 import SearchInput from "../components/Search";
-import Player from "../components/Player";
-import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
-import Zoom from "../components/Icons/Search";
 
 let mapProps = ({ search }) => ({ stations: search.results });
 let ConnectedList = connect(mapProps, { load })(StationList);
