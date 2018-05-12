@@ -1,4 +1,5 @@
 import React from "react";
+import { pure } from "recompose";
 import styled from "styled-components";
 
 import Link from "../Link";
@@ -15,7 +16,7 @@ let Nav = styled.nav`
   justify-content: space-around;
 `;
 
-export default ({ ...props }) => (
+export default () => (
   <Nav>
     <Link href="/">
       <Home width={24} />

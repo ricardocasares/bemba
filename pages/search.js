@@ -15,14 +15,10 @@ let mapProps = ({ search }) => ({ stations: search.results });
 let ConnectedList = connect(mapProps)(StationList);
 
 export let Search = () => (
-  <Fragment>
+  <Content>
     <SearchInput />
-    <Content>
-      <ConnectedList />
-    </Content>
-    <Player hidden={true} />
-    <Navigation hidden={false} />
-  </Fragment>
+    <ConnectedList />
+  </Content>
 );
 
 Search.getInitialProps = async function({ store, query }) {

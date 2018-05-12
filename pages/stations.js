@@ -14,14 +14,10 @@ let mapProps = ({ stations }) => ({ ...stations });
 let ConnectedList = connect(mapProps)(StationList);
 
 let Stations = ({ filter, name }) => (
-  <Fragment>
-    <Content>
-      <Title>{name} stations</Title>
-      <ConnectedList />
-    </Content>
-    <Player />
-    <Navigation />
-  </Fragment>
+  <Content>
+    <Title>{name} stations</Title>
+    <ConnectedList />
+  </Content>
 );
 
 Stations.getInitialProps = async function getInitialProps({ store, query }) {

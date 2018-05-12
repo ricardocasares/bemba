@@ -11,106 +11,97 @@ import Navigation from "../components/Navigation";
 import Station from "../components/StationList/Station";
 
 export default () => (
-  <Fragment>
-    <Content>
-      <Title>Explore</Title>
-      <Subtitle>Recommended for you</Subtitle>
-      <Swiper>
-        <CardLink
-          href="/stations?filter=tags&name=rock"
-          as="/stations/tags/rock"
-        >
-          Rock
-        </CardLink>
-        <CardLink
-          href="/stations?filter=tags&name=Dubstep"
-          as="/stations/tags/Dubstep"
-        >
-          Dubstep
-        </CardLink>
-        <CardLink
-          href="/stations?filter=tags&name=News"
-          as="/stations/tags/News"
-        >
-          News
-        </CardLink>
-        <CardLink
-          href="/stations?filter=tags&name=Technology"
-          as="/stations/tags/Technology"
-        >
-          Technology
-        </CardLink>
-      </Swiper>
+  <Content>
+    <Title>Explore</Title>
+    <Subtitle>Recommended for you</Subtitle>
+    <Swiper>
+      <CardLink href="/stations?filter=tags&name=rock" as="/stations/tags/rock">
+        Rock
+      </CardLink>
+      <CardLink
+        href="/stations?filter=tags&name=Dubstep"
+        as="/stations/tags/Dubstep"
+      >
+        Dubstep
+      </CardLink>
+      <CardLink href="/stations?filter=tags&name=News" as="/stations/tags/News">
+        News
+      </CardLink>
+      <CardLink
+        href="/stations?filter=tags&name=Technology"
+        as="/stations/tags/Technology"
+      >
+        Technology
+      </CardLink>
+    </Swiper>
 
-      <Subtitle>Top Cities</Subtitle>
-      <Swiper>
-        <CardLink
-          href="/stations?filter=state&name=Krakow"
-          as="/stations/state/Krakow"
-        >
-          Kraków
-        </CardLink>
-        <CardLink
-          href="/stations?filter=state&name=Kiev"
-          as="/stations/state/Kiev"
-        >
-          Kiev
-        </CardLink>
-        <CardLink
-          href="/stations?filter=state&name=Saint-Petersburg"
-          as="/stations/state/Saint-Petersburg"
-        >
-          Saint-Petersburg
-        </CardLink>
+    <Subtitle>Top Cities</Subtitle>
+    <Swiper>
+      <CardLink
+        href="/stations?filter=state&name=Krakow"
+        as="/stations/state/Krakow"
+      >
+        Kraków
+      </CardLink>
+      <CardLink
+        href="/stations?filter=state&name=Kiev"
+        as="/stations/state/Kiev"
+      >
+        Kiev
+      </CardLink>
+      <CardLink
+        href="/stations?filter=state&name=Saint-Petersburg"
+        as="/stations/state/Saint-Petersburg"
+      >
+        Saint-Petersburg
+      </CardLink>
 
-        <CardLink
-          href="/stations?filter=state&name=Minsk"
-          as="/stations/state/Minsk"
-        >
-          Minsk
-        </CardLink>
-        <CardLink
-          href="/stations?filter=state&name=Buenos Aires"
-          as="/stations/state/Buenos Aires"
-        >
-          Buenos Aires
-        </CardLink>
-        <CardLink
-          href="/stations?filter=state&name=Amsterdam"
-          as="/stations/state/Amsterdam"
-        >
-          Amsterdam
-        </CardLink>
-      </Swiper>
+      <CardLink
+        href="/stations?filter=state&name=Minsk"
+        as="/stations/state/Minsk"
+      >
+        Minsk
+      </CardLink>
+      <CardLink
+        href="/stations?filter=state&name=Buenos Aires"
+        as="/stations/state/Buenos Aires"
+      >
+        Buenos Aires
+      </CardLink>
+      <CardLink
+        href="/stations?filter=state&name=Amsterdam"
+        as="/stations/state/Amsterdam"
+      >
+        Amsterdam
+      </CardLink>
+    </Swiper>
 
-      <Subtitle>Most listened languages</Subtitle>
-      <Swiper>
-        <CardLink
-          href="/stations?filter=language&name=Spanish"
-          as="/stations/language/Spanish"
-        >
-          Spanish
-        </CardLink>
-        <CardLink
-          href="/stations?filter=language&name=English"
-          as="/stations/language/English"
-        >
-          English
-        </CardLink>
-        <CardLink
-          href="/stations?filter=language&name=Russian"
-          as="/stations/language/Pусский"
-        >
-          Pусский
-        </CardLink>
-        <CardLink
-          href="/stations?filter=language&name=Polish"
-          as="/stations/language/Polski"
-        >
-          Polski
-        </CardLink>
-      </Swiper>
-    </Content>
-    <Navigation />
-  </Fragment>
+    <Subtitle>Most listened languages</Subtitle>
+    <Swiper>
+      <CardLink
+        href="/stations?filter=language&name=Spanish"
+        as="/stations/language/Spanish"
+      >
+        Spanish
+      </CardLink>
+      <CardLink
+        href="/stations?filter=language&name=English"
+        as="/stations/language/English"
+      >
+        English
+      </CardLink>
+      <CardLink
+        href="/stations?filter=language&name=Russian"
+        as="/stations/language/Pусский"
+      >
+        Pусский
+      </CardLink>
+      <CardLink
+        href="/stations?filter=language&name=Polish"
+        as="/stations/language/Polski"
+      >
+        Polski
+      </CardLink>
+    </Swiper>
+  </Content>
 );

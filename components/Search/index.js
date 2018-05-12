@@ -4,11 +4,6 @@ import debounce from "debounce-fn";
 import { withRouter } from "next/router";
 import { connect } from "react-redux";
 
-let Container = styled.div`
-  padding: 15px;
-  background: transparent;
-`;
-
 let Input = styled.input`
   border: none;
   color: #fff;
@@ -18,19 +13,18 @@ let Input = styled.input`
   font-size: 18px;
   font-weight: 500;
   width: 100%;
+  margin-bottom: 15px;
 `;
 
 export function Search({ router, dispatch, query }) {
   let change = debounce(router.push, { wait: 500 });
 
   return (
-    <Container>
-      <Input
-        placeholder="Start typing..."
-        defaultValue={query}
-        onChange={e => change(`/search?query=${e.target.value}`)}
-      />
-    </Container>
+    <Input
+      placeholder="Start typing..."
+      defaultValue={query}
+      onChange={e => change(`/search?query=${e.target.value}`)}
+    />
   );
 }
 

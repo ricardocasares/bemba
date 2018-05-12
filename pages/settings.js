@@ -8,13 +8,9 @@ import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
 
 export default () => (
-  <Fragment>
-    <Content>
-      <Title>Settings</Title>
-      <Subtitle>Upgrade my account</Subtitle>
-      <Subtitle>Clear my search history</Subtitle>
-    </Content>
-    <Player />
-    <Navigation />
-  </Fragment>
+  <Content>
+    <Title>Settings</Title>
+    <Subtitle>Upgrade my account</Subtitle>
+    <Subtitle>Clear my search history</Subtitle>
+  </Content>
 );

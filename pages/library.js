@@ -8,12 +8,8 @@ import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
 
 export default () => (
-  <Fragment>
-    <Content>
-      <Title>My Library</Title>
-      <StationList />
-    </Content>
-    <Player />
-    <Navigation />
-  </Fragment>
+  <Content>
+    <Title>My Library</Title>
+    <StationList />
+  </Content>
 );

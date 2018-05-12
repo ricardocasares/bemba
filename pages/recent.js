@@ -8,14 +8,10 @@ import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
 
 let Results = () => (
-  <Fragment>
-    <Content>
-      <Title>Recently played</Title>
-      <StationList />
-    </Content>
-    <Player />
-    <Navigation />
-  </Fragment>
+  <Content>
+    <Title>Recently played</Title>
+    <StationList />
+  </Content>
 );
 
 Results.getInitialProps = function getInitialProps({ query }) {

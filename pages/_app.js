@@ -10,6 +10,8 @@ import routingListeners from "../lib/utils/routing";
 import makeStore from "../store";
 // components
 import Layout from "../components/Layout";
+import Player from "../components/Player";
+import Navigation from "../components/Navigation";
 
 Router.onRouteChangeStart = NProgress.start;
 Router.onRouteChangeComplete = NProgress.done;
@@ -37,6 +39,9 @@ export default withRedux(makeStore)(
           <Provider store={store}>
             <Layout>
               <Component {...pageProps} />
+
+              <Player />
+              <Navigation />
             </Layout>
           </Provider>
         </Container>
