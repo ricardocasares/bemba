@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 // store
-import { search, searchDebounced } from "../store/search/actions";
+import { load } from "../store/player/actions";
+import { search } from "../store/search/actions";
 // components
 import Content from "../components/Content";
 import SearchInput from "../components/Search";
@@ -12,7 +13,7 @@ import StationList from "../components/StationList";
 import Zoom from "../components/Icons/Search";
 
 let mapProps = ({ search }) => ({ stations: search.results });
-let ConnectedList = connect(mapProps)(StationList);
+let ConnectedList = connect(mapProps, { load })(StationList);
 
 export let Search = () => (
   <Content>

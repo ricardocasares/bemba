@@ -1,12 +1,25 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 
-import StationItem from "./StationItem";
+import Play from "../Button/Play";
+import Station from "../Station";
 
-export default ({ stations = [] }) => (
+let Item = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+let FlexStation = styled(Station)`
+  flex: 1 1 auto;
+`;
+
+export default ({ stations, load }) => (
   <Fragment>
     {stations.map(station => (
-      <StationItem station={station} key={station.id} />
+      <Item key={station.id}>
+        <FlexStation {...station} />
+        <Play onClick={e => load({ station })} />
+      </Item>
     ))}
   </Fragment>
 );

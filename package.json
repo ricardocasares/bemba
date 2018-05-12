@@ -18,6 +18,7 @@
     "react-redux": "^5.0.7",
     "recompose": "latest",
     "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "serve-static": "latest",
     "styled-components": "^3.2.6",
@@ -31,7 +32,9 @@
   },
   "now": {
     "name": "bemba",
-    "alias": ["bemba.analogic.al"]
+    "alias": [
+      "bemba.analogic.al"
+    ]
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.1"

@@ -8,7 +8,6 @@ import Swiper from "../components/Swiper";
 import Content from "../components/Content";
 import Player from "../components/Player";
 import Navigation from "../components/Navigation";
-import Station from "../components/StationList/Station";
 
 export default () => (
   <Content>

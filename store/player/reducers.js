@@ -15,12 +15,23 @@ export const initialState = {
 
 export default function(state = initialState, { type, payload }) {
   switch (type) {
-    case TYPES.PENDING:
-      return { ...state, query: payload.query, loading: true };
-    case TYPES.REJECTED:
-      return { ...state, loading: false, error: payload.error };
-    case TYPES.RESOLVED:
-      return { ...state, loading: false, results: payload.results };
+    case TYPES.LOAD:
+      return {
+        ...state,
+        station: payload.station,
+        loading: true,
+        hidden: false
+      };
+    case TYPES.HIDE:
+      return {
+        ...state,
+        hidden: true
+      };
+    case TYPES.SHOW:
+      return {
+        ...state,
+        hidden: false
+      };
   }
 
   return state;

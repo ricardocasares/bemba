@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 
 let Title = styled.h3`
@@ -11,11 +11,11 @@ let Title = styled.h3`
 let Subtitle = styled.p`
   font-size: 14px;
   color: #999;
-  margin: 0;
+  margin-top: 0;
   font-weight: 300;
 `;
 
-export default ({ name, country, state, className }) => (
+export default ({ name, country, state, className = "" }) => (
   <div className={className}>
     <Title>{name}</Title>
     <Subtitle>{[state, country].filter(x => x).join(", ")}</Subtitle>

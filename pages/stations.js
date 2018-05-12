@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 // store
+import { load } from "../store/player/actions";
 import { stations } from "../store/stations/actions";
 // components
 import Content from "../components/Content";
@@ -11,7 +12,7 @@ import StationList from "../components/StationList";
 import Title from "../components/Text/Title";
 
 let mapProps = ({ stations }) => ({ ...stations });
-let ConnectedList = connect(mapProps)(StationList);
+let ConnectedList = connect(mapProps, { load })(StationList);
 
 let Stations = ({ filter, name }) => (
   <Content>

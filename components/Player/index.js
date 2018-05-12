@@ -1,12 +1,12 @@
-import React from "react";
-import { pure } from "recompose";
+import React, { PureComponent } from "react";
 import styled from "styled-components";
-
+// store
+import { connect } from "react-redux";
+import * as actions from "../../store/player/actions";
+// components
 import Play from "../Button/Play";
 import Pause from "../Button/Pause";
-
-import Station from "../StationList/Station";
-import { PureComponent } from "react";
+import Station from "../Station";
 
 export class Player extends PureComponent {
   play = () => this.audio.play();
@@ -14,22 +14,22 @@ export class Player extends PureComponent {
 
   componentDidMount() {
     let player = this.audio;
+    let { play, pause } = this.props;
 
-    player.addEventListener("play", console.log);
-    player.addEventListener("playing", console.log);
-    player.addEventListener("pause", console.log);
+    player.addEventListener("canplay", () => {
+      player.play();
+    });
+
+    player.addEventListener("playing", () => play({ playing: true }));
+    player.addEventListener("pause", () => pause({ playing: false }));
   }
 
   render() {
-    let { className } = this.props;
+    let { className, station, loading } = this.props;
 
     return (
       <div className={className}>
-        <Station
-          name="FM Pop & Rock"
-          state="Buenos Aires"
-          country="Argentina"
-        />
+        <Station {...station} />
         <Pause onClick={this.pause} />
         <Play filled onClick={this.play} />
         <audio
@@ -37,19 +37,21 @@ export class Player extends PureComponent {
           ref={e => {
             this.audio = e;
           }}
-          src={"http://streaming.radionomy.com/2ROCK"}
+          src={station.url}
         />
       </div>
     );
   }
 }
 
-export default styled(Player)`
-  display: flex;
+let hide = ({ hidden }) => (hidden ? "none" : "flex");
+let mapProps = ({ player }) => ({ ...player });
+export default connect(mapProps, { ...actions })(styled(Player)`
+  display: ${hide};
   padding: 15px;
   background: #333;
 
   > div {
     flex: 1 1 auto;
   }
-`;
+`);
