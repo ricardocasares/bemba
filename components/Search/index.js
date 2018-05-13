@@ -19,7 +19,7 @@ let Input = styled.input`
 `;
 
 export function Search({ router, dispatch, query, show, hide }) {
-  let change = debounce(router.push, { wait: 500 });
+  let change = debounce(router.push, { wait: 800 });
 
   return (
     <Input
