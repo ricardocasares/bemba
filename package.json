@@ -33,7 +33,10 @@
   },
   "now": {
     "name": "bemba",
-    "alias": ["bemba.analogic.al"]
+    "alias": ["bemba.analogic.al"],
+    "env": {
+      "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
+    }
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.1"
