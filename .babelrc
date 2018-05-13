@@ -4,7 +4,7 @@
     [
       "transform-inline-environment-variables",
       {
-        "include": ["API_ENDPOINT"]
+        "include": ["BEMBA_API_ENDPOINT"]
       }
     ],
     [
