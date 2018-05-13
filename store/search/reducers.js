@@ -3,7 +3,6 @@ import * as TYPES from "./types";
 export const initialState = {
   query: "",
   results: [],
-  error: null,
   loading: false
 };
 

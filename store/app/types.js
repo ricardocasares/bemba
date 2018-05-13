@@ -1,0 +1,4 @@
+export const INFO = "APP/INFO";
+export const ERROR = "APP/ERROR";
+export const NOTIFICATION_SHOW = "APP/NOTIFICATION_SHOW";
+export const NOTIFICATION_HIDE = "APP/NOTIFICATION_HIDE";

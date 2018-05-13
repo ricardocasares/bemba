@@ -7,7 +7,6 @@ export const initialState = {
     country: "",
     url: ""
   },
-  error: null,
   hidden: true,
   ready: false,
   playing: false,

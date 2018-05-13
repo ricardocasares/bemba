@@ -2,6 +2,7 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { createStore, combineReducers, applyMiddleware as apply } from "redux";
 
+import appReducer from "./app";
 import playerReducer from "./player";
 import searchReducer from "./search";
 import stationsReducer from "./stations";
@@ -13,6 +14,7 @@ if (typeof window !== "undefined") {
 }
 
 let rootReducer = combineReducers({
+  app: appReducer,
   player: playerReducer,
   search: searchReducer,
   stations: stationsReducer

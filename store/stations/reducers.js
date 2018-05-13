@@ -1,7 +1,6 @@
 import * as TYPES from "./types";
 
 export const initialState = {
-  error: null,
   stations: [],
   loading: false
 };
