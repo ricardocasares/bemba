@@ -15,7 +15,7 @@ let Input = styled.input`
   font-size: 18px;
   font-weight: 500;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 `;
 
 export function Search({ router, dispatch, query, show, hide }) {
