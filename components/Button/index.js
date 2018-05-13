@@ -16,5 +16,6 @@ export default styled.button`
     width: ${size}px;
     height: ${size}px;
     stroke-width: ${stroke}px;
+    vertical-align: middle;
   }
 `;
