@@ -1,13 +1,20 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
 import nprogress from "nprogress";
+import debounce from "debounce-fn";
 // store
 import { connect } from "react-redux";
 import * as actions from "../../store/player/actions";
+import {
+  hideNotification,
+  showErrorNotification
+} from "../../store/app/actions";
 // components
 import Play from "../Button/Play";
 import Pause from "../Button/Pause";
 import Station from "../Station";
+
+const ERROR_MESSAGE = "Sorry we were not able to play this radio.";
 
 export class Player extends PureComponent {
   play = () => this.audio.play();
@@ -15,10 +22,18 @@ export class Player extends PureComponent {
 
   componentDidMount() {
     let player = this.audio;
-    let { play, pause, ready, hide } = this.props;
+    let {
+      play,
+      pause,
+      ready,
+      hide,
+      hideNotification,
+      showErrorNotification
+    } = this.props;
 
     player.addEventListener("loadstart", () => {
       nprogress.start();
+      hideNotification();
     });
 
     player.addEventListener("canplay", () => {
@@ -27,7 +42,9 @@ export class Player extends PureComponent {
 
     player.addEventListener("error", err => {
       nprogress.done();
-      hide();
+      showErrorNotification({
+        message: ERROR_MESSAGE
+      });
     });
 
     player.addEventListener("playing", () => play({ playing: true }));
@@ -56,7 +73,11 @@ export class Player extends PureComponent {
 
 let hide = ({ hidden }) => (hidden ? "none" : "flex");
 let mapProps = ({ player }) => ({ ...player });
-export default connect(mapProps, { ...actions })(styled(Player)`
+export default connect(mapProps, {
+  ...actions,
+  hideNotification,
+  showErrorNotification
+})(styled(Player)`
   display: ${hide};
   padding: 15px;
   background: #333;

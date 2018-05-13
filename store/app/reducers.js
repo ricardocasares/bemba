@@ -3,14 +3,14 @@ import * as TYPES from "./types";
 export const initialState = {
   notification: {
     message: "",
-    type: "info",
-    hidden: false
+    type: "error",
+    hidden: true
   }
 };
 
 export default function(state = initialState, { type, payload }) {
   switch (type) {
-    case TYPES.INFO:
+    case TYPES.SHOW_INFO:
       return {
         ...state,
         notification: {
@@ -19,19 +19,12 @@ export default function(state = initialState, { type, payload }) {
           hidden: false
         }
       };
-    case TYPES.ERROR:
+    case TYPES.SHOW_ERROR:
       return {
         ...state,
         notification: {
           type: "error",
           message: payload.message,
-          hidden: false
-        }
-      };
-    case TYPES.NOTIFICATION_SHOW:
-      return {
-        ...state,
-        notification: {
           hidden: false
         }
       };
