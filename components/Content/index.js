@@ -7,4 +7,9 @@ export default styled.section`
   flex: 1 1 auto;
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
