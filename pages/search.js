@@ -9,13 +9,10 @@ import Content from "../components/Content";
 import SearchInput from "../components/Search";
 import StationList from "../components/StationList";
 
-let mapProps = ({ search }) => ({ stations: search.results });
-let ConnectedList = connect(mapProps, { load })(StationList);
-
-export let Search = () => (
+export let Search = ({ load, stations }) => (
   <Content>
     <SearchInput />
-    <ConnectedList />
+    <StationList stations={stations} load={load} />
   </Content>
 );
 
@@ -25,4 +22,5 @@ Search.getInitialProps = async function({ store, query }) {
   return { query };
 };
 
-export default Search;
+let mapProps = ({ search }) => ({ stations: search.results });
+export default connect(mapProps, { load })(Search);
