@@ -13,7 +13,7 @@ let type = ({ type }) => notificationTypes[type];
 let hide = ({ hidden }) => (hidden ? "none" : "block");
 
 let Notification = styled.div`
-  padding: 15px;
+  padding: 5px 15px;
   font-size: 12px;
   font-weight: 500;
   color: white;
@@ -22,7 +22,6 @@ let Notification = styled.div`
 `;
 
 let mapProps = ({ app: { notification } }) => ({ ...notification });
-export default connect(mapProps, { actions })(
-  ({ message, ...props }) =>
-    console.log(props) || <Notification {...props}>{message}</Notification>
-);
+export default connect(mapProps, { actions })(({ message, ...props }) => (
+  <Notification {...props}>{message}</Notification>
+));
