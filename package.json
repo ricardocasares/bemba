@@ -6,6 +6,7 @@
     "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-inline-environment-variables": "^0.4.1",
     "debounce-fn": "^1.0.0",
+    "dotenv": "^5.0.1",
     "fast-memoize": "^2.3.2",
     "isomorphic-unfetch": "^2.0.0",
     "next": "latest",
@@ -25,16 +26,14 @@
     "styled-theming": "^2.2.0"
   },
   "scripts": {
-    "dev": "node server",
+    "dev": "node -r dotenv/config server",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "analyze": "BUNDLE_ANALYZE=both yarn build"
   },
   "now": {
     "name": "bemba",
-    "alias": [
-      "bemba.analogic.al"
-    ]
+    "alias": ["bemba.analogic.al"]
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.1"

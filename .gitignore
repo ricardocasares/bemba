@@ -1,3 +1,4 @@
 /.next
 /.bundles
 /node_modules
+.env
