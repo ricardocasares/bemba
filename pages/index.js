@@ -35,6 +35,12 @@ export default () => (
     <Subtitle>Top Cities</Subtitle>
     <Swiper>
       <CardLink
+        href="/stations?filter=state&name=Istanbul"
+        as="/stations/state/Istanbul"
+      >
+        Istanbul
+      </CardLink>
+      <CardLink
         href="/stations?filter=state&name=Krakow"
         as="/stations/state/Krakow"
       >
@@ -80,6 +86,12 @@ export default () => (
         as="/stations/language/Spanish"
       >
         Español
+      </CardLink>
+      <CardLink
+        href="/stations?filter=language&name=Turkish"
+        as="/stations/language/Turkish"
+      >
+        Türk
       </CardLink>
       <CardLink
         href="/stations?filter=language&name=English"
