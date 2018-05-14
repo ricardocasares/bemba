@@ -13,7 +13,7 @@ import Title from "../components/Text/Title";
 
 let Stations = ({ filter, name, stations, load }) => (
   <Content>
-    <Title>{name} stations</Title>
+    <Title>{decodeURIComponent(name)} stations</Title>
     <StationList stations={stations} load={load} />
   </Content>
 );
