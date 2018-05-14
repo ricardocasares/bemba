@@ -18,8 +18,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "serve-static": "latest",
-    "styled-components": "latest",
-    "styled-theming": "latest"
+    "styled-components": "latest"
   },
   "scripts": {
     "dev": "yarn clean && node server",
