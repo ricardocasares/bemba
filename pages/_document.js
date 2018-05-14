@@ -1,6 +1,6 @@
+import "../lib/reset";
 import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import "./_reset";
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
