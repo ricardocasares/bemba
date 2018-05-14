@@ -99,6 +99,12 @@ export default () => (
       >
         Polski
       </CardLink>
+      <CardLink
+        href="/stations?filter=language&name=Turkish"
+        as="/stations/language/Turkish"
+      >
+        Turkish
+      </CardLink>
     </Swiper>
   </Content>
 );
