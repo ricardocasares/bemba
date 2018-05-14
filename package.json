@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "babel-plugin-styled-components": "^1.5.1",
-    "babel-plugin-transform-inline-environment-variables": "^0.4.1",
     "debounce-fn": "^1.0.0",
-    "dotenv": "^5.0.1",
     "fast-memoize": "^2.3.2",
     "isomorphic-unfetch": "^2.0.0",
     "next": "latest",
@@ -25,10 +22,11 @@
     "styled-theming": "^2.2.0"
   },
   "scripts": {
-    "dev": "node -r dotenv/config server",
+    "dev": "yarn clean && node server",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "analyze": "BUNDLE_ANALYZE=both yarn build"
+    "analyze": "BUNDLE_ANALYZE=both yarn build",
+    "clean": "rm -rf ./node_modules/.cache/babel-loader"
   },
   "now": {
     "name": "bemba",
@@ -38,6 +36,9 @@
     }
   },
   "devDependencies": {
-    "@zeit/next-bundle-analyzer": "^0.1.1"
+    "@zeit/next-bundle-analyzer": "^0.1.1",
+    "babel-plugin-inline-dotenv": "^1.1.2",
+    "babel-plugin-styled-components": "^1.5.1",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.1"
   }
 }
