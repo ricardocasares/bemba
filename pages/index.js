@@ -14,27 +14,27 @@ export default class Index extends PureComponent {
         <Title>Explore</Title>
         <Subtitle>Recommended for you</Subtitle>
         <Swiper>
-          <CardLink
-            href="/stations?filter=tags&name=rock"
-            as="/stations/tags/rock"
-          >
+          <CardLink href="/stations?filter=tags&name=rock" as="/tags/rock">
             Rock
+          </CardLink>
+          <CardLink href="/stations?filter=tags&name=groove" as="/tags/groove">
+            Groove
+          </CardLink>
+          <CardLink href="/stations?filter=tags&name=sport" as="/tags/sport">
+            Sport
           </CardLink>
           <CardLink
             href="/stations?filter=tags&name=Dubstep"
-            as="/stations/tags/Dubstep"
+            as="/tags/Dubstep"
           >
             Dubstep
           </CardLink>
-          <CardLink
-            href="/stations?filter=tags&name=News"
-            as="/stations/tags/News"
-          >
+          <CardLink href="/stations?filter=tags&name=News" as="/tags/News">
             News
           </CardLink>
           <CardLink
             href="/stations?filter=tags&name=Technology"
-            as="/stations/tags/Technology"
+            as="/tags/Technology"
           >
             Technology
           </CardLink>
@@ -44,46 +44,87 @@ export default class Index extends PureComponent {
         <Swiper>
           <CardLink
             href="/stations?filter=state&name=Istanbul"
-            as="/stations/state/Istanbul"
+            as="/state/Istanbul"
           >
             Istanbul
           </CardLink>
           <CardLink
             href="/stations?filter=state&name=Krakow"
-            as="/stations/state/Krakow"
+            as="/state/Krakow"
           >
             Kraków
           </CardLink>
-          <CardLink
-            href="/stations?filter=state&name=Kiev"
-            as="/stations/state/Kiev"
-          >
+          <CardLink href="/stations?filter=state&name=Kiev" as="/state/Kiev">
             Kiev
           </CardLink>
           <CardLink
             href="/stations?filter=state&name=Saint-Petersburg"
-            as="/stations/state/Saint-Petersburg"
+            as="/state/Saint-Petersburg"
           >
             Saint-Petersburg
           </CardLink>
 
-          <CardLink
-            href="/stations?filter=state&name=Minsk"
-            as="/stations/state/Minsk"
-          >
+          <CardLink href="/stations?filter=state&name=Minsk" as="/state/Minsk">
             Minsk
           </CardLink>
           <CardLink
             href="/stations?filter=state&name=Buenos Aires"
-            as="/stations/state/Buenos Aires"
+            as="/state/Buenos Aires"
           >
             Buenos Aires
           </CardLink>
           <CardLink
             href="/stations?filter=state&name=Amsterdam"
-            as="/stations/state/Amsterdam"
+            as="/state/Amsterdam"
           >
             Amsterdam
+          </CardLink>
+        </Swiper>
+
+        <Subtitle>Countries</Subtitle>
+        <Swiper>
+          <CardLink
+            href="/stations?filter=country&name=Turkey"
+            as="/country/Turkey"
+          >
+            Turkey
+          </CardLink>
+          <CardLink
+            href="/stations?filter=country&name=Poland"
+            as="/country/Poland"
+          >
+            Poland
+          </CardLink>
+          <CardLink
+            href="/stations?filter=country&name=Ukraine"
+            as="/country/Ukraine"
+          >
+            Ukraine
+          </CardLink>
+          <CardLink
+            href="/stations?filter=country&name=Russia"
+            as="/country/Russia"
+          >
+            Russia
+          </CardLink>
+
+          <CardLink
+            href="/stations?filter=country&name=Belarus"
+            as="/country/Belarus"
+          >
+            Belarus
+          </CardLink>
+          <CardLink
+            href="/stations?filter=country&name=Argentina"
+            as="/country/Argentina"
+          >
+            Argentina
+          </CardLink>
+          <CardLink
+            href="/stations?filter=country&name=Netherlands"
+            as="/country/Netherlands"
+          >
+            Netherlands
           </CardLink>
         </Swiper>
 
@@ -91,33 +132,51 @@ export default class Index extends PureComponent {
         <Swiper>
           <CardLink
             href="/stations?filter=language&name=Spanish"
-            as="/stations/language/Spanish"
+            as="/language/Spanish"
           >
             Español
           </CardLink>
           <CardLink
+            href="/stations?filter=language&name=Italian"
+            as="/language/Italian"
+          >
+            Italiano
+          </CardLink>
+          <CardLink
             href="/stations?filter=language&name=Turkish"
-            as="/stations/language/Turkish"
+            as="/language/Turkish"
           >
             Türk
           </CardLink>
           <CardLink
             href="/stations?filter=language&name=English"
-            as="/stations/language/English"
+            as="/language/English"
           >
             English
           </CardLink>
           <CardLink
             href="/stations?filter=language&name=Russian"
-            as="/stations/language/Russian"
+            as="/language/Russian"
           >
             Pусский
           </CardLink>
           <CardLink
+            href="/stations?filter=language&name=Ukrainian"
+            as="/language/Ukrainian"
+          >
+            Українська
+          </CardLink>
+          <CardLink
             href="/stations?filter=language&name=Polish"
-            as="/stations/language/Polski"
+            as="/language/Polski"
           >
             Polski
+          </CardLink>
+          <CardLink
+            href="/stations?filter=language&name=Belarusian"
+            as="/language/Belarusian"
+          >
+            беларускі
           </CardLink>
         </Swiper>
       </Content>
