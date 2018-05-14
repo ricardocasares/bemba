@@ -12,16 +12,25 @@ export default class Index extends PureComponent {
     return (
       <Content>
         <Title>Explore</Title>
-        <Subtitle>Recommended for you</Subtitle>
+        <Subtitle>Trending</Subtitle>
         <Swiper>
+          <CardLink
+            href="/stations?filter=tags&name=Live sports"
+            as="/tags/Live sports"
+          >
+            Live Sports
+          </CardLink>
           <CardLink href="/stations?filter=tags&name=rock" as="/tags/rock">
             Rock
           </CardLink>
+          <CardLink
+            href="/stations?filter=tags&name=podcast"
+            as="/tags/podcast"
+          >
+            Podcast
+          </CardLink>
           <CardLink href="/stations?filter=tags&name=groove" as="/tags/groove">
             Groove
-          </CardLink>
-          <CardLink href="/stations?filter=tags&name=sport" as="/tags/sport">
-            Sport
           </CardLink>
           <CardLink
             href="/stations?filter=tags&name=Dubstep"
