@@ -26,12 +26,12 @@ export class Player extends PureComponent {
       play,
       pause,
       ready,
-      hide,
       hideNotification,
       showErrorNotification
     } = this.props;
 
     player.addEventListener("loadstart", () => {
+      ready();
       nprogress.start();
       hideNotification();
     });

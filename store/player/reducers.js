@@ -19,8 +19,9 @@ export default function(state = initialState, { type, payload }) {
       return {
         ...state,
         station: payload.station,
-        loading: true,
-        hidden: false
+        ready: false,
+        hidden: false,
+        loading: true
       };
     case TYPES.HIDE:
       return {
