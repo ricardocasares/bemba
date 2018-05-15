@@ -25,6 +25,6 @@ Search.getInitialProps = async function({ store, query }) {
 
 let mapProps = ({ search, library }) => ({
   stations: search.results,
-  libraryIds: library.stations.map(({ id }) => id)
+  library: library.stations
 });
 export default connect(mapProps, { load, add, remove })(Search);

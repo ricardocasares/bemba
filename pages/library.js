@@ -17,6 +17,6 @@ export let Library = ({ add, ...props }) => (
 
 let mapProps = ({ library }) => ({
   stations: library.stations,
-  libraryIds: library.stations.map(({ id }) => id)
+  library: library.stations
 });
 export default connect(mapProps, { ...actions, load })(Library);

@@ -1,4 +1,5 @@
 import * as TYPES from "./types";
+import { toObjectByKey } from "../../lib/utils";
 
 export const initialState = {
   stations: []
@@ -8,13 +9,12 @@ export default function(state = initialState, { type, payload }) {
   switch (type) {
     case TYPES.ADD:
       return {
-        ...state,
-        stations: [payload, ...state.stations]
+        stations: { ...state.stations, [payload.id]: payload }
       };
     case TYPES.REMOVE:
-      return {
-        stations: [...state.stations.filter(({ id }) => id !== payload)]
-      };
+      let stations = Object.assign({}, state.stations);
+      delete stations[payload];
+      return { stations };
   }
 
   return state;

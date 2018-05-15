@@ -27,6 +27,6 @@ Stations.getInitialProps = async function getInitialProps({ store, query }) {
 
 let mapProps = ({ stations, library }) => ({
   stations: stations.stations,
-  libraryIds: library.stations.map(({ id }) => id)
+  library: library.stations
 });
 export default connect(mapProps, { load, add, remove })(Stations);

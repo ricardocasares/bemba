@@ -17,7 +17,7 @@ export default function(state = initialState, { type, payload }) {
     case TYPES.LOAD:
       return {
         ...state,
-        station: payload.station,
+        station: payload,
         ready: false,
         hidden: false,
         playing: false

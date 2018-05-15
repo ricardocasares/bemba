@@ -23,17 +23,17 @@ let Item = styled.div`
   display: flex;
 `;
 
-export default ({ stations = [], libraryIds = [], load, add, remove }) => (
+export default ({ stations = [], library = [], load, add, remove }) => (
   <Fragment>
-    {stations.map(station => (
-      <Item key={station.id}>
-        <StationButton onClick={e => load({ station })}>
-          <Station {...station} />
+    {Object.keys(stations).map(id => (
+      <Item key={id}>
+        <StationButton onClick={e => load(stations[id])}>
+          <Station {...stations[id]} />
         </StationButton>
-        {libraryIds.includes(station.id) ? (
-          <Remove onClick={() => remove(station.id)} />
+        {library[id] ? (
+          <Remove onClick={() => remove(id)} />
         ) : (
-          <Add onClick={() => add(station)} />
+          <Add onClick={() => add(stations[id])} />
         )}
       </Item>
     ))}

@@ -74,16 +74,16 @@ export class Player extends PureComponent {
     let {
       playing,
       station,
+      library,
       className,
       addToLibrary,
-      removeFromLibrary,
-      libraryIds
+      removeFromLibrary
     } = this.props;
 
     return (
       <div className={className}>
         <Station {...station} />
-        {libraryIds.includes(station.id) ? (
+        {library[station.id] ? (
           <Remove onClick={() => removeFromLibrary(station.id)} />
         ) : (
           <Add onClick={() => addToLibrary(station)} />
@@ -109,7 +109,7 @@ export class Player extends PureComponent {
 let hide = ({ hidden }) => (hidden ? "none" : "flex");
 let mapProps = ({ player, library }) => ({
   ...player,
-  libraryIds: library.stations.map(({ id }) => id)
+  library: library.stations
 });
 export default connect(mapProps, {
   ...actions,
