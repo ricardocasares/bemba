@@ -1,15 +1,20 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
 import nprogress from "nprogress";
-import debounce from "debounce-fn";
 // store
 import { connect } from "react-redux";
 import * as actions from "../../store/player/actions";
+import {
+  add as addToLibrary,
+  remove as removeFromLibrary
+} from "../../store/library/actions";
 import {
   hideNotification,
   showErrorNotification
 } from "../../store/app/actions";
 // components
+import Add from "../Button/Add";
+import Remove from "../Button/Remove";
 import Play from "../Button/Play";
 import Pause from "../Button/Pause";
 import Station from "../Station";
@@ -52,11 +57,23 @@ export class Player extends PureComponent {
   }
 
   render() {
-    let { className, station, loading } = this.props;
+    let {
+      className,
+      station,
+      loading,
+      addToLibrary,
+      removeFromLibrary,
+      libraryIds
+    } = this.props;
 
     return (
       <div className={className}>
         <Station {...station} />
+        {libraryIds.includes(station.id) ? (
+          <Remove onClick={() => removeFromLibrary(station.id)} />
+        ) : (
+          <Add onClick={() => addToLibrary(station)} />
+        )}
         <Pause onClick={this.pause} />
         <Play filled onClick={this.play} />
         <audio
@@ -72,9 +89,14 @@ export class Player extends PureComponent {
 }
 
 let hide = ({ hidden }) => (hidden ? "none" : "flex");
-let mapProps = ({ player }) => ({ ...player });
+let mapProps = ({ player, library }) => ({
+  ...player,
+  libraryIds: library.stations.map(({ id }) => id)
+});
 export default connect(mapProps, {
   ...actions,
+  addToLibrary,
+  removeFromLibrary,
   hideNotification,
   showErrorNotification
 })(styled(Player)`

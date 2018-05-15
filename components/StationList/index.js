@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 
 import Link from "../Link";
+import Add from "../Button/Add";
+import Remove from "../Button/Remove";
 import Station from "../Station";
 
 let StationButton = styled.button`
@@ -14,14 +16,26 @@ let StationButton = styled.button`
   background: transparent;
   border: none;
   padding: 0;
+  flex: 1 1 auto;
 `;
 
-export default ({ stations, load }) => (
+let Item = styled.div`
+  display: flex;
+`;
+
+export default ({ stations = [], libraryIds = [], load, add, remove }) => (
   <Fragment>
     {stations.map(station => (
-      <StationButton href="" key={station.id} onClick={e => load({ station })}>
-        <Station {...station} />
-      </StationButton>
+      <Item key={station.id}>
+        <StationButton onClick={e => load({ station })}>
+          <Station {...station} />
+        </StationButton>
+        {libraryIds.includes(station.id) ? (
+          <Remove onClick={() => remove(station.id)} />
+        ) : (
+          <Add onClick={() => add(station)} />
+        )}
+      </Item>
     ))}
   </Fragment>
 );

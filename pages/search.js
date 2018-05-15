@@ -3,16 +3,17 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 // store
 import { load } from "../store/player/actions";
+import { add, remove } from "../store/library/actions";
 import { search } from "../store/search/actions";
 // components
 import Content from "../components/Content";
 import SearchInput from "../components/Search";
 import StationList from "../components/StationList";
 
-export let Search = ({ load, stations }) => (
+export let Search = ({ ...props }) => (
   <Content>
     <SearchInput />
-    <StationList stations={stations} load={load} />
+    <StationList {...props} />
   </Content>
 );
 
@@ -22,5 +23,8 @@ Search.getInitialProps = async function({ store, query }) {
   return { query };
 };
 
-let mapProps = ({ search }) => ({ stations: search.results });
-export default connect(mapProps, { load })(Search);
+let mapProps = ({ search, library }) => ({
+  stations: search.results,
+  libraryIds: library.stations.map(({ id }) => id)
+});
+export default connect(mapProps, { load, add, remove })(Search);
