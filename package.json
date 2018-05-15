@@ -6,7 +6,7 @@
     "debounce-fn": "^1.0.0",
     "fast-memoize": "^2.3.2",
     "isomorphic-unfetch": "^2.0.0",
-    "next": "latest",
+    "next": "^6.0.2",
     "next-redux-wrapper": "^2.0.0-beta.6",
     "nprogress": "^0.2.0",
     "polka": "^0.3.4",
@@ -29,7 +29,9 @@
   },
   "now": {
     "name": "bemba",
-    "alias": ["bemba.analogic.al"],
+    "alias": [
+      "bemba.analogic.al"
+    ],
     "env": {
       "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
     }
