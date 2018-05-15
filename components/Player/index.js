@@ -19,10 +19,22 @@ import Play from "../Button/Play";
 import Pause from "../Button/Pause";
 import Station from "../Station";
 
-const ERROR_MESSAGE = "Sorry we were not able to play this radio.";
+const ERROR_MESSAGE = "Sorry! We couldn't play this radio";
 
 export class Player extends PureComponent {
-  play = () => this.audio.play();
+  play = () => {
+    let { error, showErrorNotification } = this.props;
+    this.audio
+      .play()
+      .then(() => nprogress.done())
+      .catch(() => {
+        error();
+        showErrorNotification({
+          message: ERROR_MESSAGE
+        });
+      });
+  };
+
   pause = () => this.audio.pause();
 
   componentDidMount() {
@@ -30,6 +42,7 @@ export class Player extends PureComponent {
     let {
       play,
       pause,
+      error,
       ready,
       hideNotification,
       showErrorNotification
@@ -42,26 +55,26 @@ export class Player extends PureComponent {
     });
 
     player.addEventListener("canplay", () => {
-      player.play().then(() => nprogress.done());
+      this.play();
     });
 
     player.addEventListener("error", err => {
+      error();
       nprogress.done();
       showErrorNotification({
         message: ERROR_MESSAGE
       });
     });
 
-    player.addEventListener("playing", () => play({ playing: true }));
-    player.addEventListener("pause", () => pause({ playing: false }));
+    player.addEventListener("playing", () => play());
+    player.addEventListener("pause", () => pause());
   }
 
   render() {
     let {
-      className,
       playing,
       station,
-      loading,
+      className,
       addToLibrary,
       removeFromLibrary,
       libraryIds

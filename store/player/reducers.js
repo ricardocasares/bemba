@@ -9,8 +9,7 @@ export const initialState = {
   },
   hidden: true,
   ready: false,
-  playing: false,
-  loading: false
+  playing: false
 };
 
 export default function(state = initialState, { type, payload }) {
@@ -20,15 +19,20 @@ export default function(state = initialState, { type, payload }) {
         ...state,
         station: payload.station,
         ready: false,
-        hidden: false,
-        loading: true
+        hidden: false
       };
     case TYPES.PLAY:
       return {
         ...state,
+        hidden: false,
         playing: true
       };
     case TYPES.PAUSE:
+      return {
+        ...state,
+        playing: false
+      };
+    case TYPES.ERROR:
       return {
         ...state,
         playing: false
