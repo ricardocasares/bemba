@@ -19,7 +19,8 @@ export default function(state = initialState, { type, payload }) {
         ...state,
         station: payload.station,
         ready: false,
-        hidden: false
+        hidden: false,
+        playing: false
       };
     case TYPES.PLAY:
       return {
