@@ -6,6 +6,6 @@ import Checkmark from "../Icons/Checkmark";
 
 export default ({ ...props }) => (
   <Button {...props}>
-    <Checkmark />
+    <Checkmark color={"lime"} />
   </Button>
 );
