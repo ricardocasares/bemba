@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "debounce-fn": "^1.0.0",
     "fast-memoize": "^2.3.2",
     "isomorphic-unfetch": "^2.0.0",
     "lodash": "^4.17.10",
@@ -31,9 +30,7 @@
   },
   "now": {
     "name": "bemba",
-    "alias": [
-      "bemba.analogic.al"
-    ],
+    "alias": ["bemba.analogic.al"],
     "env": {
       "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
     }
