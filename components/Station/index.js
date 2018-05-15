@@ -9,9 +9,9 @@ let Title = styled.h3`
 `;
 
 let Subtitle = styled.p`
+  margin: 0;
   font-size: 15px;
   color: #999;
-  margin-top: 0;
   font-weight: 300;
 `;
 

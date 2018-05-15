@@ -19,14 +19,14 @@ let Notification = styled.div`
   font-size: 12px;
   font-weight: 500;
   color: white;
+  display: ${hide};
+  flex: 0 1 1;
   background: ${type};
   display: ${hide};
   position: relative;
 
-  svg {
-    position: absolute;
-    right: 0;
-    top: 7px;
+  div {
+    flex: 1;
   }
 `;
 

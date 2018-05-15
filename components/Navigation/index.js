@@ -12,7 +12,7 @@ let Nav = styled.nav`
   display: flex;
   background: #000;
   padding: 10px 15px;
-  flex: 1 0 auto;
+  flex: 0 1 1;
   justify-content: space-around;
 `;
 

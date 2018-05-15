@@ -108,8 +108,9 @@ export default connect(mapProps, {
   display: ${hide};
   padding: 15px;
   background: #333;
+  flex: 1 0 1;
 
   > div {
-    flex: 1 1 auto;
+    flex: 1 0 auto;
   }
 `);
