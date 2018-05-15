@@ -10,7 +10,7 @@ import StationList from "../components/StationList";
 
 export let Library = ({ add, ...props }) => (
   <Content>
-    <Title>My Library</Title>
+    <Title>My Station Library</Title>
     <StationList add={e => e} {...props} />
   </Content>
 );

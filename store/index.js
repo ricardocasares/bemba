@@ -1,10 +1,10 @@
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import throttle from "lodash/throttle";
+import { save, load } from "redux-localstorage-simple";
 import { createStore, combineReducers, applyMiddleware as apply } from "redux";
 
 import { isServer } from "../lib/utils";
-import { get, save } from "../lib/storage";
 import appReducer from "./app";
 import playerReducer from "./player";
 import searchReducer from "./search";
@@ -14,7 +14,10 @@ import stationsReducer from "./stations";
 let middleware = [thunk];
 
 if (!isServer()) {
-  middleware.push(logger);
+  middleware.push(
+    save({ states: ["library.stations"], namespace: "app" }),
+    logger
+  );
 }
 
 let rootReducer = combineReducers({
@@ -25,10 +28,16 @@ let rootReducer = combineReducers({
   stations: stationsReducer
 });
 
-export default function(initialState, options) {
-  let store = createStore(rootReducer, get(), apply(...middleware));
+export default function(initialState) {
+  if (!isServer()) {
+    initialState = load({
+      namespace: "app",
+      states: ["library.stations"],
+      preloadedState: initialState
+    });
+  }
 
-  store.subscribe(throttle(() => save(store.getState()), 1000));
+  let store = createStore(rootReducer, initialState, apply(...middleware));
 
   return store;
 }

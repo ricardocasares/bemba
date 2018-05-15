@@ -16,6 +16,7 @@
     "react-dom": "latest",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
+    "redux-localstorage-simple": "^2.1.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "serve-static": "latest",
@@ -30,7 +31,9 @@
   },
   "now": {
     "name": "bemba",
-    "alias": ["bemba.analogic.al"],
+    "alias": [
+      "bemba.analogic.al"
+    ],
     "env": {
       "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
     }

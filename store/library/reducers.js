@@ -9,7 +9,7 @@ export default function(state = initialState, { type, payload }) {
     case TYPES.ADD:
       return {
         ...state,
-        stations: [...state.stations, payload]
+        stations: [payload, ...state.stations]
       };
     case TYPES.REMOVE:
       return {
