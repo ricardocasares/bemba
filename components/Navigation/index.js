@@ -21,15 +21,15 @@ export default () => (
     <Link href="/">
       <Home width={24} />
     </Link>
-    <Link href="/recent">
+    {/* <Link href="/recent">
       <Clock width={24} />
-    </Link>
+    </Link> */}
     <Link href="/search">
       <Search width={24} />
     </Link>
-    <Link href="/settings">
+    {/* <Link href="/settings">
       <Options width={24} />
-    </Link>
+    </Link> */}
     <Link href="/library">
       <FolderOpen width={24} />
     </Link>
