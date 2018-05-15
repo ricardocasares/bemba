@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import debounce from "debounce-fn";
+import debounce from "lodash/debounce";
 import { withRouter } from "next/router";
 import { connect } from "react-redux";
 // store
@@ -19,7 +19,7 @@ let Input = styled.input`
 `;
 
 export function Search({ router, dispatch, query, show, hide }) {
-  let change = debounce(router.push, { wait: 800 });
+  let change = debounce(router.push, 800);
 
   return (
     <Input
