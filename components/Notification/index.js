@@ -27,7 +27,7 @@ let appear = keyframes`
 let Notification = styled.div`
   padding: 5px 15px;
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 500;
   color: white;
   display: ${hide};
   flex: 0 1 1;
