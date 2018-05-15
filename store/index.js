@@ -4,7 +4,7 @@ import throttle from "lodash/throttle";
 import { save, load } from "redux-localstorage-simple";
 import { createStore, combineReducers, applyMiddleware as apply } from "redux";
 
-import { isServer } from "../lib/utils";
+import { isServer, isProduction } from "../lib/utils";
 import appReducer from "./app";
 import playerReducer from "./player";
 import searchReducer from "./search";
@@ -12,12 +12,14 @@ import libraryReducer from "./library";
 import stationsReducer from "./stations";
 
 let middleware = [thunk];
+let localStorageConfig = { states: ["library.stations"], namespace: "app" };
 
 if (!isServer()) {
-  middleware.push(
-    save({ states: ["library.stations"], namespace: "app" }),
-    logger
-  );
+  middleware.push(save(localStorageConfig));
+}
+
+if (!isProduction()) {
+  middleware.push(logger);
 }
 
 let rootReducer = combineReducers({
@@ -33,7 +35,8 @@ export default function(initialState) {
     initialState = load({
       namespace: "app",
       states: ["library.stations"],
-      preloadedState: initialState
+      preloadedState: initialState,
+      disableWarnings: isProduction()
     });
   }
 
