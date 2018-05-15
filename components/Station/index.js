@@ -15,9 +15,20 @@ let Subtitle = styled.p`
   font-weight: 300;
 `;
 
+let Station = styled.div`
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
 export default ({ name, country, state, className = "" }) => (
-  <div className={className}>
+  <Station>
     <Title>{name}</Title>
     <Subtitle>{[state, country].filter(x => x).join(", ")}</Subtitle>
-  </div>
+  </Station>
 );

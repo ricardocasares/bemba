@@ -124,6 +124,6 @@ export default connect(mapProps, {
   flex: 1 0 1;
 
   > div {
-    flex: 1 0 auto;
+    flex: 1;
   }
 `);

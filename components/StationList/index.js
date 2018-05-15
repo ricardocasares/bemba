@@ -12,11 +12,11 @@ let StationButton = styled.button`
   color: currentColor;
   text-align: left;
   display: block;
-  width: 100%;
   background: transparent;
   border: none;
   padding: 0;
-  flex: 1 1 auto;
+  flex: 1;
+  min-width: 0;
 `;
 
 let Item = styled.div`
