@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { connect } from "react-redux";
 // store
 import { load } from "../store/player/actions";
@@ -11,13 +11,10 @@ import Navigation from "../components/Navigation";
 import StationList from "../components/StationList";
 import Title from "../components/Text/Title";
 
-let mapProps = ({ stations }) => ({ ...stations });
-let ConnectedList = connect(mapProps, { load })(StationList);
-
-let Stations = ({ filter, name }) => (
+let Stations = ({ filter, name, stations, load }) => (
   <Content>
-    <Title>{name} stations</Title>
-    <ConnectedList />
+    <Title>{decodeURIComponent(name)} stations</Title>
+    <StationList stations={stations} load={load} />
   </Content>
 );
 
@@ -27,4 +24,5 @@ Stations.getInitialProps = async function getInitialProps({ store, query }) {
   return query;
 };
 
-export default Stations;
+let mapProps = ({ stations }) => ({ stations: stations.stations });
+export default connect(mapProps, { load })(Stations);

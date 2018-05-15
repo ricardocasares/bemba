@@ -18,7 +18,7 @@ app.prepare().then(() =>
     .get("/search", render("/search"))
     .get("/library", render("/library"))
     .get("/settings", render("/settings"))
-    .get("/stations/:filter/:name", render("/stations"))
+    .get("/:filter/:name", render("/stations"))
     .get("*", (req, res) => handle(req, res))
     .listen(PORT)
     .then(() => console.log(`> Server ready`))
