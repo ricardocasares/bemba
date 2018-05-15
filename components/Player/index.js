@@ -59,6 +59,7 @@ export class Player extends PureComponent {
   render() {
     let {
       className,
+      playing,
       station,
       loading,
       addToLibrary,
@@ -74,8 +75,12 @@ export class Player extends PureComponent {
         ) : (
           <Add onClick={() => addToLibrary(station)} />
         )}
-        <Pause onClick={this.pause} />
-        <Play filled onClick={this.play} />
+
+        {playing ? (
+          <Pause onClick={this.pause} />
+        ) : (
+          <Play filled onClick={this.play} />
+        )}
         <audio
           autoPlay={false}
           ref={e => {

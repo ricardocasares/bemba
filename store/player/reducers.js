@@ -23,6 +23,16 @@ export default function(state = initialState, { type, payload }) {
         hidden: false,
         loading: true
       };
+    case TYPES.PLAY:
+      return {
+        ...state,
+        playing: true
+      };
+    case TYPES.PAUSE:
+      return {
+        ...state,
+        playing: false
+      };
     case TYPES.HIDE:
       return {
         ...state,
