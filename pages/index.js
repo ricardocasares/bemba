@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
 
+import Seo from "../components/Seo";
 import Title from "../components/Text/Title";
 import Subtitle from "../components/Text/Subtitle";
 import Swiper from "../components/Swiper";
@@ -11,6 +12,7 @@ export default class Index extends PureComponent {
   render() {
     return (
       <Content>
+        <Seo />
         <Title>Explore</Title>
         <Subtitle>Trending</Subtitle>
         <Swiper>
