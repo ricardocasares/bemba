@@ -7,7 +7,7 @@ import { rotateZeroNinety } from "../../lib/animations";
 
 let AnimatedButton = Button.extend`
   will-change: opacity, transform;
-  animation: ${rotateZeroNinety} 0.3s linear;
+  animation: ${rotateZeroNinety} 0.1s linear;
 `;
 
 export default ({ ...props }) => (
