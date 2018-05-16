@@ -18,19 +18,19 @@ let Nav = styled.nav`
 
 export default () => (
   <Nav>
-    <Link href="/">
+    <Link prefetch href="/">
       <Home width={24} />
     </Link>
     {/* <Link href="/recent">
       <Clock width={24} />
     </Link> */}
-    <Link href="/search">
+    <Link prefetch href="/search">
       <Search width={24} />
     </Link>
     {/* <Link href="/settings">
       <Options width={24} />
     </Link> */}
-    <Link href="/library">
+    <Link prefetch href="/library">
       <FolderOpen width={24} />
     </Link>
   </Nav>
