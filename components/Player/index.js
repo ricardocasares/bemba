@@ -123,6 +123,7 @@ export default connect(mapProps, {
   padding: 15px;
   background: #333;
   flex: 0 1 auto;
+  will-change: opacity;
   animation: ${opacity} 0.3s ease-in-out;
 
   > div {

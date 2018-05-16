@@ -8,7 +8,8 @@ export default styled.section`
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  animation: ${slideIn} 0.2s linear;
+  will-change: opacity, transform;
+  animation: ${slideIn} 0.1s ease-in;
 
   ::-webkit-scrollbar {
     display: none;

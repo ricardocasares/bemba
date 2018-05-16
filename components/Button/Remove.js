@@ -6,6 +6,7 @@ import Checkmark from "../Icons/Checkmark";
 import { rotateNinetyZero } from "../../lib/animations";
 
 let AnimatedButton = Button.extend`
+  will-change: opacity, transform;
   animation: ${rotateNinetyZero} 0.3s linear;
 `;
 

@@ -1,10 +1,11 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import { connect } from "react-redux";
 import * as actions from "../../store/app/actions";
 
 import Close from "../Button/Close";
+import { opacity } from "../../lib/animations";
 
 let notificationTypes = {
   info: "blue",
@@ -13,17 +14,6 @@ let notificationTypes = {
 
 let type = ({ type }) => notificationTypes[type];
 let hide = ({ hidden }) => (hidden ? "none" : "flex");
-
-let appear = keyframes`
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-`;
-
 let Notification = styled.div`
   padding: 5px 15px;
   font-size: 12px;
@@ -32,7 +22,8 @@ let Notification = styled.div`
   display: ${hide};
   flex: 0 1 1;
   background: ${type};
-  animation: ${appear} 0.2s linear;
+  will-change: opacity;
+  animation: ${opacity} 0.2s linear;
   align-items: center;
 
   button {

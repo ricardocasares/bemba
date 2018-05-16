@@ -6,6 +6,7 @@ import Plus from "../Icons/Plus";
 import { rotateZeroNinety } from "../../lib/animations";
 
 let AnimatedButton = Button.extend`
+  will-change: opacity, transform;
   animation: ${rotateZeroNinety} 0.3s linear;
 `;
 
