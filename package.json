@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "fast-memoize": "^2.3.2",
     "isomorphic-unfetch": "^2.0.0",
     "lodash": "^4.17.10",
     "next": "^6.0.2",
