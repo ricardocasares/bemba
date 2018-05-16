@@ -18,6 +18,7 @@ import Remove from "../Button/Remove";
 import Play from "../Button/Play";
 import Pause from "../Button/Pause";
 import Station from "../Station";
+import { opacity } from "../../lib/animations";
 
 const ERROR_MESSAGE = "Sorry! We couldn't play this radio";
 
@@ -121,7 +122,8 @@ export default connect(mapProps, {
   display: ${hide};
   padding: 15px;
   background: #333;
-  flex: 1 0 1;
+  flex: 0 1 auto;
+  animation: ${opacity} 0.3s ease-in-out;
 
   > div {
     flex: 1;
