@@ -12,7 +12,11 @@ import libraryReducer from "./library";
 import stationsReducer from "./stations";
 
 let middleware = [thunk];
-let localStorageConfig = { states: ["library.stations"], namespace: "app" };
+let localStorageConfig = {
+  debounce: 500,
+  namespace: "app",
+  states: ["library.stations"]
+};
 
 if (!isServer()) {
   middleware.push(save(localStorageConfig));
