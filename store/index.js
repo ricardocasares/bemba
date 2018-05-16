@@ -18,7 +18,7 @@ if (!isServer()) {
   middleware.push(save(localStorageConfig));
 }
 
-if (!isProduction()) {
+if (!isProduction() && !isServer()) {
   middleware.push(logger);
 }
 
