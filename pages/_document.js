@@ -26,6 +26,7 @@ export default class MyDocument extends Document {
             name="google-site-verification"
             content="oDrI2nIuNzWJUxr9GOW2DmfSpkMAlLdBrpNvBdUufAc"
           />
+          <link rel="manifest" href="/static/manifest/manifest.json" />
           <script
             dangerouslySetInnerHTML={{
               __html: `window.dataLayer = window.dataLayer || [];

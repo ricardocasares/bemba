@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "compression": "^1.7.2",
     "isomorphic-unfetch": "^2.0.0",
     "lodash": "^4.17.10",
     "next": "^6.0.2",
@@ -29,7 +30,9 @@
   },
   "now": {
     "name": "bemba",
-    "alias": ["bemba.analogic.al"],
+    "alias": [
+      "bemba.analogic.al"
+    ],
     "env": {
       "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
     }
@@ -38,6 +41,8 @@
     "@zeit/next-bundle-analyzer": "^0.1.1",
     "babel-plugin-inline-dotenv": "^1.1.2",
     "babel-plugin-styled-components": "^1.5.1",
-    "babel-plugin-transform-inline-environment-variables": "^0.4.1"
+    "babel-plugin-transform-inline-environment-variables": "^0.4.1",
+    "next-compose-plugins": "^2.1.1",
+    "next-manifest": "^1.5.0"
   }
 }
