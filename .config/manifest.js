@@ -1,7 +1,7 @@
 module.exports = {
   manifest: {
     scope: "/",
-    startUrl: "/",
+    startUrl: "/?from=app",
     name: "Radio Bemba",
     shortName: "Bemba",
     themeColor: "#222",
