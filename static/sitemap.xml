@@ -1,107 +1,165 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
-<loc>https://bemba.analogic.al/</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>1.00</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/stations/tags/rock</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/stations/tags/Dubstep</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/stations/tags/News</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/stations/tags/Technology</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/stations/state/Krakow</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/stations/state/Kiev</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>
-https://bemba.analogic.al/stations/state/Saint-Petersburg
-</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/stations/state/Minsk</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>
-https://bemba.analogic.al/stations/state/Buenos%20Aires
-</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/stations/state/Amsterdam</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>
-https://bemba.analogic.al/stations/language/Spanish
-</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>
-https://bemba.analogic.al/stations/language/English
-</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>
-https://bemba.analogic.al/stations/language/Russian
-</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/stations/language/Polski</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/recent</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/search</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/settings</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://bemba.analogic.al/library</loc>
-<lastmod>2018-05-12T07:10:56+00:00</lastmod>
-<priority>0.80</priority>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://bemba.analogic.al/</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/tags/Live%20sports</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/tags/rock</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/tags/podcast</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/tags/groove</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/tags/Dubstep</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/tags/News</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/tags/Technology</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/state/Istanbul</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/state/Krakow</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/state/Kiev</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/state/Saint-Petersburg</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/state/Minsk</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/state/Buenos%20Aires</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/state/Amsterdam</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/country/Turkey</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/country/Poland</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/country/Ukraine</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/country/Russia</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/country/Belarus</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/country/Argentina</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/country/Netherlands</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/language/Spanish</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/language/Italian</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/language/Turkish</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/language/English</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/language/Russian</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/language/Ukrainian</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/language/Polski</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/language/Belarusian</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/search</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bemba.analogic.al/library</loc>
+    <lastmod>2018-05-18T10:31:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>
