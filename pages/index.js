@@ -16,179 +16,49 @@ export default class Index extends PureComponent {
         <Title>Explore</Title>
         <Subtitle>Trending</Subtitle>
         <Swiper>
-          <CardLink
-            href="/stations?filter=tags&name=Live sports"
-            as="/tags/Live sports"
-          >
-            Live Sports
-          </CardLink>
-          <CardLink href="/stations?filter=tags&name=rock" as="/tags/rock">
-            Rock
-          </CardLink>
-          <CardLink
-            href="/stations?filter=tags&name=podcast"
-            as="/tags/podcast"
-          >
-            Podcast
-          </CardLink>
-          <CardLink href="/stations?filter=tags&name=groove" as="/tags/groove">
-            Groove
-          </CardLink>
-          <CardLink
-            href="/stations?filter=tags&name=Dubstep"
-            as="/tags/Dubstep"
-          >
-            Dubstep
-          </CardLink>
-          <CardLink href="/stations?filter=tags&name=News" as="/tags/News">
-            News
-          </CardLink>
-          <CardLink
-            href="/stations?filter=tags&name=Technology"
-            as="/tags/Technology"
-          >
-            Technology
-          </CardLink>
+          <CardLink href="/tags/Live sports">Live Sports</CardLink>
+          <CardLink href="/tags/rock">Rock</CardLink>
+          <CardLink href="/tags/podcast">Podcast</CardLink>
+          <CardLink href="/tags/groove">Groove</CardLink>
+          <CardLink href="/tags/Dubstep">Dubstep</CardLink>
+          <CardLink href="/tags/News">News</CardLink>
+          <CardLink href="/tags/Technology">Technology</CardLink>
         </Swiper>
 
         <Subtitle>Top Cities</Subtitle>
         <Swiper>
-          <CardLink
-            href="/stations?filter=state&name=Istanbul"
-            as="/state/Istanbul"
-          >
-            Istanbul
-          </CardLink>
-          <CardLink
-            href="/stations?filter=state&name=Krakow"
-            as="/state/Krakow"
-          >
-            Kraków
-          </CardLink>
-          <CardLink href="/stations?filter=state&name=Kiev" as="/state/Kiev">
-            Kiev
-          </CardLink>
-          <CardLink
-            href="/stations?filter=state&name=Saint-Petersburg"
-            as="/state/Saint-Petersburg"
-          >
-            Saint-Petersburg
-          </CardLink>
+          <CardLink href="/state/Istanbul">Istanbul</CardLink>
+          <CardLink href="/state/Krakow">Kraków</CardLink>
+          <CardLink href="/state/Kiev">Kiev</CardLink>
+          <CardLink href="/state/Saint-Petersburg">Saint-Petersburg</CardLink>
 
-          <CardLink href="/stations?filter=state&name=Minsk" as="/state/Minsk">
-            Minsk
-          </CardLink>
-          <CardLink
-            href="/stations?filter=state&name=Buenos Aires"
-            as="/state/Buenos Aires"
-          >
-            Buenos Aires
-          </CardLink>
-          <CardLink
-            href="/stations?filter=state&name=Amsterdam"
-            as="/state/Amsterdam"
-          >
-            Amsterdam
-          </CardLink>
+          <CardLink href="/state/Minsk">Minsk</CardLink>
+          <CardLink href="/state/Buenos Aires">Buenos Aires</CardLink>
+          <CardLink href="/state/Amsterdam">Amsterdam</CardLink>
         </Swiper>
 
         <Subtitle>Countries</Subtitle>
         <Swiper>
-          <CardLink
-            href="/stations?filter=country&name=Turkey"
-            as="/country/Turkey"
-          >
-            Turkey
-          </CardLink>
-          <CardLink
-            href="/stations?filter=country&name=Poland"
-            as="/country/Poland"
-          >
-            Poland
-          </CardLink>
-          <CardLink
-            href="/stations?filter=country&name=Ukraine"
-            as="/country/Ukraine"
-          >
-            Ukraine
-          </CardLink>
-          <CardLink
-            href="/stations?filter=country&name=Russia"
-            as="/country/Russia"
-          >
-            Russia
-          </CardLink>
+          <CardLink href="/country/Turkey">Turkey</CardLink>
+          <CardLink href="/country/Poland">Poland</CardLink>
+          <CardLink href="/country/Ukraine">Ukraine</CardLink>
+          <CardLink href="/country/Russia">Russia</CardLink>
 
-          <CardLink
-            href="/stations?filter=country&name=Belarus"
-            as="/country/Belarus"
-          >
-            Belarus
-          </CardLink>
-          <CardLink
-            href="/stations?filter=country&name=Argentina"
-            as="/country/Argentina"
-          >
-            Argentina
-          </CardLink>
-          <CardLink
-            href="/stations?filter=country&name=Netherlands"
-            as="/country/Netherlands"
-          >
-            Netherlands
-          </CardLink>
+          <CardLink href="/country/Belarus">Belarus</CardLink>
+          <CardLink href="/country/Argentina">Argentina</CardLink>
+          <CardLink href="/country/Netherlands">Netherlands</CardLink>
         </Swiper>
 
         <Subtitle>Most listened languages</Subtitle>
         <Swiper>
-          <CardLink
-            href="/stations?filter=language&name=Spanish"
-            as="/language/Spanish"
-          >
-            Español
-          </CardLink>
-          <CardLink
-            href="/stations?filter=language&name=Italian"
-            as="/language/Italian"
-          >
-            Italiano
-          </CardLink>
-          <CardLink
-            href="/stations?filter=language&name=Turkish"
-            as="/language/Turkish"
-          >
-            Türk
-          </CardLink>
-          <CardLink
-            href="/stations?filter=language&name=English"
-            as="/language/English"
-          >
-            English
-          </CardLink>
-          <CardLink
-            href="/stations?filter=language&name=Russian"
-            as="/language/Russian"
-          >
-            Pусский
-          </CardLink>
-          <CardLink
-            href="/stations?filter=language&name=Ukrainian"
-            as="/language/Ukrainian"
-          >
-            Українська
-          </CardLink>
-          <CardLink
-            href="/stations?filter=language&name=Polish"
-            as="/language/Polski"
-          >
-            Polski
-          </CardLink>
-          <CardLink
-            href="/stations?filter=language&name=Belarusian"
-            as="/language/Belarusian"
-          >
-            беларускі
-          </CardLink>
+          <CardLink href="/language/Spanish">Español</CardLink>
+          <CardLink href="/language/Italian">Italiano</CardLink>
+          <CardLink href="/language/Turkish">Türk</CardLink>
+          <CardLink href="/language/English">English</CardLink>
+          <CardLink href="/language/Russian">Pусский</CardLink>
+          <CardLink href="/language/Ukrainian">Українська</CardLink>
+          <CardLink href="/language/Polski">Polski</CardLink>
+          <CardLink href="/language/Belarusian">беларускі</CardLink>
         </Swiper>
       </Content>
     );
