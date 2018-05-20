@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-import styled from "styled-components";
 
 import Seo from "../components/Seo";
 import Title from "../components/Text/Title";

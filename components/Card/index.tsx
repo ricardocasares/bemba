@@ -2,7 +2,7 @@ import React, { SFC } from "react";
 import random from "randomcolor";
 import styled from "styled-components";
 
-import Link from "../Link";
+import Link, { LinkProps } from "../Link";
 
 const config = {
   alpha: 0.9,
@@ -29,7 +29,7 @@ export const CardTitle = styled.h3`
 `;
 
 // TODO: unknown props found: className
-export const CardLink: SFC = ({ children, ...props }) => (
+export const CardLink: SFC<LinkProps> = ({ children, ...props }) => (
   <Link {...props}>
     <Card>
       <CardTitle>{children}</CardTitle>
@@ -37,7 +37,7 @@ export const CardLink: SFC = ({ children, ...props }) => (
   </Link>
 );
 
-export default styled(CardLink)`
+export default styled<LinkProps, any>(CardLink)`
   margin-left: 15px;
 
   :last-child {

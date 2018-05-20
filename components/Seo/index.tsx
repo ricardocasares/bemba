@@ -2,14 +2,23 @@ import Head from "next/head";
 import { withRouter } from "next/router";
 
 import seoDescriptions from "../../lib/seo";
+import { SFC } from "react";
 
-export function Seo({
+interface SeoProps {
+  title?: string;
+  criteria?: any;
+  description?: string;
+  canonical?: string;
+  router?: any;
+}
+
+export const Seo: SFC<SeoProps> = ({
   title = "Radio Bemba",
   description = "Listen local radios around the world",
   criteria,
   canonical,
   router
-}) {
+}) => {
   // @TODO: Set as env variable
   let { BASE_URL = "https://bemba.analogic.al" } = process.env;
   let current = [BASE_URL, router.asPath].join("");
@@ -39,6 +48,6 @@ export function Seo({
       <meta property="og:site_name" content="Bemba Radio" />
     </Head>
   );
-}
+};
 
 export default withRouter(Seo);

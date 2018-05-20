@@ -6,7 +6,10 @@ import styled from "styled-components";
 
 export interface StyledLinkProps {
   router?: any;
-  href: string;
+  className?: string;
+}
+
+export interface LinkProps extends LinkState {
   className?: string;
 }
 
@@ -29,9 +32,9 @@ const StyledLink = styled<StyledLinkProps, any>("a")`
 
 const StyledWithRouter = withRouter(StyledLink);
 
-const CustomLink: SFC<LinkState> = ({ children, href, ...props }) => (
-  <Link {...props} href={href}>
-    <StyledWithRouter href={href}>{children}</StyledWithRouter>
+const CustomLink: SFC<LinkProps> = ({ children, className, ...props }) => (
+  <Link {...props} passHref>
+    <StyledWithRouter className={className}>{children}</StyledWithRouter>
   </Link>
 );
 
