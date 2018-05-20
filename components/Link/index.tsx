@@ -1,39 +1,38 @@
 import React, { SFC } from "react";
-import Link from "next/link";
+import Link, { LinkState } from "next/link";
 import { parse } from "url";
-import { withRouter, SingletonRouter } from "next/router";
+import { withRouter } from "next/router";
 import styled from "styled-components";
 
-export interface LinkProps {
-  router?: SingletonRouter;
+export interface StyledLinkProps {
+  router?: any;
+  href: string;
   className?: string;
 }
 
-let CustomLink: SFC<LinkProps> = ({
-  router,
-  children,
-  className,
-  ...props
-}) => (
-  <Link {...props}>
-    <a className={className}>{children}</a>
-  </Link>
-);
-
-let active = fn => ({ href, router }) => {
-  let { pathname } = router;
-  let { pathname: url } = parse(href);
+const active = fn => ({ href, router }) => {
+  const { pathname } = router;
+  const { pathname: url } = parse(href);
   return fn(url === pathname);
 };
+const color = active => (active ? "lime" : "gray");
+const hover = active => (active ? "white" : "white");
 
-let color = active => (active ? "lime" : "gray");
-let hover = active => (active ? "white" : "white");
-
-export default withRouter(styled(CustomLink)`
+const StyledLink = styled<StyledLinkProps, any>("a")`
   color: ${active(color)};
   transition: color 0.3s;
 
   :hover {
     color: ${active(hover)};
   }
-`);
+`;
+
+const StyledWithRouter = withRouter(StyledLink);
+
+const CustomLink: SFC<LinkState> = ({ children, href, ...props }) => (
+  <Link {...props} href={href}>
+    <StyledWithRouter href={href}>{children}</StyledWithRouter>
+  </Link>
+);
+
+export default CustomLink;
