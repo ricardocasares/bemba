@@ -1,9 +1,20 @@
+import React, { SFC } from "react";
 import Link from "next/link";
 import { parse } from "url";
-import { withRouter } from "next/router";
+import { withRouter, SingletonRouter } from "next/router";
 import styled from "styled-components";
 
-let CustomLink = ({ router, children, className, ...props }) => (
+export interface LinkProps {
+  router?: SingletonRouter;
+  className?: string;
+}
+
+let CustomLink: SFC<LinkProps> = ({
+  router,
+  children,
+  className,
+  ...props
+}) => (
   <Link {...props}>
     <a className={className}>{children}</a>
   </Link>
