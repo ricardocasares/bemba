@@ -1,7 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React, { SFC } from "react";
 
-import Button from "./";
+import Button, { ButtonProps } from "./";
 import Plus from "../Icons/Plus";
 import { rotateZeroNinety } from "../../lib/animations";
 
@@ -10,8 +9,10 @@ let AnimatedButton = Button.extend`
   animation: ${rotateZeroNinety} 0.1s linear;
 `;
 
-export default ({ ...props }) => (
+export const Add: SFC<ButtonProps> = ({ ...props }) => (
   <AnimatedButton {...props}>
     <Plus />
   </AnimatedButton>
 );
+
+export default Add;
