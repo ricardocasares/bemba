@@ -11,12 +11,12 @@ export interface ButtonProps {
   onClick: (event: MouseEvent<HTMLButtonElement>) => any;
 }
 
-let size = ({ size = 24 }) => size;
-let color = ({ color = "white" }) => color;
-let filled = ({ filled }) => (filled ? "currentColor" : "none");
-let stroke = ({ stroke = 2 }) => stroke;
-
 export const Button: SFC<ButtonProps> = ({ ...props }) => <button {...props} />;
+
+const size = ({ size = 24 }) => size;
+const color = ({ color = "white" }) => color;
+const stroke = ({ stroke = 2 }) => stroke;
+const filled = ({ filled }) => (filled ? "currentColor" : "transparent");
 
 export const StyledButton = styled(Button)`
   color: ${color};
