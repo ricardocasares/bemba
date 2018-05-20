@@ -20,6 +20,7 @@
     "redux-thunk": "^2.2.0",
     "serve-static": "^1.13.2",
     "styled-components": "^3.2.6",
+    "styled-with-props": "^0.0.4",
     "typescript": "^2.8.3"
   },
   "scripts": {
@@ -31,7 +32,9 @@
   },
   "now": {
     "name": "bemba",
-    "alias": ["bemba.analogic.al"],
+    "alias": [
+      "bemba.analogic.al"
+    ],
     "env": {
       "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
     }
