@@ -1,5 +1,4 @@
 import React, { SFC } from "react";
-import styled from "styled-components";
 
 import Button, { ButtonProps } from "./";
 import Checkmark from "../Icons/Checkmark";
