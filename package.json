@@ -19,6 +19,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "serve-static": "^1.13.2",
+    "slug": "^0.9.1",
     "styled-components": "^3.2.6",
     "styled-with-props": "^0.0.4",
     "typescript": "^2.8.3"
@@ -32,9 +33,7 @@
   },
   "now": {
     "name": "bemba",
-    "alias": [
-      "bemba.analogic.al"
-    ],
+    "alias": ["bemba.analogic.al"],
     "env": {
       "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
     }
