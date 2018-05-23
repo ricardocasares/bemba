@@ -1,6 +1,7 @@
-import React from "react";
+import React, { SFC } from "react";
+import SVGIconProps from "./SVGIconProps";
 
-export default ({
+const EllipsisVertical: SFC<SVGIconProps> = ({
   width = 32,
   height = 32,
   strokeWidth = "6.25%",
@@ -9,7 +10,7 @@ export default ({
   color = "currentcolor"
 }) => (
   <svg
-    id="i-plus"
+    id="i-ellipsis-vertical"
     viewBox="0 0 32 32"
     width={width}
     height={height}
@@ -19,6 +20,10 @@ export default ({
     strokeLinejoin={strokeLinejoin}
     strokeWidth={strokeWidth}
   >
-    <path d="M16 2 L16 30 M2 16 L30 16" />
+    <circle cx="16" cy="7" r="2" />
+    <circle cx="16" cy="16" r="2" />
+    <circle cx="16" cy="25" r="2" />
   </svg>
 );
+
+export default EllipsisVertical;

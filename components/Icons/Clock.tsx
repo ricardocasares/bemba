@@ -1,6 +1,7 @@
-import React from "react";
+import React, { SFC } from "react";
+import SVGIconProps from "./SVGIconProps";
 
-export default ({
+const Clock: SFC<SVGIconProps> = ({
   width = 32,
   height = 32,
   strokeWidth = "6.25%",
@@ -9,7 +10,7 @@ export default ({
   color = "currentcolor"
 }) => (
   <svg
-    id="i-options"
+    id="i-clock"
     viewBox="0 0 32 32"
     width={width}
     height={height}
@@ -19,6 +20,9 @@ export default ({
     strokeLinejoin={strokeLinejoin}
     strokeWidth={strokeWidth}
   >
-    <path d="M28 6 L4 6 M28 16 L4 16 M28 26 L4 26 M24 3 L24 9 M8 13 L8 19 M20 23 L20 29" />
+    <circle cx="16" cy="16" r="14" />
+    <path d="M16 8 L16 16 20 20" />
   </svg>
 );
+
+export default Clock;
