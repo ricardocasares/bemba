@@ -20,6 +20,7 @@ app.prepare().then(() =>
     .get("/library", render("/library"))
     .get("/settings", render("/settings"))
     .get("/:filter/:name", render("/stations"))
+    .get("/radio/:id/:slug", render("/station"))
     .get("/stations/:filter/:name", (req, res) => {
       const { filter, name } = req.params;
       res.redirect(301, `/${filter}/${name}`);
