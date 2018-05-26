@@ -26,9 +26,9 @@ export const CardTitle = styled.h3`
   color: white;
   font-size: 16px;
   font-weight: 500;
+  text-transform: capitalize;
 `;
 
-// TODO: unknown props found: className
 export const CardLink: SFC<LinkProps> = ({ children, ...props }) => (
   <Link {...props}>
     <Card>
