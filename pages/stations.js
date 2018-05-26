@@ -15,7 +15,10 @@ import Title from "../components/Text/Title";
 
 let Stations = ({ filter, name, ...props }) => (
   <Content>
-    <Seo criteria={{ name: filter, value: name }} />
+    <Seo
+      title={`Stations by ${filter} ${name} - Radio Bemba`}
+      criteria={{ name: filter, value: name }}
+    />
     <Title>{decodeURIComponent(name)} stations</Title>
     <StationList {...props} />
   </Content>
