@@ -1,18 +1,18 @@
-import React from "react";
+import React, { SFC } from "react";
 import random from "randomcolor";
 import styled from "styled-components";
 
-import Link from "../Link";
+import Link, { LinkProps } from "../Link";
 
-let config = {
+const config = {
   alpha: 0.9,
   format: "rgba",
   luminosity: "light"
 };
 
-let color = () => random(config);
+const color = () => random(config);
 
-export let Card = styled.div`
+export const Card = styled.div`
   background-color: ${color};
   min-width: 150px;
   margin-right: 0;
@@ -22,13 +22,14 @@ export let Card = styled.div`
   padding: 30px 30px;
 `;
 
-export let CardTitle = styled.h3`
+export const CardTitle = styled.h3`
   color: white;
   font-size: 16px;
   font-weight: 500;
+  text-transform: capitalize;
 `;
 
-export let CardLink = ({ children, ...props }) => (
+export const CardLink: SFC<LinkProps> = ({ children, ...props }) => (
   <Link {...props}>
     <Card>
       <CardTitle>{children}</CardTitle>
@@ -36,7 +37,7 @@ export let CardLink = ({ children, ...props }) => (
   </Link>
 );
 
-export default styled(CardLink)`
+export default styled<LinkProps, any>(CardLink)`
   margin-left: 15px;
 
   :last-child {

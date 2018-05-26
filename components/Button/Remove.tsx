@@ -1,7 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React, { SFC } from "react";
 
-import Button from "./";
+import Button, { ButtonProps } from "./";
 import Checkmark from "../Icons/Checkmark";
 import { rotateNinetyZero } from "../../lib/animations";
 
@@ -10,8 +9,10 @@ let AnimatedButton = Button.extend`
   animation: ${rotateNinetyZero} 0.1s linear;
 `;
 
-export default ({ ...props }) => (
+export const Remove: SFC<ButtonProps> = ({ ...props }) => (
   <AnimatedButton {...props}>
     <Checkmark color={"lime"} />
   </AnimatedButton>
 );
+
+export default Remove;

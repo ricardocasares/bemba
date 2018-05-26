@@ -1,6 +1,7 @@
-import React from "react";
+import React, { SFC } from "react";
+import SVGIconProps from "./SVGIconProps";
 
-export default ({
+const Link: SFC<SVGIconProps> = ({
   width = 32,
   height = 32,
   strokeWidth = "6.25%",
@@ -9,7 +10,7 @@ export default ({
   color = "currentcolor"
 }) => (
   <svg
-    id="i-search"
+    id="i-bookmark"
     viewBox="0 0 32 32"
     width={width}
     height={height}
@@ -19,7 +20,8 @@ export default ({
     strokeLinejoin={strokeLinejoin}
     strokeWidth={strokeWidth}
   >
-    <circle cx={14} cy={14} r={12} />
-    <path d="M23 23 L30 30" />
+    <path d="M6 2 L26 2 26 30 16 20 6 30 Z" />
   </svg>
 );
+
+export default Link;

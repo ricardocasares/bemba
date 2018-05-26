@@ -1,6 +1,7 @@
-import React from "react";
+import React, { SFC } from "react";
+import SVGIconProps from "./SVGIconProps";
 
-export default ({
+const FolderOpen: SFC<SVGIconProps> = ({
   width = 32,
   height = 32,
   strokeWidth = "6.25%",
@@ -9,7 +10,7 @@ export default ({
   color = "currentcolor"
 }) => (
   <svg
-    id="i-pause"
+    id="i-folder-open"
     viewBox="0 0 32 32"
     width={width}
     height={height}
@@ -19,6 +20,8 @@ export default ({
     strokeLinejoin={strokeLinejoin}
     strokeWidth={strokeWidth}
   >
-    <path d="M23 2 L23 30 M9 2 L9 30" />
+    <path d="M4 28 L28 28 30 12 14 12 10 8 2 8 Z M28 12 L28 4 4 4 4 8" />
   </svg>
 );
+
+export default FolderOpen;

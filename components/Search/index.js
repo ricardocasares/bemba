@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import debounce from "lodash/debounce";
+import debounce from "lodash.debounce";
 import { withRouter } from "next/router";
 import { connect } from "react-redux";
 // store

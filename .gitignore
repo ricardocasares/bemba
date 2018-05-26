@@ -1,3 +1,4 @@
+*.log
 /.next
 /.bundles
 /node_modules

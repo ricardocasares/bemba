@@ -1,6 +1,7 @@
-import React from "react";
+import React, { SFC } from "react";
+import SVGIconProps from "./SVGIconProps";
 
-export default ({
+const Close: SFC<SVGIconProps> = ({
   width = 32,
   height = 32,
   strokeWidth = "6.25%",
@@ -22,3 +23,5 @@ export default ({
     <path d="M2 30 L30 2 M30 30 L2 2" />
   </svg>
 );
+
+export default Close;

@@ -93,7 +93,7 @@ export class Player extends PureComponent {
         {playing ? (
           <Pause onClick={this.pause} />
         ) : (
-          <Play filled onClick={this.play} />
+          <Play filled="true" onClick={this.play} />
         )}
         <audio
           autoPlay={false}
