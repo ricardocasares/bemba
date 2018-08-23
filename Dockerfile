@@ -10,4 +10,4 @@ FROM mhart/alpine-node:base
 WORKDIR /app
 ENV NODE_ENV="production"
 COPY --from=build /build .
-CMD node server.js
+CMD ["node", "server.js"]
