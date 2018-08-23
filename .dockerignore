@@ -1,0 +1,15 @@
+*
+!.config
+!assets
+!components
+!lib
+!pages
+!static
+!store
+!.babelrc
+!package.json
+!package-lock.json
+!next.config.js
+!server.js
+!tsconfig.json
+!yarn.lock
