@@ -29,10 +29,10 @@
     "typescript": "^2.8.3"
   },
   "scripts": {
-    "dev": "yarn clean && node server",
+    "dev": "npm run clean && node server",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "analyze": "BUNDLE_ANALYZE=both yarn build",
+    "analyze": "BUNDLE_ANALYZE=both npm run build",
     "clean": "rm -rf ./node_modules/.cache/babel-loader"
   },
   "devDependencies": {
