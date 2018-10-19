@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 import Link from "../Link";
 import Home from "../Icons/Home";
-import Clock from "../Icons/Clock";
 import Search from "../Icons/Search";
-import Options from "../Icons/Options";
 import FolderOpen from "../Icons/FolderOpen";
 
 let Nav = styled.nav`

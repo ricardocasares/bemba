@@ -9,7 +9,7 @@ import Seo from "../components/Seo";
 import Content from "../components/Content";
 import Search from "../components/Search";
 import Player from "../components/Player";
-import Navigation from "../components/Navigation";
+import Navigation from "../components/Navigation/index";
 import StationList from "../components/StationList";
 import Title from "../components/Text/Title";
 
