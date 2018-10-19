@@ -5,7 +5,7 @@ import Title from "../components/Text/Title";
 import Subtitle from "../components/Text/Subtitle";
 import Swiper from "../components/Swiper";
 import CardLink from "../components/Card";
-import Content from "../components/Content";
+import Content from "../components/Content/index";
 
 export default class Index extends PureComponent {
   render() {

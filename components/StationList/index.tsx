@@ -6,7 +6,7 @@ import Link from "../Link";
 import Add from "../Button/Add";
 import Remove from "../Button/Remove";
 import Bookmark from "../Icons/EllipsisVertical";
-import Station from "../Station";
+import Station from "../Station/index";
 
 let StationButton = styled.button`
   text-decoration: none;
@@ -30,7 +30,7 @@ export default ({ stations = [], library = [], load, add, remove }) => (
   <Fragment>
     {Object.keys(stations).map(id => (
       <Item key={id}>
-        <StationButton onClick={e => load(stations[id])}>
+        <StationButton onClick={() => load(stations[id])}>
           <Station {...stations[id]} />
         </StationButton>
         {library[id] ? (

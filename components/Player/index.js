@@ -17,7 +17,7 @@ import Add from "../Button/Add";
 import Remove from "../Button/Remove";
 import Play from "../Button/Play";
 import Pause from "../Button/Pause";
-import Station from "../Station";
+import Station from "../Station/index";
 import { opacity } from "../../lib/animations";
 
 const ERROR_MESSAGE = "Sorry! We couldn't play this radio";

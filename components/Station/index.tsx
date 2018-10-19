@@ -26,7 +26,7 @@ let Station = styled.div`
   }
 `;
 
-export default ({ name, country, state, className = "" }) => (
+export default ({ name, country, state}) => (
   <Station>
     <Title>{name}</Title>
     <Subtitle>{[state, country].filter(x => x).join(", ")}</Subtitle>

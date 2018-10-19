@@ -8,10 +8,10 @@ import { add, remove } from "../store/library/actions";
 
 import Seo from "../components/Seo";
 import Subtitle from "../components/Text/Subtitle";
-import Content from "../components/Content";
-import StationItem from "../components/Station";
+import Content from "../components/Content/index";
+import StationItem from "../components/Station/index";
 import Swiper from "../components/Swiper";
-import CardLink, { Card } from "../components/Card";
+import CardLink from "../components/Card";
 import Add from "../components/Button/Add";
 import Play from "../components/Button/Play";
 import Remove from "../components/Button/Remove";
