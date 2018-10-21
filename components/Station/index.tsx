@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SFC } from "react";
 import styled from "styled-components";
 
 let Title = styled.h3`
@@ -15,7 +15,21 @@ let Subtitle = styled.p`
   font-weight: 300;
 `;
 
-let Station = styled.div`
+interface StationProps {
+  name: string;
+  country: string;
+  state: string;
+  className?: string;
+}
+
+const Station: SFC<StationProps> = ({ name, country, state }) => (
+  <div>
+    <Title>{name}</Title>
+    <Subtitle>{[state, country].filter(x => x).join(", ")}</Subtitle>
+  </div>
+);
+
+export default styled(Station)`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow-x: auto;
@@ -25,10 +39,3 @@ let Station = styled.div`
     display: none;
   }
 `;
-
-export default ({ name, country, state}) => (
-  <Station>
-    <Title>{name}</Title>
-    <Subtitle>{[state, country].filter(x => x).join(", ")}</Subtitle>
-  </Station>
-);

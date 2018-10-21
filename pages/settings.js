@@ -2,7 +2,7 @@ import React from "react";
 
 import Title from "../components/Text/Title";
 import Subtitle from "../components/Text/Subtitle";
-import Content from "../components/Content/index";
+import Content from "../components/Content";
 
 export default () => (
   <Content>
