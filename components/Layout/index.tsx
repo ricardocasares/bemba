@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SFC } from "react";
 import styled from "styled-components";
 
 import Player from "../Player";
@@ -10,7 +10,7 @@ export const StyleLayout = styled.div`
   display: flex;
   flex-flow: column;
 `;
-export const Layout = ({ children }) => (
+export const Layout: SFC<{}> = ({ children }) => (
 <StyleLayout>
     {children}
     <Notification />
