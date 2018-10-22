@@ -9,7 +9,7 @@ import configureProgressBar from "../lib/utils/routing";
 // store
 import makeStore from "../store";
 // components
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/index";
 
 export default withRedux(makeStore)(
   class extends App {

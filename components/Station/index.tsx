@@ -1,5 +1,5 @@
-import React, { SFC } from 'react';
-import styled from 'styled-components';
+import React, { SFC } from "react";
+import styled from "styled-components";
 
 let Title = styled.h3`
   font-size: 16px;
@@ -22,15 +22,10 @@ interface StationProps {
   className?: string;
 }
 
-const Station: SFC<StationProps> = ({
-  name,
-  country,
-  state,
-  className = '',
-}) => (
+const Station: SFC<StationProps> = ({ name, country, state }) => (
   <div>
     <Title>{name}</Title>
-    <Subtitle>{[state, country].filter(x => x).join(', ')}</Subtitle>
+    <Subtitle>{[state, country].filter(x => x).join(", ")}</Subtitle>
   </div>
 );
 

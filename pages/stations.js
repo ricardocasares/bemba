@@ -6,7 +6,7 @@ import { stations } from "../store/stations/actions";
 import { add, remove } from "../store/library/actions";
 // components
 import Seo from "../components/Seo";
-import Content from "../components/Content";
+import Content from "../components/Content/index";
 import Search from "../components/Search";
 import Player from "../components/Player";
 import Navigation from "../components/Navigation";
