@@ -1,21 +1,21 @@
-import React from "react";
+import React, { SFC } from "react";
 import styled from "styled-components";
 
 import Player from "../Player";
 import Navigation from "../Navigation";
 import Notification from "../Notification";
 
-export let Layout = styled.div`
+export const StyleLayout = styled.div`
   height: 100%;
   display: flex;
   flex-flow: column;
 `;
-
-export default ({ children }) => (
-  <Layout>
+export const Layout: SFC<{}> = ({ children }) => (
+<StyleLayout>
     {children}
     <Notification />
     <Player />
     <Navigation />
-  </Layout>
+  </StyleLayout>
 );
+export default Layout;
