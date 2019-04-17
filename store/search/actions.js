@@ -9,13 +9,12 @@ export let pending = create(TYPES.PENDING);
 export let resolved = create(TYPES.RESOLVED);
 export let rejected = create(TYPES.REJECTED);
 
-export let search = function search({ query, page, limit }) {
+export let search = function search({ query }) {
   return async dispatch => {
     if (!query) return;
     dispatch(pending({ query }));
-
     try {
-      let results = await api.search({ query });
+      let results = await api.search({ filter: "name", name: query });
 
       dispatch(resolved({ results, loading: false }));
     } catch (err) {

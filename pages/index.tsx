@@ -16,35 +16,29 @@ export default class Index extends PureComponent {
         <Subtitle>Trending</Subtitle>
         <Swiper>
           <CardLink
-            href="/stations?filter=tags&name=Live sports"
-            as="/tags/Live sports"
+            href="/stations?filter=tag&name=Live sports"
+            as="/tag/Live sports"
           >
             Live Sports
           </CardLink>
-          <CardLink href="/stations?filter=tags&name=rock" as="/tags/rock">
+          <CardLink href="/stations?filter=tag&name=rock" as="/tag/rock">
             Rock
           </CardLink>
-          <CardLink
-            href="/stations?filter=tags&name=podcast"
-            as="/tags/podcast"
-          >
+          <CardLink href="/stations?filter=tag&name=podcast" as="/tag/podcast">
             Podcast
           </CardLink>
-          <CardLink href="/stations?filter=tags&name=groove" as="/tags/groove">
+          <CardLink href="/stations?filter=tag&name=groove" as="/tag/groove">
             Groove
           </CardLink>
-          <CardLink
-            href="/stations?filter=tags&name=Dubstep"
-            as="/tags/Dubstep"
-          >
+          <CardLink href="/stations?filter=tag&name=Dubstep" as="/tag/Dubstep">
             Dubstep
           </CardLink>
-          <CardLink href="/stations?filter=tags&name=News" as="/tags/News">
+          <CardLink href="/stations?filter=tag&name=News" as="/tag/News">
             News
           </CardLink>
           <CardLink
-            href="/stations?filter=tags&name=Technology"
-            as="/tags/Technology"
+            href="/stations?filter=tag&name=Technology"
+            as="/tag/Technology"
           >
             Technology
           </CardLink>

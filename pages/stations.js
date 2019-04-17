@@ -34,4 +34,7 @@ let mapProps = ({ stations, library }) => ({
   stations: stations.stations,
   library: library.stations
 });
-export default connect(mapProps, { load, add, remove })(Stations);
+export default connect(
+  mapProps,
+  { load, add, remove }
+)(Stations);

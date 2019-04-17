@@ -40,24 +40,20 @@ class Station extends PureComponent<StationProps> {
 
   render() {
     const { load, add, remove, station, library } = this.props;
-    const { language } = station;
-    const tags = station.tags.split(",").filter(x => x);
-    const location = [station.country, station.state].filter(x => x);
-    const [country, state] = location;
+    const { id, language, tags, name, country, state } = station;
+    const location = [country, state].filter(x => x).join("");
 
     return (
       <Content>
         <Seo
-          title={[station.name, location.join(", "), "Radio Bemba"].join(" - ")}
-          description={[station.name, location.join(", "), tags.join(" ")].join(
-            " "
-          )}
+          title={[name, location, "Radio Bemba"].join(" - ")}
+          description={[name, location, tags.join(" ")].join(" ")}
         />
         <Toolbar>
           <StationItem {...station} />
           <Play onClick={() => load(station)} />
-          {library[station.id] ? (
-            <Remove onClick={() => remove(station.id)} />
+          {library[id] ? (
+            <Remove onClick={() => remove(id)} />
           ) : (
             <Add onClick={() => add(station)} />
           )}
@@ -67,8 +63,8 @@ class Station extends PureComponent<StationProps> {
           {tags.map(tag => (
             <CardLink
               key={tag}
-              href={`/stations?filter=tags&name=${tag}`}
-              as={`/tags/${tag}`}
+              href={`/stations?filter=tag&name=${tag}`}
+              as={`/tag/${tag}`}
             >
               {tag}
             </CardLink>
@@ -108,4 +104,7 @@ const mapProps = ({ station, library }) => ({
   library: library.stations
 });
 
-export default connect<StationProps>(mapProps, { add, remove, load })(Station);
+export default connect<StationProps>(
+  mapProps,
+  { add, remove, load }
+)(Station);

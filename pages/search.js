@@ -33,4 +33,7 @@ let mapProps = ({ search, library }) => ({
   stations: search.results,
   library: library.stations
 });
-export default connect(mapProps, { load, add, remove })(Search);
+export default connect(
+  mapProps,
+  { load, add, remove }
+)(Search);
