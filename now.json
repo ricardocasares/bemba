@@ -1,13 +1,9 @@
 {
   "name": "bemba",
-  "type": "docker",
   "alias": ["bemba.analogic.al"],
   "build": {
     "env": {
       "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
     }
-  },
-  "features": {
-    "cloud": "v2"
   }
 }

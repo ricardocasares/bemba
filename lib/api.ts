@@ -1,4 +1,3 @@
-import { encode } from "querystring";
 import fetch from "isomorphic-unfetch";
 import { toObjectByKey } from "./utils";
 

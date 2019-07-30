@@ -1,17 +1,14 @@
 {
-  "presets": ["next/babel", "@zeit/next-typescript/babel"],
+  "presets": ["next/babel"],
   "plugins": [
     [
-      "styled-components",
-      { "ssr": true, "displayName": true, "preprocess": false }
+      "emotion",
+      {
+        "sourceMap": true,
+        "autoLabel": true,
+        "labelFormat": "[local]",
+        "cssPropOptimization": false
+      }
     ]
-  ],
-  "env": {
-    "development": {
-      "plugins": ["inline-dotenv"]
-    },
-    "production": {
-      "plugins": ["transform-inline-environment-variables"]
-    }
-  }
+  ]
 }
