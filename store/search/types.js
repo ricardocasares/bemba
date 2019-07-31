@@ -1,3 +1,0 @@
-export const PENDING = "SEARCH/PENDING";
-export const RESOLVED = "SEARCH/RESOLVED";
-export const REJECTED = "SEARCH/REJECTED";

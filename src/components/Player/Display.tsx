@@ -3,7 +3,7 @@ import { Station, Title, Subtitle } from "./styles";
 
 export const Display = () => (
   <Station>
-    <Title>Test</Title>
-    <Subtitle>Test</Subtitle>
+    <Title>FM 101.5 Bemba</Title>
+    <Subtitle>Buenos Aires, Argentina</Subtitle>
   </Station>
 );

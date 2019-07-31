@@ -1,3 +1,0 @@
-export const PENDING = "STATIONS/PENDING";
-export const RESOLVED = "STATIONS/RESOLVED";
-export const REJECTED = "STATIONS/REJECTED";

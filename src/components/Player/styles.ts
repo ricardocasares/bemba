@@ -45,8 +45,6 @@ export const baseHeader = css`
 
 export const Title = styled.h4`
   ${baseHeader}
-  border-bottom: 2px solid #555;
-  margin-bottom: 3px;
 `;
 
 export const Subtitle = styled.h5`

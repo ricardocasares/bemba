@@ -1,3 +1,0 @@
-export const SHOW_INFO = "APP/SHOW_INFO";
-export const SHOW_ERROR = "APP/SHOW_ERROR";
-export const NOTIFICATION_HIDE = "APP/NOTIFICATION_HIDE";
