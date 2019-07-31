@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Container = styled.section`
+export const Wrapper = styled.section`
   padding: 15px;
   margin-bottom: 25px;
 `;
@@ -8,7 +8,7 @@ export const Container = styled.section`
 export const Header = styled.h3`
   margin: 0;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 `;
 
 export const Scroller = styled.div`

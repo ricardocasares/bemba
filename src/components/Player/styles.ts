@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/core";
+import { ellipsis } from "../../css";
 import { Heart, Play } from "react-bytesize-icons";
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   background: #1e1e1e;
 `;
@@ -28,28 +30,26 @@ export const Controls = styled.div`
 `;
 
 export const Station = styled.div`
-  display: flex;
   flex: 1;
-  padding: 15px;
+  display: flex;
   flex-direction: column;
+  padding: 15px;
   min-width: 0;
 `;
 
-export const Title = styled.h4`
+export const baseHeader = css`
+  ${ellipsis}
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   font-weight: 400;
+`;
+
+export const Title = styled.h4`
+  ${baseHeader}
   border-bottom: 2px solid #555;
   margin-bottom: 3px;
 `;
 
 export const Subtitle = styled.h5`
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: 400;
+  ${baseHeader}
   color: #939393;
 `;

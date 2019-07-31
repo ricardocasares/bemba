@@ -1,10 +1,7 @@
 import styled from "@emotion/styled";
+import { gradient, ellipsis } from "../../css";
 
 export const GradientBox = styled.div`
-  background: #ad5389;
-  background: -webkit-linear-gradient(to right, #3c1053, #ad5389);
-  background: linear-gradient(to right, #3c1053, #ad5389);
-
   padding: 15px;
   border-radius: 5px;
   height: 150px;
@@ -13,9 +10,7 @@ export const GradientBox = styled.div`
   h3,
   h4 {
     margin: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    ${ellipsis}
   }
 
   h3 {
@@ -28,4 +23,6 @@ export const GradientBox = styled.div`
     font-size: 14px;
     font-weight: 400;
   }
+
+  ${gradient("#3c1053", "#ad5389", "90deg")}
 `;
