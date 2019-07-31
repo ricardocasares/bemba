@@ -13,9 +13,10 @@ export const Input = styled.input`
   border: none;
   width: 100%;
   border-radius: 3px;
-  background: #1e1e1e;
+  background: #2e2e2e;
   padding: 10px;
   font-size: 16px;
-  color: #939393;
-  font-weight: 400;
+  color: #fff;
+  font-weight: 500;
+  opacity: 0.95;
 `;
