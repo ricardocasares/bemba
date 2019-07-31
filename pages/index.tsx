@@ -1,10 +1,14 @@
 import React from "react";
-import { Layout } from "@/components/Layout";
+import { Player } from "../src/components/Player";
+import { Layout } from "../src/components/Layout";
 
-const Index = () => (
-  <Layout>
-    <h1>Hello</h1>
-  </Layout>
-);
+function Index() {
+  return (
+    <Layout>
+      <div>Hello</div>
+      <Player />
+    </Layout>
+  );
+}
 
 export default Index;
