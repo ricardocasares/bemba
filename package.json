@@ -12,6 +12,7 @@
     "react": "^16.8.6",
     "react-bytesize-icons": "^0.10.0",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5"
   },
@@ -25,6 +26,7 @@
     "@types/react": "^16.8.23",
     "@types/react-bytesize-icons": "^0.6.4",
     "@types/react-dom": "^16.8.5",
+    "@types/react-redux": "^7.1.1",
     "babel-plugin-emotion": "^10.0.14",
     "typescript": "latest"
   }
