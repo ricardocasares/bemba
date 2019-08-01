@@ -1,11 +1,11 @@
 import React from "react";
-import { Layout } from "../src/components/Layout";
-import { Search } from "../src/components/Search";
-import { Content } from "../src/components/Content";
-import { Swiper } from "../src/components/Swiper";
-import { GradientBox } from "../src/components/GradientBox";
-import { Player } from "../src/components/Player";
-import { Bar } from "../src/components/Bar";
+import { Layout } from "@/components/Layout";
+import { Search } from "@/components/Search";
+import { Content } from "@/components/Content";
+import { Swiper } from "@/components/Swiper";
+import { GradientBox } from "@/components/GradientBox";
+import { Player } from "@/components/Player";
+import { Bar } from "@/components/Bar";
 
 function Index() {
   return (

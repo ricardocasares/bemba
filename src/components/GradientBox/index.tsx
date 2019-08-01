@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { gradient, ellipsis } from "../../css";
+import { gradient, ellipsis } from "@/css";
 
 export const GradientBox = styled.div`
   padding: 15px;

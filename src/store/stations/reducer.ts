@@ -1,5 +1,5 @@
 import { Reducer } from "redux";
-import { Station } from "../state";
+import { Station } from "@/store/state";
 import { Type, Actions } from "./actions";
 
 export const init: Station[] = [];

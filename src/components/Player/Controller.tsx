@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Controls, LikeIcon, PlayIcon, Button } from "./styles";
 import { State, Player } from "@/store/state";
-import { play } from "../../store/player";
+import { play } from "@/store/player";
 
 export function LikeButton() {
   return (

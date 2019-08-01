@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
-import { ellipsis } from "../../css";
+import { ellipsis } from "@/css";
 import { Heart, Play } from "react-bytesize-icons";
 
 export const Wrapper = styled.div`

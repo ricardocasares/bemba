@@ -9,6 +9,15 @@
         "labelFormat": "[local]",
         "cssPropOptimization": false
       }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@": "./src"
+        }
+      }
     ]
   ]
 }

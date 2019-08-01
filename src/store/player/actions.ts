@@ -1,5 +1,5 @@
 import { Action } from "redux";
-import { Station } from "../state";
+import { Station } from "@/store/state";
 
 export enum Type {
   LOAD = "@bemba/player/load",

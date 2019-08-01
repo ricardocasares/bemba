@@ -1,5 +1,5 @@
 import { Reducer } from "redux";
-import { Player } from "../state";
+import { Player } from "@/store/state";
 import { Type, Actions } from "./actions";
 
 export const init: Player = {

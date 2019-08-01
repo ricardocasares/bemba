@@ -6,9 +6,9 @@ import { Provider } from "react-redux";
 import { Global } from "@emotion/core";
 import App, { Container, AppContext } from "next/app";
 import Head from "next/head";
-import { reset } from "../src/css/reset";
-import { configureStore } from "../src/store";
-import { State } from "../src/store/state";
+import { reset } from "@/css/reset";
+import { configureStore } from "@/store";
+import { State } from "@/store/state";
 
 type BembaProps = { store: Store<State> };
 
