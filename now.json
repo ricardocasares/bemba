@@ -1,9 +1,9 @@
 {
   "name": "bemba",
   "alias": ["bemba.analogic.al"],
-  "build": {
-    "env": {
-      "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
-    }
-  }
+  "env": {
+    "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
+  },
+  "routes": [{ "src": "/(.*)", "dest": "$1" }],
+  "builds": [{ "src": "package.json", "use": "@now/next" }]
 }
