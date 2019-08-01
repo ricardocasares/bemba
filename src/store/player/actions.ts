@@ -1,35 +1,35 @@
 import { Action } from "redux";
 import { Station } from "../state";
 
-export enum Types {
+export enum Type {
   LOAD = "@bemba/player/load",
   READY = "@bemba/player/ready",
   PLAY = "@bemba/player/play",
   PAUSE = "@bemba/player/pause"
 }
 
-export type Ready = Action<Types.READY>;
-export type Play = Action<Types.PLAY>;
-export type Pause = Action<Types.PAUSE>;
-export type Load = Action<Types.LOAD> & {
+export type Ready = Action<Type.READY>;
+export type Play = Action<Type.PLAY>;
+export type Pause = Action<Type.PAUSE>;
+export type Load = Action<Type.LOAD> & {
   readonly payload: { station: Station };
 };
 
 export type Actions = Play | Pause | Load | Ready;
 
 export const load = (station: Station): Load => ({
-  type: Types.LOAD,
+  type: Type.LOAD,
   payload: { station }
 });
 
 export const ready = (): Ready => ({
-  type: Types.READY
+  type: Type.READY
 });
 
 export const play = (): Play => ({
-  type: Types.PLAY
+  type: Type.PLAY
 });
 
 export const pause = (): Pause => ({
-  type: Types.PAUSE
+  type: Type.PAUSE
 });

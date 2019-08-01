@@ -1,6 +1,6 @@
 import { Reducer } from "redux";
 import { Player } from "../state";
-import { Types, Actions } from "./actions";
+import { Type, Actions } from "./actions";
 
 export const init: Player = {
   ready: false,
@@ -13,13 +13,13 @@ export const reducer: Reducer<Player, Actions> = (
   action
 ): Player => {
   switch (action.type) {
-    case Types.LOAD:
+    case Type.LOAD:
       return { ...state, ready: false, loading: true, ...action.payload };
-    case Types.READY:
+    case Type.READY:
       return { ...state, ready: true, loading: false };
-    case Types.PLAY:
+    case Type.PLAY:
       return { ...state, playing: true };
-    case Types.PAUSE:
+    case Type.PAUSE:
       return { ...state, playing: false };
     default:
       return state;

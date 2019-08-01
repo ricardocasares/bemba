@@ -1,10 +1,11 @@
 import { delay, put, take } from "redux-saga/effects";
-import { Types, play } from "./player";
+import { Type, play } from "./player";
 
 export function* sagas() {
-  yield take(Types.PLAY);
+  yield take(Type.PLAY);
   while (true) {
     yield put(play());
+    console.log("tick");
     yield delay(1000);
   }
 }
