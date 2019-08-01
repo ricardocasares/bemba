@@ -1,14 +1,14 @@
 import React from "react";
-import Head from "next/head";
-import App, { Container, AppContext } from "next/app";
-import { Provider } from "react-redux";
 import withSagas from "next-redux-saga";
 import withRedux from "next-redux-wrapper";
-import { configureStore } from "../src/store";
-import { Global } from "@emotion/core";
-import { reset } from "../src/css/reset";
-import { State } from "../src/store/state";
 import { Store } from "redux";
+import { Provider } from "react-redux";
+import { Global } from "@emotion/core";
+import App, { Container, AppContext } from "next/app";
+import Head from "next/head";
+import { reset } from "../src/css/reset";
+import { configureStore } from "../src/store";
+import { State } from "../src/store/state";
 
 type BembaProps = { store: Store<State> };
 
