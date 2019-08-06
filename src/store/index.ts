@@ -1,5 +1,5 @@
 import createSagaMiddleware from "redux-saga";
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, createStore, compose, StoreEnhancer } from "redux";
 import { State } from "./state";
 import { sagas } from "./sagas";
 import { reducers } from "./reducers";
@@ -11,9 +11,19 @@ export const init: State = {
   stations
 };
 
+const isBrowser = () => typeof window !== "undefined";
+const withDevTools = (mw: StoreEnhancer<any>) => {
+  if (isBrowser()) {
+    return window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(mw);
+  }
+
+  return compose(mw);
+};
+
 export const configureStore = (state: State = init) => {
   const mw = createSagaMiddleware();
-  const store = createStore(reducers, state, applyMiddleware(mw));
+
+  const store = createStore(reducers, state, withDevTools(applyMiddleware(mw)));
 
   // @ts-ignore
   store.sagaTask = mw.run(sagas);

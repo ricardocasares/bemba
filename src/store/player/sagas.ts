@@ -1,34 +1,51 @@
 import { eventChannel } from "redux-saga";
-import { call, put, take, takeLatest, fork } from "redux-saga/effects";
+import { put, take, fork, call, select, takeLatest } from "redux-saga/effects";
+import { ActionType as AppActionType } from "@/store/app";
+import { ActionType } from "./actions";
 import { api, audioChannel } from "./audio";
-import { Types /* Load */ } from "./actions";
-import { Type as AppTypes } from "../app/actions";
 
-export function* load(/* action: Load */) {
-  yield call(
-    api.load,
-    "https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg"
-  );
+export function* load() {
+  const station = yield select(({ player: { station } }) => station);
+  yield call(api.load, station.url);
 }
 
 export function* play() {
   yield call(api.play);
 }
 
+export function* pause() {
+  yield call(api.pause);
+}
+
 export function* watchInit() {
-  yield take(AppTypes.CLIENT_READY);
+  yield take(AppActionType.CLIENT_READY);
   const channel = yield call(eventChannel, audioChannel);
+
   while (true) {
     yield put(yield take(channel));
   }
 }
 
 export function* watchPlay() {
-  yield takeLatest(Types.PLAY, load);
+  yield takeLatest(ActionType.PLAY, play);
+}
+
+export function* watchLoad() {
+  yield takeLatest(ActionType.LOAD, load);
+}
+
+export function* watchPause() {
+  yield takeLatest(ActionType.PAUSE, pause);
 }
 
 export function* watchReady() {
-  yield takeLatest(Types.READY, play);
+  yield takeLatest(ActionType.READY, play);
 }
 
-export const playerSagas = [fork(watchInit), fork(watchPlay), fork(watchReady)];
+export const playerSagas = [
+  fork(watchInit),
+  fork(watchLoad),
+  fork(watchReady),
+  fork(watchPlay),
+  fork(watchPause)
+];

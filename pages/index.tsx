@@ -4,8 +4,9 @@ import { Search } from "@/components/Search";
 import { Content } from "@/components/Content";
 import { Swiper } from "@/components/Swiper";
 import { GradientBox } from "@/components/GradientBox";
-import { Player } from "@/components/Player";
 import { Bar } from "@/components/Bar";
+import { ConnectedLike } from "@/components/Player/Controls/Like";
+import { ConnectedPlayer } from "@/components/Player";
 
 function Index() {
   return (
@@ -16,6 +17,7 @@ function Index() {
           <GradientBox>
             <h3>FM 103.5 Mega</h3>
             <h4>Buenos Aires, Argentina</h4>
+            <ConnectedLike />
           </GradientBox>
           <GradientBox>
             <h3>La Popu 101.2</h3>
@@ -55,7 +57,7 @@ function Index() {
           </GradientBox>
         </Swiper>
       </Content>
-      <Player />
+      <ConnectedPlayer />
       <Bar />
     </Layout>
   );

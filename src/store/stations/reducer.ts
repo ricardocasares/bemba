@@ -1,6 +1,6 @@
 import { Reducer } from "redux";
 import { Station } from "@/store/state";
-import { Type, Actions } from "./actions";
+import { Actions, ActionType } from "./actions";
 
 export const init: Station[] = [];
 
@@ -9,9 +9,11 @@ export const reducer: Reducer<Station[], Actions> = (
   action
 ): Station[] => {
   switch (action.type) {
-    case Type.LOAD:
+    case ActionType.REQUEST:
       return state;
-    case Type.LIKE:
+    case ActionType.RECEIVE:
+      return state;
+    case ActionType.LIKE:
       return state;
     default:
       return state;

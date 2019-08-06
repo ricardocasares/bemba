@@ -1,10 +1,10 @@
 import { Action } from "redux";
 import { Station } from "@/store/state";
 
-export enum Types {
-  READY = "@bemba/player/ready",
+export enum ActionType {
   LOAD = "@bemba/player/load",
   LOADING = "@bemba/player/loading",
+  READY = "@bemba/player/ready",
   PLAY = "@bemba/player/play",
   PLAYING = "@bemba/player/playing",
   PAUSE = "@bemba/player/pause",
@@ -12,16 +12,16 @@ export enum Types {
   ERRORED = "@bemba/player/errored"
 }
 
-export interface Play extends Action<Types.PLAY> {}
-export interface Playing extends Action<Types.PLAYING> {}
-export interface Pause extends Action<Types.PAUSE> {}
-export interface Paused extends Action<Types.PAUSED> {}
-export interface Load extends Action<Types.LOAD> {
+export interface Play extends Action<ActionType.PLAY> {}
+export interface Playing extends Action<ActionType.PLAYING> {}
+export interface Pause extends Action<ActionType.PAUSE> {}
+export interface Paused extends Action<ActionType.PAUSED> {}
+export interface Load extends Action<ActionType.LOAD> {
   readonly payload: { station: Station };
 }
-export interface Loading extends Action<Types.LOADING> {}
-export interface Ready extends Action<Types.READY> {}
-export interface Errored extends Action<Types.ERRORED> {
+export interface Loading extends Action<ActionType.LOADING> {}
+export interface Ready extends Action<ActionType.READY> {}
+export interface Errored extends Action<ActionType.ERRORED> {
   readonly payload: { error: Error };
 }
 
@@ -36,35 +36,35 @@ export type Actions =
   | Errored;
 
 export const ready = (): Ready => ({
-  type: Types.READY
+  type: ActionType.READY
 });
 
-export const errored = (error: Error): Errored => ({
-  type: Types.ERRORED,
-  payload: { error }
+export const errored = (): Errored => ({
+  type: ActionType.ERRORED,
+  payload: { error: new Error("There was a problem") }
 });
 
 export const loading = (): Loading => ({
-  type: Types.LOADING
+  type: ActionType.LOADING
 });
 
 export const load = (station: Station): Load => ({
-  type: Types.LOAD,
+  type: ActionType.LOAD,
   payload: { station }
 });
 
 export const play = (): Play => ({
-  type: Types.PLAY
+  type: ActionType.PLAY
 });
 
 export const playing = (): Playing => ({
-  type: Types.PLAYING
+  type: ActionType.PLAYING
 });
 
 export const pause = (): Pause => ({
-  type: Types.PAUSE
+  type: ActionType.PAUSE
 });
 
 export const paused = (): Paused => ({
-  type: Types.PAUSED
+  type: ActionType.PAUSED
 });
