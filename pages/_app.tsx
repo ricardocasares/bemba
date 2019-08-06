@@ -9,6 +9,7 @@ import Head from "next/head";
 import { reset } from "@/css/reset";
 import { configureStore } from "@/store";
 import { State } from "@/store/state";
+import { clientReady } from "@/store/app/actions";
 
 type BembaProps = { store: Store<State> };
 
@@ -21,6 +22,11 @@ class BembaApp extends App<BembaProps> {
     }
 
     return { pageProps };
+  }
+
+  componentDidMount() {
+    const { store } = this.props;
+    store.dispatch(clientReady());
   }
 
   render() {

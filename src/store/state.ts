@@ -15,5 +15,6 @@ export interface Player {
   readonly ready: boolean;
   readonly loading: boolean;
   readonly playing: boolean;
-  readonly station?: Station;
+  readonly error: Error | null;
+  readonly station: Station | null;
 }
