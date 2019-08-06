@@ -13,7 +13,7 @@ export const init: State = {
 
 const isBrowser = () => typeof window !== "undefined";
 const withDevTools = (mw: StoreEnhancer<any>) => {
-  if (isBrowser()) {
+  if (isBrowser() && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
     return window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(mw);
   }
 
