@@ -1,4 +1,5 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import { Layout } from "@/components/Layout";
 import { Search } from "@/components/Search";
 import { Content } from "@/components/Content";
@@ -6,7 +7,12 @@ import { Swiper } from "@/components/Swiper";
 import { GradientBox } from "@/components/GradientBox";
 import { Bar } from "@/components/Bar";
 import { Like } from "@/components/Player/Controls/Like";
-import { Player } from "@/components/Player";
+
+const Player = dynamic(
+  // @ts-ignore
+  () => import("@/components/Player").then(({ Player }) => Player),
+  { ssr: false }
+);
 
 function Index() {
   return (
