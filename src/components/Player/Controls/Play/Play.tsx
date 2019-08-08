@@ -1,10 +1,9 @@
 import React, { FC } from "react";
-import { play } from "@/store/player";
 import { Button, PlayIcon } from "../styles";
 
 export type Play = {
   disabled: boolean;
-  play: typeof play;
+  play: () => void;
 };
 
 export const Play: FC<Play> = ({ play, disabled }) => (

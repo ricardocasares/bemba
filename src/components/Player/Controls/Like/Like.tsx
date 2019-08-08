@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import { load } from "@/store/station";
 import { LikeIcon, Button } from "../styles";
+import { Station } from "@/store/state";
 
 export type Like = {
-  load: typeof load;
+  load: (station: Station) => void;
 };
 
 export const Like: FC<Like> = ({ load }) => {
