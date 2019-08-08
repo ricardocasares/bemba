@@ -1,20 +1,28 @@
 export interface State {
+  readonly audio: Audio;
   readonly player: Player;
-  readonly stations: Station[];
+  readonly station: Partial<Station>;
+  readonly stations: Stations;
 }
 
-export interface Station {
+export type Audio = {
+  readonly src?: string;
+  readonly ready: boolean;
+  readonly loading: boolean;
+  readonly playing: boolean;
+  readonly error?: Error;
+};
+
+export type Player = {
+  playing: boolean;
+};
+
+export type Station = {
   readonly url: string;
   readonly name: string;
   readonly tags: string[];
   readonly state: string;
   readonly country: string;
-}
+};
 
-export interface Player {
-  readonly ready: boolean;
-  readonly loading: boolean;
-  readonly playing: boolean;
-  readonly error?: Error;
-  readonly station?: Station;
-}
+export type Stations = Record<string, Station>;

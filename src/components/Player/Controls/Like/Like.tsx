@@ -1,8 +1,6 @@
 import React, { FC } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { LikeIcon, Button } from "./styles";
-import { load } from "@/store/player";
+import { load } from "@/store/station";
+import { LikeIcon, Button } from "../styles";
 
 export type Like = {
   load: typeof load;
@@ -25,8 +23,3 @@ export const Like: FC<Like> = ({ load }) => {
     </Button>
   );
 };
-
-export const ConnectedLike = connect(
-  null,
-  dispatch => bindActionCreators({ load }, dispatch)
-)(Like);

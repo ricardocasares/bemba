@@ -4,7 +4,6 @@ import { Heart, Play, Pause } from "react-bytesize-icons";
 export const Wrapper = styled.div`
   display: flex;
   padding: 15px;
-  justify-content: space-between;
 `;
 
 export const Button = styled.button`
