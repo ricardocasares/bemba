@@ -1,5 +1,5 @@
-import { ActionType, ClientReady } from "./model";
+import { ActionType, BembaClientReady } from "./model";
 
-export const clientReady = (): ClientReady => ({
+export const clientReady = (): BembaClientReady => ({
   type: ActionType.CLIENT_READY
 });

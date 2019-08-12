@@ -4,20 +4,15 @@ import { Station } from "@/store/state";
 
 export type Like = {
   load: (station: Station) => void;
+  request: (filter: string, value: string) => void;
 };
 
-export const Like: FC<Like> = ({ load }) => {
+export const Like: FC<Like> = ({ request }) => {
   return (
     <Button
-      onClick={() =>
-        load({
-          name: "Radio Bemba",
-          tags: [],
-          country: "Argentina",
-          state: "San Juan",
-          url: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg"
-        })
-      }
+      onClick={() => {
+        request("country", "Argentina");
+      }}
     >
       <LikeIcon height={25} />
     </Button>

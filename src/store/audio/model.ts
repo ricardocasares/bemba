@@ -12,28 +12,28 @@ export enum ActionType {
   ERRORED = "@bemba/audio/errored"
 }
 
-export interface Init extends Action<ActionType.INIT> {}
-export interface Play extends Action<ActionType.PLAY> {}
-export interface Playing extends Action<ActionType.PLAYING> {}
-export interface Pause extends Action<ActionType.PAUSE> {}
-export interface Paused extends Action<ActionType.PAUSED> {}
-export interface Loading extends Action<ActionType.LOADING> {}
-export interface Ready extends Action<ActionType.READY> {}
+export interface AudioInit extends Action<ActionType.INIT> {}
+export interface AudioPlay extends Action<ActionType.PLAY> {}
+export interface AudioPlaying extends Action<ActionType.PLAYING> {}
+export interface AudioPause extends Action<ActionType.PAUSE> {}
+export interface AudioPaused extends Action<ActionType.PAUSED> {}
+export interface AudioLoading extends Action<ActionType.LOADING> {}
+export interface AudioReady extends Action<ActionType.READY> {}
 
-export interface Load extends Action<ActionType.LOAD> {
+export interface AudioLoad extends Action<ActionType.LOAD> {
   readonly payload: string;
 }
 
-export interface Errored extends Action<ActionType.ERRORED> {
+export interface AudioErrored extends Action<ActionType.ERRORED> {
   readonly payload: Error;
 }
 
 export type Actions =
-  | Play
-  | Playing
-  | Pause
-  | Paused
-  | Load
-  | Loading
-  | Ready
-  | Errored;
+  | AudioPlay
+  | AudioPlaying
+  | AudioPause
+  | AudioPaused
+  | AudioLoad
+  | AudioLoading
+  | AudioReady
+  | AudioErrored;

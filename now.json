@@ -2,7 +2,9 @@
   "version": 2,
   "name": "bemba",
   "alias": ["bemba.analogic.al"],
-  "env": {
-    "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
+  "build": {
+    "env": {
+      "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
+    }
   }
 }

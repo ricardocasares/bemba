@@ -1,17 +1,16 @@
 import React from "react";
 import withSagas from "next-redux-saga";
 import withRedux from "next-redux-wrapper";
-import { Store } from "redux";
 import { Provider } from "react-redux";
 import { Global } from "@emotion/core";
 import App, { Container, AppContext } from "next/app";
 import Head from "next/head";
 import { reset } from "@/css/reset";
 import { configureStore } from "@/store";
-import { State } from "@/store/state";
+import { BembaStore } from "@/store/state";
 import { clientReady } from "@/store/app/actions";
 
-type BembaProps = { store: Store<State> };
+type BembaProps = { store: BembaStore };
 
 class BembaApp extends App<BembaProps> {
   static async getInitialProps({ Component, ctx }: AppContext) {

@@ -1,7 +1,7 @@
 import { Station } from "@/store/state";
-import { ActionType, Load } from "./model";
+import { ActionType, StationLoad } from "./model";
 
-export const load = (payload: Station): Load => ({
+export const load = (payload: Station): StationLoad => ({
   type: ActionType.LOAD,
   payload
 });

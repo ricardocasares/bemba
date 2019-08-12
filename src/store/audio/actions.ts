@@ -1,50 +1,50 @@
 import {
-  Init,
-  Load,
-  Ready,
-  Errored,
-  Loading,
-  Play,
-  Pause,
-  Playing,
-  Paused,
-  ActionType
+  ActionType,
+  AudioInit,
+  AudioLoad,
+  AudioReady,
+  AudioErrored,
+  AudioLoading,
+  AudioPlay,
+  AudioPause,
+  AudioPlaying,
+  AudioPaused
 } from "./model";
 
-export const init = (): Init => ({
+export const init = (): AudioInit => ({
   type: ActionType.INIT
 });
 
-export const load = (payload: string): Load => ({
+export const load = (payload: string): AudioLoad => ({
   type: ActionType.LOAD,
   payload
 });
 
-export const ready = (): Ready => ({
+export const ready = (): AudioReady => ({
   type: ActionType.READY
 });
 
-export const errored = (): Errored => ({
+export const errored = (): AudioErrored => ({
   type: ActionType.ERRORED,
   payload: Error("There was a problem")
 });
 
-export const loading = (): Loading => ({
+export const loading = (): AudioLoading => ({
   type: ActionType.LOADING
 });
 
-export const play = (): Play => ({
+export const play = (): AudioPlay => ({
   type: ActionType.PLAY
 });
 
-export const playing = (): Playing => ({
+export const playing = (): AudioPlaying => ({
   type: ActionType.PLAYING
 });
 
-export const pause = (): Pause => ({
+export const pause = (): AudioPause => ({
   type: ActionType.PAUSE
 });
 
-export const paused = (): Paused => ({
+export const paused = (): AudioPaused => ({
   type: ActionType.PAUSED
 });

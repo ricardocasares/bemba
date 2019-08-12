@@ -1,4 +1,11 @@
-export interface State {
+import { Store } from "redux";
+import { Actions as AppActions } from "./app";
+import { Actions as AudioActions } from "./audio";
+import { Actions as PlayerActions } from "./player";
+import { Actions as StationActions } from "./station";
+import { Actions as StationsActions } from "./stations";
+
+export interface BembaState {
   readonly audio: Audio;
   readonly player: Player;
   readonly station: Partial<Station>;
@@ -18,6 +25,7 @@ export type Player = {
 };
 
 export type Station = {
+  readonly id: string;
   readonly url: string;
   readonly name: string;
   readonly tags: string[];
@@ -26,3 +34,11 @@ export type Station = {
 };
 
 export type Stations = Record<string, Station>;
+export type BembaActions =
+  | AppActions
+  | AudioActions
+  | PlayerActions
+  | StationActions
+  | StationsActions;
+
+export type BembaStore = Store<BembaState, BembaActions>;

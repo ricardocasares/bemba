@@ -1,16 +1,25 @@
 import { Stations } from "@/store/state";
-import { ActionType, Request, Receive, Errored } from "./model";
+import {
+  ActionType,
+  StationsFetchRequest,
+  StationsFetchReceive,
+  StationsFetchErrored
+} from "./model";
 
-export const request = (): Request => ({
-  type: ActionType.REQUEST
+export const request = (
+  filter: string,
+  value: string
+): StationsFetchRequest => ({
+  type: ActionType.FETCH_REQUEST,
+  payload: { filter, value }
 });
 
-export const receive = (payload: Stations): Receive => ({
-  type: ActionType.RECEIVE,
+export const receive = (payload: Stations): StationsFetchReceive => ({
+  type: ActionType.FETCH_RECEIVE,
   payload
 });
 
-export const errored = (payload: Error): Errored => ({
-  type: ActionType.ERRORED,
+export const errored = (payload: Error): StationsFetchErrored => ({
+  type: ActionType.FETCH_ERRORED,
   payload
 });

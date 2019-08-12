@@ -5,6 +5,6 @@ export enum ActionType {
   PAUSE = "@bemba/player/pause"
 }
 
-export interface Play extends Action<ActionType.PLAY> {}
-export interface Pause extends Action<ActionType.PAUSE> {}
-export type Actions = Play | Pause;
+export interface PlayerPlay extends Action<ActionType.PLAY> {}
+export interface PlayerPause extends Action<ActionType.PAUSE> {}
+export type Actions = PlayerPlay | PlayerPause;

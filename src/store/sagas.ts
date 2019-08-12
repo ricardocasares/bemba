@@ -3,13 +3,14 @@ import * as App from "./app";
 import * as Player from "./player";
 import * as Audio from "./audio";
 import * as Station from "./station";
+import * as Stations from "./stations";
 
 function* init() {
   yield take(App.ActionType.CLIENT_READY);
   yield put(Audio.init());
 }
 
-function* load(action: Station.Load) {
+function* load(action: Station.StationLoad) {
   yield put(Audio.load(action.payload.url));
 }
 
@@ -36,5 +37,5 @@ function* mapLoad() {
 const mappings = [fork(mapLoad), fork(mapPlay), fork(mapPause)];
 
 export function* sagas() {
-  yield all([fork(init), ...mappings, ...Audio.sagas]);
+  yield all([fork(init), ...mappings, ...Audio.sagas, ...Stations.sagas]);
 }

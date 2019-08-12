@@ -2,20 +2,24 @@ import { Action } from "redux";
 import { Stations } from "@/store/state";
 
 export enum ActionType {
-  LIKE = "@bemba/stations/like",
-  REQUEST = "@bemba/stations/request",
-  RECEIVE = "@bemba/stations/receive",
-  ERRORED = "@bemba/stations/errored"
+  FETCH_REQUEST = "@bemba/stations/fetch/request",
+  FETCH_RECEIVE = "@bemba/stations/fetch/receive",
+  FETCH_ERRORED = "@bemba/stations/fetch/errored"
 }
 
-export interface Request extends Action<ActionType.REQUEST> {}
+export interface StationsFetchRequest extends Action<ActionType.FETCH_REQUEST> {
+  payload: { filter: string; value: string };
+}
 
-export interface Receive extends Action<ActionType.RECEIVE> {
+export interface StationsFetchReceive extends Action<ActionType.FETCH_RECEIVE> {
   readonly payload: Stations;
 }
 
-export interface Errored extends Action<ActionType.ERRORED> {
+export interface StationsFetchErrored extends Action<ActionType.FETCH_ERRORED> {
   readonly payload: Error;
 }
 
-export type Actions = Request | Receive | Errored;
+export type Actions =
+  | StationsFetchRequest
+  | StationsFetchReceive
+  | StationsFetchErrored;

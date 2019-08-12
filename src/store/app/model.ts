@@ -4,5 +4,5 @@ export enum ActionType {
   CLIENT_READY = "@bemba/client/ready"
 }
 
-export interface ClientReady extends Action<ActionType.CLIENT_READY> {}
-export type Actions = ClientReady;
+export interface BembaClientReady extends Action<ActionType.CLIENT_READY> {}
+export type Actions = BembaClientReady;

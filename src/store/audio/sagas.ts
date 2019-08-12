@@ -1,9 +1,9 @@
 import { eventChannel } from "redux-saga";
 import { put, take, fork, call, takeLatest } from "redux-saga/effects";
-import { ActionType, Load } from "./model";
+import { ActionType, AudioLoad } from "./model";
 import { api, audioChannel } from "./channel";
 
-function* load(action: Load) {
+function* load(action: AudioLoad) {
   yield call(api.load, action.payload);
 }
 

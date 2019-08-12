@@ -9,12 +9,8 @@ export const reducer: Reducer<Stations, Actions> = (
   action
 ): Stations => {
   switch (action.type) {
-    case ActionType.REQUEST:
-      // @TODO
-      return state;
-    case ActionType.RECEIVE:
-      // @TODO
-      return state;
+    case ActionType.FETCH_RECEIVE:
+      return { ...state, ...action.payload };
     default:
       return state;
   }
