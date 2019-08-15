@@ -5,18 +5,23 @@
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
+    "classcat": "^4.0.2",
+    "emotion-normalize": "^10.1.0",
+    "emotion-theming": "^10.0.14",
+    "framer-motion": "^1.6.2",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.2",
     "next-redux-saga": "^4.0.2",
     "next-redux-wrapper": "^3.0.0-alpha.3",
     "nexus": "^0.12.0-beta.6",
     "react": "^16.8.6",
-    "react-bytesize-icons": "^0.10.0",
+    "react-bytesize-icons": "^0.11.1",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",
-    "remeda": "0.0.11"
+    "remeda": "0.0.11",
+    "styled-map": "^3.3.0"
   },
   "scripts": {
     "dev": "next",

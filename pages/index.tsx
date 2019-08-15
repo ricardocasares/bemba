@@ -1,12 +1,10 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { Layout } from "@/components/Layout";
-import { Search } from "@/components/Search";
 import { Content } from "@/components/Content";
 import { Swiper } from "@/components/Swiper";
 import { GradientBox } from "@/components/GradientBox";
 import { Bar } from "@/components/Bar";
-import { Like } from "@/components/Player/Controls/Like";
 
 const Player = dynamic(
   // @ts-ignore
@@ -17,13 +15,11 @@ const Player = dynamic(
 function Index() {
   return (
     <Layout>
-      <Search />
       <Content>
         <Swiper title="Suggested for you">
           <GradientBox>
             <h3>FM 103.5 Mega</h3>
             <h4>Buenos Aires, Argentina</h4>
-            <Like />
           </GradientBox>
           <GradientBox>
             <h3>La Popu 101.2</h3>

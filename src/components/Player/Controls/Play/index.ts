@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { BembaState } from "@/store/state";
+import { BembaState } from "@/models/state";
 import { play } from "@/store/player";
 import { Play as Component } from "./Play";
 

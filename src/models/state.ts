@@ -1,15 +1,15 @@
 import { Store } from "redux";
-import { Actions as AppActions } from "./app";
-import { Actions as AudioActions } from "./audio";
-import { Actions as PlayerActions } from "./player";
-import { Actions as StationActions } from "./station";
-import { Actions as StationsActions } from "./stations";
+import { Actions as AppActions } from "@/store/app";
+import { Actions as AudioActions } from "@/store/audio";
+import { Actions as PlayerActions } from "@/store/player";
+import { Actions as SearchActions } from "@/store/search";
+import { Actions as StationActions } from "@/store/station";
 
 export interface BembaState {
   readonly audio: Audio;
   readonly player: Player;
+  readonly search: Search;
   readonly station: Partial<Station>;
-  readonly stations: Stations;
 }
 
 export type Audio = {
@@ -33,12 +33,27 @@ export type Station = {
   readonly country: string;
 };
 
+export enum SearchFilterParam {
+  TAG = "tag",
+  NAME = "name",
+  STATE = "state",
+  COUNTRY = "country",
+  LANGUAGE = "language"
+}
+
+export type Search = {
+  query: string;
+  filter: SearchFilterParam;
+  results: Stations;
+  history: Record<string, Stations>;
+};
+
 export type Stations = Record<string, Station>;
 export type BembaActions =
   | AppActions
   | AudioActions
   | PlayerActions
   | StationActions
-  | StationsActions;
+  | SearchActions;
 
 export type BembaStore = Store<BembaState, BembaActions>;

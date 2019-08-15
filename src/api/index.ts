@@ -1,6 +1,6 @@
 import fetch from "isomorphic-unfetch";
 import { indexBy } from "remeda";
-import { Station } from "@/store/state";
+import { Station } from "@/models/state";
 
 const BEMBA_API_ENDPOINT = process.env.BEMBA_API_ENDPOINT as string;
 const index = <T>(key: keyof T) => (data: T[]) => indexBy<T>(data, x => x[key]);

@@ -1,5 +1,5 @@
 import { Reducer } from "redux";
-import { Player } from "@/store/state";
+import { Player } from "@/models/state";
 import { Actions, ActionType } from "./model";
 
 export const initial: Player = {

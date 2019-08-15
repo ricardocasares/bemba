@@ -1,5 +1,5 @@
 import { Reducer } from "redux";
-import { Station } from "@/store/state";
+import { Station } from "@/models/state";
 import { Actions, ActionType } from "./model";
 
 export const initial: Partial<Station> = {};

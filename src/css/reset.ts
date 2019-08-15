@@ -1,9 +1,11 @@
 import { css } from "@emotion/core";
+import normalize from "emotion-normalize";
 import { sans } from "./";
 
 export const reset = css`
+  ${normalize}
+
   html {
-    line-height: 1.5;
     box-sizing: border-box;
   }
 

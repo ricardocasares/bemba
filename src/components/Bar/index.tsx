@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { Search, Heart, Bell, Options } from "react-bytesize-icons";
+import { Home, Search, Heart } from "react-bytesize-icons";
 
 const Container = styled.nav`
   display: flex;
@@ -19,16 +19,19 @@ export function Bar() {
     <Container>
       <Link href="/">
         <a>
-          <Search height={ICON_SIZE} color={ICON_ACTIVE_COLOR} />
+          <Home height={ICON_SIZE} color={ICON_ACTIVE_COLOR} />
         </a>
       </Link>
       <Link href="/search">
         <a>
+          <Search height={ICON_SIZE} color={ICON_ACTIVE_COLOR} />
+        </a>
+      </Link>
+      <Link href="/likes">
+        <a>
           <Heart height={ICON_SIZE} color={ICON_COLOR} />
         </a>
       </Link>
-      <Bell height={ICON_SIZE} color={ICON_COLOR} />
-      <Options height={ICON_SIZE} color={ICON_COLOR} />
     </Container>
   );
 }

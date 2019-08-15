@@ -1,5 +1,5 @@
 import { Reducer } from "redux";
-import { Audio } from "@/store/state";
+import { Audio } from "@/models/state";
 import { Actions, ActionType } from "./model";
 
 export const initial: Audio = {

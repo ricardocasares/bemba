@@ -2,8 +2,8 @@ import { all, put, take, fork, takeLatest } from "redux-saga/effects";
 import * as App from "./app";
 import * as Player from "./player";
 import * as Audio from "./audio";
+import * as Search from "./search";
 import * as Station from "./station";
-import * as Stations from "./stations";
 
 function* init() {
   yield take(App.ActionType.CLIENT_READY);
@@ -37,5 +37,5 @@ function* mapLoad() {
 const mappings = [fork(mapLoad), fork(mapPlay), fork(mapPause)];
 
 export function* sagas() {
-  yield all([fork(init), ...mappings, ...Audio.sagas, ...Stations.sagas]);
+  yield all([fork(init), ...mappings, ...Audio.sagas, ...Search.sagas]);
 }

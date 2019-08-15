@@ -2,7 +2,7 @@
 /// <reference types="next/types/global" />
 
 import { Store } from "redux";
-import { BembaStore } from "@/store/state";
+import { BembaStore } from "@/models/state";
 
 declare module "next" {
   export interface NextPageContext {

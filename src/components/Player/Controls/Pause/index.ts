@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { BembaState } from "@/store/state";
+import { BembaState } from "@/models/state";
 import { pause } from "@/store/player";
 import { Pause as Component } from "./Pause";
 

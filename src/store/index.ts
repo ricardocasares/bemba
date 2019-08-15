@@ -1,18 +1,18 @@
 import createSagaMiddleware from "redux-saga";
 import { applyMiddleware, createStore, compose, StoreEnhancer } from "redux";
-import { BembaState } from "./state";
+import { BembaState } from "@/models/state";
 import { sagas } from "./sagas";
 import { reducers } from "./reducers";
 import { initial as audio } from "./audio";
 import { initial as player } from "./player";
+import { initial as search } from "./search";
 import { initial as station } from "./station";
-import { initial as stations } from "./stations";
 
 export const init: BembaState = {
   audio,
   player,
-  station,
-  stations
+  search,
+  station
 };
 
 const isBrowser = () => typeof window !== "undefined";

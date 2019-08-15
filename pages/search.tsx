@@ -1,62 +1,20 @@
 import React from "react";
+import { NextPage } from "next";
 import { Layout } from "@/components/Layout";
 import { Content } from "@/components/Content";
-import { Swiper } from "@/components/Swiper";
-import { GradientBox } from "@/components/GradientBox";
+import { Search } from "@/components/Search";
 import { Bar } from "@/components/Bar";
-import { Like } from "@/components/Player/Controls/Like";
 
-function Search() {
+const SearchPage: NextPage = () => {
   return (
     <Layout>
-      <Content>
-        <Swiper title="Suggested for you">
-          <GradientBox>
-            <h3>FM 103.5 Mega</h3>
-            <h4>Buenos Aires, Argentina</h4>
-            <Like />
-          </GradientBox>
-          <GradientBox>
-            <h3>La Popu 101.2</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>103.5 MegaFM</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-        </Swiper>
-        <Swiper title="Listened recently">
-          <GradientBox>
-            <h3>103.5 MegaFM</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>103.5 MegaFM</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>103.5 MegaFM</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-        </Swiper>
-        <Swiper title="Popular on Bemba">
-          <GradientBox>
-            <h3>FM 103.5 Mega</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>La Popu 101.2</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>103.5 MegaFM</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-        </Swiper>
+      <Search />
+      <Content pt="xxl" pl="l" pr="l">
+        <h3>Recent searches</h3>
       </Content>
       <Bar />
     </Layout>
   );
-}
+};
 
-export default Search;
+export default SearchPage;
