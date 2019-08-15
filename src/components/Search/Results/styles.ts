@@ -1,18 +1,24 @@
 import { styled } from "@/css/styled";
+import { motion } from "framer-motion";
 
-export const List = styled.ul`
+export const animations = {
+  show: { opacity: 1 },
+  hide: { opacity: 0 }
+};
+
+export const List = styled(motion.ul)`
   margin: 0;
   padding: 0;
   list-style-type: none;
 `;
 
-export const ListItem = styled.li`
+export const ListItem = styled(motion.li)`
   display: flex;
   align-items: center;
   border-bottom: 1px solid #333;
 `;
 
-export const StationButton = styled.button`
+export const StationButton = styled(motion.button)`
   border: none;
   background: transparent;
   padding: 10px 0;
@@ -21,17 +27,17 @@ export const StationButton = styled.button`
   min-width: 0;
 `;
 
-export const Title = styled.h3`
+export const Title = styled(motion.h3)`
   color: #555;
   font-weight: 500;
 `;
 
-export const Subtitle = styled.h4`
+export const Subtitle = styled(motion.h4)`
   font-weight: 500;
   margin-bottom: 5px;
   color: #444;
 `;
 
-export const StationLink = styled.a`
+export const StationLink = styled(motion.a)`
   text-decoration: none;
 `;

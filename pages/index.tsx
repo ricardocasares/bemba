@@ -5,6 +5,7 @@ import { Content } from "@/components/Content";
 import { Swiper } from "@/components/Swiper";
 import { GradientBox } from "@/components/GradientBox";
 import { Bar } from "@/components/Bar";
+import { motion } from "framer-motion";
 
 const Player = dynamic(
   // @ts-ignore
@@ -59,7 +60,9 @@ function Index() {
           </GradientBox>
         </Swiper>
       </Content>
-      <Player />
+      <motion.div initial={{ y: 100 }} animate={{ y: 0 }}>
+        <Player />
+      </motion.div>
       <Bar />
     </Layout>
   );

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Stations } from "@/models/state";
 import { Item } from "./Item";
-import { List, Subtitle } from "./styles";
+import { List, Subtitle, animations } from "./styles";
 
 export type Results = {
   query: string;
@@ -19,13 +19,49 @@ export const Results: FC<Results> = ({
   results
 }) => (
   <div>
-    {loading && <Subtitle>Searching for {query} ...</Subtitle>}
-    {!empty && !loading && dirty && <Subtitle>Results for {query}</Subtitle>}
-    {empty && !loading && dirty && <Subtitle>No results for {query}</Subtitle>}
-    <List>
-      {Object.keys(results).map(station => (
-        <Item key={station} {...results[station]} />
-      ))}
-    </List>
+    {loading && (
+      <Subtitle
+        key="searching"
+        initial="hide"
+        animate="show"
+        variants={animations}
+      >
+        Searching for {query} ...
+      </Subtitle>
+    )}
+    {!empty && !loading && dirty && (
+      <Subtitle
+        key="searching"
+        initial="hide"
+        animate="show"
+        variants={animations}
+      >
+        Results for {query}
+      </Subtitle>
+    )}
+
+    {empty && !loading && dirty && (
+      <Subtitle
+        key="searching"
+        initial="hide"
+        animate="show"
+        variants={animations}
+      >
+        No results for {query}
+      </Subtitle>
+    )}
+
+    {!empty && (
+      <List
+        initial="hide"
+        animate="show"
+        variants={animations}
+        transition={{ staggerChildren: 0.1 }}
+      >
+        {Object.keys(results).map(station => (
+          <Item key={station} {...results[station]} />
+        ))}
+      </List>
+    )}
   </div>
 );
