@@ -9,9 +9,7 @@ export const Select: FC<SelectHTMLAttributes<Select>> = ({
   ...props
 }) => (
   <SelectWrapper>
-    <SelectInput id="search-filter" {...props}>
-      {children}
-    </SelectInput>
+    <SelectInput {...props}>{children}</SelectInput>
     <SelectIcon width={10} strokeWidth="5px" />
   </SelectWrapper>
 );

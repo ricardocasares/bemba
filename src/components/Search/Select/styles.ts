@@ -4,11 +4,12 @@ import { ChevronBottom } from "react-bytesize-icons";
 export const SelectWrapper = styled.div`
   display: flex;
   color: #bb86fc;
-  align-items: stretch;
+  align-items: center;
   background: #2e2e2e;
   border-radius: 3px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  padding-right: 15px;
 `;
 
 export const SelectInput = styled.select`

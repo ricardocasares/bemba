@@ -1,13 +1,7 @@
-import React, {
-  FC,
-  useState,
-  EventHandler,
-  ChangeEvent,
-  FocusEvent
-} from "react";
-import { Form, Input } from "./styles";
-import { Select } from "./Select";
+import React, { FC, EventHandler, ChangeEvent } from "react";
 import { SearchFilterParam } from "@/models/state";
+import { Select } from "./Select";
+import { Form, Input } from "./styles";
 
 export type Search = {
   query: string;
@@ -16,13 +10,6 @@ export type Search = {
 };
 
 export const Search: FC<Search> = ({ query, filter, search }) => {
-  const [hidden, setHidden] = useState(false);
-  const onFocus: EventHandler<FocusEvent> = _ => {
-    setHidden(true);
-  };
-  const onBlur: EventHandler<FocusEvent> = _ => {
-    setHidden(false);
-  };
   const onSubmit: EventHandler<ChangeEvent<HTMLFormElement>> = e => {
     e.preventDefault();
     search(query, filter);
@@ -43,10 +30,8 @@ export const Search: FC<Search> = ({ query, filter, search }) => {
         placeholder="Search"
         defaultValue={query}
         onChange={onInput}
-        onFocus={onFocus}
-        onBlur={onBlur}
       />
-      <Select onChange={onSelect} defaultValue={filter} hidden={hidden}>
+      <Select onChange={onSelect} defaultValue={filter}>
         <optgroup label="Filter by">
           {Object.values(SearchFilterParam).map(x => (
             <option key={x} value={x}>
