@@ -1,11 +1,11 @@
 import { put, call, fork, debounce, takeLatest } from "redux-saga/effects";
 import { search } from "@/api";
-import { request, receive, errored, addToHistory } from "./actions";
+import { request, receive, errored, historyAdd, historySave } from "./actions";
 import {
   ActionType,
   SearchInput,
-  SearchFetchRequest,
-  SearchFetchReceive
+  SearchHistoryAdd,
+  SearchFetchRequest
 } from "./model";
 
 function* validate({ payload: { query, filter } }: SearchInput) {
@@ -16,17 +16,21 @@ function* validate({ payload: { query, filter } }: SearchInput) {
 
 function* execute({ payload: { filter, query } }: SearchFetchRequest) {
   try {
-    console.log(filter, query);
-    yield put(receive(yield call(search, filter, query)));
+    const stations = yield call(search, filter, query);
+    yield put(receive(stations));
+
+    if (Object.keys(stations).length) {
+      yield put(historyAdd(query, filter, stations));
+    }
   } catch (err) {
     yield put(errored(err));
   }
 }
 
-function* add({ payload }: SearchFetchReceive) {
-  if (Object.keys(payload).length) {
-    yield put(addToHistory(payload));
-  }
+function* saveHistory({
+  payload: { query, filter, stations }
+}: SearchHistoryAdd) {
+  yield put(historySave(query, filter, stations));
 }
 
 function* watchInput() {
@@ -37,8 +41,8 @@ function* watchRequest() {
   yield takeLatest(ActionType.FETCH_REQUEST, execute);
 }
 
-function* watchReceive() {
-  yield debounce(5000, ActionType.FETCH_RECEIVE, add);
+function* watchHistory() {
+  yield debounce(10000, ActionType.HISTORY_ADD, saveHistory);
 }
 
-export const sagas = [fork(watchInput), fork(watchRequest), fork(watchReceive)];
+export const sagas = [fork(watchInput), fork(watchRequest), fork(watchHistory)];

@@ -2,7 +2,11 @@ import { Reducer } from "redux";
 import { Station } from "@/models/state";
 import { Actions, ActionType } from "./model";
 
-export const initial: Partial<Station> = {};
+export const initial: Partial<Station> = {
+  name: "Sarasasas",
+  state: "Sarararar",
+  country: "Ssdasdasdaadasdadasdasdasdasdasdasdasdasdasda"
+};
 
 export const reducer: Reducer<Partial<Station>, Actions> = (
   state = initial,

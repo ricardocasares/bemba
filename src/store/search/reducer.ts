@@ -4,6 +4,9 @@ import { Actions, ActionType } from "./model";
 
 export const initial: Search = {
   query: "",
+  empty: true,
+  dirty: false,
+  loading: false,
   filter: SearchFilterParam.NAME,
   results: {},
   history: {}
@@ -15,16 +18,38 @@ export const reducer: Reducer<Search, Actions> = (
 ): Search => {
   switch (action.type) {
     case ActionType.INPUT:
-      return { ...state, ...action.payload };
+      if (!action.payload.query.length) {
+        return {
+          ...state,
+          dirty: false,
+          empty: true,
+          results: {},
+          ...action.payload
+        };
+      }
+
+      return {
+        ...state,
+        dirty: true,
+        loading: true,
+        empty: true,
+        ...action.payload
+      };
     case ActionType.FETCH_RECEIVE:
       return {
         ...state,
+        dirty: true,
+        loading: false,
+        empty: !Object.keys(action.payload).length,
         results: action.payload
       };
-    case ActionType.HISTORY_ADD:
+    case ActionType.HISTORY_SAVE:
       return {
         ...state,
-        history: { ...state.history, [state.query]: state.results }
+        history: {
+          [action.payload.query]: action.payload.stations,
+          ...state.history
+        }
       };
     default:
       return state;

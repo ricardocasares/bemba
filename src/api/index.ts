@@ -35,8 +35,9 @@ export async function search(filter: string, name: string) {
           id
           url
           name
-          country
+          tags
           state
+          country
         }
       }`,
     ({ data: { stations } }) => index<Station>("id")(stations)

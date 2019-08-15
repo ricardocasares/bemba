@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { Wrapper, Title, Subtitle } from "./styles";
+import React, { FC, Fragment } from "react";
+import { Title, Subtitle } from "./styles";
 
 export type Display = {
   name: string;
@@ -8,10 +8,10 @@ export type Display = {
 };
 
 export const Display: FC<Display> = ({ name, state, country }) => (
-  <Wrapper>
+  <Fragment>
     <Title>{name}</Title>
     <Subtitle>
       {state}, {country}
     </Subtitle>
-  </Wrapper>
+  </Fragment>
 );

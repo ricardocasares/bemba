@@ -44,6 +44,9 @@ export enum SearchFilterParam {
 export type Search = {
   query: string;
   filter: SearchFilterParam;
+  dirty: boolean;
+  empty: boolean;
+  loading: boolean;
   results: Stations;
   history: Record<string, Stations>;
 };

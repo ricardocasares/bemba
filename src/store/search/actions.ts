@@ -2,10 +2,11 @@ import { Stations, SearchFilterParam } from "@/models/state";
 import {
   ActionType,
   SearchInput,
-  SearchAddToHistory,
+  SearchHistorySave,
   SearchFetchRequest,
   SearchFetchReceive,
-  SearchFetchErrored
+  SearchFetchErrored,
+  SearchHistoryAdd
 } from "./model";
 
 export const search = (
@@ -16,9 +17,22 @@ export const search = (
   payload: { query, filter }
 });
 
-export const addToHistory = (payload: Stations): SearchAddToHistory => ({
+export const historyAdd = (
+  query: string,
+  filter: SearchFilterParam,
+  stations: Stations
+): SearchHistoryAdd => ({
   type: ActionType.HISTORY_ADD,
-  payload
+  payload: { query, filter, stations }
+});
+
+export const historySave = (
+  query: string,
+  filter: SearchFilterParam,
+  stations: Stations
+): SearchHistorySave => ({
+  type: ActionType.HISTORY_SAVE,
+  payload: { query, filter, stations }
 });
 
 export const request = (
