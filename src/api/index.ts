@@ -28,10 +28,10 @@ export async function get(id: string) {
   );
 }
 
-export async function search(filter: string, name: string) {
+export async function search(filter: string, name: string, limit: number = 5) {
   return request<Response<{ stations: Station[] }>, Record<string, Station>>(
     `{
-        stations(query: { ${filter}: "${name}" }, pagination: { limit: 10 }) {
+        stations(query: { ${filter}: "${name}" }, pagination: { limit: ${limit} }) {
           id
           url
           name

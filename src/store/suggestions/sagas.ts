@@ -13,10 +13,17 @@ import { ActionType, SuggestionsFetchRequest } from "./model";
 
 function* prepare() {
   const user: User = yield select(({ app: { user } }: BembaState) => user);
+  if (user.state) {
+    yield put(request(user.state, SearchFilterParam.STATE));
+  }
 
-  yield put(request(user.state, SearchFilterParam.STATE));
-  yield put(request(user.country, SearchFilterParam.COUNTRY));
-  yield put(request(user.language, SearchFilterParam.LANGUAGE));
+  if (user.country) {
+    yield put(request(user.country, SearchFilterParam.COUNTRY));
+  }
+
+  if (user.language) {
+    yield put(request(user.language, SearchFilterParam.LANGUAGE));
+  }
 }
 
 function* execute({ payload: { filter, query } }: SuggestionsFetchRequest) {
