@@ -1,3 +1,4 @@
+import shouldForwardProp from "@emotion/is-prop-valid";
 import { motion } from "framer-motion";
 import { styled } from "@/css/styled";
 import { when } from "@/css/helpers";
@@ -17,7 +18,7 @@ export type Box = {
   fullh?: boolean;
 };
 
-export const Box = styled(motion.div)<Box>`
+export const Box = styled(motion.div, { shouldForwardProp })<Box>`
   ${when<Box>("flex", x => `flex: ${x};`)}
   ${when<Box>("flex", _ => `display: flex;`)}
   ${when<Box>("fullh", _ => `height: 100%;`)}

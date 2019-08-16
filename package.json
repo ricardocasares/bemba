@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.14",
+    "@emotion/is-prop-valid": "^0.8.2",
     "@emotion/styled": "^10.0.14",
+    "@types/facepaint": "^1.2.0",
     "classcat": "^4.0.2",
     "emotion-normalize": "^10.1.0",
     "emotion-theming": "^10.0.14",
+    "facepaint": "^1.2.1",
     "framer-motion": "^1.6.2",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.2",
