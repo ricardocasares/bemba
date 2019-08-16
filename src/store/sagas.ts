@@ -4,8 +4,9 @@ import * as Player from "./player";
 import * as Audio from "./audio";
 import * as Search from "./search";
 import * as Station from "./station";
+import * as Suggestions from "./suggestions";
 
-function* init() {
+function* client() {
   yield take(App.ActionType.CLIENT_READY);
   yield put(Audio.init());
 }
@@ -38,5 +39,12 @@ function* mapLoad() {
 const mappings = [fork(mapLoad), fork(mapPlay), fork(mapPause)];
 
 export function* sagas() {
-  yield all([fork(init), ...mappings, ...Audio.sagas, ...Search.sagas]);
+  yield all([
+    fork(client),
+    ...mappings,
+    ...App.sagas,
+    ...Audio.sagas,
+    ...Search.sagas,
+    ...Suggestions.sagas
+  ]);
 }

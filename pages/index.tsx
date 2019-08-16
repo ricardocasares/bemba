@@ -2,9 +2,10 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { Layout } from "@/components/Layout";
 import { Box } from "@/components/Box";
-import { Swiper } from "@/components/Swiper";
-import { GradientBox } from "@/components/GradientBox";
+import { Suggestions } from "@/components/Suggestions";
 import { Bar } from "@/components/Bar";
+import { NextPage } from "next";
+import { prepare } from "@/store/suggestions";
 
 const Player = dynamic(
   // @ts-ignore
@@ -12,57 +13,22 @@ const Player = dynamic(
   { ssr: false }
 );
 
-function Index() {
+const Index: NextPage = () => {
   return (
     <Layout>
       <Box scroll fullh padding="15px">
-        <Swiper title="Suggested for you">
-          <GradientBox>
-            <h3>FM 103.5 Mega</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>La Popu 101.2</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>103.5 MegaFM</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-        </Swiper>
-        <Swiper title="Listened recently">
-          <GradientBox>
-            <h3>103.5 MegaFM</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>103.5 MegaFM</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>103.5 MegaFM</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-        </Swiper>
-        <Swiper title="Popular on Bemba">
-          <GradientBox>
-            <h3>FM 103.5 Mega</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>La Popu 101.2</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-          <GradientBox>
-            <h3>103.5 MegaFM</h3>
-            <h4>Buenos Aires, Argentina</h4>
-          </GradientBox>
-        </Swiper>
+        <Suggestions />
       </Box>
       <Player />
       <Bar />
     </Layout>
   );
-}
+};
+
+Index.getInitialProps = async ctx => {
+  await ctx.store.dispatch(prepare());
+
+  return {};
+};
 
 export default Index;

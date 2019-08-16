@@ -31,7 +31,7 @@ export async function get(id: string) {
 export async function search(filter: string, name: string) {
   return request<Response<{ stations: Station[] }>, Record<string, Station>>(
     `{
-        stations(query: { ${filter}: "${name}" }) {
+        stations(query: { ${filter}: "${name}" }, pagination: { limit: 10 }) {
           id
           url
           name

@@ -10,13 +10,17 @@ import { reset } from "@/css/reset";
 import { theme } from "@/css/theme";
 import { configureStore } from "@/store";
 import { BembaStore } from "@/models/state";
-import { clientReady } from "@/store/app/actions";
+import { clientReady, serverReady } from "@/store/app/actions";
 
 type BembaProps = { store: BembaStore };
 
 class BembaApp extends App<BembaProps> {
   static async getInitialProps({ Component, ctx }: AppContext) {
     let pageProps = {};
+
+    if (ctx.req) {
+      await ctx.store.dispatch(serverReady(ctx));
+    }
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
