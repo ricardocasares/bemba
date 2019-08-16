@@ -11,7 +11,7 @@ export const Display: FC<Display> = ({ name, state, country }) => (
   <Fragment>
     <Title>{name}</Title>
     <Subtitle>
-      {state}, {country}
+      {[state, country].filter(Boolean).join(", ") || "International"}
     </Subtitle>
   </Fragment>
 );

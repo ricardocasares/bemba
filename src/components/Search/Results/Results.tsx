@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Stations } from "@/models/state";
+import { Stations, Station } from "@/models/state";
 import { Item } from "./Item";
 import { List, Subtitle, animations } from "./styles";
 
@@ -9,9 +9,11 @@ export type Results = {
   empty: boolean;
   loading: boolean;
   results: Stations;
+  load: (station: Station) => void;
 };
 
 export const Results: FC<Results> = ({
+  load,
   query,
   dirty,
   empty,
@@ -59,7 +61,7 @@ export const Results: FC<Results> = ({
         transition={{ staggerChildren: 0.1 }}
       >
         {Object.keys(results).map(station => (
-          <Item key={station} {...results[station]} />
+          <Item key={station} {...results[station]} load={load} />
         ))}
       </List>
     )}
