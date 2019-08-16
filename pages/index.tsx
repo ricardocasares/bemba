@@ -1,11 +1,10 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { Layout } from "@/components/Layout";
-import { Content } from "@/components/Content";
+import { Box } from "@/components/Box";
 import { Swiper } from "@/components/Swiper";
 import { GradientBox } from "@/components/GradientBox";
 import { Bar } from "@/components/Bar";
-import { motion } from "framer-motion";
 
 const Player = dynamic(
   // @ts-ignore
@@ -16,7 +15,7 @@ const Player = dynamic(
 function Index() {
   return (
     <Layout>
-      <Content>
+      <Box scroll fullh padding="15px">
         <Swiper title="Suggested for you">
           <GradientBox>
             <h3>FM 103.5 Mega</h3>
@@ -59,10 +58,9 @@ function Index() {
             <h4>Buenos Aires, Argentina</h4>
           </GradientBox>
         </Swiper>
-      </Content>
-      <motion.div initial={{ y: 100 }} animate={{ y: 0 }}>
-        <Player />
-      </motion.div>
+      </Box>
+
+      <Player />
       <Bar />
     </Layout>
   );

@@ -1,5 +1,4 @@
-import React, { FC } from "react";
-import { Wrapper } from "./styles";
+import React, { FC, Fragment } from "react";
 import { Like } from "./Like";
 import { Play } from "./Play";
 import { Pause } from "./Pause";
@@ -9,8 +8,8 @@ export type Controls = {
 };
 
 export const Controls: FC<Controls> = ({ playing }) => (
-  <Wrapper>
+  <Fragment>
     <Like />
     {playing ? <Pause /> : <Play />}
-  </Wrapper>
+  </Fragment>
 );

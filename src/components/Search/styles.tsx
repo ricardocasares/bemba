@@ -1,6 +1,12 @@
 import { styled } from "@/css/styled";
+import { motion } from "framer-motion";
 
-export const Form = styled.form`
+export const animate = {
+  blur: { padding: "15px", borderRadius: 0 },
+  focus: { padding: 0, borderRadius: 3 }
+};
+
+export const Form = styled(motion.form)`
   display: flex;
   padding: 15px;
   position: absolute;
@@ -9,7 +15,7 @@ export const Form = styled.form`
   background: -webkit-linear-gradient(270deg, #000 1%, rgba(0, 0, 0, 0));
 `;
 
-export const Input = styled.input`
+export const Input = styled(motion.input)`
   border: none;
   width: 100%;
   border-radius: 3px;
@@ -19,6 +25,4 @@ export const Input = styled.input`
   color: #fff;
   font-weight: 500;
   opacity: 0.95;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
 `;

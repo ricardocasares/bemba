@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.section`
-  padding: 15px;
   margin-bottom: 25px;
 `;
 
