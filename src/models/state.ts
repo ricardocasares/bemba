@@ -21,6 +21,7 @@ export type Audio = {
 };
 
 export type Player = {
+  ready: boolean;
   playing: boolean;
 };
 

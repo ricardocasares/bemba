@@ -7,8 +7,19 @@ export type Player = {
   ready: boolean;
 };
 
-export const Player: FC<Player> = () => (
-  <Box flex="auto" bg="#000">
+const variants = {
+  show: { y: 0, opacity: 1, display: "flex" },
+  hide: { y: 100, opacity: 0, display: "none" }
+};
+
+export const Player: FC<Player> = ({ ready }) => (
+  <Box
+    flex="auto"
+    bg="#000"
+    initial="hide"
+    animate={ready ? "show" : "hide"}
+    variants={variants}
+  >
     <Box flex="1" column zminw padding="15px">
       <Display />
     </Box>

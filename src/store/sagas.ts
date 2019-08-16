@@ -12,6 +12,7 @@ function* init() {
 
 function* load(action: Station.StationLoad) {
   yield put(Audio.load(action.payload.url));
+  yield put(Player.ready());
 }
 
 function* play() {

@@ -59,7 +59,6 @@ function Index() {
           </GradientBox>
         </Swiper>
       </Box>
-
       <Player />
       <Bar />
     </Layout>

@@ -1,4 +1,4 @@
-import shouldForwardProp from "@emotion/is-prop-valid";
+import valid from "@emotion/is-prop-valid";
 import { motion } from "framer-motion";
 import { styled } from "@/css/styled";
 import { when } from "@/css/helpers";
@@ -18,7 +18,29 @@ export type Box = {
   fullh?: boolean;
 };
 
-export const Box = styled(motion.div, { shouldForwardProp })<Box>`
+const forward = (keys: string[]) => ({
+  shouldForwardProp(prop: string) {
+    return keys.includes(prop) || valid(prop);
+  }
+});
+
+export const Box = styled(
+  motion.div,
+  forward([
+    "bg",
+    "padding",
+    "top",
+    "bottom",
+    "left",
+    "right",
+    "align",
+    "initial",
+    "exit",
+    "animate",
+    "variants",
+    "transition"
+  ])
+)<Box>`
   ${when<Box>("flex", x => `flex: ${x};`)}
   ${when<Box>("flex", _ => `display: flex;`)}
   ${when<Box>("fullh", _ => `height: 100%;`)}
