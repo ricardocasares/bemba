@@ -7,17 +7,16 @@ export const initial: App = {
     ip: "",
     language: "English",
     state: "",
-    country: ""
+    country: "",
   },
   serverReady: false,
-  clientReady: false
+  clientReady: false,
 };
 
 export const reducer: Reducer<App, Actions> = (
   state = initial,
   action
 ): App => {
-  console.log(action.type);
   switch (action.type) {
     case ActionType.SERVER_READY:
       return { ...state, serverReady: true };
