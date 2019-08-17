@@ -16,9 +16,11 @@ export const SuggestionsBox: FC<SuggestionsBox> = ({ load, suggestions }) => {
       {Object.entries(suggestions).map(([label, stations]) => (
         <Swiper key={label} title={`${label} stations`}>
           {Object.entries(stations).map(([id, station]) => (
-            <GradientBox key={id} onClick={() => load(station)}>
-              <Display {...station} />
-            </GradientBox>
+            <div>
+              <GradientBox key={id} onClick={() => load(station)}>
+                <Display {...station} />
+              </GradientBox>
+            </div>
           ))}
         </Swiper>
       ))}

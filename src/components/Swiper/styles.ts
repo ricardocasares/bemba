@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.section`
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 `;
 
 export const Header = styled.h3`
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 15px;
+  font-size: 20px;
 `;
 
 export const Scroller = styled.div`

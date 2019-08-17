@@ -1,8 +1,12 @@
 import styled from "@emotion/styled";
 export const GradientBox = styled.div`
-  padding: 20px;
+  padding: 15px;
   border-radius: 5px;
-  width: 200px;
+  max-width: 200px;
+  height: 100px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  word-wrap: break-word;
   background: #5f3dc4;
 
   h5 {
