@@ -1,5 +1,7 @@
-import styled from "@emotion/styled";
-export const GradientBox = styled.div`
+import { motion } from "framer-motion";
+import { styled } from "@/css/styled";
+
+export const GradientBox = styled(motion.div)`
   padding: 15px;
   border-radius: 5px;
   max-width: 200px;

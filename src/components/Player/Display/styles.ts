@@ -12,12 +12,12 @@ export const Title = styled.h4`
   ${baseHeader}
   font-weight: 400;
   font-size: 16px;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
   color: white;
 `;
 
 export const Subtitle = styled.h5`
   ${baseHeader}
-  font-size: 14px;
+  font-size: 16px;
   color: #939393;
 `;

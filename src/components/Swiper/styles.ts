@@ -14,6 +14,8 @@ export const Header = styled.h3`
 export const Scroller = styled.div`
   width: 100%;
   overflow-x: auto;
+  overflow-y: scroll;
+  padding: 15px 0;
   -webkit-overflow-scrolling: touch;
 `;
 

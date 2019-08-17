@@ -17,7 +17,11 @@ export const SuggestionsBox: FC<SuggestionsBox> = ({ load, suggestions }) => {
         <Swiper key={label} title={`${label} stations`}>
           {Object.entries(stations).map(([id, station]) => (
             <div>
-              <GradientBox key={id} onClick={() => load(station)}>
+              <GradientBox
+                key={id}
+                onClick={() => load(station)}
+                whileTap={{ boxShadow: "0 0 0 2px #845ef7" }}
+              >
                 <Display {...station} />
               </GradientBox>
             </div>
