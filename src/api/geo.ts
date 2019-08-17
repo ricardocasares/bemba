@@ -14,13 +14,13 @@ export async function geo(ip: string): Promise<User> {
         region_name: region,
         country_name: country,
         location: {
-          languages: [{ name: language }]
-        }
+          languages: [{ name: language }],
+        },
       }) => ({
         ip,
         state: state || region,
         country,
-        language
+        language,
       })
     )
     .catch(err => {

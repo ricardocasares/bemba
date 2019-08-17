@@ -18,7 +18,7 @@ export const Results: FC<Results> = ({
   dirty,
   empty,
   loading,
-  results
+  results,
 }) => (
   <div>
     {loading && (
@@ -34,7 +34,7 @@ export const Results: FC<Results> = ({
     {!empty && !loading && dirty && (
       <Subtitle
         key="searching"
-        initial="hide"
+        initial={false}
         animate="show"
         variants={animations}
       >
