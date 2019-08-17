@@ -6,7 +6,6 @@ export const GradientBox = styled(motion.div)`
   border-radius: 5px;
   max-width: 200px;
   height: 100px;
-  margin-bottom: 10px;
   overflow: hidden;
   word-wrap: break-word;
   background: #5f3dc4;
