@@ -11,20 +11,19 @@ export type SuggestionsBox = {
 };
 
 export const SuggestionsBox: FC<SuggestionsBox> = ({ load, suggestions }) => {
+  console.log(JSON.stringify(suggestions, null, 2));
   return (
     <Fragment>
       {Object.entries(suggestions).map(([label, stations]) => (
         <Swiper key={label} title={`${label} stations`}>
           {Object.entries(stations).map(([id, station]) => (
-            <div>
-              <GradientBox
-                key={id}
-                onClick={() => load(station)}
-                whileTap={{ boxShadow: "0 0 0 2px #845ef7" }}
-              >
-                <Display {...station} />
-              </GradientBox>
-            </div>
+            <GradientBox
+              key={`${label}:${id}`}
+              onClick={() => load(station)}
+              whileTap={{ boxShadow: "0 0 0 2px #845ef7" }}
+            >
+              <Display {...station} />
+            </GradientBox>
           ))}
         </Swiper>
       ))}
