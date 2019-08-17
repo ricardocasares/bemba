@@ -9,14 +9,14 @@ export type Player = {
 
 const variants = {
   show: { y: 0, opacity: 1, display: "flex" },
-  hide: { y: 100, opacity: 0, display: "none" }
+  hide: { y: 100, opacity: 0, display: "none" },
 };
 
 export const Player: FC<Player> = ({ ready }) => (
   <Box
     flex="auto"
-    bg="#000"
-    initial="hide"
+    bg="#0e0e0e"
+    initial={false}
     animate={ready ? "show" : "hide"}
     variants={variants}
   >

@@ -4,7 +4,7 @@ import {
   fork,
   select,
   takeEvery,
-  takeLatest
+  takeLatest,
 } from "redux-saga/effects";
 import { BembaState, User, SearchFilterParam } from "@/models/state";
 import { search } from "@/api";
@@ -24,6 +24,10 @@ function* prepare() {
   if (user.language) {
     yield put(request(user.language, SearchFilterParam.LANGUAGE));
   }
+
+  yield put(request("Podcast", SearchFilterParam.TAG));
+  yield put(request("News", SearchFilterParam.TAG));
+  yield put(request("Electronica", SearchFilterParam.TAG));
 }
 
 function* execute({ payload: { filter, query } }: SuggestionsFetchRequest) {

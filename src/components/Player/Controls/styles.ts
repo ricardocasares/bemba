@@ -12,16 +12,16 @@ export const Button = styled.button`
 `;
 
 export const LikeIcon = styled(Heart)`
-  fill: #383838;
-  color: #383838;
+  fill: #5f3dc4;
+  color: #5f3dc4;
 `;
 
 export const PlayIcon = styled(Play)`
-  fill: #383838;
-  color: #383838;
+  fill: #5f3dc4;
+  color: #5f3dc4;
 `;
 
 export const PauseIcon = styled(Pause)`
-  fill: #383838;
-  color: #383838;
+  fill: #5f3dc4;
+  color: #5f3dc4;
 `;

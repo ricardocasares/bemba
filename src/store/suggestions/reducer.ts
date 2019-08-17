@@ -22,7 +22,7 @@ export const reducer: Reducer<Suggestions, Actions> = (
 
       return {
         ...state,
-        [action.payload.query]: action.payload.stations
+        [action.payload.query]: action.payload.stations,
       };
     case ActionType.FETCH_ERRORED:
       return state;

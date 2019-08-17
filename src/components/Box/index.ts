@@ -21,7 +21,7 @@ export type Box = {
 const forward = (keys: string[]) => ({
   shouldForwardProp(prop: string) {
     return keys.includes(prop) || valid(prop);
-  }
+  },
 });
 
 export const Box = styled(
@@ -38,7 +38,7 @@ export const Box = styled(
     "exit",
     "animate",
     "variants",
-    "transition"
+    "transition",
   ])
 )<Box>`
   ${when<Box>("flex", x => `flex: ${x};`)}

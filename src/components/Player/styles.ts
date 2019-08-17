@@ -6,5 +6,5 @@ export type Wrapper = {
 
 export const Wrapper = styled.div<Wrapper>`
   display: ${({ visible }) => (visible ? "flex" : "none")};
-  background: #1e1e1e;
+  background: #2e2e2e;
 `;

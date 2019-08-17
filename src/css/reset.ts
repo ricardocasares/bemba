@@ -19,7 +19,7 @@ export const reset = css`
   body {
     margin: 0;
     font-weight: 400;
-    background: #1e1e1e;
+    background: #000;
     color: #fff;
   }
 

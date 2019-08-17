@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const animations = {
   show: { opacity: 1 },
-  hide: { opacity: 0 }
+  hide: { opacity: 0 },
 };
 
 export const List = styled(motion.ul)`
@@ -15,7 +15,6 @@ export const List = styled(motion.ul)`
 export const ListItem = styled(motion.li)`
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #333;
 `;
 
 export const StationButton = styled(motion.button)`
