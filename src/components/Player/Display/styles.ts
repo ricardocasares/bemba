@@ -11,12 +11,13 @@ export const baseHeader = css`
 export const Title = styled.h4`
   ${baseHeader}
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 3px;
   color: white;
 `;
 
 export const Subtitle = styled.h5`
   ${baseHeader}
+  font-size: 14px;
   color: #939393;
 `;
