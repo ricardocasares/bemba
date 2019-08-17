@@ -5,7 +5,7 @@ import { ActionType, BembaGeoRequest, BembaServerReady } from "./model";
 
 function* server({ payload }: BembaServerReady) {
   if (payload.req) {
-    const ip = payload.req.headers["x-forwarded-for"] || "201.251.228.83";
+    const ip = payload.req.headers["x-forwarded-for"];
     yield put(geoRequest(ip as string));
   }
 }
