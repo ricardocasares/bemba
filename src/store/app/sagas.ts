@@ -3,9 +3,11 @@ import { geo } from "@/api/geo";
 import { geoReceive, geoErrored, geoRequest } from "./actions";
 import { ActionType, BembaGeoRequest, BembaServerReady } from "./model";
 
+const DEV_GEO_IP_ADDRESS = process.env.DEV_GEO_IP_ADDRESS;
+
 function* server({ payload }: BembaServerReady) {
   if (payload.req) {
-    const ip = payload.req.headers["x-forwarded-for"];
+    const ip = payload.req.headers["x-forwarded-for"] || DEV_GEO_IP_ADDRESS;
     yield put(geoRequest(ip as string));
   }
 }
