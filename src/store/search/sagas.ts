@@ -16,7 +16,7 @@ function* validate({ payload: { query, filter } }: SearchInput) {
 
 function* execute({ payload: { filter, query } }: SearchFetchRequest) {
   try {
-    const stations = yield call(search, filter, query);
+    const stations = yield call(search, filter, query, 15);
     yield put(receive(stations));
 
     if (Object.keys(stations).length) {
