@@ -11,7 +11,6 @@ export type SuggestionsBox = {
 };
 
 export const SuggestionsBox: FC<SuggestionsBox> = ({ load, suggestions }) => {
-  console.log(JSON.stringify(suggestions, null, 2));
   return (
     <Fragment>
       {Object.entries(suggestions).map(([label, stations]) => (
