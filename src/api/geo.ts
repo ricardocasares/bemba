@@ -4,8 +4,8 @@ import { User } from "@/models/state";
 const KEY = process.env.IP_STACK_API_KEY;
 const API = process.env.IP_STACK_API_ENDPOINT;
 
-export const geo = async (ip: string): Promise<User> =>
-  fetch(`${API}/${ip}?access_key=${KEY}`)
+export async function geo(ip: string): Promise<User> {
+  return fetch(`${API}/${ip}?access_key=${KEY}`)
     .then(r => r.json())
     .then(
       ({
@@ -28,3 +28,4 @@ export const geo = async (ip: string): Promise<User> =>
         `There was a problem locating the user: [${err.message}]`
       );
     });
+}
