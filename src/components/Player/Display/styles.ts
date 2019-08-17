@@ -5,12 +5,14 @@ import { ellipsis } from "@/css";
 export const baseHeader = css`
   ${ellipsis}
   margin: 0;
-  font-weight: 400;
+  font-weight: 300;
 `;
 
 export const Title = styled.h4`
   ${baseHeader}
+  font-weight: 400;
   font-size: 14px;
+  margin-bottom: 3px;
   color: white;
 `;
 

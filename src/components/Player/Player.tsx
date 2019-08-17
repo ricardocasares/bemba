@@ -15,7 +15,7 @@ const variants = {
 export const Player: FC<Player> = ({ ready }) => (
   <Box
     flex="auto"
-    bg="#0e0e0e"
+    bg="#222"
     initial={false}
     animate={ready ? "show" : "hide"}
     variants={variants}

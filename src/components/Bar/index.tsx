@@ -6,9 +6,8 @@ import { Home, Search, Heart } from "react-bytesize-icons";
 const Container = styled.nav`
   display: flex;
   padding: 10px 15px;
-  background: #0e0e0e;
-  border-top: 1px solid #111;
-  justify-content: space-between;
+  background: #222;
+  justify-content: space-around;
 `;
 
 const ICON_SIZE = 20;

@@ -53,6 +53,6 @@ export const Box = styled(
   ${when<Box>("align", x => `align-items: ${x};`)}
   ${when<Box>("column", _ => `flex-direction: column;`)}
   ${when<Box>("scroll", _ => `overflow: scroll;`)}
-  ${when<Box>("scroll", _ => `-webkit-overflow-scrolling: touch;`)}
+
   ${when<Box>("zminw", _ => `min-width: 0;`)}
 `;
