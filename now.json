@@ -4,8 +4,8 @@
   "alias": ["bemba.analogic.al"],
   "build": {
     "env": {
-      "IP_STACK_API_KEY": "@ip-stack-api-key",
-      "IP_STACK_API_ENDPOINT": "@ip-stack-api-endpoint",
+      "GEOIP_API_KEY": "@geoip-api-key",
+      "GEOIP_API_ENDPOINT": "@geoip-api-endpoint",
       "BEMBA_API_ENDPOINT": "@bemba-api-endpoint"
     }
   }
