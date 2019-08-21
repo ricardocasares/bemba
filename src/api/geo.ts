@@ -27,21 +27,12 @@ export async function geo(ip?: string): Promise<any> {
     }&fields=state_prov,country_name,city,currency,languages`
   )
     .then(r => r.json())
-    .then(
-      ({
-        city,
-        state_prov: state,
-        country_name: country,
-        languages,
-        currency: { code: currency },
-      }) => ({
-        city: city.trim().replace(/city/gi, ""),
-        state,
-        country,
-        currency,
-        language: getLanguage(languages),
-      })
-    )
+    .then(({ city, state_prov: state, country_name: country, languages }) => ({
+      city: city.trim().replace(/city/gi, ""),
+      state,
+      country,
+      language: getLanguage(languages),
+    }))
     .catch(err => {
       console.error(err);
       throw new Error(

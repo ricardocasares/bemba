@@ -1,5 +1,5 @@
 import { put, call, fork, debounce, takeLatest } from "redux-saga/effects";
-import { search } from "@/api/graphql";
+import { searchStations } from "@/api/graphql";
 import { request, receive, errored, historyAdd, historySave } from "./actions";
 import {
   ActionType,
@@ -16,7 +16,7 @@ function* validate({ payload: { query, filter } }: SearchInput) {
 
 function* execute({ payload: { filter, query } }: SearchFetchRequest) {
   try {
-    const stations = yield call(search, filter, query, 15);
+    const stations = yield call(searchStations, filter, query, 15);
     yield put(receive(stations));
 
     if (Object.keys(stations).length) {

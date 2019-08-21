@@ -95,8 +95,8 @@ export const Query = queryType({
 
     t.field("suggestions", {
       type: Suggestions,
-      async resolve() {
-        const { city, country, language } = await geo();
+      async resolve(_, __, { ip }) {
+        const { city, country, language } = await geo(ip);
 
         const citySuggestions = await radio(`/search`, {
           name: city,

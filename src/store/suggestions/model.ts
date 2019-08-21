@@ -8,11 +8,13 @@ export enum ActionType {
   FETCH_ERRORED = "@bemba/suggestions/fetch/errored",
 }
 
-export interface SuggestionsPrepare extends Action<ActionType.PREPARE> {}
+export interface SuggestionsPrepare extends Action<ActionType.PREPARE> {
+  payload?: string;
+}
 
 export interface SuggestionsFetchRequest
   extends Action<ActionType.FETCH_REQUEST> {
-  readonly payload: string[];
+  readonly payload: { ip?: string; suggestions: string[] };
 }
 
 export interface SuggestionsFetchReceive

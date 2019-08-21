@@ -7,13 +7,17 @@ import {
   SuggestionsFetchErrored,
 } from "./model";
 
-export const prepare = (): SuggestionsPrepare => ({
+export const prepare = (payload?: string): SuggestionsPrepare => ({
   type: ActionType.PREPARE,
+  payload,
 });
 
-export const request = (...payload: string[]): SuggestionsFetchRequest => ({
+export const request = (
+  suggestions: string[],
+  ip?: string
+): SuggestionsFetchRequest => ({
   type: ActionType.FETCH_REQUEST,
-  payload,
+  payload: { ip, suggestions },
 });
 
 export const receive = (payload: Suggestions): SuggestionsFetchReceive => ({

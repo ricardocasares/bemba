@@ -1,17 +1,11 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import { Layout } from "@/components/Layout";
 import { Box } from "@/components/Box";
 import { Suggestions } from "@/components/Suggestions";
+import { Player } from "@/components/Player";
 import { Bar } from "@/components/Bar";
 import { NextPage } from "next";
 import { prepare } from "@/store/suggestions";
-
-const Player = dynamic(
-  // @ts-ignore
-  () => import("@/components/Player").then(({ Player }) => Player),
-  { ssr: false }
-);
 
 const Index: NextPage = () => {
   return (
@@ -26,7 +20,15 @@ const Index: NextPage = () => {
 };
 
 Index.getInitialProps = async ctx => {
-  await ctx.store.dispatch(prepare());
+  if (ctx.req) {
+    await ctx.store.dispatch(
+      prepare(ctx.req.headers["x-forwarded-for"] as string)
+    );
+  }
+
+  if (!ctx.req) {
+    await ctx.store.dispatch(prepare());
+  }
 
   return {};
 };

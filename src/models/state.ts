@@ -37,8 +37,8 @@ export type Audio = {
 };
 
 export type Player = {
-  ready: boolean;
-  playing: boolean;
+  readonly ready: boolean;
+  readonly playing: boolean;
 };
 
 export type Station = {
@@ -59,27 +59,23 @@ export enum SearchFilterParam {
 }
 
 export type Search = {
-  query: string;
-  filter: SearchFilterParam;
-  dirty: boolean;
-  empty: boolean;
-  loading: boolean;
-  results: Stations;
-  history: Record<string, Stations>;
+  readonly query: string;
+  readonly filter: SearchFilterParam;
+  readonly dirty: boolean;
+  readonly empty: boolean;
+  readonly loading: boolean;
+  readonly results: Stations;
+  readonly history: Record<string, Stations>;
 };
 
 export type Stations = Record<string, Station>;
 
 export type Suggestion = {
-  name: string;
-  stations: Stations;
+  readonly name: string;
+  readonly stations: Stations;
 };
 
-export type Suggestions = {
-  city: Suggestion;
-  country: Suggestion;
-  language: Suggestion;
-};
+export type Suggestions = Record<string, Suggestion>;
 
 export type BembaActions =
   | AppActions
