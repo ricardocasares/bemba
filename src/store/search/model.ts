@@ -7,7 +7,7 @@ export enum ActionType {
   HISTORY_SAVE = "@bemba/search/history/save",
   FETCH_REQUEST = "@bemba/search/fetch/request",
   FETCH_RECEIVE = "@bemba/search/fetch/receive",
-  FETCH_ERRORED = "@bemba/search/fetch/errored"
+  FETCH_ERRORED = "@bemba/search/fetch/errored",
 }
 
 export interface SearchInput extends Action<ActionType.INPUT> {
