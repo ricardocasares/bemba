@@ -13,9 +13,9 @@ async function request<R, T>(
   return fetch(BEMBA_API_ENDPOINT, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({ query })
+    body: JSON.stringify({ query }),
   })
     .then(res => res.json())
     .then(select);
@@ -41,5 +41,32 @@ export async function search(filter: string, name: string, limit: number = 5) {
         }
       }`,
     ({ data: { stations } }) => index<Station>("id")(stations)
+  );
+}
+
+export async function suggestions(...categories: string[]) {
+  return request<Response<any>, any>(
+    `{
+      suggestions {
+        ${categories.map(
+          category => `${category} {
+          stations {
+            id
+            url
+            name
+            tags
+            state
+            country
+          }
+        }`
+        )}
+      }
+    }`,
+    ({ data: { suggestions } }) =>
+      Object.entries(suggestions)
+        .map(([key, { stations }]: any) => ({
+          [key]: { stations: index<Station>("id")(stations) },
+        }))
+        .reduce((acc, suggestion) => ({ ...acc, ...suggestion }), {})
   );
 }

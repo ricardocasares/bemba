@@ -4,8 +4,8 @@ import { User } from "@/models/state";
 const KEY = process.env.IP_STACK_API_KEY;
 const API = process.env.IP_STACK_API_ENDPOINT;
 
-export async function geo(ip: string): Promise<User> {
-  return fetch(`${API}/${ip}?access_key=${KEY}`)
+export async function geo(ip?: string): Promise<User> {
+  return fetch(`${API}/${ip ? ip : "/check"}?access_key=${KEY}`)
     .then(r => r.json())
     .then(
       ({
@@ -13,8 +13,8 @@ export async function geo(ip: string): Promise<User> {
         city: state,
         region_name: region,
         country_name: country,
-        location: {
-          languages: [{ name: language }],
+        location: { languages: [{ name: language = "English" }] } = {
+          languages: [{}],
         },
       }) => ({
         ip,

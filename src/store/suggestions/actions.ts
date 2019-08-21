@@ -1,33 +1,27 @@
-import { Stations, SearchFilterParam } from "@/models/state";
+import { Stations } from "@/models/state";
 import {
   ActionType,
   SuggestionsPrepare,
   SuggestionsFetchRequest,
   SuggestionsFetchReceive,
-  SuggestionsFetchErrored
+  SuggestionsFetchErrored,
 } from "./model";
 
 export const prepare = (): SuggestionsPrepare => ({
-  type: ActionType.PREPARE
+  type: ActionType.PREPARE,
 });
 
-export const request = (
-  query: string,
-  filter: SearchFilterParam
-): SuggestionsFetchRequest => ({
+export const request = (...categories: string[]): SuggestionsFetchRequest => ({
   type: ActionType.FETCH_REQUEST,
-  payload: { query, filter }
+  payload: categories,
 });
 
-export const receive = (
-  query: string,
-  stations: Stations
-): SuggestionsFetchReceive => ({
+export const receive = (payload: Stations): SuggestionsFetchReceive => ({
   type: ActionType.FETCH_RECEIVE,
-  payload: { query, stations }
+  payload,
 });
 
 export const errored = (payload: Error): SuggestionsFetchErrored => ({
   type: ActionType.FETCH_ERRORED,
-  payload
+  payload,
 });

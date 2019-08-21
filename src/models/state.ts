@@ -55,7 +55,7 @@ export enum SearchFilterParam {
   NAME = "name",
   STATE = "state",
   COUNTRY = "country",
-  LANGUAGE = "language"
+  LANGUAGE = "language",
 }
 
 export type Search = {
@@ -69,7 +69,11 @@ export type Search = {
 };
 
 export type Stations = Record<string, Station>;
-export type Suggestions = Record<string, Stations>;
+
+export type Suggestions = {
+  tags: { stations: Stations };
+  country: { stations: Stations };
+};
 
 export type BembaActions =
   | AppActions

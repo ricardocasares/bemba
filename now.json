@@ -6,7 +6,7 @@
     "env": {
       "IP_STACK_API_KEY": "@ip-stack-api-key",
       "IP_STACK_API_ENDPOINT": "@ip-stack-api-endpoint",
-      "BEMBA_API_ENDPOINT": "@bemba_api_endpoint"
+      "BEMBA_API_ENDPOINT": "@bemba-api-endpoint"
     }
   }
 }

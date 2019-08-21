@@ -1,40 +1,19 @@
-import {
-  put,
-  call,
-  fork,
-  select,
-  takeEvery,
-  takeLatest,
-} from "redux-saga/effects";
-import { BembaState, User, SearchFilterParam } from "@/models/state";
-import { search } from "@/api";
+import { put, call, fork, takeEvery, takeLatest } from "redux-saga/effects";
+import { suggestions } from "@/api/graphql";
 import { receive, errored, request } from "./actions";
 import { ActionType, SuggestionsFetchRequest } from "./model";
 
 function* prepare() {
-  const user: User = yield select(({ app: { user } }: BembaState) => user);
-  if (user.state) {
-    yield put(request(user.state, SearchFilterParam.STATE));
-  }
-
-  if (user.country) {
-    yield put(request(user.country, SearchFilterParam.COUNTRY));
-  }
-
-  if (user.language) {
-    yield put(request(user.language, SearchFilterParam.LANGUAGE));
-  }
-
-  yield put(request("Podcast", SearchFilterParam.TAG));
-  yield put(request("News", SearchFilterParam.TAG));
-  yield put(request("Electronica", SearchFilterParam.TAG));
+  yield put(request("tags", "state", "country"));
 }
 
-function* execute({ payload: { filter, query } }: SuggestionsFetchRequest) {
+function* execute({ payload }: SuggestionsFetchRequest) {
   try {
-    const stations = yield call(search, filter, query);
-    yield put(receive(query, stations));
+    const stations = yield call(suggestions, ...payload);
+
+    yield put(receive(stations));
   } catch (err) {
+    console.error(err);
     yield put(errored(err));
   }
 }

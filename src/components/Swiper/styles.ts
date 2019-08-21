@@ -9,6 +9,7 @@ export const Header = styled.h3`
   font-weight: 400;
   margin-bottom: 15px;
   font-size: 20px;
+  text-transform: capitalize;
 `;
 
 export const Scroller = styled.div`
