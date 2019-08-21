@@ -1,4 +1,4 @@
-import { Stations } from "@/models/state";
+import { Suggestions } from "@/models/state";
 import {
   ActionType,
   SuggestionsPrepare,
@@ -11,12 +11,12 @@ export const prepare = (): SuggestionsPrepare => ({
   type: ActionType.PREPARE,
 });
 
-export const request = (...categories: string[]): SuggestionsFetchRequest => ({
+export const request = (...payload: string[]): SuggestionsFetchRequest => ({
   type: ActionType.FETCH_REQUEST,
-  payload: categories,
+  payload,
 });
 
-export const receive = (payload: Stations): SuggestionsFetchReceive => ({
+export const receive = (payload: Suggestions): SuggestionsFetchReceive => ({
   type: ActionType.FETCH_RECEIVE,
   payload,
 });

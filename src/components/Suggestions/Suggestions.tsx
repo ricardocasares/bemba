@@ -13,8 +13,8 @@ export type SuggestionsBox = {
 export const SuggestionsBox: FC<SuggestionsBox> = ({ load, suggestions }) => {
   return (
     <Fragment>
-      {Object.entries(suggestions).map(([label, { stations }]) => (
-        <Swiper key={label} title={`${label} stations`}>
+      {Object.entries(suggestions).map(([label, { name, stations }]) => (
+        <Swiper key={label} title={name}>
           {Object.entries(stations).map(([id, station]) => (
             <GradientBox
               key={`${label}:${id}`}

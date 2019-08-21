@@ -4,7 +4,7 @@ import { receive, errored, request } from "./actions";
 import { ActionType, SuggestionsFetchRequest } from "./model";
 
 function* prepare() {
-  yield put(request("tags", "state", "country"));
+  yield put(request("podcasts", "news", "city", "country", "language"));
 }
 
 function* execute({ payload }: SuggestionsFetchRequest) {

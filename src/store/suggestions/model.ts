@@ -1,5 +1,5 @@
 import { Action } from "redux";
-import { Stations } from "@/models/state";
+import { Suggestions } from "@/models/state";
 
 export enum ActionType {
   PREPARE = "@bemba/suggestions/prepare",
@@ -17,7 +17,7 @@ export interface SuggestionsFetchRequest
 
 export interface SuggestionsFetchReceive
   extends Action<ActionType.FETCH_RECEIVE> {
-  readonly payload: Stations;
+  readonly payload: Suggestions;
 }
 
 export interface SuggestionsFetchErrored

@@ -50,6 +50,7 @@ export async function suggestions(...categories: string[]) {
       suggestions {
         ${categories.map(
           category => `${category} {
+          name
           stations {
             id
             url
@@ -62,11 +63,12 @@ export async function suggestions(...categories: string[]) {
         )}
       }
     }`,
-    ({ data: { suggestions } }) =>
-      Object.entries(suggestions)
-        .map(([key, { stations }]: any) => ({
-          [key]: { stations: index<Station>("id")(stations) },
+    ({ data: { suggestions } }) => {
+      return Object.entries(suggestions)
+        .map(([key, { name, stations }]: any) => ({
+          [key]: { name, stations: index<Station>("id")(stations) },
         }))
-        .reduce((acc, suggestion) => ({ ...acc, ...suggestion }), {})
+        .reduce((acc, suggestion) => ({ ...acc, ...suggestion }), {});
+    }
   );
 }

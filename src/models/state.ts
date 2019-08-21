@@ -70,9 +70,15 @@ export type Search = {
 
 export type Stations = Record<string, Station>;
 
+export type Suggestion = {
+  name: string;
+  stations: Stations;
+};
+
 export type Suggestions = {
-  tags: { stations: Stations };
-  country: { stations: Stations };
+  city: Suggestion;
+  country: Suggestion;
+  language: Suggestion;
 };
 
 export type BembaActions =

@@ -1,29 +1,49 @@
+import langs from "langs";
 import fetch from "isomorphic-unfetch";
-import { User } from "@/models/state";
+// import { User } from "@/models/state";
 
-const KEY = process.env.IP_STACK_API_KEY;
-const API = process.env.IP_STACK_API_ENDPOINT;
+const KEY = process.env.GEOIP_API_KEY;
+const API = process.env.GEOIP_API_ENDPOINT;
 
-export async function geo(ip?: string): Promise<User> {
-  return fetch(`${API}/${ip ? ip : "/check"}?access_key=${KEY}`)
+function getLanguage(languages: string = "en") {
+  return [
+    ...new Set(
+      languages
+        .replace(/\s/g, "")
+        .split(",")
+        .map(lang => lang.split("-").shift())
+        .map(code => langs.where("1", code as string))
+    ),
+  ]
+    .filter(Boolean)
+    .map(({ name }) => name)
+    .shift();
+}
+
+export async function geo(ip?: string): Promise<any> {
+  return fetch(
+    `${API}/ipgeo?apiKey=${KEY}${
+      ip ? `&ip=${ip}` : ""
+    }&fields=state_prov,country_name,city,currency,languages`
+  )
     .then(r => r.json())
     .then(
       ({
-        ip,
-        city: state,
-        region_name: region,
+        city,
+        state_prov: state,
         country_name: country,
-        location: { languages: [{ name: language = "English" }] } = {
-          languages: [{}],
-        },
+        languages,
+        currency: { code: currency },
       }) => ({
-        ip,
-        state: state || region,
+        city: city.trim().replace(/city/gi, ""),
+        state,
         country,
-        language,
+        currency,
+        language: getLanguage(languages),
       })
     )
     .catch(err => {
+      console.error(err);
       throw new Error(
         `There was a problem locating the user: [${err.message}]`
       );

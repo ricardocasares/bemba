@@ -3,12 +3,9 @@ import { Suggestions } from "@/models/state";
 import { Actions, ActionType } from "./model";
 
 export const initial: Suggestions = {
-  tags: {
-    stations: {},
-  },
-  country: {
-    stations: {},
-  },
+  city: { name: "", stations: {} },
+  country: { name: "", stations: {} },
+  language: { name: "", stations: {} },
 };
 
 export const reducer: Reducer<Suggestions, Actions> = (

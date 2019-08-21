@@ -1,5 +1,6 @@
 import { objectType, queryType, idArg, inputObjectType, enumType } from "nexus";
 import { radio } from "@/api/radio";
+import { geo } from "@/api/geo";
 
 export const Station = objectType({
   name: "Station",
@@ -53,6 +54,7 @@ export const ParamsInput = inputObjectType({
 export const Suggestion = objectType({
   name: "Suggestion",
   definition(t) {
+    t.string("name");
     t.list.field("stations", { type: Station });
   },
 });
@@ -60,9 +62,11 @@ export const Suggestion = objectType({
 export const Suggestions = objectType({
   name: "Suggestions",
   definition(t) {
-    t.field("tags", { type: Suggestion });
-    t.field("state", { type: Suggestion });
+    t.field("news", { type: Suggestion });
+    t.field("city", { type: Suggestion });
     t.field("country", { type: Suggestion });
+    t.field("podcasts", { type: Suggestion });
+    t.field("language", { type: Suggestion });
   },
 });
 
@@ -92,13 +96,49 @@ export const Query = queryType({
     t.field("suggestions", {
       type: Suggestions,
       async resolve() {
-        const tags = await radio(`/search`, { tag: "tango" });
-        const state = await radio(`/search`, { tag: "tango" });
-        const country = await radio(`/search`, { tag: "tango" });
+        const { city, country, language } = await geo();
+
+        const citySuggestions = await radio(`/search`, {
+          name: city,
+        });
+
+        const newsSuggestions = await radio(`/search`, {
+          language,
+          tag: "news",
+        });
+
+        const countrySuggestions = await radio(`/search`, { country });
+
+        const podcastsSuggestions = await radio(`/search`, {
+          language,
+          tagList: "podcast",
+        });
+
+        const languageSuggestions = await radio(`/search`, {
+          language,
+        });
+
         return {
-          tags: { stations: tags },
-          state: { stations: state },
-          country: { stations: country },
+          news: {
+            name: `News in ${language}`,
+            stations: newsSuggestions,
+          },
+          city: {
+            name: `Listen stations from ${city}`,
+            stations: citySuggestions,
+          },
+          country: {
+            name: `Stations from ${country}`,
+            stations: countrySuggestions,
+          },
+          podcasts: {
+            name: `Podcasts in ${language}`,
+            stations: podcastsSuggestions,
+          },
+          language: {
+            name: `${language} language stations`,
+            stations: languageSuggestions,
+          },
         };
       },
     });
