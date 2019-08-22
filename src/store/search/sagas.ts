@@ -1,12 +1,12 @@
-import { put, call, fork, debounce, takeLatest } from "redux-saga/effects";
-import { searchStations } from "@/api/graphql";
-import { request, receive, errored, historyAdd, historySave } from "./actions";
+import { put, call, fork, debounce, takeLatest } from 'redux-saga/effects';
+import { searchStations } from '@/api/graphql';
+import { request, receive, errored, historyAdd, historySave } from './actions';
 import {
   ActionType,
   SearchInput,
   SearchHistoryAdd,
   SearchFetchRequest,
-} from "./model";
+} from './model';
 
 function* validate({ payload: { query, filter } }: SearchInput) {
   if (query.length) {

@@ -1,11 +1,11 @@
-import { Suggestions } from "@/models/state";
+import { Suggestions } from '@/models/state';
 import {
   ActionType,
   SuggestionsPrepare,
   SuggestionsFetchRequest,
   SuggestionsFetchReceive,
   SuggestionsFetchErrored,
-} from "./model";
+} from './model';
 
 export const prepare = (payload?: string): SuggestionsPrepare => ({
   type: ActionType.PREPARE,

@@ -1,10 +1,10 @@
-import { all, put, take, fork, takeLatest } from "redux-saga/effects";
-import * as App from "./app";
-import * as Player from "./player";
-import * as Audio from "./audio";
-import * as Search from "./search";
-import * as Station from "./station";
-import * as Suggestions from "./suggestions";
+import { all, put, take, fork, takeLatest } from 'redux-saga/effects';
+import * as App from './app';
+import * as Player from './player';
+import * as Audio from './audio';
+import * as Search from './search';
+import * as Station from './station';
+import * as Suggestions from './suggestions';
 
 function* client() {
   yield take(App.ActionType.CLIENT_READY);
@@ -45,6 +45,6 @@ export function* sagas() {
     ...App.sagas,
     ...Audio.sagas,
     ...Search.sagas,
-    ...Suggestions.sagas
+    ...Suggestions.sagas,
   ]);
 }

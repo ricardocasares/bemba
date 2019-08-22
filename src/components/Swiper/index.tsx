@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { Wrapper, Header, Scroller, Items } from "./styles";
+import React, { FC } from 'react';
+import { Wrapper, Header, Scroller, Items } from './styles';
 
 export type Swiper = {
   title?: string;

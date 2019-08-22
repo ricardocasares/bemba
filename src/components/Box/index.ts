@@ -1,7 +1,7 @@
-import valid from "@emotion/is-prop-valid";
-import { motion } from "framer-motion";
-import { styled } from "@/css/styled";
-import { when } from "@/css/helpers";
+import valid from '@emotion/is-prop-valid';
+import { motion } from 'framer-motion';
+import { styled } from '@/css/styled';
+import { when } from '@/css/helpers';
 
 export type Box = {
   bg?: string;
@@ -27,32 +27,32 @@ const forward = (keys: string[]) => ({
 export const Box = styled(
   motion.div,
   forward([
-    "bg",
-    "padding",
-    "top",
-    "bottom",
-    "left",
-    "right",
-    "align",
-    "initial",
-    "exit",
-    "animate",
-    "variants",
-    "transition",
+    'bg',
+    'padding',
+    'top',
+    'bottom',
+    'left',
+    'right',
+    'align',
+    'initial',
+    'exit',
+    'animate',
+    'variants',
+    'transition',
   ])
 )<Box>`
-  ${when<Box>("flex", x => `flex: ${x};`)}
-  ${when<Box>("flex", _ => `display: flex;`)}
-  ${when<Box>("fullh", _ => `height: 100%;`)}
-  ${when<Box>("bg", x => `background: ${x};`)}
-  ${when<Box>("padding", x => `padding: ${x};`)}
-  ${when<Box>("top", x => `padding-top: ${x};`)}
-  ${when<Box>("bottom", x => `padding-bottom: ${x};`)}
-  ${when<Box>("right", x => `padding-right: ${x};`)}
-  ${when<Box>("left", x => `padding-left: ${x};`)}
-  ${when<Box>("align", x => `align-items: ${x};`)}
-  ${when<Box>("column", _ => `flex-direction: column;`)}
-  ${when<Box>("scroll", _ => `overflow: scroll;`)}
+  ${when<Box>('flex', x => `flex: ${x};`)}
+  ${when<Box>('flex', _ => `display: flex;`)}
+  ${when<Box>('fullh', _ => `height: 100%;`)}
+  ${when<Box>('bg', x => `background: ${x};`)}
+  ${when<Box>('padding', x => `padding: ${x};`)}
+  ${when<Box>('top', x => `padding-top: ${x};`)}
+  ${when<Box>('bottom', x => `padding-bottom: ${x};`)}
+  ${when<Box>('right', x => `padding-right: ${x};`)}
+  ${when<Box>('left', x => `padding-left: ${x};`)}
+  ${when<Box>('align', x => `align-items: ${x};`)}
+  ${when<Box>('column', _ => `flex-direction: column;`)}
+  ${when<Box>('scroll', _ => `overflow: scroll;`)}
 
-  ${when<Box>("zminw", _ => `min-width: 0;`)}
+  ${when<Box>('zminw', _ => `min-width: 0;`)}
 `;

@@ -1,19 +1,19 @@
-import React from "react";
-import withSagas from "next-redux-saga";
-import withRedux from "next-redux-wrapper";
-import { Provider } from "react-redux";
-import { ThemeProvider } from "emotion-theming";
-import { Global } from "@emotion/core";
-import App, { Container, AppContext } from "next/app";
-import Head from "next/head";
-import { reset } from "@/css/reset";
-import { theme } from "@/css/theme";
-import { configureStore } from "@/store";
-import { BembaStore } from "@/models/state";
-import { clientReady, serverReady } from "@/store/app/actions";
-import { Layout } from "@/components/Layout";
-import { Player } from "@/components/Player";
-import { Bar } from "@/components/Bar";
+import React from 'react';
+import withSagas from 'next-redux-saga';
+import withRedux from 'next-redux-wrapper';
+import { Provider } from 'react-redux';
+import { ThemeProvider } from 'emotion-theming';
+import { Global } from '@emotion/core';
+import App, { Container, AppContext } from 'next/app';
+import Head from 'next/head';
+import { reset } from '@/css/reset';
+import { theme } from '@/css/theme';
+import { configureStore } from '@/store';
+import { BembaStore } from '@/models/state';
+import { clientReady, serverReady } from '@/store/app/actions';
+import { Layout } from '@/components/Layout';
+import { Player } from '@/components/Player';
+import { Bar } from '@/components/Bar';
 
 type BembaProps = { store: BembaStore };
 

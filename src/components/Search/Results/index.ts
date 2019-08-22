@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { BembaState } from "@/models/state";
-import { load } from "@/store/station";
-import { Results as Component } from "./Results";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { BembaState } from '@/models/state';
+import { load } from '@/store/station';
+import { Results as Component } from './Results';
 
 export const Results = connect(
   ({ search: { query, dirty, empty, loading, results } }: BembaState) => ({
@@ -10,7 +10,7 @@ export const Results = connect(
     dirty,
     empty,
     loading,
-    results
+    results,
   }),
   dispatch => bindActionCreators({ load }, dispatch)
 )(Component);

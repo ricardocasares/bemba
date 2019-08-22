@@ -1,4 +1,4 @@
-import { Stations, SearchFilterParam } from "@/models/state";
+import { Stations, SearchFilterParam } from '@/models/state';
 import {
   ActionType,
   SearchInput,
@@ -6,15 +6,15 @@ import {
   SearchFetchRequest,
   SearchFetchReceive,
   SearchFetchErrored,
-  SearchHistoryAdd
-} from "./model";
+  SearchHistoryAdd,
+} from './model';
 
 export const search = (
   query: string,
   filter: SearchFilterParam
 ): SearchInput => ({
   type: ActionType.INPUT,
-  payload: { query, filter }
+  payload: { query, filter },
 });
 
 export const historyAdd = (
@@ -23,7 +23,7 @@ export const historyAdd = (
   stations: Stations
 ): SearchHistoryAdd => ({
   type: ActionType.HISTORY_ADD,
-  payload: { query, filter, stations }
+  payload: { query, filter, stations },
 });
 
 export const historySave = (
@@ -32,7 +32,7 @@ export const historySave = (
   stations: Stations
 ): SearchHistorySave => ({
   type: ActionType.HISTORY_SAVE,
-  payload: { query, filter, stations }
+  payload: { query, filter, stations },
 });
 
 export const request = (
@@ -40,15 +40,15 @@ export const request = (
   filter: SearchFilterParam
 ): SearchFetchRequest => ({
   type: ActionType.FETCH_REQUEST,
-  payload: { filter, query }
+  payload: { filter, query },
 });
 
 export const receive = (payload: Stations): SearchFetchReceive => ({
   type: ActionType.FETCH_RECEIVE,
-  payload
+  payload,
 });
 
 export const errored = (payload: Error): SearchFetchErrored => ({
   type: ActionType.FETCH_ERRORED,
-  payload
+  payload,
 });

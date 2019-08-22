@@ -1,8 +1,8 @@
-import { styled } from "@/css/styled";
-import { motion } from "framer-motion";
+import { styled } from '@/css/styled';
+import { motion } from 'framer-motion';
 
 export const animate = {
-  blur: { padding: "15px", borderRadius: 0 },
+  blur: { padding: '15px', borderRadius: 0 },
   focus: { padding: 0, borderRadius: 3 },
 };
 

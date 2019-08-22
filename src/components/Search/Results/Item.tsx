@@ -1,8 +1,8 @@
-import React, { FC } from "react";
-import { EllipsisVertical } from "react-bytesize-icons";
-import { Station } from "@/models/state";
-import { ListItem, StationButton, StationLink } from "./styles";
-import { Display } from "@/components/Player/Display/Display";
+import React, { FC } from 'react';
+import { EllipsisVertical } from 'react-bytesize-icons';
+import { Station } from '@/models/state';
+import { ListItem, StationButton, StationLink } from './styles';
+import { Display } from '@/components/Player/Display/Display';
 
 const item = {
   show: { y: 0, opacity: 1 },

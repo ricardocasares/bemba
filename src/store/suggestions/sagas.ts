@@ -1,15 +1,15 @@
-import { put, call, fork, takeEvery, takeLatest } from "redux-saga/effects";
-import { fetchSuggestions } from "@/api/graphql";
-import { receive, errored, request } from "./actions";
+import { put, call, fork, takeEvery, takeLatest } from 'redux-saga/effects';
+import { fetchSuggestions } from '@/api/graphql';
+import { receive, errored, request } from './actions';
 import {
   ActionType,
   SuggestionsFetchRequest,
   SuggestionsPrepare,
-} from "./model";
+} from './model';
 
 function* prepare({ payload }: SuggestionsPrepare) {
   yield put(
-    request(["podcasts", "news", "city", "country", "language"], payload)
+    request(['podcasts', 'news', 'city', 'country', 'language'], payload)
   );
 }
 

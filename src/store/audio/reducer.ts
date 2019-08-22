@@ -1,11 +1,11 @@
-import { Reducer } from "redux";
-import { Audio } from "@/models/state";
-import { Actions, ActionType } from "./model";
+import { Reducer } from 'redux';
+import { Audio } from '@/models/state';
+import { Actions, ActionType } from './model';
 
 export const initial: Audio = {
   ready: false,
   loading: false,
-  playing: false
+  playing: false,
 };
 
 export const reducer: Reducer<Audio, Actions> = (
@@ -26,7 +26,7 @@ export const reducer: Reducer<Audio, Actions> = (
         ...state,
         loading: false,
         playing: false,
-        ...action.payload
+        ...action.payload,
       };
     default:
       return state;

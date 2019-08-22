@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { Button, PlayIcon } from "../styles";
+import React, { FC } from 'react';
+import { Button, PlayIcon } from '../styles';
 
 export type Play = {
   disabled: boolean;

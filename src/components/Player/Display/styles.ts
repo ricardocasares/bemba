@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
-import { ellipsis } from "@/css";
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
+import { ellipsis } from '@/css';
 
 export const baseHeader = css`
   ${ellipsis}

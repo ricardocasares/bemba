@@ -1,8 +1,8 @@
-import React from "react";
-import { Box } from "@/components/Box";
-import { Suggestions } from "@/components/Suggestions";
-import { NextPage } from "next";
-import { prepare } from "@/store/suggestions";
+import React from 'react';
+import { Box } from '@/components/Box';
+import { Suggestions } from '@/components/Suggestions';
+import { NextPage } from 'next';
+import { prepare } from '@/store/suggestions';
 
 const Index: NextPage = () => {
   return (
@@ -15,7 +15,7 @@ const Index: NextPage = () => {
 Index.getInitialProps = async ctx => {
   if (ctx.req) {
     await ctx.store.dispatch(
-      prepare(ctx.req.headers["x-forwarded-for"] as string)
+      prepare(ctx.req.headers['x-forwarded-for'] as string)
     );
   }
 

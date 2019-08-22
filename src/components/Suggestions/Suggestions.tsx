@@ -1,9 +1,9 @@
-import React, { FC, Fragment } from "react";
-import { Swiper } from "@/components/Swiper";
-import { GradientBox } from "@/components/GradientBox";
-import { Suggestions, Station } from "@/models/state";
+import React, { FC, Fragment } from 'react';
+import { Swiper } from '@/components/Swiper';
+import { GradientBox } from '@/components/GradientBox';
+import { Suggestions, Station } from '@/models/state';
 
-import { Display } from "../Player/Display/Display";
+import { Display } from '../Player/Display/Display';
 
 export type SuggestionsBox = {
   suggestions: Suggestions;

@@ -1,5 +1,5 @@
-import { styled } from "@/css/styled";
-import { ChevronBottom } from "react-bytesize-icons";
+import { styled } from '@/css/styled';
+import { ChevronBottom } from 'react-bytesize-icons';
 
 export const SelectWrapper = styled.div`
   display: flex;

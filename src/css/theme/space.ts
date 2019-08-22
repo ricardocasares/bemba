@@ -5,7 +5,7 @@ export const space = {
   l: 15,
   xl: 20,
   xxl: 75,
-  default: 0
+  default: 0,
 };
 
 export type Space = typeof space;

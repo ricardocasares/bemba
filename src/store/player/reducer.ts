@@ -1,10 +1,10 @@
-import { Reducer } from "redux";
-import { Player } from "@/models/state";
-import { Actions, ActionType } from "./model";
+import { Reducer } from 'redux';
+import { Player } from '@/models/state';
+import { Actions, ActionType } from './model';
 
 export const initial: Player = {
   ready: false,
-  playing: false
+  playing: false,
 };
 
 export const reducer: Reducer<Player, Actions> = (

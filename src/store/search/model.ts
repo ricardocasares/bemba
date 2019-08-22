@@ -1,13 +1,13 @@
-import { Action } from "redux";
-import { Stations, SearchFilterParam } from "@/models/state";
+import { Action } from 'redux';
+import { Stations, SearchFilterParam } from '@/models/state';
 
 export enum ActionType {
-  INPUT = "@bemba/search/input",
-  HISTORY_ADD = "@bemba/search/history/add",
-  HISTORY_SAVE = "@bemba/search/history/save",
-  FETCH_REQUEST = "@bemba/search/fetch/request",
-  FETCH_RECEIVE = "@bemba/search/fetch/receive",
-  FETCH_ERRORED = "@bemba/search/fetch/errored",
+  INPUT = '@bemba/search/input',
+  HISTORY_ADD = '@bemba/search/history/add',
+  HISTORY_SAVE = '@bemba/search/history/save',
+  FETCH_REQUEST = '@bemba/search/fetch/request',
+  FETCH_RECEIVE = '@bemba/search/fetch/receive',
+  FETCH_ERRORED = '@bemba/search/fetch/errored',
 }
 
 export interface SearchInput extends Action<ActionType.INPUT> {

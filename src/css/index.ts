@@ -1,8 +1,8 @@
-import { css } from "@emotion/core";
+import { css } from '@emotion/core';
 
 export const sans = css`
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 `;
 
 export const ellipsis = css`
@@ -14,7 +14,7 @@ export const ellipsis = css`
 export const gradient = (
   start: string,
   end: string,
-  to: string = "to right"
+  to: string = 'to right'
 ) => css`
   background: ${start};
   background: -webkit-linear-gradient(${to}, ${start}, ${end});

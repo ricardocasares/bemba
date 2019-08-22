@@ -1,6 +1,6 @@
-import { Reducer } from "redux";
-import { Station } from "@/models/state";
-import { Actions, ActionType } from "./model";
+import { Reducer } from 'redux';
+import { Station } from '@/models/state';
+import { Actions, ActionType } from './model';
 
 export const initial: Partial<Station> = {};
 

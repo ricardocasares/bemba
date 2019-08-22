@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { Heart, Play, Pause } from "react-bytesize-icons";
+import styled from '@emotion/styled';
+import { Heart, Play, Pause } from 'react-bytesize-icons';
 
 export const Wrapper = styled.div`
   display: flex;

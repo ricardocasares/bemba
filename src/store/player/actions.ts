@@ -1,13 +1,13 @@
-import { ActionType, PlayerPlay, PlayerPause, PlayerReady } from "./model";
+import { ActionType, PlayerPlay, PlayerPause, PlayerReady } from './model';
 
 export const play = (): PlayerPlay => ({
-  type: ActionType.PLAY
+  type: ActionType.PLAY,
 });
 
 export const pause = (): PlayerPause => ({
-  type: ActionType.PAUSE
+  type: ActionType.PAUSE,
 });
 
 export const ready = (): PlayerReady => ({
-  type: ActionType.READY
+  type: ActionType.READY,
 });

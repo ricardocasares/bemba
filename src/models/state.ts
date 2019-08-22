@@ -1,10 +1,10 @@
-import { Store } from "redux";
-import { Actions as AppActions } from "@/store/app";
-import { Actions as AudioActions } from "@/store/audio";
-import { Actions as PlayerActions } from "@/store/player";
-import { Actions as SearchActions } from "@/store/search";
-import { Actions as StationActions } from "@/store/station";
-import { Actions as SuggestionsActions } from "@/store/suggestions";
+import { Store } from 'redux';
+import { Actions as AppActions } from '@/store/app';
+import { Actions as AudioActions } from '@/store/audio';
+import { Actions as PlayerActions } from '@/store/player';
+import { Actions as SearchActions } from '@/store/search';
+import { Actions as StationActions } from '@/store/station';
+import { Actions as SuggestionsActions } from '@/store/suggestions';
 
 export interface BembaState {
   readonly app: App;
@@ -15,7 +15,7 @@ export interface BembaState {
   readonly suggestions: Suggestions;
 }
 
-export type NStation = NexusGen["fieldTypes"]["Station"];
+export type NStation = NexusGen['fieldTypes']['Station'];
 
 export interface App {
   readonly user: User;
@@ -53,11 +53,11 @@ export type Station = {
 };
 
 export enum SearchFilterParam {
-  TAG = "tag",
-  NAME = "name",
-  STATE = "state",
-  COUNTRY = "country",
-  LANGUAGE = "language",
+  TAG = 'tag',
+  NAME = 'name',
+  STATE = 'state',
+  COUNTRY = 'country',
+  LANGUAGE = 'language',
 }
 
 export type Search = {

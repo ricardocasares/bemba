@@ -1,6 +1,6 @@
-import fetch from "isomorphic-unfetch";
-import { indexBy } from "remeda";
-import { Station } from "@/models/state";
+import fetch from 'isomorphic-unfetch';
+import { indexBy } from 'remeda';
+import { Station } from '@/models/state';
 
 const BEMBA_API_ENDPOINT = process.env.BEMBA_API_ENDPOINT as string;
 const index = <T>(key: keyof T) => (data: T[]) => indexBy<T>(data, x => x[key]);
@@ -12,9 +12,9 @@ async function request<R, T>(
   headers: Record<string, any> = {}
 ): Promise<T> {
   return fetch(BEMBA_API_ENDPOINT, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       ...headers,
     },
     body: JSON.stringify({ query }),
@@ -46,7 +46,7 @@ export async function searchStations(
           country
         }
       }`,
-    ({ data: { stations } }) => index<Station>("id")(stations)
+    ({ data: { stations } }) => index<Station>('id')(stations)
   );
 }
 
@@ -72,10 +72,10 @@ export async function fetchSuggestions(categories: string[], ip?: string) {
     ({ data: { suggestions } }) => {
       return Object.entries(suggestions)
         .map(([key, { name, stations }]: any) => ({
-          [key]: { name, stations: index<Station>("id")(stations) },
+          [key]: { name, stations: index<Station>('id')(stations) },
         }))
         .reduce((acc, suggestion) => ({ ...acc, ...suggestion }), {});
     },
-    ip ? { "x-ssr-client": ip } : {}
+    ip ? { 'x-ssr-client': ip } : {}
   );
 }

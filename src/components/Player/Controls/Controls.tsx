@@ -1,7 +1,7 @@
-import React, { FC, Fragment } from "react";
-import { Like } from "./Like";
-import { Play } from "./Play";
-import { Pause } from "./Pause";
+import React, { FC, Fragment } from 'react';
+import { Like } from './Like';
+import { Play } from './Play';
+import { Pause } from './Pause';
 
 export type Controls = {
   playing: boolean;

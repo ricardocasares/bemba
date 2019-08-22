@@ -1,7 +1,7 @@
-require("dotenv").config();
+require('dotenv').config();
 
 module.exports = {
-  target: "serverless",
+  target: 'serverless',
   env: {
     GEOIP_API_KEY: process.env.GEOIP_API_KEY,
     GEOIP_API_ENDPOINT: process.env.GEOIP_API_ENDPOINT,

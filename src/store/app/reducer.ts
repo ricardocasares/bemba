@@ -1,13 +1,13 @@
-import { Reducer } from "redux";
-import { App } from "@/models/state";
-import { Actions, ActionType } from "./model";
+import { Reducer } from 'redux';
+import { App } from '@/models/state';
+import { Actions, ActionType } from './model';
 
 export const initial: App = {
   user: {
-    ip: "",
-    language: "English",
-    state: "",
-    country: "",
+    ip: '',
+    language: 'English',
+    state: '',
+    country: '',
   },
   serverReady: false,
   clientReady: false,

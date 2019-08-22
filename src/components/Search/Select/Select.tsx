@@ -1,5 +1,5 @@
-import { FC, SelectHTMLAttributes } from "react";
-import { SelectWrapper, SelectInput, SelectIcon } from "./styles";
+import { FC, SelectHTMLAttributes } from 'react';
+import { SelectWrapper, SelectInput, SelectIcon } from './styles';
 
 export type Select = {};
 

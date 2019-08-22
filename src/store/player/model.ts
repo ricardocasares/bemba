@@ -1,9 +1,9 @@
-import { Action } from "redux";
+import { Action } from 'redux';
 
 export enum ActionType {
-  PLAY = "@bemba/player/play",
-  PAUSE = "@bemba/player/pause",
-  READY = "@bemba/player/ready"
+  PLAY = '@bemba/player/play',
+  PAUSE = '@bemba/player/pause',
+  READY = '@bemba/player/ready',
 }
 
 export interface PlayerPlay extends Action<ActionType.PLAY> {}

@@ -1,15 +1,15 @@
-import { Reducer } from "redux";
-import { Search, SearchFilterParam } from "@/models/state";
-import { Actions, ActionType } from "./model";
+import { Reducer } from 'redux';
+import { Search, SearchFilterParam } from '@/models/state';
+import { Actions, ActionType } from './model';
 
 export const initial: Search = {
-  query: "",
+  query: '',
   empty: true,
   dirty: false,
   loading: false,
   filter: SearchFilterParam.NAME,
   results: {},
-  history: {}
+  history: {},
 };
 
 export const reducer: Reducer<Search, Actions> = (
@@ -24,7 +24,7 @@ export const reducer: Reducer<Search, Actions> = (
           dirty: false,
           empty: true,
           results: {},
-          ...action.payload
+          ...action.payload,
         };
       }
 
@@ -33,7 +33,7 @@ export const reducer: Reducer<Search, Actions> = (
         dirty: true,
         loading: true,
         empty: true,
-        ...action.payload
+        ...action.payload,
       };
     case ActionType.FETCH_RECEIVE:
       return {
@@ -41,15 +41,15 @@ export const reducer: Reducer<Search, Actions> = (
         dirty: true,
         loading: false,
         empty: !Object.keys(action.payload).length,
-        results: action.payload
+        results: action.payload,
       };
     case ActionType.HISTORY_SAVE:
       return {
         ...state,
         history: {
           [action.payload.query]: action.payload.stations,
-          ...state.history
-        }
+          ...state.history,
+        },
       };
     default:
       return state;

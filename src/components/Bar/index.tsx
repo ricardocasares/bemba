@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "@emotion/styled";
-import Link from "next/link";
-import { Home, Search, Heart } from "react-bytesize-icons";
+import React from 'react';
+import styled from '@emotion/styled';
+import Link from 'next/link';
+import { Home, Search, Heart } from 'react-bytesize-icons';
 
 const Container = styled.nav`
   display: flex;
@@ -11,7 +11,7 @@ const Container = styled.nav`
 `;
 
 const ICON_SIZE = 25;
-const ICON_COLOR = "#9e9e9e";
+const ICON_COLOR = '#9e9e9e';
 
 export function Bar() {
   return (

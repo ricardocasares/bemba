@@ -1,8 +1,8 @@
-import { Action } from "redux";
-import { Station } from "@/models/state";
+import { Action } from 'redux';
+import { Station } from '@/models/state';
 
 export enum ActionType {
-  LOAD = "@bemba/station/load"
+  LOAD = '@bemba/station/load',
 }
 
 export interface StationLoad extends Action<ActionType.LOAD> {

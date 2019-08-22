@@ -1,18 +1,18 @@
-import langs from "langs";
-import fetch from "isomorphic-unfetch";
+import langs from 'langs';
+import fetch from 'isomorphic-unfetch';
 // import { User } from "@/models/state";
 
 const KEY = process.env.GEOIP_API_KEY;
 const API = process.env.GEOIP_API_ENDPOINT;
 
-function getLanguage(languages: string = "en") {
+function getLanguage(languages: string = 'en') {
   return [
     ...new Set(
       languages
-        .replace(/\s/g, "")
-        .split(",")
-        .map(lang => lang.split("-").shift())
-        .map(code => langs.where("1", code as string))
+        .replace(/\s/g, '')
+        .split(',')
+        .map(lang => lang.split('-').shift())
+        .map(code => langs.where('1', code as string))
     ),
   ]
     .filter(Boolean)
@@ -23,12 +23,12 @@ function getLanguage(languages: string = "en") {
 export async function geo(ip?: string): Promise<any> {
   return fetch(
     `${API}/ipgeo?apiKey=${KEY}${
-      ip ? `&ip=${ip}` : ""
+      ip ? `&ip=${ip}` : ''
     }&fields=state_prov,country_name,city,currency,languages`
   )
     .then(r => r.json())
     .then(({ city, state_prov: state, country_name: country, languages }) => ({
-      city: city.trim().replace(/city/gi, ""),
+      city: city.trim().replace(/city/gi, ''),
       state,
       country,
       language: getLanguage(languages),

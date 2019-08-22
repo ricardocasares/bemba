@@ -1,6 +1,6 @@
-import React, { FC, EventHandler, ChangeEvent, useState } from "react";
-import { SearchFilterParam } from "@/models/state";
-import { Form, Input, animate } from "./styles";
+import React, { FC, EventHandler, ChangeEvent, useState } from 'react';
+import { SearchFilterParam } from '@/models/state';
+import { Form, Input, animate } from './styles';
 
 export type Search = {
   query: string;
@@ -9,9 +9,9 @@ export type Search = {
 };
 
 export const Search: FC<Search> = ({ query, filter, search }) => {
-  const [expanded, setExpanded] = useState("blur");
-  const onBlur = () => setExpanded("blur");
-  const onFocus = () => setExpanded("focus");
+  const [expanded, setExpanded] = useState('blur');
+  const onBlur = () => setExpanded('blur');
+  const onFocus = () => setExpanded('focus');
 
   const onSubmit: EventHandler<ChangeEvent<HTMLFormElement>> = e => {
     e.preventDefault();

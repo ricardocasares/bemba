@@ -1,6 +1,6 @@
-import { css } from "@emotion/core";
-import normalize from "emotion-normalize";
-import { sans } from "./";
+import { css } from '@emotion/core';
+import normalize from 'emotion-normalize';
+import { sans } from './';
 
 export const reset = css`
   ${normalize}

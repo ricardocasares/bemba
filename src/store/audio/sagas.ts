@@ -1,7 +1,7 @@
-import { eventChannel } from "redux-saga";
-import { put, take, fork, call, takeLatest } from "redux-saga/effects";
-import { ActionType, AudioLoad } from "./model";
-import { api, audioChannel } from "./channel";
+import { eventChannel } from 'redux-saga';
+import { put, take, fork, call, takeLatest } from 'redux-saga/effects';
+import { ActionType, AudioLoad } from './model';
+import { api, audioChannel } from './channel';
 
 function* load(action: AudioLoad) {
   yield call(api.load, action.payload);
@@ -45,5 +45,5 @@ export const sagas = [
   fork(watchLoad),
   fork(watchReady),
   fork(watchPlay),
-  fork(watchPause)
+  fork(watchPause),
 ];

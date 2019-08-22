@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import { Stations, Station } from "@/models/state";
-import { Item } from "./Item";
-import { List, Subtitle, animations } from "./styles";
+import React, { FC } from 'react';
+import { Stations, Station } from '@/models/state';
+import { Item } from './Item';
+import { List, Subtitle, animations } from './styles';
 
 export type Results = {
   query: string;

@@ -1,5 +1,5 @@
-import { styled } from "@/css/styled";
-import { motion } from "framer-motion";
+import { styled } from '@/css/styled';
+import { motion } from 'framer-motion';
 
 export const animations = {
   show: { opacity: 1 },

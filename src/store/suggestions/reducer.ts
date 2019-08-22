@@ -1,6 +1,6 @@
-import { Reducer } from "redux";
-import { Suggestions } from "@/models/state";
-import { Actions, ActionType } from "./model";
+import { Reducer } from 'redux';
+import { Suggestions } from '@/models/state';
+import { Actions, ActionType } from './model';
 
 export const initial: Suggestions = {};
 
