@@ -34,7 +34,7 @@
     "build": "run-s schema:build next:build",
     "next:dev": "next",
     "next:build": "next build",
-    "schema:dev": "ts-node-dev -r tsconfig-paths/register --respawn --project ./tsconfig.gen.json ./src/schema/generate.ts",
+    "schema:dev": "ts-node-dev -r tsconfig-paths/register --no-notify --transpile-only --respawn --project ./tsconfig.gen.json ./src/schema/generate.ts",
     "schema:build": "ts-node -r tsconfig-paths/register --project ./tsconfig.gen.json ./src/schema/generate.ts"
   },
   "devDependencies": {
