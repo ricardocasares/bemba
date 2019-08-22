@@ -22,7 +22,7 @@
       "@/*": ["src/*"]
     },
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["./typings", "./node_modules/@types"],
+    "typeRoots": ["types", "./node_modules/@types"],
     "isolatedModules": true
   },
   "exclude": ["node_modules"],

@@ -30,8 +30,12 @@
     "styled-map": "^3.3.0"
   },
   "scripts": {
-    "dev": "next",
-    "build": "next build"
+    "dev": "run-p schema:dev next:dev",
+    "build": "run-s schema:build next:build",
+    "next:dev": "next",
+    "next:build": "next build",
+    "schema:dev": "ts-node -r tsconfig-paths/register --respawn --project ./tsconfig.gen.json ./src/schema/generate.ts",
+    "schema:build": "ts-node -r tsconfig-paths/register --project ./tsconfig.gen.json ./src/schema/generate.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -43,7 +47,11 @@
     "babel-plugin-emotion": "^10.0.14",
     "babel-plugin-module-resolver": "^3.2.0",
     "dotenv": "^8.0.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.41",
+    "tsconfig-paths": "^3.8.0",
     "typescript": "latest"
   }
 }

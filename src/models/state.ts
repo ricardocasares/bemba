@@ -15,6 +15,8 @@ export interface BembaState {
   readonly suggestions: Suggestions;
 }
 
+export type NStation = NexusGen["fieldTypes"]["Station"];
+
 export interface App {
   readonly user: User;
   readonly clientReady: boolean;

@@ -1,7 +1,7 @@
 import { makeSchema } from "nexus";
-import * as station from "./station";
+import * as types from "./schema";
 
 export const schema = makeSchema({
-  types: { station },
+  types,
   outputs: false,
 });

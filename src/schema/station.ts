@@ -10,8 +10,11 @@ export const Station = objectType({
     t.string("name");
     t.string("state");
     t.string("country");
+    t.string("test");
     t.string("language");
+    // @ts-ignore
     t.list.string("tags", o => o.tags.split(","));
+    // @ts-ignore
     t.int("votes", ({ votes = 0 }) => parseInt(votes, 10));
   },
 });
@@ -89,6 +92,7 @@ export const Query = queryType({
         params: ParamsInput,
       },
       async resolve(_, { query, params }) {
+        // @ts-ignore
         return radio(`/search`, query, params);
       },
     });
