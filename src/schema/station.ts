@@ -115,7 +115,7 @@ export const Query = queryType({
 
         const podcastsSuggestions = await radio(`/search`, {
           language,
-          tagList: "podcast",
+          tag: "podcast",
         });
 
         const languageSuggestions = await radio(`/search`, {
