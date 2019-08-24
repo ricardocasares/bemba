@@ -71,6 +71,7 @@ export async function fetchSuggestions(categories: string[], ip?: string) {
     }`,
     ({ data: { suggestions } }) => {
       return Object.entries(suggestions)
+        .filter(([_, { stations }]: any) => stations.length)
         .map(([key, { name, stations }]: any) => ({
           [key]: { name, stations: index<Station>('id')(stations) },
         }))
