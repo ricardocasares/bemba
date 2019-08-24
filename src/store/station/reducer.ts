@@ -2,18 +2,21 @@ import { Reducer } from 'redux';
 import { Station } from '@/models/state';
 import { Actions, ActionType } from './model';
 
-export const initial: Partial<Station> = {};
+export const initial: Station = {
+  id: '',
+  url: '',
+  name: '',
+  state: '',
+  country: '',
+  tags: [],
+};
 
-export const reducer: Reducer<Partial<Station>, Actions> = (
+export const reducer: Reducer<Station, Actions> = (
   state = initial,
   action
-): Partial<Station> => {
+): Station => {
   switch (action.type) {
-    case ActionType.LOAD:
-      if (state.url === action.payload.url) {
-        return state;
-      }
-
+    case ActionType.FETCH_RECEIVE:
       return { ...state, ...action.payload };
     default:
       return state;

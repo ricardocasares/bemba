@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import Link from 'next/link';
+import slug from 'slug';
 import { EllipsisVertical } from 'react-bytesize-icons';
 import { Station } from '@/models/state';
 import { ListItem, StationButton, StationLink } from './styles';
@@ -18,8 +20,14 @@ export const Item: FC<Item> = ({ id, load, ...station }) => (
     <StationButton onClick={() => load({ id, ...station })}>
       <Display {...station} />
     </StationButton>
-    <StationLink href={`#/radio/${id}/${station.name}`}>
-      <EllipsisVertical strokeWidth="1px" color="#555" />
-    </StationLink>
+    <Link
+      shallow
+      href="/radio/[id]/[name]"
+      as={`/radio/${id}/${slug(station.name)}`}
+    >
+      <StationLink>
+        <EllipsisVertical strokeWidth="1px" color="#555" />
+      </StationLink>
+    </Link>
   </ListItem>
 );

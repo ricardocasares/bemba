@@ -27,6 +27,7 @@
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",
     "remeda": "0.0.11",
+    "slug": "^1.1.0",
     "styled-map": "^3.3.0"
   },
   "scripts": {

@@ -12,6 +12,7 @@ import { configureStore } from '@/store';
 import { BembaStore } from '@/models/state';
 import { clientReady, serverReady } from '@/store/app/actions';
 import { Layout } from '@/components/Layout';
+import { Box } from '@/components/Box';
 import { Player } from '@/components/Player';
 import { Bar } from '@/components/Bar';
 
@@ -49,7 +50,9 @@ class BembaApp extends App<BembaProps> {
         <Provider store={store}>
           <ThemeProvider theme={theme}>
             <Layout>
-              <Component {...pageProps} />
+              <Box fullh>
+                <Component {...pageProps} />
+              </Box>
               <Player />
               <Bar />
             </Layout>

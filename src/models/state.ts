@@ -11,7 +11,7 @@ export interface BembaState {
   readonly audio: Audio;
   readonly player: Player;
   readonly search: Search;
-  readonly station: Partial<Station>;
+  readonly station: Station;
   readonly suggestions: Suggestions;
 }
 
@@ -41,6 +41,7 @@ export type Audio = {
 export type Player = {
   readonly ready: boolean;
   readonly playing: boolean;
+  readonly station: Station;
 };
 
 export type Station = {

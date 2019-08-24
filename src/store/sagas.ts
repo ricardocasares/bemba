@@ -11,7 +11,7 @@ function* client() {
   yield put(Audio.init());
 }
 
-function* load(action: Station.StationLoad) {
+function* load(action: Player.PlayerLoad) {
   yield put(Audio.load(action.payload.url));
   yield put(Player.ready());
 }
@@ -33,7 +33,7 @@ function* mapPause() {
 }
 
 function* mapLoad() {
-  yield takeLatest(Station.ActionType.LOAD, load);
+  yield takeLatest(Player.ActionType.LOAD, load);
 }
 
 const mappings = [fork(mapLoad), fork(mapPlay), fork(mapPause)];
@@ -45,6 +45,7 @@ export function* sagas() {
     ...App.sagas,
     ...Audio.sagas,
     ...Search.sagas,
+    ...Station.sagas,
     ...Suggestions.sagas,
   ]);
 }

@@ -5,6 +5,14 @@ import { Actions, ActionType } from './model';
 export const initial: Player = {
   ready: false,
   playing: false,
+  station: {
+    id: '',
+    url: '',
+    name: '',
+    state: '',
+    country: '',
+    tags: [],
+  },
 };
 
 export const reducer: Reducer<Player, Actions> = (
@@ -18,6 +26,8 @@ export const reducer: Reducer<Player, Actions> = (
       return { ...state, ready: true };
     case ActionType.PAUSE:
       return { ...state, playing: false };
+    case ActionType.LOAD:
+      return { ...state, station: action.payload };
     default:
       return state;
   }

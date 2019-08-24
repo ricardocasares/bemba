@@ -37,6 +37,6 @@ export const Subtitle = styled(motion.h4)`
   color: #444;
 `;
 
-export const StationLink = styled(motion.a)`
+export const StationLink = styled.a`
   text-decoration: none;
 `;

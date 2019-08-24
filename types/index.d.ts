@@ -3,6 +3,12 @@ declare module 'next-redux-saga' {
   export default withSagas;
 }
 
+declare module 'slug' {
+  export type Slug = (s: string) => string;
+  const slug: Slug;
+  export default slug;
+}
+
 interface Window {
   readonly __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
 }
