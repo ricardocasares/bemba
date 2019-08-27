@@ -13,7 +13,7 @@ import { BembaStore } from '@/models/state';
 import { clientReady, serverReady } from '@/features/shared/app/store';
 import { Layout } from '@/components/Layout';
 import { Box } from '@/components/Box';
-import { Player } from '@/components/Player';
+import { Player } from '@/features/shared/player';
 import { Bar } from '@/components/Bar';
 
 type BembaProps = { store: BembaStore };

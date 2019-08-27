@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { BembaState } from '@/models/state';
-import { pause } from '@/features/shared/player/store';
-import { Pause as Component } from './Pause';
+import { Pause as Component } from '@/components/Buttons';
+import { pause } from './store';
 
 export const Pause = connect(
   ({ audio: { ready: disabled } }: BembaState) => ({ disabled }),

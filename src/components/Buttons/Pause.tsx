@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button, PauseIcon } from '../styles';
+import { Button, PauseIcon } from './styles';
 
 export type Pause = {
   disabled: boolean;

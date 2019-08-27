@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { load } from '@/features/shared/player/store';
-import { Like as Component } from './Like';
+import { Like as Component } from '@/components/Buttons';
+import { load } from './store';
 
 export const Like = connect(
   null,

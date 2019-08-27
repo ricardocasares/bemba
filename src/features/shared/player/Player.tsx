@@ -3,7 +3,7 @@ import { Box } from '@/components/Box';
 import { Display } from './Display';
 import { Controls } from './Controls';
 
-export type Player = {
+type Player = {
   ready: boolean;
 };
 

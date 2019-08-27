@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { LikeIcon, Button } from '../styles';
+import { LikeIcon, Button } from './styles';
 import { Station } from '@/models/state';
 
 export type Like = {

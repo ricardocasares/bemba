@@ -1,11 +1,6 @@
 import styled from '@emotion/styled';
 import { Heart, Play, Pause } from 'react-bytesize-icons';
 
-export const Wrapper = styled.div`
-  display: flex;
-  padding: 15px;
-`;
-
 export const Button = styled.button`
   border: none;
   background: transparent;

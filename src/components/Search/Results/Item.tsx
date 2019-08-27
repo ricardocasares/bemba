@@ -4,7 +4,7 @@ import slug from 'slug';
 import { EllipsisVertical } from 'react-bytesize-icons';
 import { Station } from '@/models/state';
 import { ListItem, StationButton, StationLink } from './styles';
-import { Display } from '@/components/Player/Display/Display';
+import { Display } from '@/components/Display';
 
 const item = {
   show: { y: 0, opacity: 1 },

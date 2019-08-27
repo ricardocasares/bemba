@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { connect } from 'react-redux';
 import { Box } from '@/components/Box';
-import { Display as DisplayComponent } from '@/components/Player/Display/Display';
+import { Display as DisplayComponent } from '@/components/Display';
 import { BembaState, Station as StationState } from '@/models/state';
 import { Play as PlayIcon } from 'react-bytesize-icons';
 import { styled } from '@/css/styled';
