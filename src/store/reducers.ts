@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { reducer as app } from './app';
-import { reducer as audio } from './audio';
-import { reducer as player } from './player';
-import { reducer as search } from './search';
-import { reducer as station } from './station';
-import { reducer as suggestions } from './suggestions';
+import { reducer as app } from '@/features/shared/app/store';
+import { reducer as audio } from '@/features/shared/audio/store';
+import { reducer as player } from '@/features/shared/player/store';
+import { reducer as search } from '@/features/search/store';
+import { reducer as station } from '@/features/station/store';
+import { reducer as suggestions } from '@/features/home/store';
 
 export const reducers = combineReducers({
   app,

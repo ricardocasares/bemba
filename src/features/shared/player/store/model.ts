@@ -2,10 +2,10 @@ import { Action } from 'redux';
 import { Station } from '@/models/state';
 
 export enum ActionType {
-  LOAD = '@bemba/player/load',
-  PLAY = '@bemba/player/play',
-  PAUSE = '@bemba/player/pause',
-  READY = '@bemba/player/ready',
+  LOAD = '@bemba/shared/player/load',
+  PLAY = '@bemba/shared/player/play',
+  PAUSE = '@bemba/shared/player/pause',
+  READY = '@bemba/shared/player/ready',
 }
 
 export interface PlayerLoad extends Action<ActionType.LOAD> {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@/components/Box';
 import { Suggestions } from '@/components/Suggestions';
 import { NextPage } from 'next';
-import { prepare } from '@/store/suggestions';
+import { prepare } from '@/features/home/store';
 
 const Index: NextPage = () => {
   return (

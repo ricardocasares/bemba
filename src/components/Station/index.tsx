@@ -5,7 +5,7 @@ import { Display as DisplayComponent } from '@/components/Player/Display/Display
 import { BembaState, Station as StationState } from '@/models/state';
 import { Play as PlayIcon } from 'react-bytesize-icons';
 import { styled } from '@/css/styled';
-import { load } from '@/store/player';
+import { load } from '@/features/shared/player/store';
 import { bindActionCreators } from 'redux';
 
 const Play = styled.button`

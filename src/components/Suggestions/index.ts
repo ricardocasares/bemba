@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { BembaState } from '@/models/state';
-import { load } from '@/store/player';
+import { load } from '@/features/shared/player/store';
 import { SuggestionsBox as Component } from './Suggestions';
 import { bindActionCreators } from 'redux';
 

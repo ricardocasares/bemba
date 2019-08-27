@@ -1,14 +1,14 @@
 import createSagaMiddleware from 'redux-saga';
 import { applyMiddleware, createStore, compose, StoreEnhancer } from 'redux';
 import { BembaState } from '@/models/state';
-import { sagas } from './sagas';
+import { initial as app } from '@/features/shared/app/store';
+import { initial as audio } from '@/features/shared/audio/store';
+import { initial as player } from '@/features/shared/player/store';
+import { initial as search } from '@/features/search/store';
+import { initial as station } from '@/features/station/store';
+import { initial as suggestions } from '@/features/home/store';
 import { reducers } from './reducers';
-import { initial as app } from './app';
-import { initial as audio } from './audio';
-import { initial as player } from './player';
-import { initial as search } from './search';
-import { initial as station } from './station';
-import { initial as suggestions } from './suggestions';
+import { sagas } from './sagas';
 
 export const init: BembaState = {
   app,

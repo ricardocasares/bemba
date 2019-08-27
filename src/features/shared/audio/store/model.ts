@@ -1,15 +1,15 @@
 import { Action } from 'redux';
 
 export enum ActionType {
-  INIT = '@bemba/audio/init',
-  LOAD = '@bemba/audio/load',
-  LOADING = '@bemba/audio/loading',
-  READY = '@bemba/audio/ready',
-  PLAY = '@bemba/audio/play',
-  PLAYING = '@bemba/audio/playing',
-  PAUSE = '@bemba/audio/pause',
-  PAUSED = '@bemba/audio/paused',
-  ERRORED = '@bemba/audio/errored',
+  INIT = '@bemba/shared/audio/init',
+  LOAD = '@bemba/shared/audio/load',
+  LOADING = '@bemba/shared/audio/loading',
+  READY = '@bemba/shared/audio/ready',
+  PLAY = '@bemba/shared/audio/play',
+  PLAYING = '@bemba/shared/audio/playing',
+  PAUSE = '@bemba/shared/audio/pause',
+  PAUSED = '@bemba/shared/audio/paused',
+  ERRORED = '@bemba/shared/audio/errored',
 }
 
 export interface AudioInit extends Action<ActionType.INIT> {}

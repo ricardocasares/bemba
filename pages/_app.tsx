@@ -10,7 +10,7 @@ import { reset } from '@/css/reset';
 import { theme } from '@/css/theme';
 import { configureStore } from '@/store';
 import { BembaStore } from '@/models/state';
-import { clientReady, serverReady } from '@/store/app/actions';
+import { clientReady, serverReady } from '@/features/shared/app/store';
 import { Layout } from '@/components/Layout';
 import { Box } from '@/components/Box';
 import { Player } from '@/components/Player';

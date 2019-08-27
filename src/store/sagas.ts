@@ -1,10 +1,10 @@
 import { all, put, take, fork, takeLatest } from 'redux-saga/effects';
-import * as App from './app';
-import * as Player from './player';
-import * as Audio from './audio';
-import * as Search from './search';
-import * as Station from './station';
-import * as Suggestions from './suggestions';
+import * as App from '@/features/shared/app/store';
+import * as Player from '@/features/shared/player/store';
+import * as Audio from '@/features/shared/audio/store';
+import * as Search from '@/features/search/store';
+import * as Station from '@/features/station/store';
+import * as Suggestions from '@/features/home/store';
 
 function* client() {
   yield take(App.ActionType.CLIENT_READY);

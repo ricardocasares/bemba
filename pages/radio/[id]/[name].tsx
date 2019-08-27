@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { Box } from '@/components/Box';
 import { Station } from '@/components/Station';
-import { request } from '@/store/station';
+import { request } from '@/features/station/store';
 
 export const StationPage: NextPage = () => (
   <Box>

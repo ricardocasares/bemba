@@ -1,10 +1,10 @@
 import { Store } from 'redux';
-import { Actions as AppActions } from '@/store/app';
-import { Actions as AudioActions } from '@/store/audio';
-import { Actions as PlayerActions } from '@/store/player';
-import { Actions as SearchActions } from '@/store/search';
-import { Actions as StationActions } from '@/store/station';
-import { Actions as SuggestionsActions } from '@/store/suggestions';
+import { Actions as AppActions } from '@/features/shared/app/store';
+import { Actions as AudioActions } from '@/features/shared/audio/store';
+import { Actions as PlayerActions } from '@/features/shared/player/store';
+import { Actions as SearchActions } from '@/features/search/store';
+import { Actions as StationActions } from '@/features/station/store';
+import { Actions as SuggestionsActions } from '@/features/home/store';
 
 export interface BembaState {
   readonly app: App;

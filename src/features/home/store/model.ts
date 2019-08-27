@@ -2,10 +2,10 @@ import { Action } from 'redux';
 import { Suggestions } from '@/models/state';
 
 export enum ActionType {
-  PREPARE = '@bemba/suggestions/prepare',
-  FETCH_REQUEST = '@bemba/suggestions/fetch/request',
-  FETCH_RECEIVE = '@bemba/suggestions/fetch/receive',
-  FETCH_ERRORED = '@bemba/suggestions/fetch/errored',
+  PREPARE = '@bemba/home/suggestions/prepare',
+  FETCH_REQUEST = '@bemba/home/suggestions/fetch/request',
+  FETCH_RECEIVE = '@bemba/home/suggestions/fetch/receive',
+  FETCH_ERRORED = '@bemba/home/suggestions/fetch/errored',
 }
 
 export interface SuggestionsPrepare extends Action<ActionType.PREPARE> {
