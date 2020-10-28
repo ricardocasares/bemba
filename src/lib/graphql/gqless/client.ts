@@ -1,19 +1,19 @@
 import { Client, QueryFetcher } from "gqless";
 import { schema, Query } from "./generated";
 
-const endpoint = "http://localhost:3000/api/graphql";
+const endpoint = process.env.GQL_ENDPOINT;
 
 const fetchQuery: QueryFetcher = async (query, variables) => {
   const response = await fetch(endpoint, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       query,
-      variables
+      variables,
     }),
-    mode: "cors"
+    mode: "cors",
   });
 
   if (!response.ok) {
