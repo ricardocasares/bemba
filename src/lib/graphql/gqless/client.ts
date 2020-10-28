@@ -1,7 +1,7 @@
 import { Client, QueryFetcher } from "gqless";
 import { schema, Query } from "./generated";
 
-const endpoint = process.env.GQL_ENDPOINT;
+const endpoint = "/api/graphql";
 
 const fetchQuery: QueryFetcher = async (query, variables) => {
   const response = await fetch(endpoint, {
