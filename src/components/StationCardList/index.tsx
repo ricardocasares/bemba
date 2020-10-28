@@ -24,7 +24,7 @@ export const GQLStations: FC<StationSearchInput> = graphql(
     const { play } = useContext(PlayerContext);
 
     return (
-      <AutoGrid gridGap={[20]}>
+      <AutoGrid gridGap={["var(--sz4)"]}>
         {query.stations({ search }).map((station) => (
           <Card
             key={[station.stationuuid, station.url].join("-")}
