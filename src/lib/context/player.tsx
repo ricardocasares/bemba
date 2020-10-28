@@ -42,6 +42,7 @@ export const PlayerProvider = ({ children }) => {
 
   const load = (s: Station) => {
     if (audio.current.src !== s.url) {
+      setLoading(true);
       audio.current.src = s.url;
       setStation(s);
     }
