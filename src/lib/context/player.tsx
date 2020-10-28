@@ -11,7 +11,7 @@ export type PlayerContext = {
   stop: () => void;
   load: (s: Station) => void;
   pause: () => void;
-  station?: Station | null;
+  station: Station;
   error: boolean;
   paused: boolean;
   playing: boolean;
@@ -83,7 +83,7 @@ export const PlayerProvider = ({ children }) => {
     setPlaying(false);
   };
 
-  const onError = (e) => {
+  const onError = () => {
     setError(true);
     setPaused(false);
     setPlaying(false);
