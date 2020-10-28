@@ -17,7 +17,7 @@ export const Player = () => {
     loading,
   } = useContext(PlayerContext);
 
-  // if (!station) return null;
+  if (!station) return null;
 
   const showPlay = playing && !error;
   const showPause = paused && !error;
