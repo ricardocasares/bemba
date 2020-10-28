@@ -29,10 +29,10 @@ export const PlayerProvider = ({ children }) => {
   const [playing, setPlaying] = useState(false);
   const [stopped, setStopped] = useState(false);
 
-  const play = (station: Station) => {
-    if (audio.current.src !== station.url) {
-      audio.current.src = station.url;
-      audio.current.play().then(() => setStation(station));
+  const play = (s: Station) => {
+    if (audio.current.src !== s.url) {
+      audio.current.src = s.url;
+      audio.current.play().then(() => setStation(s));
     }
 
     if (paused) {
@@ -65,7 +65,7 @@ export const PlayerProvider = ({ children }) => {
     return () => {
       audio.current.removeEventListener("playing", () => setPlaying(true));
     };
-  });
+  }, []);
 
   return (
     <PlayerContext.Provider
