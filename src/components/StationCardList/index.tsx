@@ -27,10 +27,9 @@ export const GQLStations: FC<StationSearchInput> = graphql(
       <AutoGrid gridGap={[20]}>
         {query.stations({ search }).map((station) => (
           <Card
-            key={station.stationuuid}
+            key={[station.stationuuid, station.url].join("-")}
             title={station.name}
             subtitle={station.country}
-            image={station.favicon}
             onClick={() => play(station)}
           />
         ))}
