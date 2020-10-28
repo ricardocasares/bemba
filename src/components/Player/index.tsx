@@ -1,41 +1,36 @@
 import { useContext } from "react";
-import { Play, Pause, Square } from "@geist-ui/react-icons";
+import { Play, Pause, Square, AlertCircle } from "@geist-ui/react-icons";
 import { LineSkeleton } from "@/components/Skeleton";
 import { PlayerContext } from "@/lib/context/player";
-import { Container, Controls, Title, Button } from "./style";
+import { Container, Controls, Title, ErrorNotification, Button } from "./style";
 
 export const Player = () => {
-  const {
-    station,
-    play,
-    pause,
-    stop,
-    error,
-    paused,
-    playing,
-    stopped,
-    loading,
-  } = useContext(PlayerContext);
+  const { station, play, pause, stop, error, playing, loading } = useContext(
+    PlayerContext
+  );
 
   if (!station) return null;
 
-  const showPlay = playing && !error;
-  const showPause = paused && !error;
-  const showStation = (playing || paused) && !error;
+  if (error) {
+    return (
+      <ErrorNotification>
+        <AlertCircle /> <p>Oops, can't play this station :(</p>
+      </ErrorNotification>
+    );
+  }
 
   return (
     <Container>
-      {error && <Title>Error</Title>}
       {loading && <LineSkeleton />}
-      {showStation && <Title>{station.name}</Title>}
+      {!loading && <Title>{station.name}</Title>}
       <Controls>
-        {showPlay && (
+        {playing && (
           <Button onClick={() => pause()}>
             <Pause />
           </Button>
         )}
-        {showPause && (
-          <Button onClick={() => play(station)}>
+        {!playing && (
+          <Button onClick={() => play()}>
             <Play />
           </Button>
         )}

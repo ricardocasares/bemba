@@ -21,7 +21,7 @@ const Loader = noSSR(Placeholder);
 
 export const GQLStations: FC<StationSearchInput> = graphql(
   ({ children: _, ...search }) => {
-    const { play } = useContext(PlayerContext);
+    const { load } = useContext(PlayerContext);
 
     return (
       <AutoGrid gridGap={["var(--sz4)"]}>
@@ -30,7 +30,7 @@ export const GQLStations: FC<StationSearchInput> = graphql(
             key={[station.stationuuid, station.url].join("-")}
             title={station.name}
             subtitle={station.country}
-            onClick={() => play(station)}
+            onClick={() => load(station)}
           />
         ))}
       </AutoGrid>

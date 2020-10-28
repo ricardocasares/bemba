@@ -1,63 +1,63 @@
 import { useState, useEffect, createContext, useRef } from "react";
 import { Station } from "@/lib/graphql/gqless";
+import styled from "@emotion/styled";
+
+const Audio = styled.audio`
+  display: none;
+`;
 
 export type PlayerContext = {
-  play: (station: Station) => void;
+  play: () => void;
   stop: () => void;
+  load: (s: Station) => void;
   pause: () => void;
   station?: Station | null;
   error: boolean;
   paused: boolean;
   playing: boolean;
-  stopped: boolean;
   loading: boolean;
 };
 
 export const PlayerContext = createContext<PlayerContext>({
   station: null,
+  load: () => {},
   play: () => {},
-  pause: () => {},
   stop: () => {},
+  pause: () => {},
   error: false,
   paused: false,
   playing: false,
-  stopped: false,
   loading: false,
 });
 
 // @TODO: This is very messy
 export const PlayerProvider = ({ children }) => {
   const audio = useRef<HTMLAudioElement>(null);
-  const [station, setStation] = useState<Station>(null);
-  const [paused, setPaused] = useState(false);
-  const [playing, setPlaying] = useState(false);
-  const [stopped, setStopped] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
 
-  const play = (s: Station) => {
-    if (audio.current.src !== s.url || error) {
+  const [error, setError] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [station, setStation] = useState<Station>(null);
+  const [playing, setPlaying] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const load = (s: Station) => {
+    if (audio.current.src !== s.url) {
+      // setLoading(true);
       audio.current.src = s.url;
       setStation(s);
-      setError(false);
-      setLoading(true);
-      setPlaying(false);
-      audio.current.play();
-    }
-
-    if (paused) {
-      audio.current.play();
     }
   };
 
+  const play = () => audio.current.play();
   const pause = () => audio.current.pause();
 
   const stop = () => {
-    audio.current.src = "";
+    audio.current.src =
+      "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=";
     setError(false);
-    setStation(null);
     setPaused(false);
-    setStopped(true);
+    setStation(null);
+    setLoading(false);
     setPlaying(false);
   };
 
@@ -66,58 +66,57 @@ export const PlayerProvider = ({ children }) => {
     setPlaying(true);
     setPaused(false);
     setLoading(false);
-    setStopped(false);
   };
 
   const onCanPlay = () => {
-    setError(false);
-    setPaused(false);
-    setPlaying(true);
     setLoading(false);
-    setStopped(false);
   };
 
   const onLoad = () => {
     setError(false);
+    setPaused(false);
     setLoading(true);
     setPlaying(false);
-    setStopped(false);
-    setPaused(false);
   };
 
   const onPause = () => {
-    setPlaying(false);
-    setStopped(false);
     setPaused(true);
+    setPlaying(false);
   };
 
-  const onError = () => {
+  const onError = (e) => {
     setError(true);
     setPaused(false);
     setPlaying(false);
-    setStopped(false);
     setLoading(false);
   };
 
+  const onEnded = () => {
+    setStation(null);
+    setPaused(false);
+  };
+
   useEffect(() => {
-    audio.current.addEventListener("load", onLoad);
     audio.current.addEventListener("error", onError);
-    audio.current.addEventListener("playing", onPlaying);
-    audio.current.addEventListener("canplay", onCanPlay);
+    audio.current.addEventListener("ended", onEnded);
     audio.current.addEventListener("pause", onPause);
+    audio.current.addEventListener("loadstart", onLoad);
+    audio.current.addEventListener("playing", onPlaying);
+    audio.current.addEventListener("canplaythrough", onCanPlay);
 
     return () => {
-      audio.current.removeEventListener("load", onLoad);
       audio.current.removeEventListener("error", onError);
       audio.current.removeEventListener("pause", onPause);
+      audio.current.removeEventListener("loadstart", onLoad);
       audio.current.removeEventListener("playing", onPlaying);
-      audio.current.removeEventListener("canplay", onCanPlay);
+      audio.current.removeEventListener("canplaythrough", onCanPlay);
     };
   }, []);
 
   return (
     <PlayerContext.Provider
       value={{
+        load,
         play,
         stop,
         error,
@@ -125,12 +124,11 @@ export const PlayerProvider = ({ children }) => {
         paused,
         loading,
         playing,
-        stopped,
         station,
       }}
     >
       {children}
-      <audio ref={audio} style={{ display: "none" }} />
+      <Audio ref={audio} autoPlay={true} />
     </PlayerContext.Provider>
   );
 };

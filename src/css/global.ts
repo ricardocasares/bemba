@@ -6,6 +6,11 @@ export const styles = css`
   ${reset}
   ${theme}
 
+  html {
+    height: 100vh;
+    min-height: 100%;
+  }
+
   body {
     color: var(--foreground);
     background: var(--background);

@@ -13,8 +13,23 @@ export const Container = styled.footer`
 export const Title = styled.div`
   font-weight: 500;
   text-align: center;
-  font-size: var(--sz3);
+  font-size: var(--sz4);
   color: var(--foreground);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+`;
+
+export const ErrorNotification = styled.div`
+  font-weight: 500;
+  display: grid;
+  grid-gap: var(--sz4);
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  color: var(--error-lighter);
+  background: var(--error);
+  font-size: var(--sz4);
+  padding: var(--sz5) var(--sz4);
 `;
 
 export const Controls = styled.section`

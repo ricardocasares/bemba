@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
 
 export const Layout = styled.div`
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: grid;
+  position: fixed;
   grid-template-rows: auto 1fr auto;
 `;
