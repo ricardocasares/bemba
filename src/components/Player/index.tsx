@@ -21,7 +21,7 @@ export const Player = () => {
 
   const showPlay = playing && !error;
   const showPause = paused && !error;
-  const showStation = playing && !error;
+  const showStation = (playing || paused) && !error;
 
   return (
     <Container>

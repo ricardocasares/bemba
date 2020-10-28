@@ -46,7 +46,7 @@ export const PlayerProvider = ({ children }) => {
     }
 
     if (paused) {
-      audio.current.play().then(() => setPaused(false));
+      audio.current.play();
     }
   };
 
