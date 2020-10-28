@@ -1,11 +1,12 @@
+import { Box } from "@/components/Box";
 import { Heading } from "@/components/Typography";
 import { StationCardList } from "@/components/StationCardList";
 
 export const Index = () => (
-  <div style={{ padding: "var(--sz4)" }}>
+  <Box p={["var(--sz4)"]}>
     <Heading as="h3">Tango</Heading>
     <StationCardList name="tango" />
-  </div>
+  </Box>
 );
 
 export default Index;
