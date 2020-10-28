@@ -11,7 +11,7 @@ export const Header = () => (
     </Link>
 
     <Navigation>
-      <Link href="/">
+      <Link href="/search">
         <a>
           <Search />
         </a>

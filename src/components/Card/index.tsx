@@ -5,14 +5,15 @@ import { Container, Cover, Button, Title, Subtitle, Body } from "./style";
 const DEFAULT_SUBTITLE = "Global";
 
 export type Card = {
+  hash: string;
   title: string;
   subtitle: string;
   onClick: (ev: React.MouseEvent) => void;
 };
 
-export const Card: FC<Card> = ({ title, subtitle, onClick }) => (
+export const Card: FC<Card> = ({ hash, title, subtitle, onClick }) => (
   <Container>
-    <Cover hash={[title, subtitle].join("-")}>
+    <Cover hash={hash || Date.now().toString()}>
       <Button onClick={onClick}>
         <PlayCircle size={64} />
       </Button>

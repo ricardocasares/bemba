@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import gradient from "random-gradient";
 
 export const Container = styled.div`
-  border-radius: var(--sz2);
+  border-radius: var(--sz1);
 `;
 
 export type Cover = {
@@ -14,8 +14,8 @@ export const Cover = styled.div<Cover>`
   place-items: center;
   min-width: 100%;
   min-height: 120px;
-  border-top-left-radius: var(--sz2);
-  border-top-right-radius: var(--sz2);
+  border-top-left-radius: var(--sz1);
+  border-top-right-radius: var(--sz1);
   background: ${({ hash }) => gradient(hash, "vertical")};
 `;
 
