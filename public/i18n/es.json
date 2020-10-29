@@ -1,0 +1,10 @@
+{
+  "index": {},
+  "search": {
+    "title": "Buscar",
+    "placeholder": "Escribe algo ..."
+  },
+  "player": {
+    "error": "Oh oh, algo salió mal :("
+  }
+}

@@ -14,6 +14,7 @@
     "@geist-ui/react-icons": "^1.0.0",
     "@gqless/react": "^1.0.0-alpha.31",
     "apollo-server-micro": "^2.18.2",
+    "debounce": "^1.2.0",
     "gqless": "^1.0.0-alpha.31",
     "next": "^10.0.0",
     "random-gradient": "^0.0.2",

@@ -14,6 +14,6 @@ export const SearchInput = styled.input`
 
   :hover,
   :focus {
-    border-color: var(--accents-4);
+    border-color: var(--accents-3);
   }
 `;

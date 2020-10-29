@@ -25,6 +25,9 @@ export const Title = styled.h3`
   margin: 0;
   margin-bottom: var(--sz1);
   color: var(--accents-7);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 export const Subtitle = styled.h4`
@@ -33,6 +36,9 @@ export const Subtitle = styled.h4`
   text-transform: uppercase;
   color: var(--accents-4);
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 export const Body = styled.div`

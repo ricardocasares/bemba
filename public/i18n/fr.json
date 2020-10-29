@@ -1,0 +1,10 @@
+{
+  "index": {},
+  "search": {
+    "title": "Chercher",
+    "placeholder": "Tapez quelque chose ..."
+  },
+  "player": {
+    "error": "Quelque chose s'est mal passé :("
+  }
+}

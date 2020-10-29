@@ -1,30 +1,34 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, ChangeEvent } from "react";
 import { Box } from "@/components/Box";
 import { Heading } from "@/components/Typography";
 import { SearchInput } from "@/components/SearchInput";
 import { StationCardList } from "@/components/StationCardList";
+import { useTranslation } from "@/lib/hooks/useTranslation";
+import debounce from "debounce";
 
 export const Index = () => {
+  const { t } = useTranslation();
   const input = useRef<HTMLInputElement>(null);
-  const [query, setQuery] = useState("");
+  const [Q, setQ] = useState("");
 
-  const showList = query.length >= 3;
-  const onChange = ({ target: { value } }) => setQuery(value);
+  const showList = Q.length >= 3;
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => setQ(e.target.value);
+  const debouncedOnChange = debounce(onChange, 350);
 
   useEffect(() => input.current.focus(), []);
 
   return (
     <Box p={["var(--sz4)"]}>
-      <Heading as="h3">Search</Heading>
+      <Heading as="h3">{t.search.title}</Heading>
 
       <SearchInput
         type="text"
-        onChange={onChange}
         ref={input}
-        placeholder="Type something ..."
+        onChange={debouncedOnChange}
+        placeholder={t.search.placeholder}
       />
 
-      {showList && <StationCardList name={query} limit={20} />}
+      {showList && <StationCardList name={Q} limit={20} />}
     </Box>
   );
 };

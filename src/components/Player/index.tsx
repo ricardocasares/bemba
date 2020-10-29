@@ -2,9 +2,12 @@ import { useContext } from "react";
 import { Play, Pause, Square, AlertCircle } from "@geist-ui/react-icons";
 import { LineSkeleton } from "@/components/Skeleton";
 import { PlayerContext } from "@/lib/context/player";
+import { useTranslation } from "@/lib/hooks/useTranslation";
+
 import { Container, Controls, Title, ErrorNotification, Button } from "./style";
 
 export const Player = () => {
+  const { t } = useTranslation();
   const { station, play, pause, stop, error, playing, loading } = useContext(
     PlayerContext
   );
@@ -14,7 +17,7 @@ export const Player = () => {
   if (error) {
     return (
       <ErrorNotification>
-        <AlertCircle /> <p>Oops, can't play this station :(</p>
+        <AlertCircle /> <p>{t.player.error}</p>
       </ErrorNotification>
     );
   }
