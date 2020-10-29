@@ -5,7 +5,7 @@ export const SearchInput = styled.input`
   padding: var(--sz3);
   font-size: var(--sz4);
   border-radius: var(--sz1);
-  margin-bottom: var(--sz4);
+  margin-bottom: var(--sz5);
   color: var(--foreground);
   background: var(--background);
   border: 1px solid var(--accents-2);
