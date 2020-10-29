@@ -22,8 +22,8 @@ export const Index = () => {
       <Heading as="h3">{t.search.title}</Heading>
 
       <SearchInput
-        type="text"
         ref={input}
+        type="search"
         onChange={debouncedOnChange}
         placeholder={t.search.placeholder}
       />
