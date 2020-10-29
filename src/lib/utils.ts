@@ -3,4 +3,5 @@ export const localesMap = {
   es: "Español",
   fr: "Française",
   pl: "Polski",
+  ru: "Русский",
 };
