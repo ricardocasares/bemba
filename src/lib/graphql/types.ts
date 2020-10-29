@@ -16,6 +16,7 @@ export const typeDefs = gql`
     votes: Int!
     favicon: String!
     homepage: String!
+    language: String!
     country: String!
     stationuuid: String!
   }
@@ -26,5 +27,6 @@ export const typeDefs = gql`
     reverse: Boolean = true
     order: StationOrder = VOTES
     country: String
+    language: String
   }
 `;

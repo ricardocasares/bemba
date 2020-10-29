@@ -1,5 +1,7 @@
 {
-  "index": {},
+  "index": {
+    "title": "In your language"
+  },
   "search": {
     "title": "Search",
     "placeholder": "Type something ..."

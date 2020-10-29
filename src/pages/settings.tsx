@@ -3,13 +3,7 @@ import { Box } from "@/components/Box";
 import { Toggle, ToggleItem } from "@/components/Toggle";
 import { Heading } from "@/components/Typography";
 import { useTranslation } from "@/lib/hooks/useTranslation";
-
-const localesMap = {
-  en: "English",
-  es: "Español",
-  fr: "Française",
-  pl: "Polski",
-};
+import { localesMap } from "@/lib/utils";
 
 export const Index = () => {
   const { t, locale, locales } = useTranslation();

@@ -53,6 +53,9 @@ export const schema = {
         get homepage() {
           return new FieldNode(schema.String, undefined, false);
         },
+        get language() {
+          return new FieldNode(schema.String, undefined, false);
+        },
         get country() {
           return new FieldNode(schema.String, undefined, false);
         },
@@ -91,6 +94,9 @@ export const schema = {
           return new InputNodeField(schema.StationOrder, true);
         },
         get country() {
+          return new InputNodeField(schema.String, true);
+        },
+        get language() {
           return new InputNodeField(schema.String, true);
         }
       },

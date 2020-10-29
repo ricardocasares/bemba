@@ -44,6 +44,7 @@ type t_Station = FieldsType<
     votes: t_Int;
     favicon: t_String;
     homepage: t_String;
+    language: t_String;
     country: t_String;
     stationuuid: t_String;
   },
@@ -72,6 +73,7 @@ export type StationSearchInput = {
   reverse?: boolean | null;
   order?: StationOrder | null;
   country?: string | null;
+  language?: string | null;
 };
 
 /**
