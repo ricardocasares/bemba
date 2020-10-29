@@ -4,6 +4,10 @@
     "title": "Search",
     "placeholder": "Type something ..."
   },
+  "settings": {
+    "title": "Settings",
+    "language": "Language"
+  },
   "player": {
     "error": "Oops, something went wrong :("
   }

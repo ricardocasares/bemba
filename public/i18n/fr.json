@@ -4,6 +4,10 @@
     "title": "Chercher",
     "placeholder": "Tapez quelque chose ..."
   },
+  "settings": {
+    "title": "Réglages",
+    "language": "Langue"
+  },
   "player": {
     "error": "Quelque chose s'est mal passé :("
   }

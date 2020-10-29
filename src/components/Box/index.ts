@@ -13,7 +13,7 @@ import {
 } from "styled-system";
 import styled from "@emotion/styled";
 
-export type Box = GridProps &
+export type Box = { as?: string } & GridProps &
   MarginProps &
   PaddingProps &
   BackgroundProps &

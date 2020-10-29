@@ -4,6 +4,10 @@
     "title": "Buscar",
     "placeholder": "Escribe algo ..."
   },
+  "settings": {
+    "title": "Configuración",
+    "language": "Lenguaje"
+  },
   "player": {
     "error": "Oh oh, algo salió mal :("
   }
