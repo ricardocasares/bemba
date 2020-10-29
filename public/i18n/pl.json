@@ -3,7 +3,7 @@
     "title": "W Twoim języku"
   },
   "search": {
-    "title": "Szukać",
+    "title": "Szukaj",
     "placeholder": "Napisz coś ..."
   },
   "settings": {
@@ -11,6 +11,6 @@
     "language": "Język"
   },
   "player": {
-    "error": "Ojojoj, coś poszło nie tak :("
+    "error": "Ach, coś poszło nie tak :("
   }
 }
