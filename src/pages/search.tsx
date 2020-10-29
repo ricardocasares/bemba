@@ -12,7 +12,7 @@ import { SearchInput } from "@/components/SearchInput";
 import { StationCardList } from "@/components/StationCardList";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 
-export const Index = () => {
+export const Search = () => {
   const { t } = useTranslation();
   const input = useRef<HTMLInputElement>(null);
   const [Q, setQ] = useState("");
@@ -47,4 +47,4 @@ export const Index = () => {
   );
 };
 
-export default Index;
+export default Search;

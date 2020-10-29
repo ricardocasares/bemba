@@ -30,7 +30,6 @@ export const PlayerContext = createContext<PlayerContext>({
   loading: false,
 });
 
-// @TODO: This is very messy
 export const PlayerProvider = ({ children }) => {
   const audio = useRef<HTMLAudioElement>(null);
 

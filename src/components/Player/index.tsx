@@ -2,9 +2,8 @@ import { useContext } from "react";
 import { Play, Pause, Square, AlertCircle } from "@geist-ui/react-icons";
 import { LineSkeleton } from "@/components/Skeleton";
 import { PlayerContext } from "@/lib/context/player";
-import { useTranslation } from "@/lib/hooks/useTranslation";
-
 import { Container, Controls, Title, ErrorNotification, Button } from "./style";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 export const Player = () => {
   const { t } = useTranslation();
