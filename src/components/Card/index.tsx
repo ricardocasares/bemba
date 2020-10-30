@@ -1,14 +1,7 @@
 import { FC } from "react";
-import { PlayCircle, Heart, HeartFill } from "@geist-ui/react-icons";
+import { PlayCircle } from "@geist-ui/react-icons";
+import { HeartToggle } from "@/components/Toggles";
 import { Container, Cover, Button, Title, Subtitle, Body } from "./style";
-
-export const HeartToggle: FC<{ active: boolean }> = ({ active }) => {
-  if (active) {
-    return <HeartFill color="var(--highlight-magenta)" />;
-  }
-
-  return <Heart color="var(--accents-3)" />;
-};
 
 const DEFAULT_SUBTITLE = "Global";
 
@@ -42,16 +35,9 @@ export const Card: FC<Card> = ({
         <Title>{title}</Title>
         <Subtitle>{subtitle || DEFAULT_SUBTITLE}</Subtitle>
       </div>
-      {!isFaved && (
-        <Button onClick={onFaved}>
-          <HeartToggle active={false} />
-        </Button>
-      )}
-      {isFaved && (
-        <Button onClick={onUnFaved}>
-          <HeartToggle active={true} />
-        </Button>
-      )}
+      <Button onClick={!isFaved ? onFaved : onUnFaved}>
+        <HeartToggle active={isFaved} />
+      </Button>
     </Body>
   </Container>
 );

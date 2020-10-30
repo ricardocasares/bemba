@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Box } from "@/components/Box";
 import { Stack } from "@/components/Stack";
-import { Toggle, ToggleItem } from "@/components/Toggle";
+import { RightLeftToggle, ToggleItem } from "@/components/Toggles";
 import { Heading } from "@/components/Typography";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 import { localesMap } from "@/lib/utils";
@@ -25,7 +25,7 @@ export const Index = () => {
             <Link href="/settings" locale={lang}>
               <a>
                 <ToggleItem>
-                  {localesMap[lang]} <Toggle active={locale == lang} />
+                  {localesMap[lang]} <RightLeftToggle active={locale == lang} />
                 </ToggleItem>
               </a>
             </Link>
