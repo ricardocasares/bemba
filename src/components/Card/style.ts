@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import gradient from "random-gradient";
+import { Gradient } from "@/components/Gradient";
 
 export const Container = styled.div`
   border-radius: var(--sz1);
@@ -9,14 +9,10 @@ export type Cover = {
   hash: string;
 };
 
-export const Cover = styled.div<Cover>`
+export const Cover = styled(Gradient)`
   display: grid;
   place-items: center;
-  min-width: 100%;
-  min-height: 120px;
-  border-top-left-radius: var(--sz1);
-  border-top-right-radius: var(--sz1);
-  background: ${({ hash }) => gradient(hash, "vertical")};
+  border-radius: var(--sz2) var(--sz2) 0 0;
 `;
 
 export const Title = styled.h3`
