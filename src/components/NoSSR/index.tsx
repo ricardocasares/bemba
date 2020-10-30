@@ -1,19 +1,14 @@
 import dynamic from "next/dynamic";
-import { FC, Suspense as ReactSuspense } from "react";
+import { FC, Suspense } from "react";
 
-export type Wrapper = {
-  fallback: React.ReactNode;
-};
-
-const Wrapper: FC<Wrapper> = ({ children, fallback }) => (
-  <ReactSuspense fallback={fallback}>{children}</ReactSuspense>
-);
-
-export const noSSR = (Fallback: React.FC<any>) =>
-  dynamic(
-    async () => (props) => <Wrapper fallback={<Fallback />} {...props} />,
+export function NoSSR(Fallback: FC<any>) {
+  return dynamic(
+    async () => ({ children }) => (
+      <Suspense fallback={<Fallback />}>{children}</Suspense>
+    ),
     {
       ssr: false,
       loading: Fallback,
     }
   );
+}

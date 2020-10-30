@@ -3,8 +3,10 @@
     "title": "На вашем языке"
   },
   "search": {
-    "title": "Поиск",
     "placeholder": "Введите что-либо ..."
+  },
+  "favorites": {
+    "title": "Закладки"
   },
   "settings": {
     "title": "Настройки",

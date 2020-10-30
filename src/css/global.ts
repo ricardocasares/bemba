@@ -11,10 +11,15 @@ export const styles = css`
     min-height: 100%;
   }
 
+  body,
+  input,
+  button {
+    font-family: var(--font-family);
+  }
+
   body {
     color: var(--foreground);
     background: var(--background);
-    font-family: var(--font-family);
     margin: 0;
     padding: 0;
   }

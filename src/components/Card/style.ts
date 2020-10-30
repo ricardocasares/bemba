@@ -46,6 +46,10 @@ export const Body = styled.div`
   border: 1px solid var(--accents-2);
   border-top: 0;
   border-radius: 0 0 var(--sz2) var(--sz2);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 10px;
+  align-items: center;
 `;
 
 export const Button = styled.button`

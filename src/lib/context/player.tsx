@@ -18,17 +18,7 @@ export type PlayerContext = {
   loading: boolean;
 };
 
-export const PlayerContext = createContext<PlayerContext>({
-  station: null,
-  load: () => {},
-  play: () => {},
-  stop: () => {},
-  pause: () => {},
-  error: false,
-  paused: false,
-  playing: false,
-  loading: false,
-});
+export const PlayerContext = createContext<PlayerContext>(null);
 
 export const PlayerProvider = ({ children }) => {
   const audio = useRef<HTMLAudioElement>(null);

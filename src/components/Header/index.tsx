@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Radio, Search, Sliders } from "@geist-ui/react-icons";
+import { HeartFill, Radio, Search, Sliders } from "@geist-ui/react-icons";
 import { Container, Navigation } from "./style";
 
 export const Header = () => (
@@ -14,6 +14,11 @@ export const Header = () => (
       <Link href="/search">
         <a>
           <Search />
+        </a>
+      </Link>
+      <Link href="/favorites">
+        <a>
+          <HeartFill color="var(--highlight-magenta)" />
         </a>
       </Link>
       <Link href="/settings">

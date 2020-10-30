@@ -7,8 +7,8 @@ import {
   ArrayNode,
   Arguments,
   ArgumentsField,
-  EnumNode,
   ScalarNode,
+  EnumNode,
   InputNode,
   InputNodeField
 } from "gqless";
@@ -27,10 +27,33 @@ export const schema = {
             }),
             false
           );
+        },
+        get stationsByUUID() {
+          return new FieldNode(
+            new ArrayNode(schema.Station, false),
+            new Arguments(
+              {
+                get uuids() {
+                  return new ArgumentsField(
+                    new ArrayNode(schema.String, false),
+                    false
+                  );
+                }
+              },
+              true
+            ),
+            false
+          );
         }
       },
       { name: "Query", extension: ((extensions as any) || {}).Query }
     );
+  },
+  get String() {
+    return new ScalarNode({
+      name: "String",
+      extension: ((extensions as any) || {}).String
+    });
   },
   get StationOrder() {
     return new EnumNode({ name: "StationOrder" });
@@ -65,12 +88,6 @@ export const schema = {
       },
       { name: "Station", extension: ((extensions as any) || {}).Station }
     );
-  },
-  get String() {
-    return new ScalarNode({
-      name: "String",
-      extension: ((extensions as any) || {}).String
-    });
   },
   get Int() {
     return new ScalarNode({

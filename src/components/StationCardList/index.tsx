@@ -1,11 +1,12 @@
-import { FC, useContext } from "react";
+import { ComponentType, FC, useContext } from "react";
 import { graphql } from "@gqless/react";
-import { query, StationSearchInput } from "@/lib/graphql/gqless";
-import { noSSR } from "@/components/NoSSR";
+import { query, Station, StationSearchInput } from "@/lib/graphql/gqless";
+import { NoSSR } from "@/components/NoSSR";
 import { Card } from "@/components/Card";
 import { AutoGrid } from "@/components/AutoGrid";
 import { CardSkeleton } from "@/components/Skeleton";
 import { PlayerContext } from "@/lib/context/player";
+import { useFavorites } from "@/lib/hooks/useFavorites";
 
 const Placeholder = () => (
   <AutoGrid gridGap={[20]}>
@@ -17,30 +18,64 @@ const Placeholder = () => (
   </AutoGrid>
 );
 
-const Loader = noSSR(Placeholder);
+export type CardList = {
+  list: Station[];
+};
 
-export const GQLStations: FC<StationSearchInput> = graphql(
-  ({ children: _, ...search }) => {
-    const { load } = useContext(PlayerContext);
+export const CardList: FC<CardList> = ({ list }) => {
+  const { load } = useContext(PlayerContext);
+  const { add, remove, isFaved } = useFavorites();
 
-    return (
-      <AutoGrid gridGap={["var(--sz4)"]}>
-        {query.stations({ search }).map((station) => (
-          <Card
-            key={[station.url, station.stationuuid].join()}
-            hash={station.stationuuid}
-            title={station.name}
-            subtitle={station.country}
-            onClick={() => load(station)}
-          />
-        ))}
-      </AutoGrid>
-    );
-  }
+  return (
+    <AutoGrid gridGap={["var(--sz4)"]}>
+      {list.map((item) => (
+        <Card
+          key={[item.url, item.stationuuid].join()}
+          hash={item.stationuuid}
+          title={item.name}
+          subtitle={item.country}
+          onPlay={() => load(item)}
+          onFaved={() => add(item.stationuuid)}
+          onUnFaved={() => remove(item.stationuuid)}
+          isFaved={isFaved(item.stationuuid)}
+        />
+      ))}
+    </AutoGrid>
+  );
+};
+
+const Loader = NoSSR(Placeholder);
+
+const withLoader = <P extends object>(
+  Component: React.ComponentType<P>
+): React.FC<P> => (props) => (
+  <Loader>
+    <Component {...(props as P)} />
+  </Loader>
 );
 
-export const StationCardList: FC<StationSearchInput> = (props) => (
-  <Loader>
-    <GQLStations {...props} />
-  </Loader>
+export const StationCardList: FC<StationSearchInput> = withLoader(
+  graphql(({ ...search }) => (
+    <CardList
+      list={query.stations({ search }).map((s) => ({
+        url: s.url,
+        name: s.name,
+        country: s.country,
+        stationuuid: s.stationuuid,
+      }))}
+    />
+  ))
+);
+
+export const StationCardFavs: FC<{ uuids: string[] }> = withLoader(
+  graphql(({ children: _, ...props }) => (
+    <CardList
+      list={query.stationsByUUID(props).map((s) => ({
+        url: s.url,
+        name: s.name,
+        country: s.country,
+        stationuuid: s.stationuuid,
+      }))}
+    />
+  ))
 );

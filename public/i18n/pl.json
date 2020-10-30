@@ -3,8 +3,10 @@
     "title": "W Twoim języku"
   },
   "search": {
-    "title": "Szukaj",
     "placeholder": "Napisz coś ..."
+  },
+  "favorites": {
+    "title": "Ulubione"
   },
   "settings": {
     "title": "Ustawienia",

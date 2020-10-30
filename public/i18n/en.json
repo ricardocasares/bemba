@@ -3,8 +3,10 @@
     "title": "In your language"
   },
   "search": {
-    "title": "Search",
     "placeholder": "Type something ..."
+  },
+  "favorites": {
+    "title": "Favorites"
   },
   "settings": {
     "title": "Settings",

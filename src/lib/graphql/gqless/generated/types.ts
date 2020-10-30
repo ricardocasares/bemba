@@ -3,8 +3,8 @@ import {
   TypeData,
   FieldsType,
   FieldsTypeArg,
-  EnumType,
-  ScalarType
+  ScalarType,
+  EnumType
 } from "gqless";
 
 type Extension<TName extends string> = TName extends keyof typeof extensions
@@ -22,9 +22,16 @@ type t_Query = FieldsType<
       { search?: StationSearchInput | null },
       t_Station[]
     >;
+    stationsByUUID: FieldsTypeArg<{ uuids: string[] }, t_Station[]>;
   },
   Extension<"Query">
 >;
+
+/**
+ * @name String
+ * @type SCALAR
+ */
+type t_String<T extends string = string> = ScalarType<T, Extension<"String">>;
 
 /**
  * @name StationOrder
@@ -50,12 +57,6 @@ type t_Station = FieldsType<
   },
   Extension<"Station">
 >;
-
-/**
- * @name String
- * @type SCALAR
- */
-type t_String<T extends string = string> = ScalarType<T, Extension<"String">>;
 
 /**
  * @name Int
@@ -284,6 +285,12 @@ type t___DirectiveLocation = EnumType<
 export type Query = TypeData<t_Query>;
 
 /**
+ * @name String
+ * @type SCALAR
+ */
+export type String = TypeData<t_String>;
+
+/**
  * @name StationOrder
  * @type ENUM
  */
@@ -297,12 +304,6 @@ export enum StationOrder {
  * @type OBJECT
  */
 export type Station = TypeData<t_Station>;
-
-/**
- * @name String
- * @type SCALAR
- */
-export type String = TypeData<t_String>;
 
 /**
  * @name Int

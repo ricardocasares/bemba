@@ -3,6 +3,7 @@ import { gql } from "apollo-server-micro";
 export const typeDefs = gql`
   type Query {
     stations(search: StationSearchInput): [Station!]!
+    stationsByUUID(uuids: [String!]!): [Station!]!
   }
 
   enum StationOrder {

@@ -32,8 +32,6 @@ export const Search = () => {
 
   return (
     <Box p={["var(--sz4)"]}>
-      <Heading as="h3">{t.search.title}</Heading>
-
       <SearchInput
         ref={input}
         type="search"

@@ -3,13 +3,17 @@ import { ApolloServer } from "apollo-server-micro";
 import { typeDefs } from "@/lib/graphql/types";
 
 const ENDPOINT = process.env.RADIO_ENDPOINT;
-const STATION_SEARCH = `${ENDPOINT}/stations/search?`;
-const searchEndpoint = (args: any) => `${STATION_SEARCH}${encode(args)}`;
+const STATIONS_SEARCH = `${ENDPOINT}/stations/search?`;
+const STATIONS_BY_UUID = `${ENDPOINT}/stations/byuuid?uuids=`;
+const searchEndpoint = (args: any) => `${STATIONS_SEARCH}${encode(args)}`;
+const byUUIDEndpoint = (args: any) => `${STATIONS_BY_UUID}${args.join(",")}`;
 
 const resolvers = {
   Query: {
     stations: async (_, { search }) =>
       fetch(searchEndpoint(search)).then((r) => r.json()),
+    stationsByUUID: async (_, { uuids }) =>
+      fetch(byUUIDEndpoint(uuids)).then((r) => r.json()),
   },
 };
 

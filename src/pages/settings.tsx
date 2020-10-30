@@ -14,7 +14,6 @@ export const Index = () => {
       <Heading as="h4" muted>
         {t.settings.language}
       </Heading>
-
       <ul>
         {locales.map((lang) => (
           <li key={lang}>
