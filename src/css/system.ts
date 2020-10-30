@@ -9,3 +9,23 @@ export const stackSpacing = system({
     property: "marginTop",
   },
 });
+
+export type ItemPaddingProps = {
+  itemPadding?: number | number[] | string | string[];
+};
+
+export const itemPadding = system({
+  itemPadding: {
+    property: "padding",
+  },
+});
+
+export type StackBorderProps = {
+  stackBorder?: number | number[] | string | string[];
+};
+
+export const stackBorder = system({
+  stackBorder: {
+    property: "borderTop",
+  },
+});

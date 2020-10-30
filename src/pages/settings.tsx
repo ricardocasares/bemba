@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Box } from "@/components/Box";
+import { Stack } from "@/components/Stack";
 import { Toggle, ToggleItem } from "@/components/Toggle";
 import { Heading } from "@/components/Typography";
 import { useTranslation } from "@/lib/hooks/useTranslation";
@@ -14,7 +15,11 @@ export const Index = () => {
       <Heading as="h4" muted>
         {t.settings.language}
       </Heading>
-      <ul>
+      <Stack
+        as="ul"
+        stackBorder="1px solid var(--accents-2)"
+        itemPadding={"var(--sz3) 0"}
+      >
         {locales.map((lang) => (
           <li key={lang}>
             <Link href="/settings" locale={lang}>
@@ -26,7 +31,7 @@ export const Index = () => {
             </Link>
           </li>
         ))}
-      </ul>
+      </Stack>
     </Box>
   );
 };
