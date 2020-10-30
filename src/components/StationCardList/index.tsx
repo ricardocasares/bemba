@@ -58,6 +58,7 @@ export const StationCardList: FC<StationSearchInput> = withLoader(
   graphql(({ ...search }) => (
     <CardList
       list={query.stations({ search }).map((s) => ({
+        ...s,
         url: s.url,
         name: s.name,
         country: s.country,
@@ -71,6 +72,7 @@ export const StationCardFavs: FC<{ uuids: string[] }> = withLoader(
   graphql(({ children: _, ...props }) => (
     <CardList
       list={query.stationsByUUID(props).map((s) => ({
+        ...s,
         url: s.url,
         name: s.name,
         country: s.country,
