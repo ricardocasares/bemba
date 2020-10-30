@@ -18,10 +18,11 @@ export const Index = () => {
         {locales.map((lang) => (
           <li key={lang}>
             <Link href="/settings" locale={lang}>
-              <ToggleItem>
-                <a>{localesMap[lang]}</a>
-                <Toggle active={locale == lang} />
-              </ToggleItem>
+              <a>
+                <ToggleItem>
+                  {localesMap[lang]} <Toggle active={locale == lang} />
+                </ToggleItem>
+              </a>
             </Link>
           </li>
         ))}
