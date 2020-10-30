@@ -25,7 +25,7 @@ export const Card: FC<Card> = ({
   isFaved,
 }) => (
   <Container>
-    <Cover hash={hash || Date.now().toString()}>
+    <Cover hash={hash}>
       <Button onClick={onPlay}>
         <PlayCircle size={64} />
       </Button>
