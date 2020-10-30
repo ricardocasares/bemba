@@ -9,7 +9,7 @@ export const Search = () => {
   const { favs } = useFavorites();
 
   return (
-    <Box p={["var(--sz4)"]}>
+    <Box p={["var(--sz3)"]}>
       <Heading as="h3">{t.favorites.title}</Heading>
       <StationCardFavs uuids={favs} />
     </Box>

@@ -10,7 +10,7 @@ export const Index = () => {
   const { t, locale, locales } = useTranslation();
 
   return (
-    <Box p={["var(--sz4)"]}>
+    <Box p={["var(--sz3)"]}>
       <Heading as="h3">{t.settings.title}</Heading>
       <Heading as="h4" muted>
         {t.settings.language}

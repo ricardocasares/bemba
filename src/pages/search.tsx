@@ -31,7 +31,7 @@ export const Search = () => {
   }, []);
 
   return (
-    <Box p={["var(--sz4)"]}>
+    <Box p={["var(--sz3)"]}>
       <SearchInput
         ref={input}
         type="search"
