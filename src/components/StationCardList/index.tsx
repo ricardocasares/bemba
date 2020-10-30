@@ -1,11 +1,11 @@
-import { ComponentType, FC, useContext } from "react";
+import { FC } from "react";
 import { graphql } from "@gqless/react";
 import { query, Station, StationSearchInput } from "@/lib/graphql/gqless";
 import { NoSSR } from "@/components/NoSSR";
 import { Card } from "@/components/Card";
 import { AutoGrid } from "@/components/AutoGrid";
 import { CardSkeleton } from "@/components/Skeleton";
-import { PlayerContext } from "@/lib/context/player";
+import { usePlayer } from "@/lib/hooks/usePlayer";
 import { useFavorites } from "@/lib/hooks/useFavorites";
 
 const Placeholder = () => (
@@ -23,7 +23,7 @@ export type CardList = {
 };
 
 export const CardList: FC<CardList> = ({ list }) => {
-  const { load } = useContext(PlayerContext);
+  const { load } = usePlayer();
   const { add, remove, isFaved } = useFavorites();
 
   return (

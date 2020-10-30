@@ -2,6 +2,9 @@ import { useState, useEffect, createContext, useRef } from "react";
 import { Station } from "@/lib/graphql/gqless";
 import styled from "@emotion/styled";
 
+const EMPTY_AUDIO =
+  "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=";
+
 const Audio = styled.audio`
   display: none;
 `;
@@ -41,8 +44,7 @@ export const PlayerProvider = ({ children }) => {
   const pause = () => audio.current.pause();
 
   const stop = () => {
-    audio.current.src =
-      "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=";
+    audio.current.src = EMPTY_AUDIO;
     setError(false);
     setPaused(false);
     setStation(null);

@@ -1,15 +1,12 @@
-import { useContext } from "react";
 import { Play, Pause, Square, AlertCircle } from "@geist-ui/react-icons";
 import { LineSkeleton } from "@/components/Skeleton";
-import { PlayerContext } from "@/lib/context/player";
 import { Container, Controls, Title, ErrorNotification, Button } from "./style";
+import { usePlayer } from "@/lib/hooks/usePlayer";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 
 export const Player = () => {
   const { t } = useTranslation();
-  const { station, play, pause, stop, error, playing, loading } = useContext(
-    PlayerContext
-  );
+  const { station, play, pause, stop, error, playing, loading } = usePlayer();
 
   if (!station) return null;
 
