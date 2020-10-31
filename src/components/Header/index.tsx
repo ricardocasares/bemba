@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { HeartFill, Radio, Search, Sliders } from "@geist-ui/react-icons";
+import { Logo } from "@/components/Logo";
+import { HeartFill, Search, Sliders } from "@geist-ui/react-icons";
 import { Container, Navigation } from "./style";
 
 export const Header = () => (
   <Container>
     <Link href="/">
       <a>
-        <Radio />
+        <Logo />
       </a>
     </Link>
 
