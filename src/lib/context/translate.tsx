@@ -10,26 +10,24 @@ export type TranslateContext = {
   locales: string[];
 };
 
-const cache = new Map<string, Translation>();
-cache.set("en", defaultLang);
-
 export const TranslateContext = createContext<TranslateContext>(null);
 
 export const TranslateProvider = ({ children }) => {
   const { locale, locales } = useRouter();
   const [t, setTranslation] = useState(defaultLang);
+  const [cache, setCache] = useState({ en: defaultLang });
 
   useEffect(() => {
-    if (cache.has(locale)) {
-      setTranslation(cache.get(locale));
+    if (cache[locale]) {
+      setTranslation(cache[locale]);
     }
 
-    if (!cache.has(locale)) {
+    if (!cache[locale]) {
       fetch(`/i18n/${locale}.json`)
         .then((r) => r.json())
         .then((translation) => {
-          cache.set(locale, translation);
-          setTranslation(cache.get(locale));
+          setCache((state) => ({ ...state, [locale]: translation }));
+          setTranslation(translation);
         });
     }
   }, [locale]);
