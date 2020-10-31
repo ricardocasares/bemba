@@ -6,7 +6,9 @@ export function useFrequency() {
   const [state, setState] = useState(100);
 
   useEffect(() => {
-    const ctx = new AudioContext();
+    // @ts-ignore
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    const ctx = new AudioCtx();
     const analyser = ctx.createAnalyser();
     const source = ctx.createMediaElementSource(audio.current);
     analyser.fftSize = 64;
