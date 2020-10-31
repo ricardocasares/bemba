@@ -1,6 +1,9 @@
 import { encode } from "querystring";
 import { ApolloServer } from "apollo-server-micro";
 import { typeDefs } from "@/lib/graphql/types";
+import retryFetch from "@vercel/fetch";
+
+const fetcher = retryFetch(null, { timeout: 5000 });
 
 const ENDPOINT = process.env.RADIO_ENDPOINT;
 const STATIONS_SEARCH = `${ENDPOINT}/stations/search?`;
@@ -11,9 +14,9 @@ const byUUIDEndpoint = (args: any) => `${STATIONS_BY_UUID}${args.join(",")}`;
 const resolvers = {
   Query: {
     stations: async (_, { search }) =>
-      fetch(searchEndpoint(search)).then((r) => r.json()),
+      fetcher(searchEndpoint(search)).then((r) => r.json()),
     stationsByUUID: async (_, { uuids }) =>
-      fetch(byUUIDEndpoint(uuids)).then((r) => r.json()),
+      fetcher(byUUIDEndpoint(uuids)).then((r) => r.json()),
   },
 };
 
