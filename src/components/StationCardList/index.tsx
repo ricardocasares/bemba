@@ -44,14 +44,12 @@ export const CardList: FC<CardList> = ({ list }) => {
   );
 };
 
-const Loader = NoSSR(Placeholder);
-
 const withLoader = <P extends object>(
   Component: React.ComponentType<P>
 ): React.FC<P> => (props) => (
-  <Loader>
+  <NoSSR fallback={<Placeholder />}>
     <Component {...(props as P)} />
-  </Loader>
+  </NoSSR>
 );
 
 export const StationCardList: FC<StationSearchInput> = withLoader(

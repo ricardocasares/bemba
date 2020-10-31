@@ -1,14 +1,11 @@
 import dynamic from "next/dynamic";
-import { FC, Suspense } from "react";
+import { Suspense, SuspenseProps } from "react";
 
-export function NoSSR(Fallback: FC<any>) {
-  return dynamic(
-    async () => ({ children }) => (
-      <Suspense fallback={<Fallback />}>{children}</Suspense>
-    ),
-    {
-      ssr: false,
-      loading: Fallback,
-    }
-  );
-}
+export const NoSSR = dynamic(
+  async () => ({ children, fallback }: SuspenseProps) => (
+    <Suspense fallback={fallback}>{children}</Suspense>
+  ),
+  {
+    ssr: false,
+  }
+);
