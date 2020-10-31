@@ -9,7 +9,7 @@ type Icon = {
 
 const Icon = styled(Radio)<Icon>`
   path {
-    color: ${({ alpha }) => `rgba(0, 112, 243, ${alpha})`};
+    color: ${({ alpha }) => `rgba(0, 112, 243, ${alpha || 1})`};
   }
 `;
 
@@ -17,5 +17,5 @@ export const Logo = () => {
   const freq = useFrequency();
   const alpha = mapValueToRange(freq, [0, 255], [0, 1]);
 
-  return <Icon alpha={alpha || 1} />;
+  return <Icon alpha={alpha} />;
 };

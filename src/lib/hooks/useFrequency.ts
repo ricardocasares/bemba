@@ -16,7 +16,7 @@ export function useFrequency() {
 
     const update = () => {
       analyser.getByteFrequencyData(frequencyData);
-      setState(frequencyData[1]);
+      setState(frequencyData[3]);
       return requestAnimationFrame(update);
     };
 
