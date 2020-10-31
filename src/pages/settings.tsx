@@ -29,12 +29,11 @@ export const Settings = () => {
       >
         {["dark", "light", "system"].map((mode) => (
           <li key={mode}>
-            <ToggleItem>
-              {mode}
-              <GhostButton onClick={() => setTheme(mode)}>
-                <RightLeftToggle active={theme === mode} />
-              </GhostButton>
-            </ToggleItem>
+            <GhostButton onClick={() => setTheme(mode)}>
+              <ToggleItem>
+                {mode} <RightLeftToggle active={theme === mode} />
+              </ToggleItem>
+            </GhostButton>
           </li>
         ))}
       </Stack>
