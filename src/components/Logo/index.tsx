@@ -9,7 +9,7 @@ type Icon = {
 
 const Icon = styled(Radio)<Icon>`
   path {
-    color: ${({ alpha }) => `rgba(0, 112, 243, ${alpha || 1})`};
+    stroke: ${({ alpha }) => `rgba(0, 112, 243, ${alpha || 1})`};
   }
 `;
 
