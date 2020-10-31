@@ -1,8 +1,7 @@
-import { createContext } from "react";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { createContext, Dispatch, SetStateAction } from "react";
+import { useLocalStorage } from "@/lib/hooks/useLocalStorage";
 
-export type FavoritesContext = [string[], (favs: string[]) => void];
-
+export type FavoritesContext = [string[], Dispatch<SetStateAction<string[]>>];
 export const FavoritesContext = createContext<FavoritesContext>(null);
 
 export const FavoritesProvider = ({ children }) => {
