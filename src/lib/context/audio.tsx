@@ -9,12 +9,7 @@ export const AudioElementProvider = ({ children }) => {
   return (
     <AudioElementContext.Provider value={audio}>
       {children}
-      <audio
-        ref={audio}
-        autoPlay={true}
-        crossOrigin="anonymous"
-        style={{ display: "none" }}
-      />
+      <audio ref={audio} autoPlay={true} style={{ display: "none" }} />
     </AudioElementContext.Provider>
   );
 };
