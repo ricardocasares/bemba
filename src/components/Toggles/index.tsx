@@ -36,7 +36,7 @@ export const HeartToggle: FC<Activable> = (props) => (
 
 export const RightLeftToggle: FC<Activable> = (props) => (
   <Toggle
-    on={<ToggleRight color="var(--cyan)" />}
+    on={<ToggleRight color="var(--success)" />}
     off={<ToggleLeft color="var(--accents-5)" />}
     {...props}
   />

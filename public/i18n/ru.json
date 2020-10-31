@@ -10,6 +10,7 @@
   },
   "settings": {
     "title": "Настройки",
+    "color": "Цветовой режим",
     "language": "Язык"
   },
   "player": {

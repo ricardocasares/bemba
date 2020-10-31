@@ -55,21 +55,19 @@ export const base = css`
 `;
 
 export const dark = css`
-  @media (prefers-color-scheme: dark) {
-    :root {
-      /* colors */
-      --foreground: #fff;
-      --background: #000;
-      --selection: var(--highlight-purple);
-      --accents-8: #fafafa;
-      --accents-7: #eaeaea;
-      --accents-6: #999;
-      --accents-5: #888;
-      --accents-4: #666;
-      --accents-3: #444;
-      --accents-2: #333;
-      --accents-1: #111;
-    }
+  [data-theme="dark"] {
+    /* colors */
+    --foreground: #fff;
+    --background: #000;
+    --selection: var(--highlight-purple);
+    --accents-8: #fafafa;
+    --accents-7: #eaeaea;
+    --accents-6: #999;
+    --accents-5: #888;
+    --accents-4: #666;
+    --accents-3: #444;
+    --accents-2: #333;
+    --accents-1: #111;
   }
 `;
 
