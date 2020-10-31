@@ -38,7 +38,7 @@ export function usePlayer() {
     });
   };
 
-  const onPlaying = () => {
+  const onPlaying = () =>
     setState((state) => ({
       ...state,
       error: false,
@@ -46,9 +46,8 @@ export function usePlayer() {
       loading: false,
       playing: true,
     }));
-  };
 
-  const onPause = () => {
+  const onPause = () =>
     setState((state) => ({
       ...state,
       error: false,
@@ -56,9 +55,8 @@ export function usePlayer() {
       loading: false,
       playing: false,
     }));
-  };
 
-  const onCanPlayThrough = () => {
+  const onCanPlayThrough = () =>
     setState((state) => ({
       ...state,
       error: false,
@@ -66,9 +64,8 @@ export function usePlayer() {
       loading: false,
       playing: true,
     }));
-  };
 
-  const onLoadStart = () => {
+  const onLoadStart = () =>
     setState((state) => ({
       ...state,
       error: false,
@@ -76,9 +73,8 @@ export function usePlayer() {
       loading: true,
       playing: false,
     }));
-  };
 
-  const onError = () => {
+  const onError = () =>
     setState((state) => ({
       ...state,
       error: true,
@@ -86,9 +82,8 @@ export function usePlayer() {
       loading: false,
       playing: false,
     }));
-  };
 
-  const onEnded = () => {
+  const onEnded = () =>
     setState((state) => ({
       ...state,
       error: false,
@@ -96,7 +91,6 @@ export function usePlayer() {
       playing: false,
       station: null,
     }));
-  };
 
   useEffect(() => {
     audio.current.addEventListener("error", onError);

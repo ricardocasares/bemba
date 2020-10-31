@@ -8,11 +8,13 @@ export const Player = () => {
   const { t } = useTranslation();
   const { station, play, pause, stop, error, playing, loading } = usePlayer();
 
+  const closeNotification = () => stop();
+
   if (!station) return null;
 
   if (error) {
     return (
-      <ErrorNotification>
+      <ErrorNotification onAnimationEnd={closeNotification}>
         <AlertCircle /> <p>{t.player.error}</p>
       </ErrorNotification>
     );

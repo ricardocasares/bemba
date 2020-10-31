@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { fadeInAndOut } from "@/css/animations";
 
 export const Container = styled.footer`
   display: grid;
@@ -30,6 +31,7 @@ export const ErrorNotification = styled.div`
   background: var(--error);
   font-size: var(--sz4);
   padding: var(--sz5) var(--sz4);
+  animation: ${fadeInAndOut} linear 5s;
 `;
 
 export const Controls = styled.section`
