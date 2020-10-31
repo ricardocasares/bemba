@@ -25,4 +25,5 @@ export const Heading = styled.h1<Text>`
 export const Text = styled.p<Text>`
   margin-top: 0;
   line-height: 1.5em;
+  color: ${({ muted }) => (muted ? "var(--accents-6)" : "var(--foreground)")};
 `;

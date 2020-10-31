@@ -2,11 +2,13 @@ import Link from "next/link";
 import { Box } from "@/components/Box";
 import { Stack } from "@/components/Stack";
 import { RightLeftToggle, ToggleItem } from "@/components/Toggles";
-import { Heading } from "@/components/Typography";
+import { Heading, Text } from "@/components/Typography";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 import { localesMap } from "@/lib/utils";
 
-export const Index = () => {
+const REF = process.env.VERCEL_GITHUB_COMMIT_SHA || "dev";
+
+export const Settings = () => {
   const { t, locale, locales } = useTranslation();
 
   return (
@@ -32,8 +34,15 @@ export const Index = () => {
           </li>
         ))}
       </Stack>
+      <Box style={{ textAlign: "center" }} mt="var(--sz7)">
+        <Text as="small" muted>
+          <a href={`https://github.com/ricardocasares/bemba/commit/${REF}`}>
+            bemba@{REF.slice(0, 6)}
+          </a>
+        </Text>
+      </Box>
     </Box>
   );
 };
 
-export default Index;
+export default Settings;
