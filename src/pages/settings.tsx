@@ -6,7 +6,7 @@ import { Heading, Text } from "@/components/Typography";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 import { localesMap } from "@/lib/utils";
 
-const REF = process.env.VERCEL_GITHUB_COMMIT_SHA || "dev";
+const SHA = process.env.NEXT_PUBLIC_SHA || "dev";
 
 export const Settings = () => {
   const { t, locale, locales } = useTranslation();
@@ -36,8 +36,8 @@ export const Settings = () => {
       </Stack>
       <Box style={{ textAlign: "center" }} mt="var(--sz7)">
         <Text as="small" muted>
-          <a href={`https://github.com/ricardocasares/bemba/commit/${REF}`}>
-            bemba@{REF.slice(0, 6)}
+          <a href={`https://github.com/ricardocasares/bemba/commit/${SHA}`}>
+            bemba@{SHA.slice(0, 6)}
           </a>
         </Text>
       </Box>
