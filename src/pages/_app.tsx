@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import { Global } from "@emotion/core";
@@ -12,6 +13,12 @@ import SEO from "@/config/seo";
 export function BembaApp({ Component, pageProps }: AppProps) {
   return (
     <Providers>
+      <Head>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+        />
+      </Head>
       <Global styles={styles} />
       <Layout>
         <Header />
