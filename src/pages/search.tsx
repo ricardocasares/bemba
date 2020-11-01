@@ -1,3 +1,4 @@
+import { NextSeo } from "next-seo";
 import debounce from "debounce";
 import {
   useState,
@@ -7,7 +8,6 @@ import {
   KeyboardEventHandler,
 } from "react";
 import { Box } from "@/components/Box";
-import { Heading } from "@/components/Typography";
 import { SearchInput } from "@/components/SearchInput";
 import { StationCardList } from "@/components/StationCardList";
 import { useTranslation } from "@/lib/hooks/useTranslation";
@@ -32,6 +32,7 @@ export const Search = () => {
 
   return (
     <Box p={["var(--sz3)"]}>
+      <NextSeo description="Search radios around the world" />
       <SearchInput
         ref={input}
         type="search"

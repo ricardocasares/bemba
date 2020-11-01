@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 import { useTheme } from "next-themes";
 import { Box } from "@/components/Box";
 import { Stack } from "@/components/Stack";
@@ -16,8 +17,9 @@ export const Settings = () => {
 
   return (
     <Box p={["var(--sz3)"]}>
-      <Heading as="h3">{t.settings.title}</Heading>
+      <NextSeo description="Customize your experience" />
 
+      <Heading as="h3">{t.settings.title}</Heading>
       <Heading as="h4" muted>
         {t.settings.color}
       </Heading>

@@ -1,3 +1,4 @@
+import { NextSeo } from "next-seo";
 import { Box } from "@/components/Box";
 import { Heading } from "@/components/Typography";
 import { StationCardFavs } from "@/components/StationCardList";
@@ -10,6 +11,7 @@ export const Search = () => {
 
   return (
     <Box p={["var(--sz3)"]}>
+      <NextSeo description="Your favorite radios around the world" />
       <Heading as="h3">{t.favorites.title}</Heading>
       <StationCardFavs uuids={favs} />
     </Box>
