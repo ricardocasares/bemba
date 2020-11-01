@@ -1,11 +1,11 @@
 {
   "name": "Radio Bemba",
   "short_name": "Bemba",
-  "theme_color": "#000000",
-  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "background_color": "#000000",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/?sourc=pwa",
+  "scope": "/?source=pwa",
   "start_url": "/",
   "shortcuts": [
     {
