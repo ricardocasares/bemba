@@ -11,13 +11,16 @@ export const styles = css`
     min-height: 100%;
   }
 
-  body,
-  input,
-  button {
+  *,
+  *::before,
+  *::after {
     font-family: var(--font-family);
+    will-change: color, background;
+    transition: color 0.1s, background 0.3s, border-color 0.3s;
   }
 
   body {
+    font-size: 16px;
     color: var(--foreground);
     background: var(--background);
     margin: 0;

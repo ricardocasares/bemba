@@ -25,6 +25,7 @@ export const Logo = () => {
           stroke: "var(--accents-4)",
           transform: `scale(${opacity})`,
           transformOrigin: "center",
+          willChange: "transform, stroke",
         }}
       />
       <path
@@ -32,6 +33,7 @@ export const Logo = () => {
         style={{
           opacity,
           stroke: "var(--success)",
+          willChange: "opacity",
         }}
       />
     </svg>

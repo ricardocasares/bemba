@@ -57,7 +57,6 @@ export const reset = css`
   *::before,
   *::after {
     box-sizing: inherit;
-    transition: color 0.1s, background 0.3s, border-color 0.3s;
   }
 
   img,
