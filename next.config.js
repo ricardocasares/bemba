@@ -3,8 +3,11 @@ const [first, ...rules] = require("next-pwa/cache");
 
 rules.pop();
 
+const IS_DEV = process.env.NODE_ENV === "development";
+
 module.exports = withPWA({
   pwa: {
+    disable: IS_DEV,
     dest: "public",
     runtimeCaching: [
       {
