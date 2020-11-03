@@ -8,7 +8,7 @@ const EMPTY_AUDIO =
 
 export function usePlayer() {
   const audio = useContext(AudioElementContext);
-  const [state, setState] = useContext(PlayerContext);
+  const { state, setState } = useContext(PlayerContext);
 
   const play = () => audio.current.play();
   const pause = () => audio.current.pause();

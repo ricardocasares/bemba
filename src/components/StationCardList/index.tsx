@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { graphql } from "@gqless/react";
 import { query, Station, StationSearchInput } from "@/lib/graphql/gqless";
 import { NoSSR } from "@/components/NoSSR";
@@ -22,7 +22,7 @@ export type CardList = {
   list: Station[];
 };
 
-export const CardList: FC<CardList> = ({ list }) => {
+export const CardList: FC<CardList> = memo(({ list }) => {
   const { load } = usePlayer();
   const { add, remove, isFaved } = useFavorites();
 
@@ -42,7 +42,7 @@ export const CardList: FC<CardList> = ({ list }) => {
       ))}
     </AutoGrid>
   );
-};
+});
 
 const withLoader = <P extends object>(
   Component: React.ComponentType<P>

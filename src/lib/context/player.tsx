@@ -1,4 +1,10 @@
-import { useState, createContext, SetStateAction, Dispatch } from "react";
+import {
+  useMemo,
+  useState,
+  createContext,
+  SetStateAction,
+  Dispatch,
+} from "react";
 import { Station } from "@/lib/graphql/gqless";
 
 export type PlayerState = {
@@ -9,10 +15,10 @@ export type PlayerState = {
   station: Station;
 };
 
-export type PlayerContext = [
-  PlayerState,
-  Dispatch<SetStateAction<PlayerState>>
-];
+export type PlayerContext = {
+  state: PlayerState;
+  setState: Dispatch<SetStateAction<PlayerState>>;
+};
 
 export const PlayerContext = createContext<PlayerContext>(null);
 
@@ -25,9 +31,9 @@ export const PlayerProvider = ({ children }) => {
     station: null,
   });
 
+  const value = useMemo(() => ({ state, setState }), [state, setState]);
+
   return (
-    <PlayerContext.Provider value={[state, setState]}>
-      {children}
-    </PlayerContext.Provider>
+    <PlayerContext.Provider value={value}>{children}</PlayerContext.Provider>
   );
 };
