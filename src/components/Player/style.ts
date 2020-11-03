@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { truncate } from "@/css/utils";
 import { fadeInAndOut } from "@/css/animations";
 
 export const Container = styled.footer`
@@ -16,9 +17,7 @@ export const Title = styled.div`
   text-align: center;
   font-size: var(--sz4);
   color: var(--foreground);
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  ${truncate}
 `;
 
 export const ErrorNotification = styled.div`
