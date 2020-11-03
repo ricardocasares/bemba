@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { PlayCircle } from "@geist-ui/react-icons";
 import { HeartToggle } from "@/components/Toggles";
 import { Container, Cover, Button, Title, Subtitle, Body } from "./style";
@@ -15,29 +15,23 @@ export type Card = {
   onUnFaved: (ev: React.MouseEvent) => void;
 };
 
-export const Card: FC<Card> = ({
-  hash,
-  title,
-  subtitle,
-  onPlay,
-  onFaved,
-  onUnFaved,
-  isFaved,
-}) => (
-  <Container>
-    <Cover hash={hash}>
-      <Button onClick={onPlay}>
-        <PlayCircle size={64} />
-      </Button>
-    </Cover>
-    <Body>
-      <div style={{ display: "grid" }}>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle || DEFAULT_SUBTITLE}</Subtitle>
-      </div>
-      <Button onClick={!isFaved ? onFaved : onUnFaved}>
-        <HeartToggle active={isFaved} />
-      </Button>
-    </Body>
-  </Container>
+export const Card: FC<Card> = memo(
+  ({ hash, title, subtitle, onPlay, onFaved, onUnFaved, isFaved }) => (
+    <Container>
+      <Cover hash={hash}>
+        <Button onClick={onPlay}>
+          <PlayCircle size={64} />
+        </Button>
+      </Cover>
+      <Body>
+        <div style={{ display: "grid" }}>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle || DEFAULT_SUBTITLE}</Subtitle>
+        </div>
+        <Button onClick={!isFaved ? onFaved : onUnFaved}>
+          <HeartToggle active={isFaved} />
+        </Button>
+      </Body>
+    </Container>
+  )
 );
