@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "generate": "gqless generate",
-    "integration": "testcafe chrome tests/"
+    "integration": "testcafe chrome:headless tests/"
   },
   "dependencies": {
     "@emotion/core": "latest",

@@ -1,0 +1,24 @@
+name: Node.js CI
+
+on: deployment_status
+
+jobs:
+  build:
+    if: github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Integration tests on Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install --dev
+      - run: yarn integration
+        env:
+          CI: true
+          TARGET_URL: ${{ github.event.deployment_status.target_url }}

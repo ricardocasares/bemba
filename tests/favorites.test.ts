@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-fixture`Favorites`.page`http://localhost:3000`;
+fixture`Favorites`.page(process.env.TARGET_URL);
 
 test("Adds a station to favorites", async (t) => {
   const button = Selector("[data-test-card-fave-button]").nth(1);
