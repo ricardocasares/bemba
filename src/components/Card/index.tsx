@@ -17,7 +17,7 @@ export type Card = {
 
 export const Card: FC<Card> = memo(
   ({ hash, title, subtitle, onPlay, onFaved, onUnFaved, isFaved }) => (
-    <Container>
+    <Container data-test-card={hash}>
       <Cover hash={hash}>
         <Button onClick={onPlay}>
           <PlayCircle size={64} />
@@ -28,7 +28,7 @@ export const Card: FC<Card> = memo(
           <Title>{title}</Title>
           <Subtitle>{subtitle || DEFAULT_SUBTITLE}</Subtitle>
         </div>
-        <Button onClick={!isFaved ? onFaved : onUnFaved}>
+        <Button onClick={!isFaved ? onFaved : onUnFaved} data-test-card-fave-button={hash}>
           <HeartToggle active={isFaved} />
         </Button>
       </Body>

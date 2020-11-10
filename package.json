@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate": "gqless generate"
+    "generate": "gqless generate",
+    "integration": "testcafe chrome tests/"
   },
   "dependencies": {
     "@emotion/core": "latest",
@@ -31,6 +32,7 @@
     "@types/node": "^14.6.1",
     "@types/react": "^16.9.48",
     "@types/styled-system": "^5.1.10",
+    "testcafe": "^1.9.4",
     "typescript": "^4.0.2"
   }
 }
