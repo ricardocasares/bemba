@@ -8,6 +8,7 @@ Supercharged radio!
 - Next.js
 - Emotion
 - GQLess
+- Testcafe
 
 ### Contributing
 
