@@ -1,4 +1,4 @@
-name: Integration
+name: Integration tests
 
 on: [deployment_status]
 
@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - uses: actions/checkout@v1
-      - name: Run TestCafe Tests
+      - name: Run integration tests
         uses: DevExpress/testcafe-action@latest
         with:
           args: "chrome:headless tests"
