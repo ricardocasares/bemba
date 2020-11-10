@@ -5,7 +5,7 @@ on: [deployment_status]
 jobs:
   build:
     if: github.event.deployment_status.state == 'success'
-    name: node v${{ matrix.node }}@${{ matrix.os }}
+    name: node-${{ matrix.node }}@${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
