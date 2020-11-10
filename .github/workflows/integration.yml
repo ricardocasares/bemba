@@ -1,11 +1,11 @@
-name: Integration
+name: Integration tests
 
 on: [deployment_status]
 
 jobs:
   build:
     if: github.event.deployment_status.state == 'success'
-    name: node v${{ matrix.node }}@${{ matrix.os }}
+    name: node-${{ matrix.node }}@${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - uses: actions/checkout@v1
-      - name: Run TestCafe Tests
+      - name: Run integration tests
         uses: DevExpress/testcafe-action@latest
         with:
           args: "chrome:headless tests"
