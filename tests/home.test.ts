@@ -7,6 +7,6 @@ fixture`Home`.page(process.env.TARGET_URL);
 test("Lists stations", async (cafe) =>
   cafe
     .expect(Card.exists)
-    .eql(true)
+    .ok()
     .expect(Card.count)
     .eql(20));
