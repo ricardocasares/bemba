@@ -3,6 +3,7 @@ import { Selector } from "testcafe";
 const Card = Selector("[data-test-card]");
 const CardButton = Selector("[data-test-card-fave-button]");
 
+
 fixture`Favorites`.page(process.env.TARGET_URL).beforeEach(async (t) => {
   t.ctx.id = await CardButton.getAttribute("data-test-card-fave-button");
   return t.click(CardButton).navigateTo("/favorites");
