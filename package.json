@@ -9,8 +9,8 @@
     "generate": "gqless generate"
   },
   "dependencies": {
-    "@emotion/core": "latest",
-    "@emotion/styled": "latest",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "@geist-ui/react-icons": "^1.0.0",
     "@gqless/react": "^1.0.0-alpha.31",
     "@vercel/fetch": "^6.1.0",
@@ -32,6 +32,7 @@
     "@types/node": "^14.6.1",
     "@types/react": "^16.9.48",
     "@types/styled-system": "^5.1.10",
+    "testcafe": "^1.9.4",
     "typescript": "^4.0.2"
   }
 }
