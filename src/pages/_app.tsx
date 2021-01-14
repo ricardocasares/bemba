@@ -1,6 +1,6 @@
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
-import { Global } from "@emotion/core";
+import { Global } from "@emotion/react";
 import { Providers } from "@/lib/providers";
 import { Layout } from "@/components/Layout";
 import { Header } from "@/components/Header";

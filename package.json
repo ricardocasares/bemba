@@ -9,8 +9,8 @@
     "generate": "gqless generate"
   },
   "dependencies": {
-    "@emotion/core": "latest",
-    "@emotion/styled": "latest",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "@geist-ui/react-icons": "^1.0.0",
     "@gqless/react": "^1.0.0-alpha.31",
     "@vercel/fetch": "^6.1.0",
