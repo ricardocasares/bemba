@@ -14,7 +14,7 @@
     "@geist-ui/react-icons": "^1.0.0",
     "@gqless/react": "^1.0.0-alpha.31",
     "@vercel/fetch": "^6.1.0",
-    "apollo-server-micro": "^2.18.2",
+    "apollo-server-micro": "^2.19.2",
     "debounce": "^1.2.0",
     "gqless": "^1.0.0-alpha.31",
     "next": "^10.0.0",
