@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="0 0 24 24" width="512" height="512" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="12" cy="12" r="2" style="stroke: rgb(121, 40, 202);"/>
-  <path d="M16.24 7.76a6 6 0 010 8.49m-8.48-.01a6 6 0 010-8.49m11.31-2.82a10 10 0 010 14.14m-14.14 0a10 10 0 010-14.14" style="color: rgb(204, 204, 204); stroke: rgb(0, 112, 243);"/>
+  <g transform="matrix(1, 0, 0, 1, 0.239157736301, 0.843812406063)">
+    <circle cx="11.723445" cy="11.260412" r="1.500481" style="stroke: rgb(102, 102, 102);"/>
+    <path d="M 14.904466 8.07939 C 16.664751 9.837717 16.664751 12.690606 14.904466 14.448934 M 8.542425 14.441431 C 6.78214 12.683104 6.78214 9.830215 8.542425 8.071887 M 17.027648 5.956208 C 19.956452 8.885897 19.956452 13.634924 17.027648 16.564613 M 6.419243 16.564613 C 3.490439 13.634924 3.490439 8.885897 6.419243 5.956208" style="color: rgb(204, 204, 204); stroke: rgb(0, 112, 243);"/>
+  </g>
 </svg>
