@@ -11,7 +11,7 @@ export function usePlayer() {
   const audio = useContext(AudioElementContext);
   const { state, setState } = useContext(PlayerContext);
 
-  const play = () => audio.current.play();
+  const play = async () => await audio.current.play();
   const pause = () => audio.current.pause();
 
   const load = (station: Station) => {
