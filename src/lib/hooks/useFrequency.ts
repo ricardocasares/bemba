@@ -6,7 +6,7 @@ export function useFrequency() {
   const [state, setState] = useState(100);
 
   useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
     const ctx = new AudioCtx();
     const analyser = ctx.createAnalyser();

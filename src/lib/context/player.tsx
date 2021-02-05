@@ -7,18 +7,18 @@ import {
 } from "react";
 import { Station } from "@/lib/graphql/gqless";
 
-export type PlayerState = {
+export interface PlayerState {
   error: boolean;
   paused: boolean;
   loading: boolean;
   playing: boolean;
   station: Station;
-};
+}
 
-export type PlayerContext = {
+export interface PlayerContext {
   state: PlayerState;
   setState: Dispatch<SetStateAction<PlayerState>>;
-};
+}
 
 export const PlayerContext = createContext<PlayerContext>(null);
 

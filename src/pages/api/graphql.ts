@@ -14,9 +14,9 @@ const byUUIDEndpoint = (args: any) => `${STATIONS_BY_UUID}${args.join(",")}`;
 const resolvers = {
   Query: {
     stations: async (_, { search }) =>
-      fetcher(searchEndpoint(search)).then((r) => r.json()),
+      await fetcher(searchEndpoint(search)).then(async (r) => await r.json()),
     stationsByUUID: async (_, { uuids }) =>
-      fetcher(byUUIDEndpoint(uuids)).then((r) => r.json()),
+      await fetcher(byUUIDEndpoint(uuids)).then(async (r) => await r.json()),
   },
 };
 

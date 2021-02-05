@@ -26,7 +26,7 @@ export const Settings = () => {
       <Stack
         as="ul"
         mb="var(--sz5)"
-        itemPadding={"var(--sz3) 0"}
+        itemPadding="var(--sz3) 0"
         stackBorder="1px solid var(--accents-2)"
       >
         {["dark", "light", "system"].map((mode) => (
@@ -46,7 +46,7 @@ export const Settings = () => {
       <Stack
         as="ul"
         mb="var(--sz5)"
-        itemPadding={"var(--sz3) 0"}
+        itemPadding="var(--sz3) 0"
         stackBorder="1px solid var(--accents-2)"
       >
         {locales.map((lang) => (

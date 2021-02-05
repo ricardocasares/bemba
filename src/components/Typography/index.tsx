@@ -9,10 +9,10 @@ const sizesMap = {
   h6: "var(--sz3)",
 };
 
-export type Text = {
+export interface Text {
   as?: string;
   muted?: boolean;
-};
+}
 
 export const Heading = styled.h1<Text>`
   font-weight: 500;

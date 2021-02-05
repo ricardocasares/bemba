@@ -1,10 +1,10 @@
 import { FC, memo } from "react";
 import gradient from "random-gradient";
 
-export type Gradient = {
+export interface Gradient {
   hash?: string;
   direction?: "radial" | "vertical" | "horizontal";
-};
+}
 
 export const Gradient: FC<Gradient> = memo(
   ({ hash, direction = "vertical", ...props }) => (

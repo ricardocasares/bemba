@@ -11,7 +11,7 @@ export const AudioElementProvider = ({ children }) => {
       {children}
       <audio
         ref={audio}
-        autoPlay={true}
+        autoPlay
         crossOrigin="anonymous"
         style={{ display: "none" }}
       />

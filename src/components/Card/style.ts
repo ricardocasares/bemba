@@ -6,9 +6,9 @@ export const Container = styled.div`
   border-radius: var(--sz1);
 `;
 
-export type Cover = {
+export interface Cover {
   hash: string;
-};
+}
 
 export const Cover = styled(Gradient)`
   display: grid;

@@ -4,11 +4,11 @@ import defaultLang from "@/i18n/en.json";
 
 export type Translation = typeof defaultLang;
 
-export type TranslateContext = {
+export interface TranslateContext {
   t: Translation;
   locale: string;
   locales: string[];
-};
+}
 
 export const TranslateContext = createContext<TranslateContext>(null);
 
@@ -24,7 +24,7 @@ export const TranslateProvider = ({ children }) => {
 
     if (!cache[locale]) {
       fetch(`/i18n/${locale}.json`)
-        .then((r) => r.json())
+        .then(async (r) => await r.json())
         .then((translation) => {
           setCache((state) => ({ ...state, [locale]: translation }));
           setTranslation(translation);

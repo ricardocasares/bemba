@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
 import { AppProps } from "next/app";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
 import { Global } from "@emotion/react";
 import { Providers } from "@/lib/providers";
@@ -13,14 +13,14 @@ import { pageview } from "@/lib/utils";
 import SEO from "@/config/seo";
 
 export function BembaApp({ Component, pageProps }: AppProps) {
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = (url: string) => pageview(url);
-    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on("routeChangeComplete", handleRouteChange);
 
-    return () => router.events.off('routeChangeComplete', handleRouteChange)
-  }, [router.events])
+    return () => router.events.off("routeChangeComplete", handleRouteChange);
+  }, [router.events]);
 
   return (
     <Providers>

@@ -31,7 +31,7 @@ export const Player = () => {
           </Button>
         )}
         {!playing && (
-          <Button onClick={() => play()}>
+          <Button onClick={async () => await play()}>
             <Play />
           </Button>
         )}

@@ -1,8 +1,8 @@
 import { system } from "styled-system";
 
-export type StackSpacingProps = {
+export interface StackSpacingProps {
   stackSpacing?: number | number[] | string | string[];
-};
+}
 
 export const stackSpacing = system({
   stackSpacing: {
@@ -10,9 +10,9 @@ export const stackSpacing = system({
   },
 });
 
-export type ItemPaddingProps = {
+export interface ItemPaddingProps {
   itemPadding?: number | number[] | string | string[];
-};
+}
 
 export const itemPadding = system({
   itemPadding: {
@@ -20,9 +20,9 @@ export const itemPadding = system({
   },
 });
 
-export type StackBorderProps = {
+export interface StackBorderProps {
   stackBorder?: number | number[] | string | string[];
-};
+}
 
 export const stackBorder = system({
   stackBorder: {

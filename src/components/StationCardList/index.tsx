@@ -18,9 +18,9 @@ const Placeholder = () => (
   </AutoGrid>
 );
 
-export type CardList = {
+export interface CardList {
   list: Station[];
-};
+}
 
 export const CardList: FC<CardList> = memo(({ list }) => {
   const { load } = usePlayer();

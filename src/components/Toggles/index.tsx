@@ -8,14 +8,14 @@ import {
 
 export { ToggleItem } from "./style";
 
-export type Toggable = {
+export interface Toggable {
   on: ReactElement;
   off: ReactElement;
-};
+}
 
-export type Activable = {
+export interface Activable {
   active: boolean;
-};
+}
 
 export type Toggle = Toggable & Activable;
 

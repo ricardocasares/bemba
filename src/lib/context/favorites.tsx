@@ -1,10 +1,10 @@
 import { useMemo, createContext, Dispatch, SetStateAction } from "react";
 import { useLocalStorage } from "@/lib/hooks/useLocalStorage";
 
-export type FavoritesContext = {
+export interface FavoritesContext {
   favs: string[];
   setFavs: Dispatch<SetStateAction<string[]>>;
-};
+}
 
 export const FavoritesContext = createContext<FavoritesContext>(null);
 

@@ -15,14 +15,14 @@ export function mapValueToRange(
 }
 
 export const pageview = (url) => {
-  // @ts-ignore
+  // @ts-expect-error
   window.gtag("config", process.env.NEXT_PUBLIC_GA_TRACKING_ID, {
     page_path: url,
   });
 };
 
 export const event = ({ action, category, label, value }) => {
-  // @ts-ignore
+  // @ts-expect-error
   window.gtag("event", action, {
     event_category: category,
     event_label: label,

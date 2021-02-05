@@ -10,7 +10,7 @@ import {
   ScalarNode,
   EnumNode,
   InputNode,
-  InputNodeField
+  InputNodeField,
 } from "gqless";
 
 export const schema = {
@@ -23,7 +23,7 @@ export const schema = {
             new Arguments({
               get search() {
                 return new ArgumentsField(schema.StationSearchInput, true);
-              }
+              },
             }),
             false
           );
@@ -38,13 +38,13 @@ export const schema = {
                     new ArrayNode(schema.String, false),
                     false
                   );
-                }
+                },
               },
               true
             ),
             false
           );
-        }
+        },
       },
       { name: "Query", extension: ((extensions as any) || {}).Query }
     );
@@ -52,7 +52,7 @@ export const schema = {
   get String() {
     return new ScalarNode({
       name: "String",
-      extension: ((extensions as any) || {}).String
+      extension: ((extensions as any) || {}).String,
     });
   },
   get StationOrder() {
@@ -84,7 +84,7 @@ export const schema = {
         },
         get stationuuid() {
           return new FieldNode(schema.String, undefined, false);
-        }
+        },
       },
       { name: "Station", extension: ((extensions as any) || {}).Station }
     );
@@ -92,7 +92,7 @@ export const schema = {
   get Int() {
     return new ScalarNode({
       name: "Int",
-      extension: ((extensions as any) || {}).Int
+      extension: ((extensions as any) || {}).Int,
     });
   },
   get StationSearchInput() {
@@ -115,7 +115,7 @@ export const schema = {
         },
         get language() {
           return new InputNodeField(schema.String, true);
-        }
+        },
       },
       { name: "StationSearchInput" }
     );
@@ -123,7 +123,7 @@ export const schema = {
   get Boolean() {
     return new ScalarNode({
       name: "Boolean",
-      extension: ((extensions as any) || {}).Boolean
+      extension: ((extensions as any) || {}).Boolean,
     });
   },
   get CacheControlScope() {
@@ -132,7 +132,7 @@ export const schema = {
   get Upload() {
     return new ScalarNode({
       name: "Upload",
-      extension: ((extensions as any) || {}).Upload
+      extension: ((extensions as any) || {}).Upload,
     });
   },
   get __Schema() {
@@ -163,7 +163,7 @@ export const schema = {
             undefined,
             false
           );
-        }
+        },
       },
       { name: "__Schema", extension: ((extensions as any) || {}).__Schema }
     );
@@ -189,7 +189,7 @@ export const schema = {
             new Arguments({
               get includeDeprecated() {
                 return new ArgumentsField(schema.Boolean, true);
-              }
+              },
             }),
             true
           );
@@ -214,7 +214,7 @@ export const schema = {
             new Arguments({
               get includeDeprecated() {
                 return new ArgumentsField(schema.Boolean, true);
-              }
+              },
             }),
             true
           );
@@ -225,14 +225,14 @@ export const schema = {
             new Arguments({
               get includeDeprecated() {
                 return new ArgumentsField(schema.Boolean, true);
-              }
+              },
             }),
             true
           );
         },
         get ofType() {
           return new FieldNode(schema.__Type, undefined, true);
-        }
+        },
       },
       { name: "__Type", extension: ((extensions as any) || {}).__Type }
     );
@@ -255,7 +255,7 @@ export const schema = {
             new Arguments({
               get includeDeprecated() {
                 return new ArgumentsField(schema.Boolean, true);
-              }
+              },
             }),
             false
           );
@@ -268,7 +268,7 @@ export const schema = {
         },
         get deprecationReason() {
           return new FieldNode(schema.String, undefined, true);
-        }
+        },
       },
       { name: "__Field", extension: ((extensions as any) || {}).__Field }
     );
@@ -293,11 +293,11 @@ export const schema = {
         },
         get deprecationReason() {
           return new FieldNode(schema.String, undefined, true);
-        }
+        },
       },
       {
         name: "__InputValue",
-        extension: ((extensions as any) || {}).__InputValue
+        extension: ((extensions as any) || {}).__InputValue,
       }
     );
   },
@@ -315,11 +315,11 @@ export const schema = {
         },
         get deprecationReason() {
           return new FieldNode(schema.String, undefined, true);
-        }
+        },
       },
       {
         name: "__EnumValue",
-        extension: ((extensions as any) || {}).__EnumValue
+        extension: ((extensions as any) || {}).__EnumValue,
       }
     );
   },
@@ -348,17 +348,17 @@ export const schema = {
             undefined,
             false
           );
-        }
+        },
       },
       {
         name: "__Directive",
-        extension: ((extensions as any) || {}).__Directive
+        extension: ((extensions as any) || {}).__Directive,
       }
     );
   },
   get __DirectiveLocation() {
     return new EnumNode({ name: "__DirectiveLocation" });
-  }
+  },
 };
 
 lazyGetters(schema);

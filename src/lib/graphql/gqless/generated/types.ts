@@ -4,7 +4,7 @@ import {
   FieldsType,
   FieldsTypeArg,
   ScalarType,
-  EnumType
+  EnumType,
 } from "gqless";
 
 type Extension<TName extends string> = TName extends keyof typeof extensions
@@ -68,14 +68,14 @@ type t_Int<T extends number = number> = ScalarType<T, Extension<"Int">>;
  * @name StationSearchInput
  * @type INPUT_OBJECT
  */
-export type StationSearchInput = {
+export interface StationSearchInput {
   name?: string | null;
   limit?: number | null;
   reverse?: boolean | null;
   order?: StationOrder | null;
   country?: string | null;
   language?: string | null;
-};
+}
 
 /**
  * @name Boolean
@@ -296,7 +296,7 @@ export type String = TypeData<t_String>;
  */
 export enum StationOrder {
   NAME = "NAME",
-  VOTES = "VOTES"
+  VOTES = "VOTES",
 }
 
 /**
@@ -323,7 +323,7 @@ export type Boolean = TypeData<t_Boolean>;
  */
 export enum CacheControlScope {
   PUBLIC = "PUBLIC",
-  PRIVATE = "PRIVATE"
+  PRIVATE = "PRIVATE",
 }
 
 /**
@@ -356,7 +356,7 @@ export enum __TypeKind {
   ENUM = "ENUM",
   INPUT_OBJECT = "INPUT_OBJECT",
   LIST = "LIST",
-  NON_NULL = "NON_NULL"
+  NON_NULL = "NON_NULL",
 }
 
 /**
@@ -406,5 +406,5 @@ export enum __DirectiveLocation {
   ENUM = "ENUM",
   ENUM_VALUE = "ENUM_VALUE",
   INPUT_OBJECT = "INPUT_OBJECT",
-  INPUT_FIELD_DEFINITION = "INPUT_FIELD_DEFINITION"
+  INPUT_FIELD_DEFINITION = "INPUT_FIELD_DEFINITION",
 }
