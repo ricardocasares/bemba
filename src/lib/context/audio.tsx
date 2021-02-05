@@ -1,10 +1,10 @@
-import { useRef, createContext, MutableRefObject } from 'react'
+import { useRef, createContext, MutableRefObject } from "react";
 
-export type AudioElementContext = MutableRefObject<HTMLAudioElement>
-export const AudioElementContext = createContext<AudioElementContext>(null)
+export type AudioElementContext = MutableRefObject<HTMLAudioElement>;
+export const AudioElementContext = createContext<AudioElementContext>(null);
 
 export const AudioElementProvider = ({ children }) => {
-  const audio = useRef<HTMLAudioElement>(null)
+  const audio = useRef<HTMLAudioElement>(null);
 
   return (
     <AudioElementContext.Provider value={audio}>
@@ -12,9 +12,9 @@ export const AudioElementProvider = ({ children }) => {
       <audio
         ref={audio}
         autoPlay
-        crossOrigin='anonymous'
-        style={{ display: 'none' }}
+        crossOrigin="anonymous"
+        style={{ display: "none" }}
       />
     </AudioElementContext.Provider>
-  )
-}
+  );
+};

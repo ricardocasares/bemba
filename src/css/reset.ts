@@ -1,4 +1,4 @@
-import { css } from '@emotion/react'
+import { css } from "@emotion/react";
 
 export const reset = css`
   html,
@@ -83,4 +83,4 @@ export const reset = css`
   th:not([align]) {
     text-align: left;
   }
-`
+`;

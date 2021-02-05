@@ -1,6 +1,6 @@
-import styled from '@emotion/styled'
-import { truncate } from '@/css/utils'
-import { fadeInAndOut } from '@/css/animations'
+import styled from "@emotion/styled";
+import { truncate } from "@/css/utils";
+import { fadeInAndOut } from "@/css/animations";
 
 export const Container = styled.footer`
   display: grid;
@@ -10,7 +10,7 @@ export const Container = styled.footer`
   grid-template-columns: 1fr auto;
   background: var(--background);
   border-top: 1px solid var(--accents-2);
-`
+`;
 
 export const Title = styled.div`
   font-weight: 500;
@@ -18,7 +18,7 @@ export const Title = styled.div`
   font-size: var(--sz4);
   color: var(--foreground);
   ${truncate}
-`
+`;
 
 export const ErrorNotification = styled.div`
   font-weight: 500;
@@ -31,14 +31,14 @@ export const ErrorNotification = styled.div`
   font-size: var(--sz4);
   padding: var(--sz5) var(--sz4);
   animation: ${fadeInAndOut} linear 5s;
-`
+`;
 
 export const Controls = styled.section`
   display: grid;
   grid-gap: var(--sz4);
   grid-auto-flow: column;
   justify-content: center;
-`
+`;
 
 export const Button = styled.button`
   margin: 0;
@@ -47,4 +47,4 @@ export const Button = styled.button`
   appearance: none;
   background: none;
   color: var(--foreground);
-`
+`;

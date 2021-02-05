@@ -1,6 +1,6 @@
-import { css } from '@emotion/react'
-import { reset } from './reset'
-import { theme } from './theme'
+import { css } from "@emotion/react";
+import { reset } from "./reset";
+import { theme } from "./theme";
 
 export const styles = css`
   ${reset}
@@ -36,4 +36,4 @@ export const styles = css`
     color: var(--foreground);
     background: var(--selection);
   }
-`
+`;

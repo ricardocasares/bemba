@@ -1,31 +1,31 @@
-import { system } from 'styled-system'
+import { system } from "styled-system";
 
 export interface StackSpacingProps {
-  stackSpacing?: number | number[] | string | string[]
+  stackSpacing?: number | number[] | string | string[];
 }
 
 export const stackSpacing = system({
   stackSpacing: {
-    property: 'marginTop'
-  }
-})
+    property: "marginTop",
+  },
+});
 
 export interface ItemPaddingProps {
-  itemPadding?: number | number[] | string | string[]
+  itemPadding?: number | number[] | string | string[];
 }
 
 export const itemPadding = system({
   itemPadding: {
-    property: 'padding'
-  }
-})
+    property: "padding",
+  },
+});
 
 export interface StackBorderProps {
-  stackBorder?: number | number[] | string | string[]
+  stackBorder?: number | number[] | string | string[];
 }
 
 export const stackBorder = system({
   stackBorder: {
-    property: 'borderTop'
-  }
-})
+    property: "borderTop",
+  },
+});

@@ -3,24 +3,24 @@ import {
   useState,
   createContext,
   SetStateAction,
-  Dispatch
-} from 'react'
-import { Station } from '@/lib/graphql/gqless'
+  Dispatch,
+} from "react";
+import { Station } from "@/lib/graphql/gqless";
 
 export interface PlayerState {
-  error: boolean
-  paused: boolean
-  loading: boolean
-  playing: boolean
-  station: Station
+  error: boolean;
+  paused: boolean;
+  loading: boolean;
+  playing: boolean;
+  station: Station;
 }
 
 export interface PlayerContext {
-  state: PlayerState
-  setState: Dispatch<SetStateAction<PlayerState>>
+  state: PlayerState;
+  setState: Dispatch<SetStateAction<PlayerState>>;
 }
 
-export const PlayerContext = createContext<PlayerContext>(null)
+export const PlayerContext = createContext<PlayerContext>(null);
 
 export const PlayerProvider = ({ children }) => {
   const [state, setState] = useState<PlayerState>({
@@ -28,12 +28,12 @@ export const PlayerProvider = ({ children }) => {
     paused: false,
     loading: false,
     playing: false,
-    station: null
-  })
+    station: null,
+  });
 
-  const value = useMemo(() => ({ state, setState }), [state, setState])
+  const value = useMemo(() => ({ state, setState }), [state, setState]);
 
   return (
     <PlayerContext.Provider value={value}>{children}</PlayerContext.Provider>
-  )
-}
+  );
+};

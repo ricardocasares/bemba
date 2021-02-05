@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const GhostButton = styled.button`
   text-align: left;
@@ -11,4 +11,4 @@ export const GhostButton = styled.button`
   display: block;
   width: 100%;
   font-size: var(--sz4);
-`
+`;

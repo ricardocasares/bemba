@@ -1,24 +1,24 @@
-import { Selector } from "testcafe";
+import { Selector } from 'testcafe'
 
-const Card = Selector("[data-test-card]");
-const Input = Selector("input");
+const Card = Selector('[data-test-card]')
+const Input = Selector('input')
 
-fixture`Search`.page`${process.env.TARGET_URL}/search`;
+fixture`Search`.page`${process.env.TARGET_URL}/search`
 
-test("Requires 3 chars to perform search", async (cafe) =>
-  cafe
+test('Requires 3 chars to perform search', async (cafe) =>
+  await cafe
     .expect(Input.exists)
     .ok()
-    .typeText(Input, "un")
+    .typeText(Input, 'un')
     .expect(Card.exists)
-    .notOk());
+    .notOk())
 
 test("Performs a search for keyword 'Tango'", async (cafe) =>
-  cafe
+  await cafe
     .expect(Input.exists)
     .ok()
-    .typeText(Input, "Tango")
+    .typeText(Input, 'Tango')
     .expect(Card.exists)
     .ok()
-    .expect(Card.withText("Tangoparabailar").exists)
-    .ok());
+    .expect(Card.withText('Tangoparabailar').exists)
+    .ok())

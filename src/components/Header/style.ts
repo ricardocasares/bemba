@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const Container = styled.header`
   display: grid;
@@ -7,7 +7,7 @@ export const Container = styled.header`
   grid-template-columns: auto 1fr;
   align-items: center;
   border-bottom: 1px solid var(--accents-2);
-`
+`;
 
 export const Navigation = styled.nav`
   display: grid;
@@ -18,7 +18,7 @@ export const Navigation = styled.nav`
   list-style: none;
   margin: 0;
   padding: 0;
-`
+`;
 
 export const Toggle = styled.button`
   border: none;
@@ -30,4 +30,4 @@ export const Toggle = styled.button`
   padding: 0;
   margin: 0;
   font-size: 20px;
-`
+`;

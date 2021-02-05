@@ -1,7 +1,7 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class BembaDocument extends Document {
-  render () {
+  render() {
     return (
       <Html>
         <Head>
@@ -12,13 +12,13 @@ class BembaDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html: `
-                                window.dataLayer = window.dataLayer || [];
-                                function gtag(){dataLayer.push(arguments);}
-                                gtag('js', new Date());
-                                gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
-                                page_path: window.location.pathname,
-                                });
-                            `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+                });
+              `,
             }}
           />
         </Head>
@@ -27,8 +27,8 @@ class BembaDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default BembaDocument
+export default BembaDocument;

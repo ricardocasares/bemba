@@ -1,23 +1,23 @@
-import { Play, Pause, Square, AlertCircle } from '@geist-ui/react-icons'
-import { LineSkeleton } from '@/components/Skeleton'
-import { Container, Controls, Title, ErrorNotification, Button } from './style'
-import { usePlayer } from '@/lib/hooks/usePlayer'
-import { useTranslation } from '@/lib/hooks/useTranslation'
+import { Play, Pause, Square, AlertCircle } from "@geist-ui/react-icons";
+import { LineSkeleton } from "@/components/Skeleton";
+import { Container, Controls, Title, ErrorNotification, Button } from "./style";
+import { usePlayer } from "@/lib/hooks/usePlayer";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 export const Player = () => {
-  const { t } = useTranslation()
-  const { station, play, pause, stop, error, playing, loading } = usePlayer()
+  const { t } = useTranslation();
+  const { station, play, pause, stop, error, playing, loading } = usePlayer();
 
-  const closeNotification = () => stop()
+  const closeNotification = () => stop();
 
-  if (!station) return null
+  if (!station) return null;
 
   if (error) {
     return (
       <ErrorNotification onAnimationEnd={closeNotification}>
         <AlertCircle /> <p>{t.player.error}</p>
       </ErrorNotification>
-    )
+    );
   }
 
   return (
@@ -41,5 +41,5 @@ export const Player = () => {
         </Button>
       </Controls>
     </Container>
-  )
-}
+  );
+};
