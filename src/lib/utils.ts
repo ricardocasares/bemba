@@ -13,3 +13,19 @@ export function mapValueToRange(
 ) {
   return ((n - a) * (y - x)) / (b - a) + x;
 }
+
+export const pageview = (url) => {
+  // @ts-ignore
+  window.gtag("config", process.env.NEXT_PUBLIC_GA_TRACKING_ID, {
+    page_path: url,
+  });
+};
+
+export const event = ({ action, category, label, value }) => {
+  // @ts-ignore
+  window.gtag("event", action, {
+    event_category: category,
+    event_label: label,
+    value: value,
+  });
+};
