@@ -1,4 +1,5 @@
 import { useEffect, useContext } from "react";
+import { event } from "@/lib/utils";
 import { PlayerContext } from "@/lib/context/player";
 import { AudioElementContext } from "@/lib/context/audio";
 import { Station } from "@/lib/graphql/gqless/generated";
@@ -16,6 +17,14 @@ export function usePlayer() {
   const load = (station: Station) => {
     if (audio.current.src !== station.url) {
       audio.current.src = station.url;
+
+      event({
+        action: "load",
+        label: "Radio load",
+        category: "player",
+        value: station.stationuuid,
+      });
+
       setState((state) => ({
         ...state,
         error: false,
@@ -29,6 +38,7 @@ export function usePlayer() {
 
   const stop = () => {
     audio.current.src = EMPTY_AUDIO;
+
     setState({
       error: false,
       paused: false,
@@ -39,13 +49,22 @@ export function usePlayer() {
   };
 
   const onPlaying = () =>
-    setState((state) => ({
-      ...state,
-      error: false,
-      paused: false,
-      loading: false,
-      playing: true,
-    }));
+    setState((state) => {
+      event({
+        action: "play",
+        label: "Radio playing",
+        category: "player",
+        value: state?.station?.stationuuid,
+      });
+
+      return {
+        ...state,
+        error: false,
+        paused: false,
+        loading: false,
+        playing: true,
+      };
+    });
 
   const onPause = () =>
     setState((state) => ({
@@ -75,26 +94,25 @@ export function usePlayer() {
     }));
 
   const onError = () =>
-    setState((state) => ({
-      ...state,
-      error: true,
-      paused: false,
-      loading: false,
-      playing: false,
-    }));
+    setState((state) => {
+      event({
+        action: "error",
+        label: "Player error",
+        category: "player",
+        value: state?.station?.stationuuid,
+      });
 
-  const onEnded = () =>
-    setState((state) => ({
-      ...state,
-      error: false,
-      paused: false,
-      playing: false,
-      station: null,
-    }));
+      return {
+        ...state,
+        error: true,
+        paused: false,
+        loading: false,
+        playing: false,
+      };
+    });
 
   useEffect(() => {
     audio.current.addEventListener("error", onError);
-    audio.current.addEventListener("ended", onEnded);
     audio.current.addEventListener("pause", onPause);
     audio.current.addEventListener("playing", onPlaying);
     audio.current.addEventListener("loadstart", onLoadStart);
