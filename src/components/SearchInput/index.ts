@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const SearchInput = styled.input`
   width: 100%;
@@ -16,4 +16,4 @@ export const SearchInput = styled.input`
   :focus {
     border-color: var(--accents-3);
   }
-`;
+`

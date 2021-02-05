@@ -1,4 +1,4 @@
-import { keyframes } from "@emotion/react";
+import { keyframes } from '@emotion/react'
 
 export const fadeInAndOut = keyframes`
 0% {
@@ -16,4 +16,4 @@ export const fadeInAndOut = keyframes`
 100% {
     opacity: 0
 }
-`;
+`

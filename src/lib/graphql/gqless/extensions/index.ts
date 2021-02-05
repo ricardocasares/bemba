@@ -1,4 +1,4 @@
-export const Query = {};
+export const Query = {}
 
 /**
  * Add a key to a type

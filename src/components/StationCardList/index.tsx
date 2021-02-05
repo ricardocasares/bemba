@@ -1,12 +1,12 @@
-import { FC, memo } from "react";
-import { graphql } from "@gqless/react";
-import { query, Station, StationSearchInput } from "@/lib/graphql/gqless";
-import { NoSSR } from "@/components/NoSSR";
-import { Card } from "@/components/Card";
-import { AutoGrid } from "@/components/AutoGrid";
-import { CardSkeleton } from "@/components/Skeleton";
-import { usePlayer } from "@/lib/hooks/usePlayer";
-import { useFavorites } from "@/lib/hooks/useFavorites";
+import { FC, memo } from 'react'
+import { graphql } from '@gqless/react'
+import { query, Station, StationSearchInput } from '@/lib/graphql/gqless'
+import { NoSSR } from '@/components/NoSSR'
+import { Card } from '@/components/Card'
+import { AutoGrid } from '@/components/AutoGrid'
+import { CardSkeleton } from '@/components/Skeleton'
+import { usePlayer } from '@/lib/hooks/usePlayer'
+import { useFavorites } from '@/lib/hooks/useFavorites'
 
 const Placeholder = () => (
   <AutoGrid gridGap={[20]}>
@@ -16,18 +16,18 @@ const Placeholder = () => (
     <CardSkeleton />
     <CardSkeleton />
   </AutoGrid>
-);
+)
 
-export type CardList = {
-  list: Station[];
-};
+export interface CardList {
+  list: Station[]
+}
 
 export const CardList: FC<CardList> = memo(({ list }) => {
-  const { load } = usePlayer();
-  const { add, remove, isFaved } = useFavorites();
+  const { load } = usePlayer()
+  const { add, remove, isFaved } = useFavorites()
 
   return (
-    <AutoGrid gridGap={["var(--sz4)"]}>
+    <AutoGrid gridGap={['var(--sz4)']}>
       {list.map((item) => (
         <Card
           key={[item.url, item.stationuuid].join()}
@@ -41,8 +41,8 @@ export const CardList: FC<CardList> = memo(({ list }) => {
         />
       ))}
     </AutoGrid>
-  );
-});
+  )
+})
 
 const withLoader = <P extends object>(
   Component: React.ComponentType<P>
@@ -50,7 +50,7 @@ const withLoader = <P extends object>(
   <NoSSR fallback={<Placeholder />}>
     <Component {...(props as P)} />
   </NoSSR>
-);
+)
 
 export const StationCardList: FC<StationSearchInput> = withLoader(
   graphql(({ ...search }) => (
@@ -60,11 +60,11 @@ export const StationCardList: FC<StationSearchInput> = withLoader(
         url: s.url,
         name: s.name,
         country: s.country,
-        stationuuid: s.stationuuid,
+        stationuuid: s.stationuuid
       }))}
     />
   ))
-);
+)
 
 export const StationCardFavs: FC<{ uuids: string[] }> = withLoader(
   graphql(({ children: _, ...props }) => (
@@ -74,8 +74,8 @@ export const StationCardFavs: FC<{ uuids: string[] }> = withLoader(
         url: s.url,
         name: s.name,
         country: s.country,
-        stationuuid: s.stationuuid,
+        stationuuid: s.stationuuid
       }))}
     />
   ))
-);
+)

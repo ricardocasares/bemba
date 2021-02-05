@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css } from '@emotion/react'
 
 export const base = css`
   :root {
@@ -52,7 +52,7 @@ export const base = css`
     --accents-7: #333;
     --accents-8: #111;
   }
-`;
+`
 
 export const dark = css`
   [data-theme="dark"] {
@@ -69,9 +69,9 @@ export const dark = css`
     --accents-2: #333;
     --accents-1: #111;
   }
-`;
+`
 
 export const theme = css`
   ${base}
   ${dark}
-`;
+`

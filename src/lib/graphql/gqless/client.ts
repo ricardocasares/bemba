@@ -1,30 +1,30 @@
-import { Client, QueryFetcher } from "gqless";
-import { schema, Query } from "./generated";
+import { Client, QueryFetcher } from 'gqless'
+import { schema, Query } from './generated'
 
-const endpoint = "/api/graphql";
+const endpoint = '/api/graphql'
 
 const fetchQuery: QueryFetcher = async (query, variables) => {
   const response = await fetch(endpoint, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       query,
-      variables,
+      variables
     }),
-    mode: "cors",
-  });
+    mode: 'cors'
+  })
 
   if (!response.ok) {
-    throw new Error(`Network error, received status code ${response.status}`);
+    throw new Error(`Network error, received status code ${response.status}`)
   }
 
-  const json = await response.json();
+  const json = await response.json()
 
-  return json;
-};
+  return json
+}
 
-export const client = new Client<Query>(schema.Query, fetchQuery);
+export const client = new Client<Query>(schema.Query, fetchQuery)
 
-export const query = client.query;
+export const query = client.query

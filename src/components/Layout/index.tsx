@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const Layout = styled.div`
   width: 100%;
@@ -6,4 +6,4 @@ export const Layout = styled.div`
   display: grid;
   position: fixed;
   grid-template-rows: auto 1fr auto;
-`;
+`
