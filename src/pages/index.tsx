@@ -9,7 +9,7 @@ export const Index = () => {
 
   return (
     <Stack p={["var(--sz3)"]} stackSpacing={["var(--sz4)"]}>
-      <Heading as="h3">{t.index.title}</Heading>
+      <Heading as="h3">{t.index.title} hey</Heading>
       <StationCardList language={localesMap[locale]} limit={20} />
     </Stack>
   );
