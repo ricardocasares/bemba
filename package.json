@@ -14,6 +14,7 @@
     "@geist-ui/react-icons": "^1.0.0",
     "@gqless/react": "^1.0.0-alpha.31",
     "@next/plugin-google-analytics": "^10.0.6",
+    "@next/plugin-sentry": "ricardocasares/next-plugin-sentry",
     "@vercel/fetch": "^6.1.0",
     "apollo-server-micro": "^2.20.0",
     "debounce": "^1.2.0",

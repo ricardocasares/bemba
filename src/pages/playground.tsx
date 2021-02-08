@@ -1,3 +1,4 @@
+import { Box } from "@/components/Box";
 import { memo, useCallback, useState } from "react";
 // Generates random colours any time it's called
 const randomColour = () => "#" + ((Math.random() * 0xffffff) << 0).toString(16);
@@ -26,6 +27,8 @@ export const Playground = () => {
   functions.add(incrementDelta);
   functions.add(increment);
 
+  const crash = () => { throw new Error('Simulated app crash'); };
+
   return (
     <div>
       <div> Delta is {delta} </div>
@@ -34,6 +37,7 @@ export const Playground = () => {
       <div>
         <Button onClick={incrementDelta}>Increment Delta</Button>
         <Button onClick={increment}>Increment Counter</Button>
+        <Button onClick={crash}>Crash</Button>
       </div>
       <br />
       <div> Newly Created Functions: {functions.size - 2} </div>
