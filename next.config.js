@@ -9,5 +9,6 @@ module.exports = {
   },
   experimental: {
     plugins: true
-  }
+  },
+  reactStrictMode: true
 };
