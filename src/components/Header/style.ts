@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { hidden } from "@/css/utils";
 
 export const Container = styled.header`
   display: grid;
@@ -20,14 +21,6 @@ export const Navigation = styled.nav`
   padding: 0;
 `;
 
-export const Toggle = styled.button`
-  border: none;
-  outline: none;
-  cursor: pointer;
-  appearance: none;
-  background: none;
-  color: var(--foreground);
-  padding: 0;
-  margin: 0;
-  font-size: 20px;
+export const Hidden = styled.span`
+  ${hidden}
 `;
