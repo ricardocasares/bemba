@@ -19,7 +19,7 @@ export const Card: FC<Card> = memo(
   ({ hash, title, subtitle, onPlay, onFaved, onUnFaved, isFaved }) => (
     <Container data-test-card={hash}>
       <Cover hash={hash}>
-        <Button onClick={onPlay}>
+        <Button onClick={onPlay} aria-label={`Play ${title}`}>
           <PlayCircle size={64} />
         </Button>
       </Cover>
@@ -29,6 +29,7 @@ export const Card: FC<Card> = memo(
           <Subtitle>{subtitle || DEFAULT_SUBTITLE}</Subtitle>
         </div>
         <Button
+          aria-label={`Add ${title} to favorites`}
           onClick={!isFaved ? onFaved : onUnFaved}
           data-test-card-fave-button={hash}
         >

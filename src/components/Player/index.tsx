@@ -26,17 +26,17 @@ export const Player = () => {
       {!loading && <Title>{station.name}</Title>}
       <Controls>
         {playing && (
-          <Button onClick={() => pause()}>
+          <Button onClick={() => pause()} aria-label={`Pause ${station.name}`}>
             <Pause />
           </Button>
         )}
         {!playing && (
-          <Button onClick={async () => await play()}>
+          <Button onClick={async () => await play()} aria-label={`Play ${station.name}`}>
             <Play />
           </Button>
         )}
 
-        <Button onClick={() => stop()}>
+        <Button onClick={() => stop()} aria-label={`Stop playing ${station.name}`}>
           <Square />
         </Button>
       </Controls>
