@@ -1,6 +1,11 @@
 module.exports = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
+  publicRuntimeConfig: {
+    sentry: {
+      environment: process.env.VERCEL_ENV,
+    },
+  },
   i18n: {
     locales: ["en", "es", "pl", "fr", "ru"],
     defaultLocale: "en",
