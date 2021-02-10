@@ -1,4 +1,6 @@
-module.exports = {
+const preact = require('next-plugin-preact');
+
+module.exports = preact({
   i18n: {
     locales: ["en", "es", "pl", "fr", "ru"],
     defaultLocale: "en",
@@ -8,7 +10,8 @@ module.exports = {
     NEXT_PUBLIC_GA_TRACKING_ID: process.env.NEXT_PUBLIC_GA_TRACKING_ID,
   },
   experimental: {
-    plugins: true
+    plugins: true,
+    webpack5: true
   },
   reactStrictMode: true
-};
+});
