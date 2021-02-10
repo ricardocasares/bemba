@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.0.0",
+    "@emotion/styled": "^11.1.5",
     "@geist-ui/react-icons": "^1.0.0",
     "@gqless/react": "^1.0.0-alpha.31",
     "@next/plugin-google-analytics": "^10.0.6",
