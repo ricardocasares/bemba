@@ -1,0 +1,54 @@
+name: Integration tests
+
+on: [deployment_status]
+
+jobs:
+  build:
+    if: github.event.deployment_status.state == 'success'
+    name: node-${{ matrix.node }} ${{ matrix.browser }} ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+        browser: ["chrome", "firefox"]
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/checkout@v1
+      - name: Testing ${{ github.event.deployment_status.target_url }}
+        uses: DevExpress/testcafe-action@latest
+        with:
+          args: "${{ matrix.browser }}:headless tests"
+        env:
+          CI: true
+          TARGET_URL: ${{ github.event.deployment_status.target_url }}
+      - name: Integration tests passed
+        if: ${{ success() }}
+
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "context": "node-${{ matrix.node }} ${{ matrix.browser }} ${{ matrix.os }}",
+            "state": "success",
+            "description": "Integration tests passed",
+            "target_url": "'"$GITHUB_SERVER_URL"'/'"$GITHUB_REPOSITORY"'/actions/runs/'"$GITHUB_RUN_ID"'"
+          }'
+
+      - name: Integration tests failed
+        if: ${{ failure() }}
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "context": "node-${{ matrix.node }} ${{ matrix.browser }} ${{ matrix.os }}",
+            "state": "failure",
+            "description": "Integration tests failed",
+            "target_url": "'"$GITHUB_SERVER_URL"'/'"$GITHUB_REPOSITORY"'/actions/runs/'"$GITHUB_RUN_ID"'"
+          }'
