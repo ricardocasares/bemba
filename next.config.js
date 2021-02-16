@@ -19,4 +19,10 @@ module.exports = {
     NEXT_PUBLIC_SENTRY_RELEASE: process.env.VERCEL_GIT_COMMIT_SHA,
     NEXT_PUBLIC_GA_TRACKING_ID: process.env.NEXT_PUBLIC_GA_TRACKING_ID,
   },
+  async rewrites() {
+    return [{
+      source: "/stream",
+      destination: process.env.STREAM_PROXY
+    }];
+  }
 };
