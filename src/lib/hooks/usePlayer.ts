@@ -16,7 +16,7 @@ export function usePlayer() {
 
   const load = (station: Station) => {
     if (audio.current.src !== station.url) {
-      audio.current.src = station.url;
+      audio.current.src = `/stream?target=${station.url}`;
 
       event({
         action: "load",
