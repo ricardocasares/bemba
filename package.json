@@ -20,7 +20,7 @@
     "debounce": "^1.2.0",
     "gqless": "^1.0.0-alpha.31",
     "graphql": "^15.5.0",
-    "next": "^10.0.6",
+    "next": "^10.0.7",
     "next-seo": "^4.19.0",
     "next-themes": "^0.0.10",
     "random-gradient": "^0.0.2",
