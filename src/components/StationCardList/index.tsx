@@ -45,7 +45,7 @@ export const StationCardList: FC<StationSearchInput> = (props) => {
 export type StationCardFavs = { uuids: string[]; };
 
 export const StationCardFavs: FC<StationCardFavs> = ({ uuids }) => {
-  const { data, error } = useStationsByUUID(uuids, { name: true, stationuuid: true });
+  const { data, error } = useStationsByUUID(uuids, { name: true, url: true, country: true, stationuuid: true });
 
   if (!data && !error) return <Placeholder />;
   if (error) return <p>Error</p>;
