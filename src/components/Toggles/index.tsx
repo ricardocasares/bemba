@@ -1,10 +1,8 @@
 import { FC, ReactElement } from "react";
-import {
-  Heart,
-  HeartFill,
-  ToggleLeft,
-  ToggleRight,
-} from "@geist-ui/react-icons";
+import Heart from "@geist-ui/react-icons/heart";
+import HeartFill from "@geist-ui/react-icons/heartFill";
+import ToggleLeft from "@geist-ui/react-icons/toggleLeft";
+import ToggleRight from "@geist-ui/react-icons/toggleRight";
 
 export { ToggleItem } from "./style";
 
@@ -28,16 +26,16 @@ export const Toggle: FC<Toggle> = ({ on, off, active }) => (
 
 export const HeartToggle: FC<Activable> = (props) => (
   <Toggle
-    on={<HeartFill color="var(--highlight-magenta)" />}
-    off={<Heart color="var(--accents-5)" />}
+    on={<HeartFill color="var(--sx-colors-highlight-magenta)" />}
+    off={<Heart color="var(--sx-colors-accents-5)" />}
     {...props}
   />
 );
 
 export const RightLeftToggle: FC<Activable> = (props) => (
   <Toggle
-    on={<ToggleRight color="var(--success)" />}
-    off={<ToggleLeft color="var(--accents-5)" />}
+    on={<ToggleRight color="var(--sx-colors-success)" />}
+    off={<ToggleLeft color="var(--sx-colors-accents-5)" />}
     {...props}
   />
 );

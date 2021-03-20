@@ -9,8 +9,8 @@ export const Index = () => {
   const language = localesMap[locale];
 
   return (
-    <Stack p={["var(--sz3)"]} stackSpacing={["var(--sz4)"]}>
-      <Heading as="h3">{t.index.title}</Heading>
+    <Stack>
+      <Heading as="h1" size="1">{t.index.title}</Heading>
       <StationCardList language={language} limit={20} />
     </Stack>
   );

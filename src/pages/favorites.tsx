@@ -4,17 +4,18 @@ import { Heading } from "@/components/Typography";
 import { StationCardFavs } from "@/components/StationCardList";
 import { useFavorites } from "@/lib/hooks/useFavorites";
 import { useTranslation } from "@/lib/hooks/useTranslation";
+import { Stack } from "@/components/Stack";
 
 export const Search = () => {
   const { t } = useTranslation();
   const { favs } = useFavorites();
 
   return (
-    <Box p={["var(--sz3)"]}>
+    <Stack>
       <NextSeo description="Your favorite radios around the world" />
-      <Heading as="h3">{t.favorites.title}</Heading>
+      <Heading as="h1" size="1">{t.favorites.title}</Heading>
       <StationCardFavs uuids={favs} />
-    </Box>
+    </Stack>
   );
 };
 

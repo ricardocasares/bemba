@@ -1,27 +1,50 @@
-import styled from "@emotion/styled";
-import { BorderProps } from "styled-system";
+import { styled } from "@/css";
 import { Box } from "@/components/Box";
-import {
-  stackSpacing,
-  StackSpacingProps,
-  stackBorder,
-  StackBorderProps,
-  itemPadding,
-  ItemPaddingProps,
-} from "@/css/system";
 
-export type Stack = StackSpacingProps &
-  StackBorderProps &
-  ItemPaddingProps &
-  BorderProps &
-  Box;
+export const Stack = styled(Box, {
+  variants: {
+    separated: {
+      true: {
+        "> * + *": {
+          borderTop: "1px solid $accents-2",
+        },
+      },
+    },
 
-export const Stack = styled(Box)<Stack>`
-  > * {
-    ${itemPadding}
-  }
-  > *:not(style) ~ *:not(style) {
-    ${stackBorder}
-    ${stackSpacing}
-  }
-`;
+    spacing: {
+      sm: {
+        padding: "$3",
+
+        "> * + *": {
+          marginTop: "$2",
+          padding: 0,
+          paddingTop: "$2",
+        },
+      },
+
+      md: {
+        padding: "$4",
+
+        "> * + *": {
+          marginTop: "$3",
+          padding: 0,
+          paddingTop: "$3",
+        },
+      },
+
+      xl: {
+        padding: "$5",
+
+        "> * + *": {
+          marginTop: "$4",
+          padding: 0,
+          paddingTop: "$4",
+        },
+      },
+    },
+  },
+
+  defaultVariants: {
+    spacing: "sm",
+  },
+});

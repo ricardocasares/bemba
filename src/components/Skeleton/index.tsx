@@ -5,8 +5,8 @@ export const CardSkeleton = () => (
     speed={2}
     width="100%"
     height={180}
-    backgroundColor="var(--accents-1)"
-    foregroundColor="var(--accents-2)"
+    backgroundColor="var(--sx-colors-accents-1)"
+    foregroundColor="var(--sx-colors-accents-2)"
   >
     <rect x="0" y="0" width="100%" height="120" />
     <rect x="0" y="125" width="60%" height="20" />
@@ -19,8 +19,8 @@ export const LineSkeleton = () => (
     speed={2}
     width="100%"
     height={16}
-    backgroundColor="var(--accents-1)"
-    foregroundColor="var(--accents-2)"
+    backgroundColor="var(--sx-colors-accents-1)"
+    foregroundColor="var(--sx-colors-accents-2)"
   >
     <rect x="0" y="0" width="100%" height="16" />
   </Loader>

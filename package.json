@@ -11,12 +11,11 @@
     "postinstall": "yarn generate"
   },
   "dependencies": {
-    "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
     "@geist-ui/react-icons": "^1.0.0",
-    "@genql/runtime": "2.5.0",
+    "@genql/runtime": "2.6.0",
     "@next/plugin-google-analytics": "^10.0.6",
     "@next/plugin-sentry": "ricardocasares/next-plugin-sentry",
+    "@stitches/react": "^0.1.7",
     "@vercel/fetch": "^6.1.0",
     "apollo-server-micro": "^2.21.2",
     "debounce": "^1.2.1",
@@ -35,7 +34,6 @@
     "@genql/cli": "2.6.0",
     "@types/node": "^14.14.39",
     "@types/react": "^17.0.3",
-    "@types/styled-system": "^5.1.11",
     "next-plugin-graphql": "^0.0.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",

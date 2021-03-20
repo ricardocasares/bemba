@@ -12,64 +12,58 @@ import { localesMap } from "@/lib/utils";
 const SHA = process.env.NEXT_PUBLIC_SHA || "dev";
 
 export const Settings = () => {
-  const { theme, setTheme } = useTheme();
+  const { setTheme, theme, resolvedTheme } = useTheme();
   const { t, locale, locales } = useTranslation();
 
   return (
-    <Box p={["var(--sz3)"]}>
+    <Box>
       <NextSeo description="Customize your experience" />
+      <Stack>
+        <Heading as="h1" size="1">{t.settings.title}</Heading>
 
-      <Heading as="h3">{t.settings.title}</Heading>
-      <Heading as="h4" muted>
-        {t.settings.color}
-      </Heading>
-      <Stack
-        as="ul"
-        mb="var(--sz5)"
-        itemPadding="var(--sz3) 0"
-        stackBorder="1px solid var(--accents-2)"
-      >
-        {["dark", "light", "system"].map((mode) => (
-          <li key={mode}>
-            <GhostButton onClick={() => setTheme(mode)}>
-              <ToggleItem>
-                {mode} <RightLeftToggle active={theme === mode} />
-              </ToggleItem>
-            </GhostButton>
-          </li>
-        ))}
-      </Stack>
+        <Heading as="h2" size="2" muted>
+          {t.settings.color}
+        </Heading>
 
-      <Heading as="h4" muted>
-        {t.settings.language}
-      </Heading>
-      <Stack
-        as="ul"
-        mb="var(--sz5)"
-        itemPadding="var(--sz3) 0"
-        stackBorder="1px solid var(--accents-2)"
-      >
-        {locales.map((lang) => (
-          <li key={lang}>
-            <Link href="/settings" locale={lang}>
-              <a>
+        <Stack as="ul" separated css={{ marginBottom: "$4" }}>
+          {["dark", "light", "system"].map((mode) => (
+            <li key={mode}>
+              <GhostButton onClick={() => setTheme(mode)}>
                 <ToggleItem>
-                  {localesMap[lang]} <RightLeftToggle active={locale == lang} />
+                  {mode} <RightLeftToggle active={theme === mode || resolvedTheme === mode} />
                 </ToggleItem>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </Stack>
+              </GhostButton>
+            </li>
+          ))}
+        </Stack>
 
-      <Box style={{ textAlign: "center" }} mt="var(--sz7)">
-        <Text as="small" muted>
-          bemba v
+        <Heading as="h2" size="2" muted>
+          {t.settings.language}
+        </Heading>
+
+        <Stack as="ul" separated css={{ marginBottom: "$4" }}>
+          {locales.map((lang) => (
+            <li key={lang}>
+              <Link href="/settings" locale={lang}>
+                <a>
+                  <ToggleItem>
+                    {localesMap[lang]} <RightLeftToggle active={locale == lang} />
+                  </ToggleItem>
+                </a>
+              </Link>
+            </li>
+          ))}
+        </Stack>
+
+        <Box css={{ textAlign: 'center' }}>
+          <Text as="small" muted>
+            bemba v
           <a href={`https://github.com/ricardocasares/bemba/commit/${SHA}`}>
-            {SHA.slice(0, 6)}
-          </a>
-        </Text>
-      </Box>
+              {SHA.slice(0, 6)}
+            </a>
+          </Text>
+        </Box>
+      </Stack>
     </Box>
   );
 };

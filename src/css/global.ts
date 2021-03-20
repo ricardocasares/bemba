@@ -1,39 +1,50 @@
-import { css } from "@emotion/react";
-import { reset } from "./reset";
-import { theme } from "./theme";
+import { global } from "@/css";
 
-export const styles = css`
-  ${reset}
-  ${theme}
+export const globalStyles = global({
+  "html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6": {
+    margin: "0",
+    padding: "0",
+  },
 
-  html {
-    height: 100vh;
-    min-height: 100%;
-  }
+  "h1, h2, h3, h4, h5, h6": {
+    fontSize: "100%",
+    fontWeight: "normal",
+  },
 
-  *,
-  *::before,
-  *::after {
-    font-family: var(--font-family);
-    will-change: color, background;
-    transition: color 0.1s, background 0.3s, border-color 0.3s;
-  }
+  ul: { listStyle: "none" },
 
-  body {
-    font-size: 16px;
-    color: var(--foreground);
-    background: var(--background);
-    margin: 0;
-    padding: 0;
-  }
+  "button, input, select, textarea": { margin: "0" },
 
-  a {
-    text-decoration: none;
-    color: var(--foreground);
-  }
+  html: {
+    boxSizing: "border-box",
+    height: "100vh",
+    minHeight: "100%",
+  },
 
-  ::selection {
-    color: var(--foreground);
-    background: var(--selection);
-  }
-`;
+  "*, *::before, *::after": {
+    boxSizing: "inherit",
+    fontFamily: "$sans",
+  },
+
+  "img, video": { height: "auto", maxWidth: "100%" },
+  iframe: { border: "0" },
+  table: { borderCollapse: "collapse", borderSpacing: "0" },
+
+  body: {
+    fontSize: "16px",
+    color: "$foreground",
+    background: "$background",
+    margin: 0,
+    padding: 0,
+  },
+
+  a: {
+    textDecoration: "none",
+    color: "$foreground",
+  },
+
+  "::selection": {
+    color: "$foreground",
+    background: "$selection",
+  },
+});

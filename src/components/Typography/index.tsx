@@ -1,29 +1,40 @@
-import styled from "@emotion/styled";
+import { styled } from "@/css";
 
-const sizesMap = {
-  h1: "var(--sz8)",
-  h2: "var(--sz7)",
-  h3: "var(--sz6)",
-  h4: "var(--sz5)",
-  h5: "var(--sz4)",
-  h6: "var(--sz3)",
-};
+export const Heading = styled("h1", {
+  fontWeight: 500,
+  lineHeight: "1em",
+  margin: "0",
 
-export interface Text {
-  as?: string;
-  muted?: boolean;
+  variants: {
+    size: {
+      1: {
+        fontSize: "$4"
+      },
+      2: {
+        fontSize: "$3"
+      },
+      3: {
+        fontSize: "$2"
+      }
+    },
+    muted: {
+      true: {
+        color: "$accents-4"
+      }
+    }
+  },
 }
+);
 
-export const Heading = styled.h1<Text>`
-  font-weight: 500;
-  line-height: 1.3em;
-  margin-bottom: var(--sz4);
-  font-size: ${({ as = "h1" }) => sizesMap[as]};
-  color: ${({ muted }) => (muted ? "var(--accents-6)" : "var(--foreground)")};
-`;
+export const Text = styled("p", {
+  marginTop: "0",
+  lineHeight: "1.5em",
 
-export const Text = styled.p<Text>`
-  margin-top: 0;
-  line-height: 1.5em;
-  color: ${({ muted }) => (muted ? "var(--accents-6)" : "var(--foreground)")};
-`;
+  variants: {
+    muted: {
+      true: {
+        color: "$accents-4"
+      }
+    }
+  }
+});

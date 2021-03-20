@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
+import { styled } from "@/css";
 
-export const ToggleItem = styled.div`
-  display: grid;
-  text-transform: capitalize;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-`;
+export const ToggleItem = styled("div", {
+  display: "grid",
+  textTransform: "capitalize",
+  gridTemplateColumns: "1fr auto",
+  alignItems: "center",
+});

@@ -1,54 +1,40 @@
-import styled from "@emotion/styled";
-import { truncate } from "@/css/utils";
+import { styled } from "@/css";
 import { Gradient } from "@/components/Gradient";
 
-export const Container = styled.div`
-  border-radius: var(--sz1);
-`;
+export const Cover = styled(Gradient, {
+  display: "grid",
+  placeItems: "center",
+  borderRadius: "$1 $1 0 0",
+});
 
-export interface Cover {
-  hash: string;
-}
+export const Title = styled("h2", {
+  fontSize: "$2",
+  fontWeight: 500,
+  color: "fg",
+});
 
-export const Cover = styled(Gradient)`
-  display: grid;
-  place-items: center;
-  border-radius: var(--sz2) var(--sz2) 0 0;
-`;
+export const Subtitle = styled("h3", {
+  fontSize: "$1",
+  fontWeight: 400,
+  textTransform: "uppercase",
+  color: "$accents-4",
+});
 
-export const Title = styled.h3`
-  font-size: var(--sz4);
-  font-weight: 500;
-  margin: 0;
-  margin-bottom: var(--sz1);
-  color: var(--accents-7);
-  ${truncate}
-`;
+export const Body = styled("div", {
+  padding: "$3",
+  border: "1px solid $accents-2",
+  borderTop: "0",
+  borderRadius: "0 0 $1 $1",
+  display: "grid",
+  gridTemplateColumns: "1fr auto",
+  gridGap: "10px",
+  alignItems: "center",
+});
 
-export const Subtitle = styled.h4`
-  font-size: var(--sz3);
-  font-weight: 300;
-  text-transform: uppercase;
-  color: var(--accents-4);
-  margin: 0;
-  ${truncate}
-`;
-
-export const Body = styled.div`
-  padding: var(--sz3);
-  border: 1px solid var(--accents-2);
-  border-top: 0;
-  border-radius: 0 0 var(--sz2) var(--sz2);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-gap: 10px;
-  align-items: center;
-`;
-
-export const Button = styled.button`
-  color: var(--background);
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-`;
+export const Button = styled("button", {
+  color: "$background",
+  margin: "0",
+  padding: "0",
+  border: "none",
+  background: "transparent",
+});

@@ -1,13 +1,8 @@
-import styled from "@emotion/styled";
+import { styled } from "@/css";
 import { Box } from "@/components/Box";
 
-export type AutoGrid = Box & {
-  min?: string;
-  max?: string;
-};
-
-export const AutoGrid = styled(Box)<AutoGrid>`
-  display: grid;
-  grid-template-columns: ${({ min = "200px", max = "1fr" }) =>
-    `repeat(auto-fit, minmax(${min}, ${max}))`};
-`;
+export const AutoGrid = styled(Box, {
+  display: "grid",
+  gap: "$3",
+  gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+});

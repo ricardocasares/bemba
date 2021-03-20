@@ -7,7 +7,7 @@ import {
   ChangeEvent,
   KeyboardEventHandler,
 } from "react";
-import { Box } from "@/components/Box";
+import { Stack } from "@/components/Stack";
 import { SearchInput } from "@/components/SearchInput";
 import { StationCardList } from "@/components/StationCardList";
 import { useTranslation } from "@/lib/hooks/useTranslation";
@@ -31,7 +31,7 @@ export const Search = () => {
   }, []);
 
   return (
-    <Box p={["var(--sz3)"]}>
+    <Stack spacing="sm">
       <NextSeo description="Search radios around the world" />
       <SearchInput
         ref={input}
@@ -42,7 +42,7 @@ export const Search = () => {
       />
 
       {showList && <StationCardList name={Q} limit={20} />}
-    </Box>
+    </Stack>
   );
 };
 
