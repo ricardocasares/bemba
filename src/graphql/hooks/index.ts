@@ -6,19 +6,18 @@ import {
   StationSearchInput,
 } from "@/graphql";
 
-export function useStations(
+export const useStations = (
   search: StationSearchInput,
   station: StationRequest = everything
-) {
-  const fetcher = () => client.query({ stations: [{ search }, station] });
-  return useSWR(JSON.stringify({ search, station }), fetcher);
-}
+) =>
+  useSWR(JSON.stringify({ search, station }), () =>
+    client.query({ stations: [{ search }, station] })
+  );
 
-export function useStationsByUUID(
+export const useStationsByUUID = (
   uuids: string[],
   station: StationRequest = everything
-) {
-  const fetcher = (uuids: string[]) =>
-    client.query({ stationsByUUID: [{ uuids }, station] });
-  return useSWR([uuids], fetcher);
-}
+) =>
+  useSWR([uuids], (uuids: string[]) =>
+    client.query({ stationsByUUID: [{ uuids }, station] })
+  );
