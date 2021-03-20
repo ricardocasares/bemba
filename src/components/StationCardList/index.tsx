@@ -1,28 +1,17 @@
-import { FC, memo } from "react";
-import { graphql } from "@gqless/react";
-import { query, Station, StationSearchInput } from "@/lib/graphql/gqless";
-import { NoSSR } from "@/components/NoSSR";
+import { FC } from "react";
 import { Card } from "@/components/Card";
 import { AutoGrid } from "@/components/AutoGrid";
-import { CardSkeleton } from "@/components/Skeleton";
+import { Placeholder } from "@/components/Placeholder";
 import { usePlayer } from "@/lib/hooks/usePlayer";
-import { useFavorites } from "@/lib/hooks/useFavorites";
+import { useFavorites } from '@/lib/hooks/useFavorites';
+import { Station, StationSearchInput } from "@/graphql";
+import { useStations, useStationsByUUID } from '@/graphql/hooks';
 
-const Placeholder = () => (
-  <AutoGrid gridGap={[20]}>
-    <CardSkeleton />
-    <CardSkeleton />
-    <CardSkeleton />
-    <CardSkeleton />
-    <CardSkeleton />
-  </AutoGrid>
-);
-
-export interface CardList {
+export type CardList = {
   list: Station[];
-}
+};
 
-export const CardList: FC<CardList> = memo(({ list }) => {
+export const CardList: FC<CardList> = ({ list }) => {
   const { load } = usePlayer();
   const { add, remove, isFaved } = useFavorites();
 
@@ -42,40 +31,24 @@ export const CardList: FC<CardList> = memo(({ list }) => {
       ))}
     </AutoGrid>
   );
-});
+};
 
-const withLoader = <P extends object>(
-  Component: React.ComponentType<P>
-): React.FC<P> => (props) => (
-  <NoSSR fallback={<Placeholder />}>
-    <Component {...(props as P)} />
-  </NoSSR>
-);
+export const StationCardList: FC<StationSearchInput> = (props) => {
+  const { data, error } = useStations(props, { name: true, url: true, country: true, stationuuid: true });
 
-export const StationCardList: FC<StationSearchInput> = withLoader(
-  graphql(({ ...search }) => (
-    <CardList
-      list={query.stations({ search }).map((s) => ({
-        ...s,
-        url: s.url,
-        name: s.name,
-        country: s.country,
-        stationuuid: s.stationuuid,
-      }))}
-    />
-  ))
-);
+  if (!data) return <Placeholder />;
+  if (error) return <p>Error</p>;
 
-export const StationCardFavs: FC<{ uuids: string[] }> = withLoader(
-  graphql(({ children: _, ...props }) => (
-    <CardList
-      list={query.stationsByUUID(props).map((s) => ({
-        ...s,
-        url: s.url,
-        name: s.name,
-        country: s.country,
-        stationuuid: s.stationuuid,
-      }))}
-    />
-  ))
-);
+  return <CardList list={data.stations} />;
+};
+
+export type StationCardFavs = { uuids: string[]; };
+
+export const StationCardFavs: FC<StationCardFavs> = ({ uuids }) => {
+  const { data, error } = useStationsByUUID(uuids, { name: true, stationuuid: true });
+
+  if (!data && !error) return <Placeholder />;
+  if (error) return <p>Error</p>;
+
+  return <CardList list={data.stationsByUUID} />;
+};

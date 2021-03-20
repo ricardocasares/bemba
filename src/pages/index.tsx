@@ -6,11 +6,12 @@ import { localesMap } from "@/lib/utils";
 
 export const Index = () => {
   const { t, locale } = useTranslation();
+  const language = localesMap[locale];
 
   return (
     <Stack p={["var(--sz3)"]} stackSpacing={["var(--sz4)"]}>
       <Heading as="h3">{t.index.title}</Heading>
-      <StationCardList language={localesMap[locale]} limit={20} />
+      <StationCardList language={language} limit={20} />
     </Stack>
   );
 };

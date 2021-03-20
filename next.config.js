@@ -1,4 +1,6 @@
-module.exports = {
+const withGraphQL = require('next-plugin-graphql');
+
+module.exports = withGraphQL({
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   publicRuntimeConfig: {
@@ -25,4 +27,4 @@ module.exports = {
       destination: process.env.STREAM_PROXY
     }];
   }
-};
+});

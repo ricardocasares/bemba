@@ -1,7 +1,7 @@
 import { encode } from "querystring";
 import { ApolloServer } from "apollo-server-micro";
-import { typeDefs } from "@/lib/graphql/types";
 import retryFetch from "@vercel/fetch";
+import typeDefs from "@/graphql/schema.graphql";
 
 const fetcher = retryFetch(null, { timeout: 5000 });
 
@@ -20,7 +20,10 @@ const resolvers = {
   },
 };
 
-export default new ApolloServer({ typeDefs, resolvers }).createHandler({
+export default new ApolloServer({
+  typeDefs,
+  resolvers,
+}).createHandler({
   path: "/api/graphql",
 });
 

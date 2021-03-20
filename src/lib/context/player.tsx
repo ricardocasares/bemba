@@ -5,7 +5,7 @@ import {
   SetStateAction,
   Dispatch,
 } from "react";
-import { Station } from "@/lib/graphql/gqless";
+import { Station } from "@/graphql";
 
 export interface PlayerState {
   error: boolean;
