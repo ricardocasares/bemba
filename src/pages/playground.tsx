@@ -1,5 +1,6 @@
 import { Box } from "@/components/Box";
 import { memo, useCallback, useState } from "react";
+
 // Generates random colours any time it's called
 const randomColour = () => "#" + ((Math.random() * 0xffffff) << 0).toString(16);
 
@@ -31,6 +32,7 @@ export const Playground = () => {
 
   return (
     <div>
+
       <div> Delta is {delta} </div>
       <div> Counter is {c} </div>
       <br />

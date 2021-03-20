@@ -4,21 +4,21 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
-    "generate": "gqless generate"
+    "next:build": "next build",
+    "build": "run-s generate next:build",
+    "generate": "genql -s src/graphql/schema.graphql -o .generated/genql"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@geist-ui/react-icons": "^1.0.0",
-    "@gqless/react": "^1.0.0-alpha.31",
+    "@genql/runtime": "2.5.0",
     "@next/plugin-google-analytics": "^10.0.6",
     "@next/plugin-sentry": "ricardocasares/next-plugin-sentry",
     "@vercel/fetch": "^6.1.0",
     "apollo-server-micro": "^2.21.2",
     "debounce": "^1.2.1",
-    "gqless": "^1.0.0-alpha.31",
     "graphql": "^15.5.0",
     "next": "^10.0.6",
     "next-seo": "^4.20.0",
@@ -27,13 +27,16 @@
     "react": "^17.0.0",
     "react-content-loader": "^6.0.2",
     "react-dom": "^17.0.0",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "swr": "^0.5.3"
   },
   "devDependencies": {
-    "@gqless/cli": "^1.0.0-alpha.33",
+    "@genql/cli": "2.5.0",
     "@types/node": "^14.14.35",
     "@types/react": "^17.0.3",
     "@types/styled-system": "^5.1.10",
+    "next-plugin-graphql": "^0.0.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "testcafe": "^1.12.0",
     "typescript": "^4.2.3"

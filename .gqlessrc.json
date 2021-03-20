@@ -1,4 +1,0 @@
-{
-  "url": "http://localhost:3000/api/graphql",
-  "outputDir": "src/lib/graphql/gqless"
-}

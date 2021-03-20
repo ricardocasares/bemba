@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import { event } from "@/lib/utils";
 import { PlayerContext } from "@/lib/context/player";
 import { AudioElementContext } from "@/lib/context/audio";
-import { Station } from "@/lib/graphql/gqless/generated";
+import { Station } from "@/graphql";
 
 const EMPTY_AUDIO =
   "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=";
