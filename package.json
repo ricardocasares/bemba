@@ -7,7 +7,8 @@
     "start": "next start",
     "next:build": "next build",
     "build": "run-s generate next:build",
-    "generate": "genql -s src/graphql/schema.graphql -o .generated/genql"
+    "generate": "genql -s src/graphql/schema.graphql -o .generated/genql",
+    "postinstall": "yarn generate"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
