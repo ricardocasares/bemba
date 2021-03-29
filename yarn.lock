@@ -1146,12 +1146,12 @@
   resolved "https://registry.yarnpkg.com/@geist-ui/react-icons/-/react-icons-1.0.1.tgz#5da112bbc98216bf05da3aabbd7d21594440b209"
   integrity sha512-/phre1NwXT0Mrxcq3yb+KksJ16/ykptgxI7+jh5pmDZfxnIMPlBWFBGDK0yw96oi752Wuo24X6+tkWjVe/g5Bg==
 
-"@genql/cli@2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@genql/cli/-/cli-2.5.0.tgz#529fac69b428098e1eb227080ed4a2a3cda31a71"
-  integrity sha512-/j+Z4M2r/smVtJfb7oO3N+iO2wLOybSRtE6mvBqnDvGLt/gpsyb34dLrfe857PkXWrc90iypONqr175rTTjUqQ==
+"@genql/cli@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@genql/cli/-/cli-2.6.0.tgz#75de440704686ffc61ad5217d784242653912e64"
+  integrity sha512-1ZjAfJspph/dgb1/c3hSF0zvqDxOvvoDA1DI0bsMxWZBhT9y5b/C2fJ0gcNRx5VSZX+p2Om4kh2GOCMWDNbuPg==
   dependencies:
-    "@genql/runtime" "^2.5.0"
+    "@genql/runtime" "^2.6.0"
     "@graphql-tools/graphql-file-loader" "^6.0.10"
     "@graphql-tools/load" "^6.0.10"
     "@types/node" "^14.0.14"
@@ -1169,10 +1169,26 @@
     rimraf "^2.6.3"
     yargs "^15.3.1"
 
-"@genql/runtime@2.5.0", "@genql/runtime@^2.5.0":
+"@genql/runtime@2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@genql/runtime/-/runtime-2.5.0.tgz#5176f204d04a78e8d1556407b54d19cfb5d1c7ca"
   integrity sha512-KwkEbCSNyf2rmw8Yh1g4guOKpy6ckU9rp12FGD8arAmuM5D+YDeapis7BaNRdPaTsg7xUq5Tn79qOokp2Hn9CA==
+  dependencies:
+    "@types/qs" "^6.9.0"
+    "@types/ws" "^6.0.1"
+    graphql-query-batcher "^1.0.1"
+    isomorphic-unfetch "^3.0.0"
+    lodash "^4.17.20"
+    subscriptions-transport-ws "^0.9.16"
+    tslib "^2.0.0"
+    utility-types "^3.10.0"
+    ws "^6.1.4"
+    zen-observable-ts "^0.8.21"
+
+"@genql/runtime@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@genql/runtime/-/runtime-2.6.0.tgz#7942e7b48fe74f38bdff47da2ac6cae205258fe5"
+  integrity sha512-AqkFwApU3W0G8jbAiPrAS+7KYxSnFB/4gCN1BPkcKBLa2Y58jATLHSt5FNY+I18xF9M7rlLcCaM9T8ZCtCoMCw==
   dependencies:
     "@types/qs" "^6.9.0"
     "@types/ws" "^6.0.1"
