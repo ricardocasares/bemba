@@ -15,7 +15,7 @@
     "@emotion/styled": "^11.1.5",
     "@geist-ui/react-icons": "^1.0.0",
     "@genql/runtime": "2.5.0",
-    "@next/plugin-google-analytics": "^10.0.6",
+    "@next/plugin-google-analytics": "^10.0.9",
     "@next/plugin-sentry": "ricardocasares/next-plugin-sentry",
     "@vercel/fetch": "^6.1.0",
     "apollo-server-micro": "^2.21.2",
