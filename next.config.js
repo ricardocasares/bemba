@@ -13,7 +13,7 @@ module.exports = withGraphQL({
     defaultLocale: "en",
   },
   future: {
-    webpack5: true
+    webpack5: false
   },
   experimental: {
     plugins: true,
