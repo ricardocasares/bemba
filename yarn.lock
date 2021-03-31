@@ -1292,10 +1292,10 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-10.0.6.tgz#e3c845491a8b0fffda219b5bda84b361b8b2f9c2"
   integrity sha512-++zgrcSL9SprjWKBbO3YuVj/8CTmxJl+zLErW/Kbr2VCT0u12SrBcMKvD236lEGs5/qUgeBfU3Dvmr6MASWrtA==
 
-"@next/plugin-google-analytics@^10.0.6":
-  version "10.0.6"
-  resolved "https://registry.yarnpkg.com/@next/plugin-google-analytics/-/plugin-google-analytics-10.0.6.tgz#64047f2210ae0efe3c12463b82d202d668ac4d07"
-  integrity sha512-4RiwjC9LlNakcRFJRub988G3UUIi7z/mZtVCfHbaEGhQyQPui59KvKj/1eW9MYrO94NK/10ObxUfI6dVM8GhOA==
+"@next/plugin-google-analytics@^10.1.2":
+  version "10.1.2"
+  resolved "https://registry.yarnpkg.com/@next/plugin-google-analytics/-/plugin-google-analytics-10.1.2.tgz#5957abddf8ff5a8e4a09651d1ee764071b39ab3a"
+  integrity sha512-5k4d/AOXIuTdPOjzbKEvdbBFFVRH0iaM40lUmXDml1eZf1cgFPEIVh4+eNOSu1c0tKxDJCbcK/eP8hXbKGf1vA==
 
 "@next/plugin-sentry@ricardocasares/next-plugin-sentry":
   version "10.0.6"
