@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@genql/cli": "2.6.0",
-    "@types/node": "^14.14.37",
+    "@types/node": "^14.14.39",
     "@types/react": "^17.0.3",
     "@types/styled-system": "^5.1.11",
     "next-plugin-graphql": "^0.0.2",
