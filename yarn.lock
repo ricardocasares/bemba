@@ -1169,23 +1169,7 @@
     rimraf "^2.6.3"
     yargs "^15.3.1"
 
-"@genql/runtime@2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@genql/runtime/-/runtime-2.5.0.tgz#5176f204d04a78e8d1556407b54d19cfb5d1c7ca"
-  integrity sha512-KwkEbCSNyf2rmw8Yh1g4guOKpy6ckU9rp12FGD8arAmuM5D+YDeapis7BaNRdPaTsg7xUq5Tn79qOokp2Hn9CA==
-  dependencies:
-    "@types/qs" "^6.9.0"
-    "@types/ws" "^6.0.1"
-    graphql-query-batcher "^1.0.1"
-    isomorphic-unfetch "^3.0.0"
-    lodash "^4.17.20"
-    subscriptions-transport-ws "^0.9.16"
-    tslib "^2.0.0"
-    utility-types "^3.10.0"
-    ws "^6.1.4"
-    zen-observable-ts "^0.8.21"
-
-"@genql/runtime@^2.6.0":
+"@genql/runtime@2.6.0", "@genql/runtime@^2.6.0":
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@genql/runtime/-/runtime-2.6.0.tgz#7942e7b48fe74f38bdff47da2ac6cae205258fe5"
   integrity sha512-AqkFwApU3W0G8jbAiPrAS+7KYxSnFB/4gCN1BPkcKBLa2Y58jATLHSt5FNY+I18xF9M7rlLcCaM9T8ZCtCoMCw==
@@ -1801,12 +1785,7 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
   integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
 
-"@types/qs@*":
-  version "6.9.5"
-  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.5.tgz#434711bdd49eb5ee69d90c1d67c354a9a8ecb18b"
-  integrity sha512-/JHkVHtx/REVG0VVToGRGH2+23hsYLHdyG+GrvoUGlGAd0ErauXDyvHtRI/7H7mzLm+tBCKA7pfcpkQ1lf58iQ==
-
-"@types/qs@^6.9.0":
+"@types/qs@*", "@types/qs@^6.9.0":
   version "6.9.6"
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.6.tgz#df9c3c8b31a247ec315e6996566be3171df4b3b1"
   integrity sha512-0/HnwIfW4ki2D8L8c9GVcG5I72s9jP5GSLVF0VIXDW00kmIpA6O33G7a8n59Tmh7Nz0WUC3rSb7PTY/sdW2JzA==
