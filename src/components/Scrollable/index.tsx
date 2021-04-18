@@ -1,5 +1,3 @@
-import styled from "@emotion/styled";
+import { styled } from "@/css";
 
-export const Scrollable = styled.div`
-  overflow-y: scroll;
-`;
+export const Scrollable = styled("div", { overflowY: "scroll" });

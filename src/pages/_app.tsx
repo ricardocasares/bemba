@@ -1,22 +1,22 @@
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
-import { Global } from "@emotion/react";
 import { Providers } from "@/lib/providers";
 import { Layout } from "@/components/Layout";
 import { Header } from "@/components/Header";
 import { Scrollable } from "@/components/Scrollable";
 import { Player } from "@/components/Player";
-import { styles } from "@/css/global";
-import SEO from "@/config/seo";
+import seoProps from "@/config/seo";
+import { globalStyles } from "@/css/global";
 
 export function BembaApp({ Component, pageProps }: AppProps) {
+  globalStyles();
+
   return (
     <Providers>
-      <Global styles={styles} />
       <Layout>
         <Header />
         <Scrollable>
-          <DefaultSeo {...SEO} />
+          <DefaultSeo {...seoProps} />
           <Component {...pageProps} />
         </Scrollable>
         <Player />

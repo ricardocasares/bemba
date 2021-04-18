@@ -5,7 +5,7 @@ import { CardSkeleton } from '@/components/Skeleton';
 export type Placeholder = { count?: number; };
 
 export const Placeholder: FC<Placeholder> = ({ count = 10 }) => (
-  <AutoGrid gridGap={[20]}>
-    {Array(count).fill(null).map((i) => <CardSkeleton key={`${i}-skeleton`} />)}
+  <AutoGrid>
+    {Array(count).fill(null).map((_, i) => <CardSkeleton key={`skeleton-${i}`} />)}
   </AutoGrid>
 );

@@ -1,4 +1,7 @@
-import { Play, Pause, Square, AlertCircle } from "@geist-ui/react-icons";
+import Play from "@geist-ui/react-icons/play";
+import Pause from "@geist-ui/react-icons/pause";
+import Square from "@geist-ui/react-icons/square";
+import AlertCircle from "@geist-ui/react-icons/alertCircle";
 import { LineSkeleton } from "@/components/Skeleton";
 import { Container, Controls, Title, ErrorNotification, Button } from "./style";
 import { usePlayer } from "@/lib/hooks/usePlayer";

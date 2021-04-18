@@ -6,7 +6,7 @@ Supercharged radio!
 
 - [React](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
-- [Emotion](http://emotion.sh/)
+- [Stitches](http://stitches.dev/)
 - [GenQL](https://genql.now.sh/)
 - [Testcafe](https://devexpress.github.io/testcafe/)
 

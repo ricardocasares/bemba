@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import { HeartFill, Search, Sliders } from "@geist-ui/react-icons";
+import Search from "@geist-ui/react-icons/search";
+import Sliders from "@geist-ui/react-icons/sliders";
+import HeartFill from "@geist-ui/react-icons/heartFill";
 import { Container, Navigation, Hidden } from "./style";
 
 export const Header = () => (
@@ -21,7 +23,7 @@ export const Header = () => (
       </Link>
       <Link href="/favorites">
         <a>
-          <HeartFill color="var(--highlight-magenta)" aria-hidden="true" />
+          <HeartFill color="var(--sx-colors-highlight-magenta)" aria-hidden="true" />
           <Hidden>Favorites</Hidden>
         </a>
       </Link>

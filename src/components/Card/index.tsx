@@ -1,7 +1,9 @@
 import { FC, memo } from "react";
-import { PlayCircle } from "@geist-ui/react-icons";
+import PlayCircle from "@geist-ui/react-icons/playCircle";
+import { Box } from "@/components/Box";
 import { HeartToggle } from "@/components/Toggles";
-import { Container, Cover, Button, Title, Subtitle, Body } from "./style";
+import { Cover, Button, Title, Subtitle, Body } from "./style";
+import { truncate } from "@/css/utils";
 
 const DEFAULT_SUBTITLE = "Global";
 
@@ -17,16 +19,16 @@ export interface Card {
 
 export const Card: FC<Card> = memo(
   ({ hash, title, subtitle, onPlay, onFaved, onUnFaved, isFaved }) => (
-    <Container data-test-card={hash}>
+    <Box data-test-card={hash}>
       <Cover hash={hash}>
         <Button onClick={onPlay} aria-label={`Play ${title}`}>
           <PlayCircle size={64} />
         </Button>
       </Cover>
       <Body>
-        <div style={{ display: "grid" }}>
-          <Title>{title}</Title>
-          <Subtitle>{subtitle || DEFAULT_SUBTITLE}</Subtitle>
+        <div style={{ display: "grid", gridGap: '5px' }}>
+          <Title className={truncate.className}>{title}</Title>
+          <Subtitle className={truncate.className}>{subtitle || DEFAULT_SUBTITLE}</Subtitle>
         </div>
         <Button
           aria-label={`Add ${title} to favorites`}
@@ -36,6 +38,6 @@ export const Card: FC<Card> = memo(
           <HeartToggle active={isFaved} />
         </Button>
       </Body>
-    </Container>
+    </Box>
   )
 );

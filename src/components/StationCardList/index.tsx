@@ -16,7 +16,7 @@ export const CardList: FC<CardList> = ({ list }) => {
   const { add, remove, isFaved } = useFavorites();
 
   return (
-    <AutoGrid gridGap={["var(--sz4)"]}>
+    <AutoGrid>
       {list.map((item) => (
         <Card
           key={[item.url, item.stationuuid].join()}
@@ -36,8 +36,8 @@ export const CardList: FC<CardList> = ({ list }) => {
 export const StationCardList: FC<StationSearchInput> = (props) => {
   const { data, error } = useStations(props, { name: true, url: true, country: true, stationuuid: true });
 
-  if (!data) return <Placeholder />;
   if (error) return <p>Error</p>;
+  if (!data && !error) return <Placeholder />;
 
   return <CardList list={data.stations} />;
 };
@@ -47,8 +47,8 @@ export type StationCardFavs = { uuids: string[]; };
 export const StationCardFavs: FC<StationCardFavs> = ({ uuids }) => {
   const { data, error } = useStationsByUUID(uuids, { name: true, url: true, country: true, stationuuid: true });
 
-  if (!data && !error) return <Placeholder />;
   if (error) return <p>Error</p>;
+  if (!data && !error) return <Placeholder />;
 
   return <CardList list={data.stationsByUUID} />;
 };
