@@ -28,7 +28,7 @@
     "react-content-loader": "^6.0.3",
     "react-dom": "^17.0.2",
     "styled-system": "^5.1.5",
-    "swr": "^0.5.3"
+    "swr": "^0.5.5"
   },
   "devDependencies": {
     "@genql/cli": "2.6.0",
