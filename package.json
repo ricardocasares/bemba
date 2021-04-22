@@ -17,7 +17,7 @@
     "@next/plugin-sentry": "ricardocasares/next-plugin-sentry",
     "@stitches/react": "^0.1.7",
     "@vercel/fetch": "^6.1.0",
-    "apollo-server-micro": "^2.21.2",
+    "apollo-server-micro": "^2.23.0",
     "debounce": "^1.2.1",
     "graphql": "^15.5.0",
     "next": "^10.0.6",
