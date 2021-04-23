@@ -1402,17 +1402,17 @@
     "@sentry/types" "5.27.0"
     tslib "^1.9.3"
 
-"@stitches/core@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.7.tgz#132d6e3bab1b3af44b6c67980d7e2d23b64703d0"
-  integrity sha512-OSo1qS0QlBJ/Uyc6h2luc8pzFR2qNK7ehWUtRDIegAhq5phvVw9B6oEc9E7HDf6ku8UEzCd/BVwXiUSjknMQDQ==
+"@stitches/core@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.8.tgz#174e109244be3745fc3eb4869a6a3b6c9a38d074"
+  integrity sha512-SIBYlL8H2k2kk4NpvD17cvf5n2WDRscqpIwHQs66k1l9xnSXISiCaLCgNigaGrZAYlkAI57YAX2WoTmNnGAL+Q==
 
-"@stitches/react@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.1.7.tgz#9e307b34a8b0c40d2c71907b686692ef881e9d37"
-  integrity sha512-oq+ll96qYrOmKeOGL+7fpIW9Gbxaw56kzdU7OcKWLwxaborOLHimmQELD0UXy9ZfMQ5EvgjbXPxussgUR8qrUg==
+"@stitches/react@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.1.8.tgz#c34dbf0d605653f139e3f8f59684d78e1a6a43d8"
+  integrity sha512-DrnYguiSh6WnUtiuaH2fI47WojUCmJEPQBPTPy4Zz0xW6c3aer8slSJpl3K4jRuN98yoOqhadhn3TCPALV5f4w==
   dependencies:
-    "@stitches/core" "^0.1.7"
+    "@stitches/core" "^0.1.8"
 
 "@styled-system/background@^5.1.2":
   version "5.1.2"
