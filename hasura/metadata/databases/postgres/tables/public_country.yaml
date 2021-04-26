@@ -1,0 +1,26 @@
+table:
+  name: country
+  schema: public
+array_relationships:
+- name: stations
+  using:
+    manual_configuration:
+      column_mapping:
+        id: country_id
+      insertion_order: null
+      remote_table:
+        name: station
+        schema: public
+select_permissions:
+- permission:
+    columns:
+    - id
+    - name
+    filter: {}
+  role: public
+- permission:
+    columns:
+    - id
+    - name
+    filter: {}
+  role: user
