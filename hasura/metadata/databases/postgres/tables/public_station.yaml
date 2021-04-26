@@ -1,0 +1,62 @@
+table:
+  name: station
+  schema: public
+object_relationships:
+- name: country
+  using:
+    manual_configuration:
+      column_mapping:
+        country_id: id
+      insertion_order: null
+      remote_table:
+        name: country
+        schema: public
+- name: user
+  using:
+    manual_configuration:
+      column_mapping:
+        user_id: id
+      insertion_order: null
+      remote_table:
+        name: user
+        schema: public
+select_permissions:
+- permission:
+    columns:
+    - id
+    - name
+    - url
+    - stream
+    - votes
+    - plays
+    - created_at
+    - updated_at
+    - country_id
+    - user_id
+    filter: {}
+  role: public
+- permission:
+    columns:
+    - country_id
+    - created_at
+    - id
+    - name
+    - plays
+    - stream
+    - updated_at
+    - url
+    - user_id
+    - votes
+    filter: {}
+  role: user
+update_permissions:
+- permission:
+    check: null
+    columns:
+    - name
+    - stream
+    - url
+    filter:
+      user_id:
+        _eq: X-Hasura-User-Id
+  role: user

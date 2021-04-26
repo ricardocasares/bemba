@@ -1,0 +1,43 @@
+{
+  "name": "frontend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "test": "echo \"No tests found\"",
+    "start": "next start",
+    "next:build": "next build",
+    "build": "run-s generate next:build",
+    "generate": "node -r dotenv/config .scripts/gql.js"
+  },
+  "dependencies": {
+    "@geist-ui/react-icons": "^1.0.0",
+    "@genql/runtime": "2.6.0",
+    "@next/plugin-google-analytics": "10.0.6",
+    "@next/plugin-sentry": "ricardocasares/next-plugin-sentry#semver:10.0.6",
+    "@stitches/react": "^0.1.9",
+    "@vercel/fetch": "^6.1.0",
+    "debounce": "^1.2.1",
+    "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "next": "10.0.6",
+    "next-auth": "^3.17.2",
+    "next-seo": "^4.20.0",
+    "next-themes": "^0.0.14",
+    "random-gradient": "^0.0.2",
+    "react": "^17.0.2",
+    "react-content-loader": "^6.0.3",
+    "react-dom": "^17.0.2",
+    "swr": "^0.5.3"
+  },
+  "devDependencies": {
+    "@genql/cli": "2.6.0",
+    "@types/jsonwebtoken": "^8.5.1",
+    "@types/node": "^14.14.39",
+    "@types/react": "^17.0.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "testcafe": "^1.14.0",
+    "typescript": "^4.2.4"
+  }
+}

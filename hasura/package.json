@@ -1,0 +1,12 @@
+{
+  "name": "hasura",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "yarn compose",
+    "test": "echo \"No tests found\"",
+    "build": "yarn compose",
+    "compose": "docker-compose up -d --build",
+    "console": "hasura console"
+  }
+}

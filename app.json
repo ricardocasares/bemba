@@ -1,0 +1,26 @@
+{
+  "name": "Bemba GraphQL",
+  "description": "GraphQL engine.",
+  "logo": "https://gist.githubusercontent.com/ricardocasares/9e11afb331a41b498127e24c574dc33d/raw/4faddf3971a3d18cc864f4f3199065ca73624b1c/logo.svg",
+  "keywords": ["database", "api", "graphql", "heroku", "postgres", "bemba"],
+  "success_url": "/console",
+  "website": "https://bemba.app",
+  "repository": "https://github.com/ricardocasares/bemba",
+  "stack": "container",
+  "app": { "region": "eu" },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    }
+  ],
+  "environments": {
+    "review": {
+      "addons": ["heroku-postgresql:hobby-dev"]
+    }
+  }
+}

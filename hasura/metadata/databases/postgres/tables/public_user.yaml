@@ -1,0 +1,44 @@
+table:
+  name: user
+  schema: public
+array_relationships:
+- name: stations
+  using:
+    manual_configuration:
+      column_mapping:
+        id: user_id
+      insertion_order: null
+      remote_table:
+        name: station
+        schema: public
+insert_permissions:
+- permission:
+    backend_only: true
+    check: {}
+    columns: []
+  role: user
+select_permissions:
+- permission:
+    columns:
+    - avatarUrl
+    - name
+    filter: {}
+  role: public
+- permission:
+    columns:
+    - created_at
+    - name
+    filter: {}
+  role: user
+update_permissions:
+- permission:
+    check: null
+    columns:
+    - email
+    - name
+    filter:
+      id:
+        _eq: X-Hasura-User-Id
+    set:
+      id: x-hasura-User-Id
+  role: user
