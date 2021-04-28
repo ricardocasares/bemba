@@ -1181,8 +1181,9 @@
   integrity sha512-4RiwjC9LlNakcRFJRub988G3UUIi7z/mZtVCfHbaEGhQyQPui59KvKj/1eW9MYrO94NK/10ObxUfI6dVM8GhOA==
 
 "@next/plugin-sentry@ricardocasares/next-plugin-sentry":
-  version "10.0.6"
-  resolved "https://codeload.github.com/ricardocasares/next-plugin-sentry/tar.gz/35963363f3b8d8ae8797c685d6b9ef7f963f90d2"
+  version "10.1.3"
+  uid "3b1bc677dce45f713c2289d9419ac67be691206e"
+  resolved "https://codeload.github.com/ricardocasares/next-plugin-sentry/tar.gz/3b1bc677dce45f713c2289d9419ac67be691206e"
   dependencies:
     "@sentry/browser" "5.27.0"
     "@sentry/integrations" "5.27.0"
