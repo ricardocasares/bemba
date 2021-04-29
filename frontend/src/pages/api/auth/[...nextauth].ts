@@ -24,6 +24,16 @@ export default NextAuth({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
+    Providers.Twitter({
+      clientId: process.env.TWITTER_ID,
+      clientSecret: process.env.TWITTER_SECRET,
+      scope: "r_liteprofile r_emailaddress",
+    }),
+    Providers.LinkedIn({
+      clientId: process.env.LINKEDIN_ID,
+      clientSecret: process.env.LINKEDIN_SECRET,
+      scope: "r_liteprofile r_emailaddress",
+    }),
   ],
 
   secret: process.env.SECRET,
@@ -73,12 +83,11 @@ export default NextAuth({
             object: {
               id: token.sub,
               name: user.name,
-              email: user.email,
-              avatarUrl: user.image,
+              avatar_url: user.image,
             },
             on_conflict: {
-              constraint: "user_email_key",
-              update_columns: ["name", "avatarUrl"],
+              constraint: "user_pkey",
+              update_columns: ["name", "avatar_url", "updated_at"],
             },
           })
           .get({ name: true })

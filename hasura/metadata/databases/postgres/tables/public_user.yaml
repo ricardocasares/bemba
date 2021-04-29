@@ -20,7 +20,7 @@ insert_permissions:
 select_permissions:
 - permission:
     columns:
-    - avatarUrl
+    - avatar_url
     - name
     filter: {}
   role: public
@@ -34,7 +34,6 @@ update_permissions:
 - permission:
     check: null
     columns:
-    - email
     - name
     filter:
       id:

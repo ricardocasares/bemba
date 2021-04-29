@@ -1,3 +1,4 @@
 - "!include public_country.yaml"
+- "!include public_locale.yaml"
 - "!include public_station.yaml"
 - "!include public_user.yaml"

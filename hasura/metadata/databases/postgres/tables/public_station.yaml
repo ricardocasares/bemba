@@ -20,6 +20,16 @@ object_relationships:
       remote_table:
         name: user
         schema: public
+array_relationships:
+- name: locales
+  using:
+    manual_configuration:
+      column_mapping:
+        country_id: country_id
+      insertion_order: null
+      remote_table:
+        name: locale
+        schema: public
 select_permissions:
 - permission:
     columns:

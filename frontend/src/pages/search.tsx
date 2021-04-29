@@ -15,10 +15,10 @@ import { useTranslation } from "@/lib/hooks/useTranslation";
 export const Search = () => {
   const { t } = useTranslation();
   const input = useRef<HTMLInputElement>(null);
-  const [Q, setQ] = useState("");
+  const [query, setQuery] = useState("");
 
-  const showList = Q.length >= 3;
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => setQ(e.target.value);
+  const showList = query.length >= 3;
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => setQuery(e.target.value);
   const debouncedOnChange = debounce(onChange, 350);
   const closeKeyboard: KeyboardEventHandler<HTMLInputElement> = (e) => {
     if (e.key === "Enter") {
@@ -41,7 +41,7 @@ export const Search = () => {
         placeholder={t.search.placeholder}
       />
 
-      {showList && <StationCardList />}
+      {showList && <StationCardList where={{ name: { _ilike: `%${query}%` } }} />}
     </Stack>
   );
 };
