@@ -1,5 +1,4 @@
 import { NextSeo } from "next-seo";
-import { Box } from "@/components/Box";
 import { Heading } from "@/components/Typography";
 import { StationCardFavs } from "@/components/StationCardList";
 import { useFavorites } from "@/lib/hooks/useFavorites";

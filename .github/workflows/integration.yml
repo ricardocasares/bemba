@@ -20,7 +20,7 @@ jobs:
       - name: Testing ${{ github.event.deployment_status.target_url }}
         uses: DevExpress/testcafe-action@latest
         with:
-          args: "${{ matrix.browser }}:headless tests"
+          args: "${{ matrix.browser }}:headless frontend/tests"
         env:
           CI: true
           TARGET_URL: ${{ github.event.deployment_status.target_url }}

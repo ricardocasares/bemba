@@ -2,6 +2,8 @@ import Link from "next/link";
 import { signIn, signOut, useSession } from 'next-auth/client';
 import { Logo } from "@/components/Logo";
 import GitHub from "@geist-ui/react-icons/github";
+import Twitter from "@geist-ui/react-icons/twitter";
+import LinkedIn from "@geist-ui/react-icons/linkedin";
 import LogOut from "@geist-ui/react-icons/logOut";
 import Search from "@geist-ui/react-icons/search";
 import Sliders from "@geist-ui/react-icons/sliders";
@@ -43,6 +45,18 @@ export const Header = () => {
           <a>
             <LogOut aria-hidden="true" onClick={() => signOut()} />
             <Hidden>Logout</Hidden>
+          </a>
+        </Link>}
+        {!session && <Link href="">
+          <a>
+            <LinkedIn aria-hidden="true" onClick={() => signIn('linkedin')} />
+            <Hidden>Login with LinkedIn</Hidden>
+          </a>
+        </Link>}
+        {!session && <Link href="">
+          <a>
+            <Twitter aria-hidden="true" onClick={() => signIn('twitter')} />
+            <Hidden>Login with GitHub</Hidden>
           </a>
         </Link>}
         {!session && <Link href="">
