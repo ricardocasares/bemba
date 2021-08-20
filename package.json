@@ -17,18 +17,18 @@
     "@next/plugin-sentry": "ricardocasares/next-plugin-sentry",
     "@stitches/react": "^0.2.3",
     "@vercel/fetch": "^6.1.0",
-    "apollo-server-micro": "^2.21.2",
+    "apollo-server-micro": "^2.25.2",
     "debounce": "^1.2.1",
     "graphql": "^15.5.0",
     "next": "^10.0.6",
-    "next-seo": "^4.20.0",
+    "next-seo": "^4.26.0",
     "next-themes": "^0.0.10",
     "random-gradient": "^0.0.2",
     "react": "^17.0.2",
     "react-content-loader": "^6.0.3",
     "react-dom": "^17.0.2",
     "styled-system": "^5.1.5",
-    "swr": "^0.5.3"
+    "swr": "^0.5.6"
   },
   "devDependencies": {
     "@genql/cli": "2.6.0",
