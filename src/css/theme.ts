@@ -1,6 +1,6 @@
-import { theme } from "@/css";
+import { createTheme } from "@/css";
 
-export const dark = theme("dark", {
+export const dark = createTheme("dark", {
   colors: {
     background: "#000",
     foreground: "#fff",
