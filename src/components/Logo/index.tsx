@@ -22,7 +22,7 @@ export const Logo = () => {
         cy="12"
         r="2"
         style={{
-          stroke: "var(--sx-colors-accents-4)",
+          stroke: "var(--colors-accents-4)",
           transform: `scale(${opacity})`,
           transformOrigin: "center",
           willChange: "transform, stroke",
@@ -32,7 +32,7 @@ export const Logo = () => {
         d="M16.24 7.76a6 6 0 010 8.49m-8.48-.01a6 6 0 010-8.49m11.31-2.82a10 10 0 010 14.14m-14.14 0a10 10 0 010-14.14"
         style={{
           opacity,
-          stroke: "var(--sx-colors-active)",
+          stroke: "var(--colors-active)",
           willChange: "opacity",
         }}
       />

@@ -1,6 +1,6 @@
-import { global } from "@/css";
+import { globalCss } from "@/css";
 
-export const globalStyles = global({
+export const globalStyles = globalCss({
   "html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6": {
     margin: "0",
     padding: "0",

@@ -26,16 +26,16 @@ export const Toggle: FC<Toggle> = ({ on, off, active }) => (
 
 export const HeartToggle: FC<Activable> = (props) => (
   <Toggle
-    on={<HeartFill color="var(--sx-colors-highlight-magenta)" />}
-    off={<Heart color="var(--sx-colors-accents-5)" />}
+    on={<HeartFill color="var(--colors-highlight-magenta)" />}
+    off={<Heart color="var(--colors-accents-5)" />}
     {...props}
   />
 );
 
 export const RightLeftToggle: FC<Activable> = (props) => (
   <Toggle
-    on={<ToggleRight color="var(--sx-colors-success)" />}
-    off={<ToggleLeft color="var(--sx-colors-accents-5)" />}
+    on={<ToggleRight color="var(--colors-success)" />}
+    off={<ToggleLeft color="var(--colors-accents-5)" />}
     {...props}
   />
 );

@@ -23,7 +23,7 @@ export const Header = () => (
       </Link>
       <Link href="/favorites">
         <a>
-          <HeartFill color="var(--sx-colors-highlight-magenta)" aria-hidden="true" />
+          <HeartFill color="var(--colors-highlight-magenta)" aria-hidden="true" />
           <Hidden>Favorites</Hidden>
         </a>
       </Link>

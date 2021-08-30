@@ -1,13 +1,13 @@
-import { createCss } from "@stitches/react";
+import { createStitches } from "@stitches/react";
 
 export const {
   css,
-  theme,
   styled,
-  global,
+  globalCss,
   keyframes,
-  getCssString,
-} = createCss({
+  getCssText,
+  createTheme,
+} = createStitches({
   theme: {
     colors: {
       active: "$success",
