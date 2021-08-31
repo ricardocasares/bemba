@@ -14,7 +14,6 @@
   "dependencies": {
     "@geist-ui/react-icons": "^1.0.0",
     "@genql/runtime": "2.6.0",
-    "@next/plugin-google-analytics": "^10.0.6",
     "@next/plugin-sentry": "ricardocasares/next-plugin-sentry",
     "@stitches/react": "^1.0.0",
     "@vercel/fetch": "^6.1.0",
