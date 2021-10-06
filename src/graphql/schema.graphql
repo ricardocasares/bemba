@@ -9,7 +9,7 @@ enum StationOrder {
 }
 
 type Station {
-  owner: String!
+  owner: Int!
   name: String!
   url: String!
   votes: Int!
