@@ -1,5 +1,5 @@
 type Query {
-  searchStations(search: StationSearchInput): [Station!]!
+  stations(search: StationSearchInput): [Station!]!
   stationsByUUID(uuids: [String!]!): [Station!]!
 }
 
@@ -9,6 +9,7 @@ enum StationOrder {
 }
 
 type Station {
+  owner: String!
   name: String!
   url: String!
   votes: Int!
