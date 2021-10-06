@@ -1,5 +1,5 @@
 type Query {
-  searchStation(search: StationSearchInput): [Station!]!
+  searchStations(search: StationSearchInput): [Station!]!
   stationsByUUID(uuids: [String!]!): [Station!]!
 }
 
