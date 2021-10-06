@@ -1,0 +1,20 @@
+rules:
+  - name: grahpql recommendations
+    check: true
+    skip: true
+    match: ["**/*.graphql"]
+    comment: |-
+      :warning:
+      
+      You have modified the GraphQL schema. Please take this into account when modifying graphql schemas:
+      
+      **When deleting fields**
+      - [ ] Marked the field as `@deprecated` instead of deleting it
+      **When adding new types**
+      - [ ] You have checked there is no naming conflicts
+      - [ ] You are using `PascalCase` for naming the types
+      
+      :warning:
+      
+      When you modify the GraphQL schema, we automatically generate a client library.
+      If you have modified types or queries and you have not updated the code handling it, the build step will fail.
