@@ -23,10 +23,10 @@ fixture`Settings`.page`${process.env.TARGET_URL}/settings`;
 
 [
   ["English", "Settings"],
-  ["Español", "Configuración"],
-  ["Polski", "Ustawienia"],
-  ["Française", "Réglages"],
-  ["Русский", "Настройки"],
+  ["Spanish", "Configuración"],
+  ["Polish", "Ustawienia"],
+  ["French", "Réglages"],
+  ["Russian", "Настройки"],
 ].forEach(([lang, label]) =>
   test(`Sets application language to '${lang}'`, async (cafe) =>
     await cafe
