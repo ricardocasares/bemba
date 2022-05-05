@@ -21,7 +21,7 @@
     "graphql": "^15.5.0",
     "next": "^12.1.4",
     "next-seo": "^4.26.0",
-    "next-themes": "^0.0.10",
+    "next-themes": "^0.1.1",
     "random-gradient": "^0.0.2",
     "react": "^17.0.2",
     "react-content-loader": "^6.0.3",
