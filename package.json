@@ -11,6 +11,9 @@
     "postinstall": "yarn generate",
     "release": "semantic-release"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@geist-ui/react-icons": "^1.0.0",
     "@genql/runtime": "2.6.0",

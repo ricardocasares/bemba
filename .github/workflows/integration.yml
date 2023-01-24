@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [18]
         browser: ["chrome", "firefox"]
     steps:
       - uses: actions/setup-node@v1
