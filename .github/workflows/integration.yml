@@ -5,7 +5,7 @@ on: [deployment_status]
 jobs:
   build:
     if: github.event.deployment_status.state == 'success'
-    name: Integration tests
+    name: E2E ${{ matrix.browser }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
