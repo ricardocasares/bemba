@@ -5,7 +5,7 @@ on: [deployment_status]
 jobs:
   build:
     if: github.event.deployment_status.state == 'success'
-    name: node-${{ matrix.node }} ${{ matrix.browser }} ${{ matrix.os }}
+    name: Integration tests
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -22,13 +22,6 @@ jobs:
           CI: true
           TARGET_URL: ${{ github.event.deployment_status.target_url }}
         run: "npx testcafe ${{ matrix.browser }}:headless tests"
-      # - name: Testing ${{ github.event.deployment_status.target_url }}
-      #   uses: DevExpress/testcafe-action@latest
-      #   with:
-      #     args: "${{ matrix.browser }}:headless tests"
-      #   env:
-      #     CI: true
-      #     TARGET_URL: ${{ github.event.deployment_status.target_url }}
       - if: ${{ success() }}
         run: |
           curl --request POST \
