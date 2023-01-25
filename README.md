@@ -13,3 +13,7 @@ Supercharged radio!
 ## Contributing
 
 Pull requests are welcome :)
+
+## Credits
+
+Huge thanks to the folks at [radio-browser](https://www.radio-browser.info/) mantaining the API.

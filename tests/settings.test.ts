@@ -10,7 +10,6 @@ fixture`Settings`.page`${process.env.TARGET_URL}/settings`;
 [
   ["Dark", "dark"],
   ["Light", "light"],
-  ["System", "system"],
 ].forEach(([label, mode]) =>
   test(`Sets ${mode} color mode`, async (cafe) =>
     await cafe

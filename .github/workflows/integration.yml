@@ -1,32 +1,27 @@
-name: Integration tests
+name: E2E tests
 
 on: [deployment_status]
 
 jobs:
   build:
     if: github.event.deployment_status.state == 'success'
-    name: node-${{ matrix.node }} ${{ matrix.browser }} ${{ matrix.os }}
+    name: ${{ matrix.browser }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [18]
         browser: ["chrome", "firefox"]
     steps:
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - uses: actions/checkout@v1
-      - name: Testing ${{ github.event.deployment_status.target_url }}
-        uses: DevExpress/testcafe-action@latest
-        with:
-          args: "${{ matrix.browser }}:headless tests"
-        env:
-          CI: true
+      - run: npm ci
+      - env:
           TARGET_URL: ${{ github.event.deployment_status.target_url }}
-      - name: Integration tests passed
-        if: ${{ success() }}
-
+        run: "npx testcafe ${{ matrix.browser }}:headless tests"
+      - if: ${{ success() }}
         run: |
           curl --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
@@ -38,9 +33,7 @@ jobs:
             "description": "Integration tests passed",
             "target_url": "'"$GITHUB_SERVER_URL"'/'"$GITHUB_REPOSITORY"'/actions/runs/'"$GITHUB_RUN_ID"'"
           }'
-
-      - name: Integration tests failed
-        if: ${{ failure() }}
+      - if: ${{ failure() }}
         run: |
           curl --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
