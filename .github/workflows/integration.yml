@@ -19,7 +19,6 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm ci
       - env:
-          CI: true
           TARGET_URL: ${{ github.event.deployment_status.target_url }}
         run: "npx testcafe ${{ matrix.browser }}:headless tests"
       - if: ${{ success() }}
