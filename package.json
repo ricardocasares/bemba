@@ -19,7 +19,7 @@
     "@genql/runtime": "2.6.0",
     "@stitches/react": "^1.2.7",
     "@vercel/fetch": "^6.1.0",
-    "apollo-server-micro": "^2.25.2",
+    "apollo-server-micro": "^3.11.1",
     "debounce": "^1.2.1",
     "graphql": "^15.5.0",
     "next": "^12.1.4",
